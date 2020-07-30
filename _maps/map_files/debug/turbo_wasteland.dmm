@@ -98,6 +98,7 @@
 "bT" = (/obj/machinery/trading_machine/weapon,/obj/effect/decal/cleanable/dirt,/obj/machinery/camera/autoname,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "bU" = (/obj/structure/table/abductor,/obj/machinery/cell_charger,/turf/open/floor/plating/abductor,/area/abductor_ship)
 "bV" = (/obj/machinery/autolathe,/turf/open/floor/plating/abductor,/area/abductor_ship)
+"bX" = (/obj/effect/ruin_loader,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababab
@@ -114,7 +115,7 @@ abahahahahahbEbPbKbKbKbKbEahahahahahahahahahahaFahahahahahahahahahahahahahababab
 abahahahahahbEbLbQbPbUbVbEahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahbEbEbEbEbEbEbEahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahauahahahahahahahahahahahahahahahahahahahahahahahahahahababab
-abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
+abahahahahahahahahahahahahahahahahahahahahahahahahahahahahbXahahahahahahahababab
 abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab

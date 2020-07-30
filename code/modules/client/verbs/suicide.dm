@@ -4,10 +4,10 @@
 	set hidden = 1
 	if(!canSuicide())
 		return
-	var/confirm = alert("Вы хотите совершить самоубийство?", "Подтвердите", "Yes", "No")
+	var/confirm = alert("Вы хотите совершить самоубийство?", "Подтвердите", "Да", "Нет")
 	if(!canSuicide())
 		return
-	if(confirm == "Yes")
+	if(confirm == "Да")
 		suiciding = 1
 		log_game("[key_name(src)] (job: [job ? "[job]" : "None"]) commited suicide at [get_area(src)].")
 		var/obj/item/held_item = get_active_held_item()
