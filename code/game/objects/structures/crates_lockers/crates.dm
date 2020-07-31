@@ -66,14 +66,26 @@
 	manifest = null
 	update_icon()
 
+/obj/structure/closet/crate/vault_compact
+	name = "компактный ящик Волт-Тек"
+	desc = "A rectangular blue steel vault crate."
+	icon = 'icons/fallout/objects/crates.dmi'
+	icon_state = "vault_clean_c"
+
+/obj/structure/closet/crate/vault_compact/rusted
+	name = "ржавый компактный ящик Волт-Тек"
+	desc = "A rectangular blue steel vault crate."
+	icon = 'icons/fallout/objects/crates.dmi'
+	icon_state = "vault_rusted_c"
+
 /obj/structure/closet/crate/vault_blue
-	name = "голубой ящик Волт-Тек"
+	name = "ящик Волт-Тек"
 	desc = "A rectangular blue steel vault crate."
 	icon = 'icons/fallout/objects/crates.dmi'
 	icon_state = "vault_blue"
 
 /obj/structure/closet/crate/vault_yellow
-	name = "жёлтый ящик Волт-Тек"
+	name = "ржавый ящик Волт-Тек"
 	desc = "A rectangular yellow steel vault crate."
 	icon = 'icons/fallout/objects/crates.dmi'
 	icon_state = "vault_yellow"
@@ -85,7 +97,7 @@
 	icon_state = "orange"
 
 /obj/structure/closet/crate/mil_crate
-	name = "военный ящик"
+	name = "полевой контейнер"
 	desc = "A rectangular mil steel crate."
 	icon = 'icons/fallout/objects/crates.dmi'
 	icon_state = "mil_crate"

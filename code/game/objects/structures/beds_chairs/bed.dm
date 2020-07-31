@@ -164,6 +164,33 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 10
 
+/obj/structure/bed/wooden
+	name = "деревянная кровать"
+	icon_state = "wood_bed"
+
+/obj/structure/bed/metal
+	name = "металлическая кровать"
+	icon_state = "metal_bed"
+
+/obj/structure/bed/wire
+	name = "металлическая кровать"
+	icon_state = "wire_bed"
+
+/obj/structure/bed/wire/rand
+	name = "металлическая кровать"
+	icon_state = "wire_bed"
+
+/obj/structure/bed/wire/rand/New()
+	..()
+	icon_state = "wire_bed[rand(1,3)]"
+
+/obj/structure/bed/metal/rand
+	name = "металлическая кровать"
+	icon_state = "metal_bed"
+
+/obj/structure/bed/metal/rand/New()
+	..()
+	icon_state = "bed[rand(1,3)]"
 
 /obj/structure/bed/alien
 	name = "resting contraption"

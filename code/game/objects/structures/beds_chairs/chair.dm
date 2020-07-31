@@ -182,6 +182,29 @@
 /obj/structure/chair/comfy/lime
 	color = rgb(255,251,0)
 
+/obj/structure/chair/armchair
+	name = "кресло с подлокотниками"
+	desc = "It looks comfy.\n<span class='notice'>Alt-click to rotate it clockwise.</span>"
+	icon_state = "armchair"
+	resistance_flags = FLAMMABLE
+	obj_integrity = 70
+	max_integrity = 70
+	buildstackamount = 2
+	var/image/armrest = null
+	item_chair = null
+
+/obj/structure/chair/armchair/New()
+	armrest = image("icons/obj/chairs.dmi", "armchair_armrest")
+	armrest.layer = ABOVE_MOB_LAYER
+	return ..()
+
+/obj/structure/chair/armchair/post_buckle_mob(mob/living/M)
+	..()
+	if(has_buckled_mobs())
+		add_overlay(armrest)
+	else
+		overlays -= armrest
+
 /obj/structure/chair/office
 	anchored = 0
 	buildstackamount = 5
