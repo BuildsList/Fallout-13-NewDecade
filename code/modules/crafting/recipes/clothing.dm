@@ -1,5 +1,5 @@
 /datum/crafting_recipe/cloth
-	name = "Cloth"
+	name = "Ткань"
 	result = /obj/item/stack/sheet/cloth
 	reqs = list(/obj/item/clothing = 1)
 	time = 30
@@ -17,7 +17,7 @@
 	XP = 5
 
 /datum/crafting_recipe/rag_shoes
-	name = "Cloth Shoes"
+	name = "Обмотки на ноги"
 	result = /obj/item/clothing/shoes/f13/rag
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/crafting/wonderglue = 1)
@@ -50,7 +50,7 @@
 	XP = 15
 
 /datum/crafting_recipe/shoes
-	name = "Leather Shoes"
+	name = "Кожанные ботинки"
 	result = /obj/item/clothing/shoes/f13/tan
 	reqs = list(/obj/item/stack/sheet/animalhide = 2,
 				/obj/item/crafting/wonderglue = 1)
@@ -104,7 +104,7 @@
 	XP = 15
 
 /datum/crafting_recipe/ragclothing
-	name = "Rag Clothing"
+	name = "Обмотки на тело"
 	result = /obj/item/clothing/under/f13/rag
 	reqs = list(/obj/item/stack/sheet/cloth = 5,
 				/obj/item/crafting/wonderglue = 1)
@@ -115,7 +115,7 @@
 	XP = 5
 
 /datum/crafting_recipe/ragclothing
-	name = "Pants"
+	name = "Обмотки на ноги"
 	result = /obj/item/clothing/under/pants/f13/cloth
 	reqs = list(/obj/item/stack/sheet/cloth = 3,
 				/obj/item/crafting/wonderglue = 1)
@@ -126,7 +126,7 @@
 	XP = 5
 
 /datum/crafting_recipe/satchel
-	name = "Satchel"
+	name = "Сумка"
 	result = /obj/item/weapon/storage/backpack/satchel
 	time = 150
 	reqs = list(/obj/item/stack/sheet/animalhide = 2,

@@ -32,7 +32,7 @@ Chief Engineer
 
 	id = /obj/item/weapon/card/id/silver
 	belt = /obj/item/weapon/storage/belt/utility/chief/full
-	l_pocket = /obj/item/device/pda/heads/ce
+	l_pocket = /obj/item/clothing/gloves/pda/heads/ce
 	ears = /obj/item/device/radio/headset/heads/ce
 	uniform = /obj/item/clothing/under/rank/chief_engineer
 	shoes = /obj/item/clothing/shoes/sneakers/brown
@@ -84,7 +84,7 @@ Station Engineer
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/weapon/storage/belt/utility/full
-	l_pocket = /obj/item/device/pda/engineering
+	l_pocket = /obj/item/clothing/gloves/pda/engineering
 	ears = /obj/item/device/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineer
 	shoes = /obj/item/clothing/shoes/workboots
@@ -134,7 +134,7 @@ Atmospheric Technician
 	jobtype = /datum/job/atmos
 
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
-	l_pocket = /obj/item/device/pda/atmos
+	l_pocket = /obj/item/clothing/gloves/pda/atmos
 	ears = /obj/item/device/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	r_pocket = /obj/item/device/analyzer

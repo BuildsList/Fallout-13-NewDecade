@@ -45,7 +45,7 @@
 /* Initialization */
 /obj/machinery/bounty_machine/New()
 	InitQuestList()
-	Find_charPod(pod_distance)
+	FindPod(pod_distance)
 	UpdateActiveQuests()
 
 
@@ -144,8 +144,8 @@
  *	Pod management
 */
 
-/* Find_char and assign firs pod in distance */
-/obj/machinery/bounty_machine/proc/Find_charPod(var/distance = 1)
+/* Find and assign firs pod in distance */
+/obj/machinery/bounty_machine/proc/FindPod(var/distance = 1)
 	for(var/Obj in view(distance, src))
 		if(istype(Obj, /obj/machinery/bounty_pod))
 			connected_pod = Obj
@@ -155,40 +155,38 @@
  *	GUI
 */
 /obj/machinery/bounty_machine/proc/ShowUI()
-	var/dat = {"<meta charset="UTF-8">"}
+	var/dat = ""
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/bounty_employers)
 	assets.send(usr)
 
 	dat += "<h1>Wasteland Bounty Station</h1>"
 	if(connected_pod)
-		dat += "<font color='green'>Pod found</font><br>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Rescan</a><br>"
+		dat += "<font color='green'>Квантовый телепортатор найден</font><br>"
+		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a><br>"
 	else
-		dat += "<font color='red'>Pod not found</font>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Rescan</a><br>"
+		dat += "<font color='red'>Квантовый телепортатор не найден</font>"
+		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a><br>"
 
 	dat += "<style>.leftimg {float:left;margin: 7px 7px 7px 0;}</style>"
 
-	dat += "<h2>Contracts:</h2>"
+	dat += "<h2>Контракты:</h2>"
 	var/item_index = 1
 	for(var/datum/bounty_quest/Q in active_quests)
-		//usr << browse_rsc(Q.GetIconWithPath(), Q.employer_icon)
-		//usr.browse_rsc_icon(Q.GetIconWithPath(), Q.employer_icon)
 		dat += "<div class='statusDisplay'>"
-		//dat += "<img src=\ref=[Q.employer_icon] class='leftimg' width = 59 height = 70></img>"
-		//dat += "<font color='green'><b>ID: </b> [Q.name]</font><br>"
-		dat += "<font color='green'><b>Employer: </b> [Q.employer]</font><br>"
-		//dat += "<font color='green'><b>Message:</b></font>"
-		//dat += "<font color='green'>[Q.desc]</font><br><br>"
-		dat += "<font color='green'><b>Acceptable package: </b></font>"
+		dat += "<img src='[Q.employer_icon]' class='leftimg' width = 59 height = 70></img>"
+		dat += "<font color='green'><b>Название: </b> [Q.name]</font><br>"
+		dat += "<font color='green'><b>Заказчик: </b> [Q.employer]</font><br>"
+		dat += "<font color='green'><b>Сообщение:</b></font>"
+		dat += "<font color='green'>[Q.desc]</font><br><br>"
+		dat += "<font color='green'><b>Надо: </b></font>"
 		dat += "<font color='green'><i>[Q.need_message]. </i></font><br>"
-		dat += "<font color='green'><b>Reward:</b></font>"
+		dat += "<font color='green'><b>Награда:</b></font>"
 		dat += "<font color='green'> [Q.caps_reward] caps</font> "
-		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Send package</a>"
+		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Отправить посылку</a>"
 		dat += "</div>"
 		item_index++
 
-	var/datum/browser/popup = new(usr, "bounty", "Wasteland Contracts Database", 640, 400) // Set up the popup browser window
+	var/datum/browser/popup = new(usr, "bounty", "База Данных Контрактов Пустоши", 640, 400) // Set up the popup browser window
 	popup.set_content(dat)
 	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
@@ -199,11 +197,11 @@
 			var/result_msg = ProcessQuestComplete(href_list["completequest"], usr)
 			to_chat(usr, result_msg)
 		else
-			to_chat(usr, "Pod not found")
+			to_chat(usr, "Квантовый телепортатор не найден")
 		ShowUI()
 
 	if(href_list["findpod"])
-		Find_charPod(pod_distance)
+		FindPod(pod_distance)
 		ShowUI()
 
 /*

@@ -58,7 +58,7 @@
 	living_mob_list -= src
 	if(!gibbed)
 		dead_mob_list += src
-	to_chat(src, "Ожидайте респавна. OOC -> Respawn.")
+	to_chat(src, "Ожидайте возрождения. OOC -> Возродиться.")
 	paralysis = 0
 	stunned = 0
 	weakened = 0

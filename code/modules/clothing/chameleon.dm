@@ -453,18 +453,18 @@
 /obj/item/device/radio/headset/chameleon/emp_act(severity)
 	chameleon_action.emp_randomise()
 
-/obj/item/device/pda/chameleon
+/obj/item/clothing/gloves/pda/chameleon
 	name = "PDA"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
-/obj/item/device/pda/chameleon/New()
+/obj/item/clothing/gloves/pda/chameleon/New()
 	..()
 	chameleon_action = new(src)
-	chameleon_action.chameleon_type = /obj/item/device/pda
+	chameleon_action.chameleon_type = /obj/item/clothing/gloves/pda
 	chameleon_action.chameleon_name = "PDA"
-	chameleon_action.chameleon_blacklist = list(/obj/item/device/pda/heads)
-	chameleon_action.chameleon_blacklist_with_subtypes = list(/obj/item/device/pda/ai)
+	chameleon_action.chameleon_blacklist = list(/obj/item/clothing/gloves/pda/heads)
+	chameleon_action.chameleon_blacklist_with_subtypes = list(/obj/item/clothing/gloves/pda/ai)
 	chameleon_action.initialize_disguises()
 
-/obj/item/device/pda/chameleon/emp_act(severity)
+/obj/item/clothing/gloves/pda/chameleon/emp_act(severity)
 	chameleon_action.emp_randomise()

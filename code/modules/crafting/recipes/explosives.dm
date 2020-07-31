@@ -1,5 +1,5 @@
 /datum/crafting_recipe/capmine
-	name = "Bottlecap Mine"
+	name = "Крышкомина"
 	result = /obj/item/weapon/grenade/mine/caps_mine
 	reqs = list(/obj/item/crafting/lunchbox = 1,
 				/obj/item/crafting/sensor_module = 1,
@@ -31,7 +31,7 @@
 	XP = 20
 
 /datum/crafting_recipe/dynim
-	name = "Dynamite charge"
+	name = "Динамитная шашка"
 	result = /obj/item/weapon/grenade/syndieminibomb/dynim
 	reqs = list(/obj/item/weapon/grenade/syndieminibomb/dynamite = 6,
 				/obj/item/crafting/duct_tape = 2,
@@ -60,7 +60,7 @@
 	XP = 30
 
 /datum/crafting_recipe/molotov
-	name = "Molotov"
+	name = "Молотов"
 	result = /obj/item/weapon/grenade/syndieminibomb/molotov
 	reqs = list(/obj/item/weapon/reagent_containers/food/drinks/bottle = 1,
 				/datum/reagent/fuel = 60,

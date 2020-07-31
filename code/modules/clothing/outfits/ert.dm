@@ -168,7 +168,7 @@
 	belt = /obj/item/weapon/gun/energy/e_gun
 	l_pocket = /obj/item/weapon/pen
 	back = /obj/item/weapon/storage/backpack/satchel
-	r_pocket = /obj/item/device/pda/heads
+	r_pocket = /obj/item/clothing/gloves/pda/heads
 	l_hand = /obj/item/weapon/clipboard
 	id = /obj/item/weapon/card/id
 
@@ -176,7 +176,7 @@
 	if(visualsOnly)
 		return
 
-	var/obj/item/device/pda/heads/pda = H.r_store
+	var/obj/item/clothing/gloves/pda/heads/pda = H.r_store
 	pda.owner = H.real_name
 	pda.ownjob = "Centcom Official"
 	pda.update_label()

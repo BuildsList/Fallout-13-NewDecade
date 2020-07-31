@@ -1,6 +1,6 @@
 /obj/item/weapon/stock_parts/cell
-	name = "micro-fusion cell"
-	desc = "A rechargable micro-fusion power cell."
+	name = "Микроядерная батарея"
+	desc = "Микроядерная батарея, используется для питания разных устройств требующих наличия источника питания."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
@@ -14,7 +14,7 @@
 	var/maxcharge = 1000
 	materials = list(MAT_METAL=700, MAT_GLASS=50)
 	var/rigged = 0		// true if rigged to explode
-	var/chargerate = 100 //how much power is given every tick in a recharger
+	var/chargerate = 0.5 //how much power is given every tick in a recharger
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
@@ -184,62 +184,61 @@
 	..()
 	charge = 0
 
-/obj/item/weapon/stock_parts/cell/pulse //200 pulse shots
+/obj/item/weapon/stock_parts/cell/pulse
 	name = "pulse rifle power cell"
-	maxcharge = 40000
+	maxcharge = 20000
 	rating = 3
-	chargerate = 1500
+	chargerate = 0.5
 
-/obj/item/weapon/stock_parts/cell/pulse/carbine //25 pulse shots
+/obj/item/weapon/stock_parts/cell/pulse/carbine
 	name = "pulse carbine power cell"
-	maxcharge = 5000
+	maxcharge = 25000
 
-/obj/item/weapon/stock_parts/cell/pulse/pistol //10 pulse shots
+/obj/item/weapon/stock_parts/cell/pulse/pistol
 	name = "pulse pistol power cell"
-	maxcharge = 2000
+	maxcharge = 10000
 
 /obj/item/weapon/stock_parts/cell/high
-	name = "high-capacity micro-fusion cell"
+	name = "Микроядерная батарея, усиленный заряд"
 	origin_tech = "powerstorage=2"
 	icon_state = "hcell"
-	maxcharge = 3000
+	maxcharge = 1500
 	materials = list(MAT_GLASS=60)
 	rating = 3
-	chargerate = 1500
+	chargerate = 0.5
 	price = 200
 
 /obj/item/weapon/stock_parts/cell/high/plus
-	name = "high-capacity micro-fusion cell+"
-	desc = "Where did these come from?"
+	name = "Микроядерная батарея, усиленный заряд+"
 	icon_state = "h+cell"
-	maxcharge = 15000
-	chargerate = 2250
+	maxcharge = 2500
+	chargerate = 0.5
 
 /obj/item/weapon/stock_parts/cell/high/empty/New()
 	..()
 	charge = 0
 
 /obj/item/weapon/stock_parts/cell/super
-	name = "super-capacity micro-fusion cell"
+	name = "Микроядерная батарея, максимальный заряд"
 	origin_tech = "powerstorage=3;materials=3"
 	icon_state = "scell"
-	maxcharge = 5000
+	maxcharge = 4500
 	materials = list(MAT_GLASS=300)
 	rating = 4
-	chargerate = 2000
+	chargerate = 0.5
 
 /obj/item/weapon/stock_parts/cell/super/empty/New()
 	..()
 	charge = 0
 
 /obj/item/weapon/stock_parts/cell/hyper
-	name = "hyper-capacity micro-fusion cell"
+	name = "Микроядерная батарея, гипер заряд"
 	origin_tech = "powerstorage=4;engineering=4;materials=4"
 	icon_state = "hpcell"
-	maxcharge = 10000
+	maxcharge = 5000
 	materials = list(MAT_GLASS=400)
 	rating = 5
-	chargerate = 3000
+	chargerate = 0.5
 
 /obj/item/weapon/stock_parts/cell/hyper/empty/New()
 	..()
@@ -286,7 +285,7 @@
 
 
 /obj/item/weapon/stock_parts/cell/potato
-	name = "potato battery"
+	name = "картофельная батарея"
 	desc = "A rechargable starch based power cell."
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "potato"

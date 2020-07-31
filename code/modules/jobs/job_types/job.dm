@@ -177,7 +177,7 @@
 		C.update_label()
 		H.sec_hud_set_ID()
 
-	var/obj/item/device/pda/PDA = H.get_item_by_slot(pda_slot)
+	var/obj/item/clothing/gloves/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title

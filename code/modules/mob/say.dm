@@ -1,6 +1,6 @@
 //Speech verbs.
 /mob/verb/say_verb(message as text)
-	set name = "Say"
+	set name = "Говорить"
 	set category = "IC"
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
@@ -8,7 +8,7 @@
 	usr.say(message)
 
 /mob/verb/whisper(message as text)
-	set name = "Whisper"
+	set name = "Шептать"
 	set category = "IC"
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
@@ -16,7 +16,7 @@
 	say(message) //only carbons actually whisper, everything else just talks
 
 /mob/verb/me_verb(message as text)
-	set name = "Me"
+	set name = "Действие"
 	set category = "IC"
 
 	if(say_disabled)	//This is here to try to identify lag problems

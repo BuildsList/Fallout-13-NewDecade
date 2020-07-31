@@ -667,7 +667,7 @@
 					to_chat(H, "The [I.name] is too big to attach.")//should be src?
 
 				return 0
-			if( istype(I, /obj/item/device/pda) || istype(I, /obj/item/weapon/pen) || is_type_in_list(I, H.wear_suit.allowed) )
+			if( istype(I, /obj/item/clothing/gloves/pda) || istype(I, /obj/item/weapon/pen) || is_type_in_list(I, H.wear_suit.allowed) )
 				return 1
 			return 0
 		if(slot_handcuffed)
@@ -811,7 +811,7 @@
 		else
 			H.throw_alert("thirst", /obj/screen/alert/thirst, 4)
 	if(H.water_level < THIRST_LEVEL_DEADLY || H.nutrition < NUTRITION_LEVEL_STARVING)
-		H.adjustStaminaLoss(6)//sasargule
+		H.adjustStaminaLoss(6)
 	return 1
 
 

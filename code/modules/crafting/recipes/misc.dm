@@ -1,5 +1,5 @@
 /datum/crafting_recipe/radio
-	name = "PRC Radio"
+	name = "PRC радиостанция"
 	result = /obj/item/device/radio/prc
 	time = 800
 	reqs = list(/obj/item/crafting/diode = 2,
@@ -15,7 +15,7 @@
 	XP = 50
 
 /datum/crafting_recipe/barrel
-	name = "long weapon barrel"
+	name = "Оружейный ствол (Длинный)"
 	result = /obj/item/crafting/barrel_l
 	time = 800
 	reqs = list(/obj/item/stack/sheet/metal = 4)
@@ -25,7 +25,7 @@
 	XP = 60
 
 /datum/crafting_recipe/barrel_s
-	name = "long weapon barrel"
+	name = "Оружейный ствол (Короткий)"
 	result = /obj/item/crafting/barrel_s
 	time = 400
 	reqs = list(/obj/item/stack/sheet/metal = 2)
@@ -35,7 +35,7 @@
 	XP = 30
 
 /datum/crafting_recipe/weaponparts/handle_p
-	name = "Pistol Handle"
+	name = "Пистолетная рукоять"
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
 	time = 300
@@ -45,7 +45,7 @@
 	result = /obj/item/weaponcrafting/handle/pistol
 
 /datum/crafting_recipe/weaponparts/handle_r
-	name = "Rifle Handle"
+	name = "Винтовочная рукоять"
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
 	time = 300
@@ -58,7 +58,7 @@
 
 
 /datum/crafting_recipe/weaponparts/ballistic
-	name = "Ballistic Weapon Parts"
+	name = "Детали огнестрельного оружия"
 	reqs = list(/obj/item/weapon/gun/ballistic/automatic = 1)
 	time = 400
 	category = CAT_MISC
@@ -67,7 +67,7 @@
 	result = /obj/item/crafting/weapon_parts/ballistic
 
 /datum/crafting_recipe/weaponparts/energy
-	name = "Energy Weapon Parts"
+	name = "Детали энергетического оружия"
 	reqs = list(/obj/item/weapon/gun/energy/laser = 1)
 	time = 800
 	category = CAT_MISC
@@ -76,7 +76,7 @@
 	result = /obj/item/crafting/weapon_parts/energy
 
 /datum/crafting_recipe/weaponparts/plasma
-	name = "Plasma Weapon Parts"
+	name = "Детали плазменного оружия"
 	reqs = list(/obj/item/weapon/gun/energy/plasma = 1)
 	time = 900
 	category = CAT_MISC
@@ -85,7 +85,7 @@
 	result = /obj/item/crafting/weapon_parts/plasma
 
 /datum/crafting_recipe/rope
-	name = "Rope"
+	name = "Верёвка"
 	reqs = list(/obj/item/stack/sheet/cloth = 4)
 	time = 100
 	category = CAT_MISC

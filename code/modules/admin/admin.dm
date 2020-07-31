@@ -557,7 +557,7 @@ var/global/BSACooldown = 0
 /datum/admins/proc/toggleaban()
 	set category = "Server"
 	set desc="Respawn basically"
-	set name="Toggle Respawn"
+	set name="Переключить респавн"
 	abandon_allowed = !( abandon_allowed )
 	if (abandon_allowed)
 		to_chat(world, "<B>Теперь вы можете возрождаться.</B>")

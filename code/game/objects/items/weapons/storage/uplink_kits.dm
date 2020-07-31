@@ -275,7 +275,7 @@
 	new /obj/item/weapon/storage/backpack/chameleon(src)
 	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/weapon/stamp/chameleon(src)
-	new /obj/item/device/pda/chameleon(src)
+	new /obj/item/clothing/gloves/pda/chameleon(src)
 	new /obj/item/weapon/gun/energy/laser/chameleon(src)
 
 //5*(2*4) = 5*8 = 45, 45 damage if you hit one person with all 5 stars.

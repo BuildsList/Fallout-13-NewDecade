@@ -143,6 +143,9 @@
 
 /mob/living/carbon/human/unEquip(obj/item/I)
 	. = ..() //See mob.dm for an explanation on this and some rage about people copypasting instead of calling ..() like they should.
+	if (!. && istype(., /obj/item/clothing/gloves/pda))
+		var/obj/item/clothing/gloves/pda/eqpda = I
+		eqpda.attack_self(src)
 	if(!. || !I)
 		return
 
@@ -168,6 +171,11 @@
 		update_suit_sensors()
 		update_inv_w_uniform()
 	else if(I == gloves)
+		if (istype(I, /obj/item/clothing/gloves/pda))
+			var/obj/item/clothing/gloves/pda/pdaitem = I
+			if (pdaitem.locked_on_hand)
+				src << "<span class='danger'>Отстегните пипбой для начала!</span>"
+				return
 		gloves = null
 		update_inv_gloves()
 	else if(I == glasses)

@@ -5,7 +5,7 @@
 	icon_state = "pdapainter"
 	density = 1
 	anchored = 1
-	var/obj/item/device/pda/storedpda = null
+	var/obj/item/clothing/gloves/pda/storedpda = null
 	var/list/colorlist = list()
 	obj_integrity = 200
 	max_integrity = 200
@@ -30,11 +30,11 @@
 
 /obj/machinery/pdapainter/New()
 	..()
-	var/blocked = list(/obj/item/device/pda/ai/pai, /obj/item/device/pda/ai, /obj/item/device/pda/heads,
-						/obj/item/device/pda/clear, /obj/item/device/pda/syndicate)
+	var/blocked = list(/obj/item/clothing/gloves/pda/ai/pai, /obj/item/clothing/gloves/pda/ai, /obj/item/clothing/gloves/pda/heads,
+						/obj/item/clothing/gloves/pda/clear, /obj/item/clothing/gloves/pda/syndicate)
 
-	for(var/P in typesof(/obj/item/device/pda)-blocked)
-		var/obj/item/device/pda/D = new P
+	for(var/P in typesof(/obj/item/clothing/gloves/pda)-blocked)
+		var/obj/item/clothing/gloves/pda/D = new P
 
 		//D.name = "PDA Style [colorlist.len+1]" //Gotta set the name, otherwise it all comes up as "PDA"
 		D.name = D.icon_state //PDAs don't have unique names, but using the sprite names works.
@@ -66,12 +66,12 @@
 		power_change()
 		return
 
-	else if(istype(O, /obj/item/device/pda))
+	else if(istype(O, /obj/item/clothing/gloves/pda))
 		if(storedpda)
 			to_chat(user, "<span class='warning'>There is already a PDA inside!</span>")
 			return
 		else
-			var/obj/item/device/pda/P = user.get_active_held_item()
+			var/obj/item/clothing/gloves/pda/P = user.get_active_held_item()
 			if(istype(P))
 				if(!user.drop_item())
 					return
@@ -112,7 +112,7 @@
 		add_fingerprint(user)
 
 		if(storedpda)
-			var/obj/item/device/pda/P
+			var/obj/item/clothing/gloves/pda/P
 			P = input(user, "Select your color!", "PDA Painting") as null|anything in colorlist
 			if(!P)
 				return

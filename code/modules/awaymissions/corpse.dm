@@ -138,7 +138,7 @@
 		H.equipOutfit(outfit_type)
 
 		// We don't want corpse PDAs to show up in the messenger list.
-		var/obj/item/device/pda/PDA = locate(/obj/item/device/pda) in H
+		var/obj/item/clothing/gloves/pda/PDA = locate(/obj/item/clothing/gloves/pda) in H
 		if(PDA)
 			PDA.toff = TRUE
 
@@ -316,7 +316,7 @@
 /obj/effect/mob_spawn/human/doctor/alive/equip(mob/living/carbon/human/H)
 	..()
 	// Remove radio and PDA so they wouldn't annoy station crew.
-	var/list/del_types = list(/obj/item/device/pda, /obj/item/device/radio/headset)
+	var/list/del_types = list(/obj/item/clothing/gloves/pda, /obj/item/device/radio/headset)
 	for(var/del_type in del_types)
 		var/obj/item/I = locate(del_type) in H
 		qdel(I)

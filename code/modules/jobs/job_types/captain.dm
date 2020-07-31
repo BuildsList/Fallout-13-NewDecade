@@ -31,7 +31,7 @@ Captain
 	jobtype = /datum/job/captain
 
 	id = /obj/item/weapon/card/id/gold
-	belt = /obj/item/device/pda/captain
+	belt = /obj/item/clothing/gloves/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/device/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
@@ -86,7 +86,7 @@ Head of Personnel
 	jobtype = /datum/job/hop
 
 	id = /obj/item/weapon/card/id/silver
-	belt = /obj/item/device/pda/heads/hop
+	belt = /obj/item/clothing/gloves/pda/heads/hop
 	ears = /obj/item/device/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
 	shoes = /obj/item/clothing/shoes/sneakers/brown

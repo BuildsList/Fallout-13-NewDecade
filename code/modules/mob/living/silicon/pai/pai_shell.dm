@@ -20,8 +20,8 @@
 	addtimer(CALLBACK(src, .proc/emittercool), emittercd)
 	canmove = TRUE
 	density = TRUE
-	if(istype(card.loc, /obj/item/device/pda))
-		var/obj/item/device/pda/P = card.loc
+	if(istype(card.loc, /obj/item/clothing/gloves/pda))
+		var/obj/item/clothing/gloves/pda/P = card.loc
 		P.pai = null
 		P.visible_message("<span class='notice'>[src] ejects itself from [P]!</span>")
 	if(istype(card.loc, /mob/living))

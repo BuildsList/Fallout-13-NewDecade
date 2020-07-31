@@ -26,7 +26,7 @@
 		faction_data += {"
 		<tr>
 			<td>
-				[objective_completed_fac] Faction Objective:
+				[objective_completed_fac] Задача вашей фракции:
 			</td>
 			<td>
 				<b>[F.objective.parent.name]</b><br>
@@ -70,6 +70,6 @@
 	popup.open(0)
 
 /mob/verb/see_objectives()
-	set name = "Objectives"
+	set name = "Задачи"
 	set category = "IC"
 	show_objectives(src)

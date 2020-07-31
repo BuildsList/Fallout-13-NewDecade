@@ -186,8 +186,8 @@
 /datum/mind/proc/remove_antag_equip()
 	var/list/Mob_Contents = current.get_contents()
 	for(var/obj/item/I in Mob_Contents)
-		if(istype(I, /obj/item/device/pda))
-			var/obj/item/device/pda/P = I
+		if(istype(I, /obj/item/clothing/gloves/pda))
+			var/obj/item/clothing/gloves/pda/P = I
 			P.lock_code = ""
 
 		else if(istype(I, /obj/item/device/radio))
@@ -240,14 +240,15 @@
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
 		recipient = current
-	var/output = "<B>Память [current.real_name]:</B><br>"
+	var/output = {"<meta charset="UTF-8">"}
+	output += "<B>Память [current.real_name]:</B><br>"
 	output += memory
 
 	if(objectives.len)
 		output += "<B>Задачи:</B>"
 		var/obj_count = 1
 		for(var/datum/objective/objective in objectives)
-			output += "<br><B>Objective #[obj_count++]</B>: [objective.explanation_text]"
+			output += "<br><B>Задача #[obj_count++]</B>: [objective.explanation_text]"
 
 	if(window)
 		recipient << browse(output,"window=memory")
@@ -603,12 +604,12 @@
 
 	out += "<br><br>"
 
-	out += "<b>Memory:</b><br>"
+	out += "<b>Память:</b><br>"
 	out += memory
-	out += "<br><a href='?src=\ref[src];memory_edit=1'>Edit memory</a><br>"
-	out += "Objectives:<br>"
+	out += "<br><a href='?src=\ref[src];memory_edit=1'>Редактировать</a><br>"
+	out += "Задачи:<br>"
 	if (objectives.len == 0)
-		out += "EMPTY<br>"
+		out += "ПУСТО<br>"
 	else
 		var/obj_count = 1
 		for(var/datum/objective/objective in objectives)
@@ -632,7 +633,7 @@
 		assigned_role = new_role
 
 	else if (href_list["memory_edit"])
-		var/new_memo = copytext_char(sanitize(input("Write new memory", "Memory", memory) as null|message),1,MAX_MESSAGE_LEN)
+		var/new_memo = copytext_char(sanitize(input("Write new memory", "Память", memory) as null|message),1,MAX_MESSAGE_LEN)
 		if (isnull(new_memo))
 			return
 		memory = new_memo

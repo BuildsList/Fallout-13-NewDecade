@@ -1,6 +1,6 @@
 // MELEE
 /datum/crafting_recipe/spear
-	name = "Spear"
+	name = "Копьё"
 	result = /obj/item/weapon/twohanded/tribal_spear
 	reqs = list(/obj/item/crafting/duct_tape = 1,
 				/obj/item/weapon/kitchen/knife = 1,
@@ -11,7 +11,7 @@
 	XP = 20
 
 /datum/crafting_recipe/throwing_spear
-	name = "Throwing Spear"
+	name = "Метательное копьё"
 	result = /obj/item/weapon/spear
 	reqs = list(/obj/item/stack/sheet/metal = 3)
 	time = 100
@@ -33,7 +33,7 @@
 //BALLISTIC
 
 /datum/crafting_recipe/bozar
-	name = "Bozar"
+	name = "Бозар"
 	result = /obj/item/weapon/gun/ballistic/automatic/bozar
 	reqs = list(/obj/item/weaponcrafting/reciever = 1,
 				/obj/item/weaponcrafting/stock = 1,
@@ -47,7 +47,7 @@
 	XP = 200
 
 /datum/crafting_recipe/n99
-	name = "10-mm Pistol"
+	name = "10-мм Пистолет"
 	result = /obj/item/weapon/gun/ballistic/automatic/pistol/n99
 	reqs = list(/obj/item/weaponcrafting/reciever = 1,
 				/obj/item/crafting/barrel_s = 1,

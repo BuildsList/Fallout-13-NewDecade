@@ -399,7 +399,7 @@ var/next_mob_id = 0
 */
 
 /mob/verb/memory()
-	set name = "Notes"
+	set name = "Заметки"
 	set category = "IC"
 	set desc = "View your character's notes memory."
 	if(mind)
@@ -408,7 +408,7 @@ var/next_mob_id = 0
 		to_chat(src, "You don't have a mind datum for some reason, so you can't look at your notes, if you had any.")
 
 /mob/verb/add_memory(msg as message)
-	set name = "Add Note"
+	set name = "Добавить заметку"
 	set category = "IC"
 
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
@@ -420,7 +420,7 @@ var/next_mob_id = 0
 		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
 
 /mob/verb/abandon_mob()
-	set name = "Respawn"
+	set name = "Возродиться"
 	set category = "OOC"
 
 	if (!( abandon_allowed ))
@@ -429,14 +429,18 @@ var/next_mob_id = 0
 		to_chat(usr, "<span class='boldnotice'>Вы должны умереть чтобы использовать это!</span>")
 		return
 
+	if(world.time - src.timeofdeath < 6000)
+		to_chat(usr, "<span class='boldnotice'>Рано! Ждите ещё: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
+		return
+
 	if(jobban_isbanned(src, "labor"))
-		if(world.time - src.timeofdeath < 6000)
-			to_chat(usr, "<span class='boldnotice'>You are on corrections! Wait for 15 minutes. You waited [Floor((world.time - src.timeofdeath)/10)] seconds!</span>")
+		if(world.time - src.timeofdeath < 12000)
+			to_chat(usr, "<span class='boldnotice'>You are on corrections! Wait for 30 minutes. You waited [Floor((world.time - src.timeofdeath)/10)] seconds!</span>")
 			return
 
 	log_game("[usr.name]/[usr.key] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+	to_chat(usr, "<span class='boldnotice'>Пожалуйста, старайтесь соблюдать ролевой отыгрышь!</span>")
 
 	if(!client)
 		log_game("[usr.key] AM failed due to disconnect.")
@@ -878,8 +882,8 @@ var/next_mob_id = 0
 					break
 				search_id = 0
 
-		else if( search_pda && istype(A,/obj/item/device/pda) )
-			var/obj/item/device/pda/PDA = A
+		else if( search_pda && istype(A,/obj/item/clothing/gloves/pda) )
+			var/obj/item/clothing/gloves/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
 				PDA.update_label()

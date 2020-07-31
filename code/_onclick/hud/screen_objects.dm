@@ -620,14 +620,14 @@
 
 
 /obj/screen/wheel/talk
-	name = "разговорное колесо"
+	name = "разговорная панель"
 	icon_state = "talk_wheel"
 	screen_loc = "11:6,2:-11"
 	wheel_buttons_type = /obj/screen/wheel_button/talk
 	buttons_names = list("help","hello","bye","stop","thanks","come","out", "yes", "no")
-	var/list/word_messages = list(list("Помогите!","Помогите мне!"), list("Привет.", "Здравствуй."), list("Пока.", "До свидания."),\
+	var/list/word_messages = list(list("Помогите!", "Помогите мне!", "Помогите кто-нибудь!", "На помощь!"), list("Привет.", "Здравствуй."), list("Пока.", "До свидания.", "До встречи.", "Ещё увидимся."),\
 									list("Стой!", "Стоять!"), list("Спасибо.", "Спасибо!", "Благодарю."), \
-									list("Идём.", "За мной."), list("Уходи!", "Убирайся!", "Свали!"), \
+									list("Идём.", "За мной.", "Пошли."), list("Уходи!", "Убирайся!", "Свали!", "Прочь!", "Убирайся прочь!"), \
 									list("Да.", "Так точно."), list("Нет.", "Никак нет."))
 
 /obj/screen/wheel/talk/set_button(obj/screen/wheel_button/WB, button_number)
@@ -638,7 +638,7 @@
 
 
 /obj/screen/wheel_button
-	name = "базовое колесо"
+	name = "базовая панель"
 	screen_loc = "8,8"
 	layer = HUD_LAYER
 	plane = HUD_PLANE
@@ -650,7 +650,7 @@
 	return ..()
 
 /obj/screen/wheel_button/close_wheel
-	name = "закрыть колесо"
+	name = "закрыть панель"
 	icon_state = "radialclose"
 
 /obj/screen/wheel_button/close_wheel/Click()

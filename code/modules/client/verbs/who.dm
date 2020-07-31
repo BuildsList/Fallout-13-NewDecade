@@ -62,7 +62,7 @@
 	var/msg = "<b>Текущие администрация онлайн:</b>\n"
 	if(holder)
 		for(var/client/C in admins)
-			msg += "\t[C] имеет ранг [C.holder.rank]"
+			msg += "\t[C], Ранг: [C.holder.rank]"
 
 			if(C.holder.fakekey)
 				msg += " <i>(как [C.holder.fakekey])</i>"

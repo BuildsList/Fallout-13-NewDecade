@@ -1,5 +1,5 @@
 /datum/crafting_recipe/healingpowder
-	name = "Healing Powder"
+	name = "Целебный порошок"
 	result = /obj/item/stack/medical/healingpowder
 	time = 50
 	reqs = list(/obj/item/weapon/reagent_containers/food/snacks/grown/broc = 1,

@@ -310,7 +310,7 @@
 			traitor_mob.dna.remove_mutation(CLOWNMUT)
 
 	var/loc = ""
-	var/obj/item/I = locate(/obj/item/device/pda) in traitor_mob.contents //Hide the uplink in a PDA if available, otherwise radio
+	var/obj/item/I = locate(/obj/item/clothing/gloves/pda) in traitor_mob.contents //Hide the uplink in a PDA if available, otherwise radio
 	if(!I)
 		I = locate(/obj/item/device/radio) in traitor_mob.contents
 
@@ -328,8 +328,8 @@
 
 			to_chat(traitor_mob, "The Syndicate have cunningly disguised a Syndicate Uplink as your [R.name] [loc]. Simply dial the frequency [format_frequency(R.traitor_frequency)] to unlock its hidden features.")
 			traitor_mob.mind.store_memory("<B>Radio Frequency:</B> [format_frequency(R.traitor_frequency)] ([R.name] [loc]).")
-		else if(istype(I, /obj/item/device/pda))
-			var/obj/item/device/pda/P = I
+		else if(istype(I, /obj/item/clothing/gloves/pda))
+			var/obj/item/clothing/gloves/pda/P = I
 			P.lock_code = "[rand(100,999)] [pick("Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu")]"
 
 			to_chat(traitor_mob, "The Syndicate have cunningly disguised a Syndicate Uplink as your [P.name] [loc]. Simply enter the code \"[P.lock_code]\" into the ringtone select to unlock its hidden features.")

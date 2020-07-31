@@ -1,22 +1,22 @@
 
 //The advanced pea-green monochrome lcd of tomorrow.
 
-var/global/list/obj/item/device/pda/PDAs = list()
+var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 
 
-/obj/item/device/pda
+/obj/item/clothing/gloves/pda
 	name = "\improper ПипБой-3000А"
-	desc = "Наручный микрокомпьютер. Очень стильный и прочный."
+	var/desco= "" //examine = desco + locked/unlocked
+	desco = "Наручный микрокомпьютер. Очень стильный и прочный."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "pipboy"
 	flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_TINY
-	slot_flags = SLOT_ID | SLOT_BELT
+	//slot_flags = SLOT_ID | SLOT_BELT
 	origin_tech = "programming=2"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 100, acid = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-
 
 	//Main variables
 	var/owner = null // String name of owner
@@ -45,6 +45,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/detonate = 1 // Can the PDA be blown up?
 	var/hidden = 0 // Is the PDA hidden from the PDA list?
 	var/emped = 0
+	var/locked_on_hand = 0 //когда будет 1, его не снимешь!
 
 	var/obj/item/weapon/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
@@ -57,7 +58,14 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/obj/item/inserted_item //Used for pen, crayon, and lipstick insertion or removal. Same as above.
 	var/overlays_x_offset = 0	//x offset to use for certain overlays
 
-/obj/item/device/pda/New()
+/obj/item/clothing/gloves/pda/examine(mob/user)
+	var/append = " Не застёгнут."
+	if (locked_on_hand==1)
+		append = " Надёжно закреплён."
+	src.desc = src.desco + append;
+	..()
+
+/obj/item/clothing/gloves/pda/New()
 	..()
 	if(fon)
 		set_light(f_lum)
@@ -67,19 +75,19 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	inserted_item =	new /obj/item/weapon/pen(src)
 	update_icon()
 
-/obj/item/device/pda/proc/update_label()
+/obj/item/clothing/gloves/pda/proc/update_label()
 	name = "ПипБой-[owner] ([ownjob])" //Name generalisation
 
-/obj/item/device/pda/GetAccess()
+/obj/item/clothing/gloves/pda/GetAccess()
 	if(id)
 		return id.GetAccess()
 	else
 		return ..()
 
-/obj/item/device/pda/GetID()
+/obj/item/clothing/gloves/pda/GetID()
 	return id
 
-/obj/item/device/pda/update_icon()
+/obj/item/clothing/gloves/pda/update_icon()
 	cut_overlays()
 	if(id)
 		var/image/I = image(icon_state = "id_overlay", pixel_x = overlays_x_offset)
@@ -98,13 +106,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			var/image/I = image(icon_state = "pai_off_overlay", pixel_x = overlays_x_offset)
 			add_overlay(I)
 
-/obj/item/device/pda/MouseDrop(obj/over_object, src_location, over_location)
+/obj/item/clothing/gloves/pda/MouseDrop(obj/over_object, src_location, over_location)
 	var/mob/M = usr
 	if((!istype(over_object, /obj/screen)) && usr.canUseTopic(src))
 		return attack_self(M)
 	return
 
-/obj/item/device/pda/attack_self(mob/user)
+/obj/item/clothing/gloves/pda/attack_self(mob/user)
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/pda)
 	assets.send(user)
 
@@ -127,7 +135,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 	if (!owner)
 		dat += "Внимание: Нет данных о пользователе.  Подтвердите личность.<br><br>"
-		dat += "<a href='byond://?src=\ref[src];choice=Refresh'><img src=pda_refresh.png> Retry</a>"
+		dat += "<a href='byond://?src=\ref[src];choice=Refresh'><img src=pda_refresh.png> Повторить</a>"
 	else
 		switch (mode)
 			if (0)
@@ -201,13 +209,14 @@ var/global/list/obj/item/device/pda/PDAs = list()
 						dat += "<li><a href='byond://?src=\ref[src];choice=Drone Phone'><img src=pda_dronephone.png> Drone Phone</a></li>"
 				dat += "<li><a href='byond://?src=\ref[src];choice=3'><img src=pda_atmos.png> Atmospheric Scan</a></li>"
 				dat += "<li><a href='byond://?src=\ref[src];choice=Light'><img src=pda_flashlight.png> [fon ? "Disable" : "Enable"] Flashlight</a></li>"
-				if (pai)
+				//todo: make not glove pda for robotic stuff?
+				/*if (pai)
 					if(pai.loc != src)
 						pai = null
-						update_icon()
 					else
 						dat += "<li><a href='byond://?src=\ref[src];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li><a href='byond://?src=\ref[src];choice=pai;option=2'>Eject pAI Device</a></li>"
+				*/
 				dat += "</ul>"
 
 			if (1)
@@ -237,7 +246,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				var/count = 0
 
 				if (!toff)
-					for (var/obj/item/device/pda/P in sortNames(get_viewable_pdas()))
+					for (var/obj/item/clothing/gloves/pda/P in sortNames(get_viewable_pdas()))
 						if (P == src)
 							continue
 						dat += "<li><a href='byond://?src=\ref[src];choice=Message;target=\ref[P]'>[P]</a>"
@@ -294,7 +303,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	user << browse(dat, "window=pda;size=400x450;border=1;can_resize=1;can_minimize=0")
 	onclose(user, "pda", src)
 
-/obj/item/device/pda/Topic(href, href_list)
+/obj/item/clothing/gloves/pda/Topic(href, href_list)
 	..()
 	var/mob/living/U = usr
 	//Looking for master was kind of pointless since PDAs don't appear to have one.
@@ -435,7 +444,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					U << browse(null, "window=pda")
 					return
 			if("Message")
-				var/obj/item/device/pda/P = locate(href_list["target"])
+				var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 				src.create_message(U, P)
 
 			if("MessageAll")
@@ -443,7 +452,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 			if("Send Honk")//Honk virus
 				if(istype(cartridge, /obj/item/weapon/cartridge/clown))//Cartridge checks are kind of unnecessary since everything is done through switch.
-					var/obj/item/device/pda/P = locate(href_list["target"])//Leaving it alone in case it may do something useful, I guess.
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])//Leaving it alone in case it may do something useful, I guess.
 					if(!isnull(P))
 						if (!P.toff && cartridge:honk_charges > 0)
 							cartridge:honk_charges--
@@ -456,7 +465,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					return
 			if("Send Silence")//Silent virus
 				if(istype(cartridge, /obj/item/weapon/cartridge/mime))
-					var/obj/item/device/pda/P = locate(href_list["target"])
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 					if(!isnull(P))
 						if (!P.toff && cartridge:mime_charges > 0)
 							cartridge:mime_charges--
@@ -483,7 +492,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 			if("Detonate")//Detonate PDA
 				if(istype(cartridge, /obj/item/weapon/cartridge/syndicate))
-					var/obj/item/device/pda/P = locate(href_list["target"])
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 					if(!isnull(P))
 						if (!P.toff && cartridge:shock_charges > 0)
 							cartridge:shock_charges--
@@ -513,14 +522,15 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					return
 
 //pAI FUNCTIONS===================================
-			if("pai")
+			/*if("pai")
 				switch(href_list["option"])
 					if("1")		// Configure pAI device
 						pai.attack_self(U)
 					if("2")		// Eject pAI device
 						var/turf/T = get_turf(src.loc)
 						if(T)
-							pai.forceMove(T)
+							pai.loc = T
+							pai.loc = T*/
 
 //LINK FUNCTIONS===================================
 
@@ -550,7 +560,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		U << browse(null, "window=pda")
 	return
 
-/obj/item/device/pda/proc/remove_id()
+/obj/item/clothing/gloves/pda/proc/remove_id()
 	if (id)
 		if (ismob(loc))
 			var/mob/M = loc
@@ -561,7 +571,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		id = null
 		update_icon()
 
-/obj/item/device/pda/proc/msg_input(mob/living/U = usr)
+/obj/item/clothing/gloves/pda/proc/msg_input(mob/living/U = usr)
 	var/t = stripped_input(U, "Введите сообщение", name, null, MAX_MESSAGE_LEN)
 	if (!t || toff)
 		return
@@ -573,7 +583,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		t = Gibberish(t, 100)
 	return t
 
-/obj/item/device/pda/proc/send_message(mob/living/user = usr,list/obj/item/device/pda/targets)
+/obj/item/clothing/gloves/pda/proc/send_message(mob/living/user = usr,list/obj/item/clothing/gloves/pda/targets)
 	var/message = msg_input(user)
 
 	if(!message || !targets.len)
@@ -585,7 +595,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/multiple = targets.len > 1
 
 	var/datum/data_pda_msg/last_sucessful_msg
-	for(var/obj/item/device/pda/P in targets)
+	for(var/obj/item/clothing/gloves/pda/P in targets)
 		if(P == src)
 			continue
 		var/obj/machinery/message_server/MS = null
@@ -611,10 +621,10 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		show_to_ghosts(user,last_sucessful_msg,1)
 		log_pda("[user] (ПИП: [src.name]) отправляет \"[message]\" для Всех")
 
-/obj/item/device/pda/proc/show_to_sender(datum/data_pda_msg/msg,multiple = 0)
+/obj/item/clothing/gloves/pda/proc/show_to_sender(datum/data_pda_msg/msg,multiple = 0)
 	tnote += "<i><b>&rarr; To [multiple ? "Everyone" : msg.recipient]:</b></i><br>[msg.message][msg.get_photo_ref()]<br>"
 
-/obj/item/device/pda/proc/show_recieved_message(datum/data_pda_msg/msg,obj/item/device/pda/source)
+/obj/item/clothing/gloves/pda/proc/show_recieved_message(datum/data_pda_msg/msg,obj/item/clothing/gloves/pda/source)
 	tnote += "<i><b>&larr; From <a href='byond://?src=\ref[src];choice=Message;target=\ref[source]'>[source.owner]</a> ([source.ownjob]):</b></i><br>[msg.message][msg.get_photo_ref()]<br>"
 
 	if (!silent)
@@ -635,13 +645,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	update_icon()
 	add_overlay(image(icon, icon_alert))
 
-/obj/item/device/pda/proc/show_to_ghosts(mob/living/user, datum/data_pda_msg/msg,multiple = 0)
+/obj/item/clothing/gloves/pda/proc/show_to_ghosts(mob/living/user, datum/data_pda_msg/msg,multiple = 0)
 	for(var/mob/M in player_list)
 		if(isobserver(M) && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTPDA))
 			var/link = FOLLOW_LINK(M, user)
 			to_chat(M, "[link] <span class='name'>[msg.sender] </span><span class='game say'>Сообщение на Пипбой</span> --> <span class='name'>[multiple ? "Everyone" : msg.recipient]</span>: <span class='message'>[msg.message][msg.get_photo_ref()]</span></span>")
 
-/obj/item/device/pda/proc/can_send(obj/item/device/pda/P)
+/obj/item/clothing/gloves/pda/proc/can_send(obj/item/clothing/gloves/pda/P)
 	if(!P || qdeleted(P) || P.toff)
 		return null
 
@@ -672,13 +682,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		return null
 
 
-/obj/item/device/pda/proc/send_to_all(mob/living/U = usr)
+/obj/item/clothing/gloves/pda/proc/send_to_all(mob/living/U = usr)
 	send_message(U,get_viewable_pdas())
 
-/obj/item/device/pda/proc/create_message(mob/living/U = usr, obj/item/device/pda/P)
+/obj/item/clothing/gloves/pda/proc/create_message(mob/living/U = usr, obj/item/clothing/gloves/pda/P)
 	send_message(U,list(P))
 
-/obj/item/device/pda/AltClick()
+/obj/item/clothing/gloves/pda/AltClick()
 	..()
 
 	if(issilicon(usr))
@@ -690,9 +700,21 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		else
 			remove_pen()
 
-/obj/item/device/pda/verb/verb_remove_id()
+/obj/item/clothing/gloves/pda/verb/toggle_lock()
 	set category = "Object"
-	set name = "Eject ID"
+	set name = "Переключить замок"
+	set src in usr
+	if(issilicon(usr))
+		return
+	locked_on_hand = 1 - locked_on_hand;
+	if (locked_on_hand)
+		flags |= NODROP
+	else
+		flags &= ~NODROP
+
+/obj/item/clothing/gloves/pda/verb/verb_remove_id()
+	set category = "Object"
+	set name = "Изъять носитель данных"
 	set src in usr
 
 	if(issilicon(usr))
@@ -704,7 +726,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		else
 			to_chat(usr, "<span class='warning'>В пипбое нет носителя данных!</span>")
 
-/obj/item/device/pda/verb/verb_remove_pen()
+/obj/item/clothing/gloves/pda/verb/verb_remove_pen()
 	set category = "Object"
 	set name = "Remove Pen"
 	set src in usr
@@ -715,7 +737,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	if (usr.canUseTopic(src))
 		remove_pen()
 
-/obj/item/device/pda/proc/remove_pen()
+/obj/item/clothing/gloves/pda/proc/remove_pen()
 	if(inserted_item)
 		if(ismob(loc))
 			var/mob/M = loc
@@ -729,7 +751,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		to_chat(usr, "<span class='warning'>В пипбое нет ручки!</span>")
 
 //trying to insert or remove an id
-/obj/item/device/pda/proc/id_check(mob/user, obj/item/weapon/card/id/I)
+/obj/item/clothing/gloves/pda/proc/id_check(mob/user, obj/item/weapon/card/id/I)
 	if(!I)
 		if(id)
 			remove_id()
@@ -751,7 +773,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	return 1
 
 // access to status display signals
-/obj/item/device/pda/attackby(obj/item/C, mob/user, params)
+/obj/item/clothing/gloves/pda/attackby(obj/item/C, mob/user, params)
 	if(istype(C, /obj/item/weapon/cartridge) && !cartridge)
 		if(!user.unEquip(C))
 			return
@@ -781,14 +803,14 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				updateSelfDialog()//Update self dialog on success.
 			return	//Return in case of failed check or when successful.
 		updateSelfDialog()//For the non-input related code.
-	else if(istype(C, /obj/item/device/paicard) && !src.pai)
+	/*else if(istype(C, /obj/item/device/paicard) && !src.pai)
 		if(!user.unEquip(C))
 			return
 		C.forceMove(src)
 		pai = C
 		to_chat(user, "<span class='notice'>You slot \the [C] into [src].</span>")
 		update_icon()
-		updateUsrDialog()
+		updateUsrDialog()*/
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
 		if(inserted_item)
 			to_chat(user, "<span class='warning'>There is already \a [inserted_item] in \the [src]!</span>")
@@ -808,7 +830,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	else
 		return ..()
 
-/obj/item/device/pda/attack(mob/living/carbon/C, mob/living/user)
+/obj/item/clothing/gloves/pda/attack(mob/living/carbon/C, mob/living/user)
 	if(istype(C))
 		switch(scanmode)
 
@@ -829,7 +851,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				else
 					user.show_message("<span class='notice'>No radiation detected.</span>")
 
-/obj/item/device/pda/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
+/obj/item/clothing/gloves/pda/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	if(!proximity) return
 	switch(scanmode)
 
@@ -880,7 +902,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 
 
-/obj/item/device/pda/proc/explode() //This needs tuning.
+/obj/item/clothing/gloves/pda/proc/explode() //This needs tuning.
 	if(!detonate) return
 	var/turf/T = get_turf(src)
 
@@ -899,7 +921,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	qdel(src)
 	return
 
-/obj/item/device/pda/Destroy()
+/obj/item/clothing/gloves/pda/Destroy()
 	PDAs -= src
 	if(id)
 		qdel(id)
@@ -928,7 +950,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		to_chat(user, "Turn on your receiver in order to send messages.")
 		return
 
-	for (var/obj/item/device/pda/P in get_viewable_pdas())
+	for (var/obj/item/clothing/gloves/pda/P in get_viewable_pdas())
 		if (P == src)
 			continue
 		else if (P == src.aiPDA)
@@ -992,10 +1014,10 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 /obj/item/weapon/storage/box/PDAs/New()
 	..()
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
 	new /obj/item/weapon/cartridge/head(src)
 
 	var/newcart = pick(	/obj/item/weapon/cartridge/engineering,
@@ -1006,7 +1028,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	new newcart(src)
 
 // Pass along the pulse to atoms in contents, largely added so pAIs are vulnerable to EMP
-/obj/item/device/pda/emp_act(severity)
+/obj/item/clothing/gloves/pda/emp_act(severity)
 	for(var/atom/A in src)
 		A.emp_act(severity)
 	emped += 1
@@ -1016,7 +1038,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 /proc/get_viewable_pdas()
 	. = list()
 	// Returns a list of PDAs which can be viewed from another PDA/message monitor.
-	for(var/obj/item/device/pda/P in PDAs)
+	for(var/obj/item/clothing/gloves/pda/P in PDAs)
 		if(!P.owner || P.toff || P.hidden) continue
 		. += P
 	return .

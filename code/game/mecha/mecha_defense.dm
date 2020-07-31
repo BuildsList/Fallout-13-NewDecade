@@ -175,7 +175,7 @@
 				if(istype(W, /obj/item/weapon/card/id))
 					id_card = W
 				else
-					var/obj/item/device/pda/pda = W
+					var/obj/item/clothing/gloves/pda/pda = W
 					id_card = pda.id
 				output_maintenance_dialog(id_card, user)
 				return

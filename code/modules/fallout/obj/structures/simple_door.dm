@@ -173,7 +173,7 @@
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
-				if(!C.handcuffed)
+				if(!C.handcuffed & !C.buckled) //любители ездить в домах сосут жопу
 					SwitchState(animate)
 					return 1
 			else

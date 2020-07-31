@@ -409,7 +409,7 @@ var/list/TYPES_SHORTCUTS = list(
 			id.update_label()
 
 			if(worn)
-				if(istype(worn,/obj/item/device/pda))
+				if(istype(worn,/obj/item/clothing/gloves/pda))
 					worn:id = id
 					id.forceMove(worn)
 				else if(istype(worn,/obj/item/weapon/storage/wallet))

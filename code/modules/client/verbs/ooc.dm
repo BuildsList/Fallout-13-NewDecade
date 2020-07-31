@@ -194,7 +194,7 @@ var/global/normal_ooc_colour = OOC_COLOR
 	normal_ooc_colour = OOC_COLOR
 
 /client/verb/colorooc()
-	set name = "Set Your OOC Color"
+	set name = "Выбрать свой цвет в ООС"
 	set category = "Preferences"
 
 	if(!check_rights_for(src, R_ADMIN))
@@ -230,9 +230,9 @@ var/global/normal_ooc_colour = OOC_COLOR
 		to_chat(src, "<span class='notice'>There are no admin notices at the moment.</span>")
 
 /client/verb/motd()
-	set name = "MOTD"
+	set name = "Приветствие"
 	set category = "OOC"
-	set desc ="Check the Message of the Day"
+	set desc ="Проверить Приветствие"
 
 	if(join_motd)
 		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
@@ -240,9 +240,9 @@ var/global/normal_ooc_colour = OOC_COLOR
 		to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
 
 /client/proc/self_notes()
-	set name = "View Admin Remarks"
+	set name = "Проверить заметки от администрации"
 	set category = "OOC"
-	set desc = "View the notes that admins have written about you"
+	set desc = "Позволяет посмотреть что администрация пишет о вас"
 
 	if(!config.see_own_notes)
 		to_chat(usr, "<span class='notice'>Sorry, that function is not enabled on this server.</span>")
