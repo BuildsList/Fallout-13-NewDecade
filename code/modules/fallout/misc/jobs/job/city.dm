@@ -51,10 +51,8 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -108,10 +106,8 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -163,7 +159,6 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal
 	)
 
 /datum/outfit/job/citizen
@@ -198,7 +193,6 @@
 	/obj/item/clothing/under/f13/cowboyb,
 	/obj/item/clothing/suit/f13/cowboygvest,
 	/obj/item/clothing/suit/f13/cowboybvest,
-	/obj/item/clothing/under/f13/female/flapper
 	)
 
 	denied_items = list(
@@ -208,7 +202,6 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal
 	)
 
 /datum/outfit/job/trader

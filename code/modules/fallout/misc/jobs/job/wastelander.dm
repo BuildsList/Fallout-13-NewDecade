@@ -46,11 +46,8 @@
 	required_items = list(
 	/obj/item/clothing/shoes/f13/brownie,
 	/obj/item/clothing/gloves/f13/leather,
-	/obj/item/clothing/under/f13/female/mercadv,
 	/obj/item/clothing/under/f13/merccharm,
-	/obj/item/clothing/under/f13/female/merccharm,
 	/obj/item/clothing/under/f13/doctor,
-	/obj/item/clothing/under/f13/female/doctor,
 	/obj/item/clothing/suit/armor/f13/kit,
 	/obj/item/clothing/glasses/sunglasses,
 	/obj/item/clothing/glasses/eyepatch
@@ -63,10 +60,8 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
 
@@ -102,10 +97,7 @@
 	/obj/item/clothing/gloves/f13/leather,
 	/obj/item/clothing/gloves/f13/military,
 	/obj/item/clothing/under/f13/mercadv,
-	/obj/item/clothing/under/f13/female/mercadv,
-	/obj/item/clothing/under/f13/female/merccharm,
 	/obj/item/clothing/under/f13/doctor,
-	/obj/item/clothing/under/f13/female/doctor,
 	/obj/item/clothing/under/f13/bodyguard,
 	/obj/item/clothing/suit/f13/duster,
 	/obj/item/clothing/suit/armor/f13/kit,
@@ -129,10 +121,8 @@
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
 

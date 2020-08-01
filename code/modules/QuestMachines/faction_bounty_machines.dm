@@ -174,13 +174,13 @@
 /obj/machinery/bounty_machine/faction/proc/GetShopUI()
 	var/dat = {"<meta charset="UTF-8">"}
 	dat += "<h1>Faction shop</h1>"
-	dat += "<a href='?src=\ref[src];exit=1'>Exit</a><br><br>"
-	dat += "<font color = 'green'>Caps stored: [stored_caps]</font>"
-	dat += "<a href='?src=\ref[src];removecaps=1'>Remove</a><br>"
+	dat += "<a href='?src=\ref[src];exit=1'>Выход</a><br><br>"
+	dat += "<font color = 'green'>Баланс: [stored_caps]</font>"
+	dat += "<a href='?src=\ref[src];removecaps=1'>Забрать</a><br>"
 	if(free_access)
-		dat += "<font color = 'green'><b>Access:</b> Free</font><br>"
+		dat += "<font color = 'green'><b>Access:</b> Бесплатно</font><br>"
 	else
-		dat += "<font color = 'red'><b>Access:</b> Leader Only</font><br>"
+		dat += "<font color = 'red'><b>Access:</b> Только для лидера</font><br>"
 
 	dat += "<div class='statusDisplay'>"
 	for(var/i = 1; i <= price_list.len; i++)
@@ -190,11 +190,11 @@
 		if(stored_caps < price_list[itm_type])
 			dat += "<a href='?src=\ref[src];examine=[i]'>?</a>"
 			dat += "<font color = 'grey'><b> [itm_ref] - [price] </b></font>"
-			dat += "<a href='?src=\ref[src];buy=[i]'>Buy</a><br>"
+			dat += "<a href='?src=\ref[src];buy=[i]'>Купить</a><br>"
 		else
 			dat += "<a href='?src=\ref[src];examine=[i]'>?</a>"
 			dat += "<font color = 'green'><b> [itm_ref] - [price] </b></font>"
-			dat += "<a href='?src=\ref[src];buy=[i]'>Buy</a><br>"
+			dat += "<a href='?src=\ref[src];buy=[i]'>Купить</a><br>"
 	dat += ""
 	dat += "</div>"
 	return dat
@@ -209,10 +209,10 @@
 
 	if(connected_pod)
 		dat += "<font color='green'>Pod found</font><br>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Rescan</a>"
+		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
 	else
 		dat += "<font color='red'>Pod not found</font><br>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Rescan</a>"
+		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
 	dat += "<a href='?src=\ref[src];shop=1'>Faction Shop</a><br>"
 	dat += "<style>.leftimg {float:left;margin: 7px 7px 7px 0;}</style>"
 

@@ -98,7 +98,6 @@ There are several things that need to be remembered:
 
 /mob/living/carbon/human/update_inv_w_uniform()
 	remove_overlay(UNIFORM_LAYER)
-
 	if(client && hud_used)
 		var/obj/screen/inventory/inv = hud_used.inv_slots[slot_w_uniform]
 		inv.update_icon()
@@ -127,8 +126,8 @@ There are several things that need to be remembered:
 
 		if(dna && dna.species.sexes)
 			var/G = (gender == FEMALE) ? "f" : "m"
-			if(G == "f" && U.fitted != NO_FEMALE_UNIFORM)
-				standing = U.build_worn_icon(state = "[t_color]", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE, femaleuniform = U.fitted)
+			if(G == "f")
+				standing = U.build_worn_icon(state = "[t_color]_f", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi')
 
 		if(!standing)
 			standing = U.build_worn_icon(state = "[t_color]", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE)
@@ -251,7 +250,7 @@ There are several things that need to be remembered:
 
 /mob/living/carbon/human/update_inv_shoes()
 	remove_overlay(SHOES_LAYER)
-
+	var/image/standing
 	if(get_num_legs() <2)
 		return
 
@@ -265,7 +264,22 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += shoes					//add it to client's screen
 		update_observer_view(shoes,1)
-		var/image/standing = shoes.build_worn_icon(state = shoes.icon_state, default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/feet.dmi')
+		standing = shoes.build_worn_icon(state = shoes.icon_state, default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/feet.dmi')
+		overlays_standing[SHOES_LAYER]	= standing
+
+	if(istype(shoes, /obj/item/clothing/shoes))
+		var/obj/item/clothing/shoes/S = shoes
+		var/t_color = S.item_color
+		if(!t_color)
+			t_color = S.icon_state
+		if(dna && dna.species.sexes)
+			var/G = (gender == FEMALE) ? "f" : "m"
+			if(G == "f")
+				standing = S.build_worn_icon(state = "[t_color]_f", default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/feet.dmi')
+
+		if(!standing)
+			standing = S.build_worn_icon(state = "[t_color]", default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/feet.dmi')
+
 		overlays_standing[SHOES_LAYER]	= standing
 
 	apply_overlay(SHOES_LAYER)
@@ -324,7 +338,7 @@ There are several things that need to be remembered:
 
 /mob/living/carbon/human/update_inv_wear_suit()
 	remove_overlay(SUIT_LAYER)
-
+	var/image/standing
 	if(client && hud_used)
 		var/obj/screen/inventory/inv = hud_used.inv_slots[slot_wear_suit]
 		inv.update_icon()
@@ -336,11 +350,25 @@ There are several things that need to be remembered:
 				client.screen += wear_suit
 		update_observer_view(wear_suit,1)
 
-		var/image/standing = wear_suit.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi')
+		standing = wear_suit.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi')
 		overlays_standing[SUIT_LAYER]	= standing
 
 		if(wear_suit.breakouttime) //suit is restraining
 			drop_all_held_items()
+
+		var/t_color = wear_suit.item_color
+		if(!t_color)
+			t_color = wear_suit.icon_state
+
+		if(dna && dna.species.sexes)
+			var/G = (gender == FEMALE) ? "f" : "m"
+			if(G == "f")
+				standing = wear_suit.build_worn_icon(state = "[t_color]_f", default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi')
+
+		if(!standing)
+			standing = wear_suit.build_worn_icon(state = "[t_color]", default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi')
+
+		overlays_standing[SUIT_LAYER]	= standing
 
 	update_hair()
 	update_mutant_bodyparts()

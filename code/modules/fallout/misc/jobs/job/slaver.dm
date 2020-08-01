@@ -54,10 +54,8 @@
 	/obj/item/clothing/shoes/f13/rag,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin
 	)
 
 /datum/outfit/job/gangleader
@@ -107,7 +105,6 @@
 	denied_items = list(
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn
 	)
 
@@ -160,7 +157,6 @@
 	denied_items = list(
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn
 	)
 
@@ -212,6 +208,5 @@
 	denied_items = list(
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn
 	)

@@ -98,7 +98,9 @@
 "bT" = (/obj/machinery/trading_machine/weapon,/obj/effect/decal/cleanable/dirt,/obj/machinery/camera/autoname,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "bU" = (/obj/structure/table/abductor,/obj/machinery/cell_charger,/turf/open/floor/plating/abductor,/area/abductor_ship)
 "bV" = (/obj/machinery/autolathe,/turf/open/floor/plating/abductor,/area/abductor_ship)
+"bW" = (/obj/machinery/bounty_machine,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "bX" = (/obj/effect/ruin_loader,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
+"bY" = (/obj/structure/table/wood,/obj/effect/decal/cleanable/dirt,/obj/machinery/bounty_machine,/turf/open/floor/f13/wood,/area/f13/wasteland)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababab
@@ -125,7 +127,7 @@ abahahaCaNaLaMaQaIaNbhaCakalalalalalalalalalalalalalalalalalalalalalalalalababab
 abahaCaCaMaMaMaMaHaMaMaCakalalalalalalalalalalalalalalalalalalalalalalalalababab
 abahaCaPbobqaMbzaRaSbAaTakalalalazbebebebebebebebebeananbebebebebebebebebeababab
 abahaUaNbraNaHaIaWaIaVaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
-abahaCaXaYaZaMbybabbbcaCakalalalbfbxbxahbuahahahahahbkbkahahahahahahbiahahababab
+abahaCaXaYaZaMbybabbbcaCakalalalbfbxbxahbubWahahahahbkbkahahahahahahbiahahababab
 abaBaCaCbdaCaCaCaEaEaCaCakalalalbfbxbxahbBahbvahahahahahahahahahahahahahahababab
 abaiacafacafacafacacbRacapalalalbfbxbxahahahahahahahahahahahahahahahahahahababab
 abaqalalalalalalalalalalalalalalbfahahahbBahbBahahahbmbmahahbiahahahahahahababab
@@ -135,7 +137,7 @@ abasatatatbpbpatatatatataAalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCaCaEaEaCaTaCaCaCaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCblbCbsbtaIaybSaraEakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCbDaIaIaIagaIaIaaaEakalalalbfahahahahahahahadahahahahahahahahahahahahababab
-ababaCbcaIaMaMaHaMaIaeaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
+ababaCbYaIaMaMaHaMaIaeaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCbcaIaMbTaIawaIaxaEakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCavaIaMbwaIawaIaxaEakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCaCaCaCaCaCaCbnbnaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab

@@ -134,25 +134,25 @@
 /obj/item/clothing/under/f13/relaxedwear
 	name = "pre-War male relaxedwear"
 	desc = "A dirty long-sleeve blue shirt with a greenish brown sweater-vest and slacks."
-	icon_state = "relaxedwear_m"
+	icon_state = "relaxedwear"
 	item_state = "g_suit"
-	item_color = "relaxedwear_m"
+	item_color = "relaxedwear"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/spring
 	name = "pre-War male spring outfit"
 	desc = "A dirty long-sleeve beige shirt with a red sweater-vest and brown trousers."
-	icon_state = "spring_m"
+	icon_state = "spring"
 	item_state = "brownjsuit"
-	item_color = "spring_m"
+	item_color = "spring"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/formal
 	name = "pre-War male formal wear"
 	desc = "A black jacket with an old white shirt and dirty dark purple trousers.<br>Traditionally worn by the richest of the post-War world."
-	icon_state = "formal_m"
+	icon_state = "formal"
 	item_state = "judge"
-	item_color = "formal_m"
+	item_color = "formal"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -180,17 +180,9 @@
 /obj/item/clothing/under/f13/tribal
 	name = "male tribal outfit"
 	desc = "A male outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
-	icon_state = "tribal_m"
+	icon_state = "tribal"
 	item_state = "lgloves"
-	item_color = "tribal_m"
-	can_adjust = 0
-
-/obj/item/clothing/under/f13/female/tribal
-	name = "female tribal outfit"
-	desc = "A female outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
-	icon_state = "tribal_f"
-	item_state = "lgloves"
-	item_color = "tribal_f"
+	item_color = "tribal"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/settler
@@ -201,7 +193,7 @@
 	item_color = "settler"
 	can_adjust = 0
 
-/obj/item/clothing/under/f13/brahmin //Male version
+/obj/item/clothing/under/f13/brahmin
 	name = "male brahmin-skin outfit"
 	desc = "A basic male outfit consisting of a white shirt and patched trousers with Y-shaped suspenders."
 	icon_state = "brahmin_m"
@@ -209,30 +201,12 @@
 	item_color = "brahmin_m"
 	can_adjust = 0
 
-/obj/item/clothing/under/f13/female/brahmin //Female version
-	name = "female brahmin-skin outfit"
-	desc = "A basic female outfit consisting of a rolled-up long-sleeve shirt and patched trousers with Y-shaped suspenders.<br>Fitted for female wastelanders."
-	icon_state = "brahmin_f"
-	item_state = "brownjsuit"
-	item_color = "brahmin_f"
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = 0
-
-/obj/item/clothing/under/f13/doctor //Male version
+/obj/item/clothing/under/f13/doctor
 	name = "male doctor fatigues"
 	desc = "A white t-shirt, a small brown satchel bag and brown trousers with pouches attached to the belt.<br>Fitted for male wastelanders."
-	icon_state = "doctor_m"
+	icon_state = "doctor"
 	item_state = "brownjsuit"
-	item_color = "doctor_m"
-	can_adjust = 0
-
-/obj/item/clothing/under/f13/female/doctor //Female version
-	name = "female doctor fatigues"
-	desc = "A white t-shirt with brown trousers, and a small brown satchel bag attached to it.<br>Fitted for female wastelanders."
-	icon_state = "doctor_f"
-	item_state = "brownjsuit"
-	item_color = "doctor_f"
-	fitted = FEMALE_UNIFORM_TOP
+	item_color = "doctor"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/deadmoney
@@ -447,65 +421,32 @@
 	can_adjust = 0
 	icon = 'icons/obj/clothing/uniforms.dmi'
 
-/obj/item/clothing/under/f13/veramale
+/obj/item/clothing/under/f13/vera
 	name = "Star's tuxedo"
 	desc = "A classy sepia tuxedo paired up with a vibrant red suit vest and beige dress shirt, complimented with a bowtie adding a bit of pre-war flair for the ambitious male waster."
-	icon_state = "veramale"
-	item_state = "veramale"
-	item_color = "veramale"
+	icon_state = "vera"
+	item_state = "vera"
+	item_color = "vera"
 	can_adjust = 0
 	icon = 'icons/obj/clothing/uniforms.dmi'
 
-/obj/item/clothing/under/f13/verafemale
-	name = "Starlet's dress"
-	desc = "A sexy black evening dress with a vibrant scarlet trim and faux flower attached to the left hip, suited for formal events or general bossywork for the ambitious female waster."
-	icon_state = "verafemale"
-	item_state = "verafemale"
-	item_color = "verafemale"
-	can_adjust = 0
-	icon = 'icons/obj/clothing/uniforms.dmi'
-
-/obj/item/clothing/under/f13/mercadv //Male version
+/obj/item/clothing/under/f13/mercadv
 	name = "male merc adventurer outfit"
 	desc = "A large leather jacket with torn-off sleeves, paired with a red sweater, a necklace with three teeth of unknown origin strung on, and a pair of brown leather pants.<br>There is also a rough leather bandolier for additional storage capacity.<br>Fitted for male wastelanders."
-	icon_state = "merca_m"
+	icon_state = "merca"
 	item_state = "bl_suit"
-	item_color = "merca_m"
+	item_color = "merca"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
 	self_weight = 3
 
-/obj/item/clothing/under/f13/female/mercadv //Female version
-	name = "female merc adventurer outfit"
-	desc = "A large leather jacket with torn-off sleeves, paired with a midriff-revealing red and black top and a pair of brown leather pants.<br>There is also a rough leather bandolier and belt for additional storage capacity.<br>Fitted for female wastelanders."
-	icon_state = "merca_f"
-	item_state = "bl_suit"
-	item_color = "merca_f"
-	fitted = FEMALE_UNIFORM_TOP
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	can_adjust = 0
-	self_weight = 3
-
-/obj/item/clothing/under/f13/merccharm //Male version
+/obj/item/clothing/under/f13/merccharm
 	name = "male merc charmer outfit"
 	desc = "A blue and gray outfit resembling a three piece suit, heavily stitched and reinforced with a small metal cup on the groin area.<br>Fitted for male wastelanders."
-	icon_state = "mercc_m"
+	icon_state = "mercc"
 	item_state = "bl_suit"
-	item_color = "mercc_m"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 10, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	can_adjust = 0
-	self_weight = 3
-
-/obj/item/clothing/under/f13/female/merccharm //Female version
-	name = "female merc charmer outfit"
-	desc = "A ripped and torn blue female business suit, it still gives ladies a rather sexy look.<br>Fitted for female wastelanders."
-	icon_state = "mercc_f"
-	item_state = "bl_suit"
-	item_color = "mercc_f"
-	fitted = FEMALE_UNIFORM_TOP
+	item_color = "mercc"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -622,6 +563,17 @@
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
 	item_color = "enclave_o"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 10, rad = 10, fire = 0, acid = 0)
+	can_adjust = 0
+	self_weight = 3
+
+/obj/item/clothing/under/f13/enclave_colonel
+	name = "форма полковника анклава"
+	desc = "Стандартная униформа офицера Анклава. <br>Внешний."
+	icon_state = "enclave_colonel"
+	item_state = "bl_suit"
+	item_color = "enclave_colonel"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 10, rad = 10, fire = 0, acid = 0)
 	can_adjust = 0

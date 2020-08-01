@@ -99,17 +99,8 @@
 /obj/item/clothing/shoes/f13/military/diesel
 	name = "male diesel boots"
 	desc = "Fancy mens' steel-toed boots."
-	icon_state = "diesel_m"
-	item_state = "diesel_m"
-	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
-	cold_protection = FEET
-	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-
-/obj/item/clothing/shoes/f13/military/female/diesel
-	name = "female diesel boots"
-	desc = "Fancy womens' knee-high platform boots with shiny steel clasps."
-	icon_state = "diesel_f"
-	item_state = "diesel_f"
+	icon_state = "diesel"
+	item_state = "diesel"
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT

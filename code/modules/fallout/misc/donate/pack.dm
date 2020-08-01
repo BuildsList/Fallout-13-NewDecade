@@ -49,10 +49,8 @@
 		/obj/item/clothing/under/pants/f13/cloth,
 		/obj/item/clothing/under/f13/rag,
 		/obj/item/clothing/under/f13/tribal,
-		/obj/item/clothing/under/f13/female/tribal,
 		/obj/item/clothing/under/f13/settler,
 		/obj/item/clothing/under/f13/brahmin,
-		/obj/item/clothing/under/f13/female/brahmin,
 		/obj/item/clothing/under/f13/worn,
 		// Suits
 		/obj/item/clothing/suit/f13/mantle_liz,
@@ -220,7 +218,6 @@
 	desc = "<b>Доступно для: Нейтралы и Рейдеры!</b><br>Если вам кажется что в игре недостаточно металла, этот набор всё исправит.<br><i>ГОРШОК МЁРТВ!</i><br>"
 	items = list(
 		/obj/item/clothing/shoes/f13/military/diesel,
-		/obj/item/clothing/shoes/f13/military/female/diesel,
 		/obj/item/clothing/suit/armor/f13/punk,
 		/obj/item/device/instrument/eguitar,
 		/obj/item/key/motorcycle

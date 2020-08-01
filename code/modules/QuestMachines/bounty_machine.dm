@@ -159,7 +159,7 @@
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/bounty_employers)
 	assets.send(usr)
 
-	dat += "<h1>Wasteland Bounty Station</h1>"
+	dat += "<h1>Станция Контрактов Пустоши</h1>"
 	if(connected_pod)
 		dat += "<font color='green'>Квантовый телепортатор найден</font><br>"
 		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a><br>"
@@ -177,7 +177,7 @@
 		dat += "<font color='green'><b>Название: </b> [Q.name]</font><br>"
 		dat += "<font color='green'><b>Заказчик: </b> [Q.employer]</font><br>"
 		dat += "<font color='green'><b>Сообщение:</b></font>"
-		dat += "<font color='green'>[Q.desc]</font><br><br>"
+		dat += "<font color='green'>[Q.desc]</font><br>"
 		dat += "<font color='green'><b>Надо: </b></font>"
 		dat += "<font color='green'><i>[Q.need_message]. </i></font><br>"
 		dat += "<font color='green'><b>Награда:</b></font>"
