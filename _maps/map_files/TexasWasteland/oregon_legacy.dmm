@@ -1653,7 +1653,7 @@
 "aFO" = (/obj/structure/rack,/obj/item/clothing/suit/poncho{pixel_x = 5; pixel_y = -5},/obj/item/clothing/suit/poncho/green{pixel_x = -5; pixel_y = 5},/obj/item/clothing/suit/poncho/green{pixel_x = -5; pixel_y = 5},/obj/item/clothing/suit/poncho{pixel_x = 5; pixel_y = -5},/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
 "aFP" = (/obj/structure/rack,/obj/item/clothing/suit/jacket/miljacket{pixel_x = 6; pixel_y = 6},/obj/item/clothing/suit/ianshirt,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
 "aFQ" = (/obj/item/weapon/rack_parts,/obj/item/clothing/shoes/f13/tan,/obj/item/clothing/shoes/f13/tan,/obj/machinery/light,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
-"aFR" = (/obj/structure/rack,/obj/item/clothing/shoes/f13/military/female/diesel,/obj/item/clothing/suit/armor/f13/punk,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
+"aFR" = (/obj/structure/rack,/obj/item/clothing/suit/armor/f13/punk,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
 "aFS" = (/obj/structure/rack,/obj/item/clothing/suit/hooded/chaplain_hoodie,/obj/item/clothing/suit/hooded/chaplain_hoodie,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
 "aFT" = (/obj/structure/rack,/obj/item/clothing/under/f13/mikeclothes,/obj/item/clothing/under/f13/mikeclothes,/obj/item/clothing/under/f13/mikeclothes,/obj/item/clothing/under/f13/mikeclothes,/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
 "aFU" = (/obj/structure/rack,/obj/item/clothing/under/f13/patriotsuit,/obj/item/clothing/under/f13/patriotsuit,/obj/machinery/light{dir = 4},/turf/open/floor/f13{icon_state = "floordirty"},/area/f13/building)
