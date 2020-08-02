@@ -276,8 +276,8 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/soviet
-	name = "soviet uniform"
-	desc = "For the Motherland!"
+	name = "советская форма"
+	desc = "За родину!"
 	icon_state = "soviet"
 	item_state = "soviet"
 	item_color = "soviet"
@@ -292,7 +292,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/kilt
-	name = "kilt"
+	name = "килт"
 	desc = "Includes shoes and plaid."
 	icon_state = "kilt"
 	item_state = "kilt"
@@ -306,7 +306,7 @@
 	flags = NODROP
 
 /obj/item/clothing/under/gladiator
-	name = "gladiator uniform"
+	name = "одеяние гладиатора"
 	desc = "Are you not entertained? Is that not why you are here?"
 	icon_state = "gladiator"
 	item_state = "gladiator"
@@ -321,19 +321,19 @@
 	has_sensor = 0
 
 /obj/item/clothing/under/captainparade
-	name = "captain's parade uniform"
-	desc = "A captain's luxury-wear, for special occasions."
+	name = "парадная форма смотрителя"
+	desc = "Форма смотрителя класса люкс для особых случаев."
 	icon_state = "captain_parade"
 	item_state = "by_suit"
 	item_color = "captain_parade"
 	can_adjust = 0
 
-/obj/item/clothing/under/hosparademale
-	name = "head of security's parade uniform"
+/obj/item/clothing/under/hosparade
+	name = "парадная форма службы безопасности"
 	desc = "A male head of security's luxury-wear, for special occasions."
-	icon_state = "hos_parade_male"
+	icon_state = "hos_parade"
 	item_state = "r_suit"
-	item_color = "hos_parade_male"
+	item_color = "hos_parade"
 	can_adjust = 0
 
 /obj/item/clothing/under/assistantformal
@@ -494,7 +494,7 @@
 	body_parts_covered = CHEST|GROIN
 
 /obj/item/clothing/under/janimaid
-	name = "maid uniform"
+	name = "форма горничной"
 	desc = "A simple maid uniform for housekeeping."
 	icon_state = "janimaid"
 	item_state = "janimaid"
