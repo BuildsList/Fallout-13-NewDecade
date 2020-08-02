@@ -1013,8 +1013,8 @@ window "infowindow"
 		size = 624x20
 		anchor1 = 1,1
 		anchor2 = 100,1
-		font-family = "Fallout Regular,Monofonto,Verdana"
-		text-color = #ffff66
+		font-family = "Monofonto,Fallout Regular,Verdana"
+		text-color = #66ff66
 		background-color = #3c4438
 		border = line
 		saved-params = "is-checked"
@@ -1041,7 +1041,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 1008x428
+		size = 508x428
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #ff0000
@@ -1157,8 +1157,8 @@ window "statwindow"
 		type = INFO
 		pos = 16,8
 		size = 1008x440
-		anchor1 = 1,1
-		anchor2 = 85,96
+		anchor1 = 1,2
+		anchor2 = 85,99
 		font-family = "Monofonto,Verdana"
 		text-color = #66ff66
 		background-color = #292929
