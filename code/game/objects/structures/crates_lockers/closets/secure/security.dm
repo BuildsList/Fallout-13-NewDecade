@@ -64,7 +64,7 @@
 	new /obj/item/weapon/cartridge/hos(src)
 	new /obj/item/device/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/female/hosparadefem(src)
-	new /obj/item/clothing/under/hosparademale(src)
+	new /obj/item/clothing/under/hosparade(src)
 	new /obj/item/clothing/suit/armor/vest/leather(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/under/rank/head_of_security/alt(src)
