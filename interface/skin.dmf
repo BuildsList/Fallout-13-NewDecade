@@ -1041,12 +1041,11 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 640x480
+		size = 638x428
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = #ff0000
+		background-color = #747a70
 		is-disabled = true
-		is-default = true
 		saved-params = ""
 		auto-format = false
 
