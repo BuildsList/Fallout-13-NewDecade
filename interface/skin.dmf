@@ -1040,8 +1040,8 @@ window "outputwindow"
 		inner-size = 640x453
 	elem "browseroutput"
 		type = BROWSER
-		pos = 16,0
-		size = 496x428
+		pos = 8,0
+		size = 528x428
 		anchor1 = 3,0
 		anchor2 = 81,94
 		background-color = #ff0000
