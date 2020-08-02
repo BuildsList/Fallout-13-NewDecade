@@ -1040,10 +1040,10 @@ window "outputwindow"
 		inner-size = 640x453
 	elem "browseroutput"
 		type = BROWSER
-		pos = 8,0
-		size = 528x428
-		anchor1 = 1,0
-		anchor2 = 84,94
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
 		background-color = #ff0000
 		is-disabled = true
 		is-default = true
