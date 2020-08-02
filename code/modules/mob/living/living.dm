@@ -284,21 +284,21 @@
 // MOB PROCS //END
 
 /mob/living/proc/mob_sleep()
-	set name = "Sleep"
+	set name = "Спать"
 	set category = "IC"
 
 	if(sleeping)
 		to_chat(src, "<span class='notice'>Вы уже спите.</span>")
 		return
 	else
-		if(alert(src, "Вы уверены что хотите немного поспать?", "Sleep", "Yes", "No") == "Yes")
+		if(alert(src, "Вы уверены что хотите немного поспать?", "Спать", "Да", "Нет") == "Да")
 			SetSleeping(20) //Short nap
 	update_canmove()
 
 /mob/proc/get_contents()
 
 /mob/living/proc/lay_down()
-	set name = "Crawl / Crouch"
+	set name = "Ползти"
 	set category = "IC"
 
 	if(stat)
@@ -315,7 +315,7 @@
 		to_chat(src, "<span class='danger'>Когда вы попытались встать, вы ударились о [under_object] своей головой!<br>Ай!</span>")
 
 /mob/living/proc/surrender()
-	set name = "Surrender"
+	set name = "Сдаться"
 	set category = "IC"
 
 	if(canmove)

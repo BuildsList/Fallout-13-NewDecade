@@ -1041,7 +1041,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 638x428
+		size = 1008x428
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #ff0000
@@ -1155,8 +1155,8 @@ window "statwindow"
 		command = "Действие"
 	elem "stat"
 		type = INFO
-		pos = 0,8
-		size = 1024x440
+		pos = 16,8
+		size = 1008x440
 		anchor1 = 1,1
 		anchor2 = 85,96
 		font-family = "Monofonto,Verdana"
