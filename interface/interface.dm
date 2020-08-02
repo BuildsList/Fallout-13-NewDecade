@@ -1,6 +1,6 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki()
-	set name = "wiki"
+	set name = "вики"
 	set desc = "Visit the wiki."
 	set hidden = 1
 	if(config.wikiurl)
@@ -12,7 +12,7 @@
 	return
 
 /client/verb/forum()
-	set name = "forum"
+	set name = "форум"
 	set desc = "Visit the forum."
 	set hidden = 1
 	if(config.forumurl)
@@ -24,7 +24,7 @@
 	return
 
 /client/verb/rules()
-	set name = "rules"
+	set name = "правила"
 	set desc = "Show Server Rules."
 	set hidden = 1
 	if(config.rulesurl)
@@ -36,8 +36,8 @@
 	return
 
 /client/verb/github()
-	set name = "discord"
-	set desc = "Join to discord"
+	set name = "дискорд"
+	set desc = "Заходите к нам"
 	set hidden = 1
 	if(config.discord)
 		if(alert("This will open discord invite in your browser. Are you sure?",,"Yes","No")=="No")
@@ -80,7 +80,7 @@ Admin:
 		to_chat(src, adminhotkeys)
 
 /client/verb/changelog()
-	set name = "Changelog"
+	set name = "Обновления"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',

@@ -829,7 +829,7 @@ menu "menu"
 		command = ".quit"
 		category = "&File"
 		saved-params = "is-checked"
-	elem 
+	elem "iconzz"
 		name = "&Icons"
 		command = ""
 		saved-params = "is-checked"
@@ -888,8 +888,8 @@ menu "menu"
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 219,0
-		size = 640x440
+		pos = 281,0
+		size = 640x459
 		anchor1 = none
 		anchor2 = none
 		background-color = #3c4438
@@ -897,10 +897,12 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
+		outer-size = 656x517
+		inner-size = 640x478
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x417
+		size = 634x436
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #3c4438
@@ -910,7 +912,7 @@ window "mainwindow"
 		is-vert = true
 	elem "input"
 		type = INPUT
-		pos = 5,420
+		pos = 5,439
 		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
@@ -920,10 +922,11 @@ window "mainwindow"
 		saved-params = "command"
 	elem "say"
 		type = BUTTON
-		pos = 600,420
+		pos = 600,439
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"say.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
@@ -935,6 +938,7 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
@@ -943,13 +947,14 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = none
 		anchor2 = none
+		background-color = #0000ff
 		is-visible = false
 		saved-params = ""
 
 window "mapwindow"
 	elem "mapwindow"
 		type = MAIN
-		pos = 219,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -962,6 +967,7 @@ window "mapwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
+		outer-size = 654x494
 	elem "map"
 		type = MAP
 		pos = 0,0
@@ -989,6 +995,7 @@ window "infowindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
+		outer-size = 654x494
 	elem "info"
 		type = CHILD
 		pos = 0,30
@@ -1006,8 +1013,8 @@ window "infowindow"
 		size = 624x20
 		anchor1 = 1,1
 		anchor2 = 100,1
-		font-family = "Verdana"
-		text-color = #ffffff
+		font-family = "Fallout Regular,Monofonto,Verdana"
+		text-color = #ffff66
 		background-color = #3c4438
 		border = line
 		saved-params = "is-checked"
@@ -1017,34 +1024,8 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 219,0
+		pos = 281,0
 		size = 640x453
-		anchor1 = none
-		anchor2 = none
-		background-color = #747a70
-		saved-params = "pos;size;is-minimized;is-maximized"
-		titlebar = false
-		statusbar = false
-		can-close = false
-		can-minimize = false
-		can-resize = false
-		is-pane = true
-	elem "browseroutput"
-		type = BROWSER
-		pos = 0,0
-		size = 638x428
-		anchor1 = 0,0
-		anchor2 = 100,100
-		background-color = #747a70
-		is-disabled = true
-		saved-params = ""
-		auto-format = false
-
-window "statwindow"
-	elem "statwindow"
-		type = MAIN
-		pos = 219,0
-		size = 640x480
 		anchor1 = none
 		anchor2 = none
 		background-color = #3c4438
@@ -1055,19 +1036,136 @@ window "statwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		transparent-color = #ffffff
-	elem "stat"
-		type = INFO
+		outer-size = 654x467
+		inner-size = 640x453
+	elem "browseroutput"
+		type = BROWSER
 		pos = 0,0
-		size = 636x430
+		size = 638x428
 		anchor1 = 0,0
 		anchor2 = 100,100
-		font-family = "Verdana"
-		text-color = #ffffff
-		background-color = #454943
+		background-color = #ff0000
+		is-disabled = true
+		saved-params = ""
+		auto-format = false
+
+window "statwindow"
+	elem "statwindow"
+		type = MAIN
+		pos = 281,0
+		size = 1210x452
+		anchor1 = none
+		anchor2 = none
+		background-color = #3c4438
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+		can-scroll = vertical
+		transparent-color = #ffffff
+		outer-size = 1224x466
+		inner-size = 1210x452
+	elem "adminsuka"
+		type = BUTTON
+		pos = 1032,312
+		size = 160x36
+		anchor1 = 85,69
+		anchor2 = 99,77
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ПОМОЩЬ АДМИНА"
+		command = "adminhelp"
+	elem "whispersuka"
+		type = BUTTON
+		pos = 1032,168
+		size = 160x36
+		anchor1 = 85,37
+		anchor2 = 99,45
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ШЕПТАТЬ"
+		command = "Шептать"
+	elem "restsuka"
+		type = BUTTON
+		pos = 1032,264
+		size = 160x36
+		anchor1 = 85,58
+		anchor2 = 99,66
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "СПАТЬ"
+		command = "Спать"
+	elem "oocbutton"
+		type = BUTTON
+		pos = 1032,216
+		size = 160x36
+		anchor1 = 85,48
+		anchor2 = 99,56
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ЧАТ"
+		command = "OOC"
+	elem "govorit"
+		type = BUTTON
+		pos = 1032,72
+		size = 160x36
+		anchor1 = 85,16
+		anchor2 = 99,24
+		font-family = "Monofonto,Fallout Regular"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ГОВОРИТЬ"
+		command = "Говорить"
+		stretch = true
+	elem "deistvie"
+		type = BUTTON
+		pos = 1032,120
+		size = 160x36
+		anchor1 = 85,27
+		anchor2 = 99,35
+		font-family = "Monofonto,Fallout Regular"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ДЕЙСТВИЕ"
+		command = "Действие"
+	elem "stat"
+		type = INFO
+		pos = 0,8
+		size = 1024x440
+		anchor1 = 1,1
+		anchor2 = 85,96
+		font-family = "Monofonto,Verdana"
+		text-color = #66ff66
+		background-color = #292929
 		is-default = true
 		saved-params = ""
-		tab-text-color = #ffffff
-		tab-background-color = #3c4438
-		tab-font-family = "Verdana"
+		highlight-color = #ffffcc
+		tab-text-color = #66ff66
+		tab-background-color = #111111
+		tab-font-family = "Monofonto,Verdana"
 
