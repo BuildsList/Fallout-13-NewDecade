@@ -60,14 +60,14 @@
 	sharpness = IS_SHARP
 
 /obj/item/weapon/machete/imp_machete
-	name = "Improvised machete"
+	name = "Самодельное мачете"
 	desc = "This big, long, sharp blade is good for cleaving limbs off of the native Joshua trees or from an unlucky mutant. It appears as a long, sharpened lawn mower blade taped to a wooden handle."
 	icon_state = "imp_machete"
 	force = 18
 	price = 900
 
 /obj/item/weapon/machete/serratedmachete
-	name = "Serrated machete"
+	name = "Зазубренное мачете"
 	desc = "The machete appears to be a makeshift weapon, as it consists of a lawn mower blade strapped to a wooden handle.<br>It is the primary melee weapon of Caesar's Legion. This one serrated."
 	icon_state = "serratedmachete"
 	force = 32
@@ -91,7 +91,7 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/tireiron
-	name = "tire iron"
+	name = "монтировка"
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon = 'icons/fallout/objects/melee.dmi'
 	icon_state = "tire"
@@ -108,7 +108,7 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/golf9
-	name = "9 iron"
+	name = "9 Айрон"
 	desc = "This old and quite heavy 9 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
 	icon = 'icons/fallout/objects/melee.dmi'
 	icon_state = "golf9"
@@ -121,7 +121,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/weapon/golf10
-	name = "10 iron"
+	name = "10 Айрон"
 	desc = "This old and quite deadly 10 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
 	icon = 'icons/fallout/objects/melee.dmi'
 	icon_state = "golf10"
@@ -179,7 +179,7 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/powergauntlet
-	name = "power gauntlet"
+	name = "силовая перчатка"
 	desc = "Power Knuckles 'Big ram' produced by Beau.<br>Most consider it the best weapon for close combat.<br>Small but powerful battery provides the power for device operation."
 	icon = 'icons/fallout/objects/melee.dmi'
 	icon_state = "powergauntlet"
