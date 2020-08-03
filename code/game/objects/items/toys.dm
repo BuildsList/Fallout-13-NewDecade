@@ -303,7 +303,7 @@
 	return 0
 
 /obj/item/toy/katana
-	name = "replica katana"
+	name = "реплика катаны"
 	desc = "Woefully underpowered in D20."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "katana"
@@ -313,7 +313,7 @@
 	force = 5
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
+	attack_verb = list("атакует", "режет", "тыкает", "нарезает")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /*
