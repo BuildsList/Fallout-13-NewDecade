@@ -73,11 +73,11 @@
 
 	var/server
 	var/banappeals
-	var/wikiurl = "https://discord.gg/zyYBHeQ" // default wiki
-	var/forumurl = "https://discord.gg/zyYBHeQ" //default forums
-	var/rulesurl = "https://discord.gg/zyYBHeQ" // default rules
-	var/discord = "https://discord.gg/zyYBHeQ" //default chat
-	var/bitbucket = "https://discord.gg/zyYBHeQ" //default code
+	var/wikiurl = "https://discord.gg/GEMmJYV" // default wiki
+	var/forumurl = "https://discord.gg/GEMmJYV" //default forums
+	var/rulesurl = "https://discord.gg/GEMmJYV" // default rules
+	var/discord = "https://discord.gg/GEMmJYV" //default chat
+	var/bitbucket = "https://discord.gg/GEMmJYV" //default code
 
 	var/forbid_singulo_possession = 0
 	var/useircbot = 0
