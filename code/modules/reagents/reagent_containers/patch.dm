@@ -7,7 +7,7 @@
 	possible_transfer_amounts = list()
 	volume = 40
 	apply_type = PATCH
-	apply_method = "apply"
+	apply_method = "наложить"
 	self_delay = 15		// three seconds
 
 /obj/item/weapon/reagent_containers/pill/patch/afterattack(obj/target, mob/user , proximity)

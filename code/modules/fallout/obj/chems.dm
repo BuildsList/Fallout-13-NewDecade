@@ -7,6 +7,7 @@
 	icon = 'icons/fallout/objects/medicine/syringe.dmi'
 	icon_state = "medx_15"
 	item_state = "syringe_15"
+	apply_method = "вколоть"
 	self_weight = 0.1
 	price = 250
 
@@ -16,6 +17,7 @@
 	list_reagents = list("charcoal" = 50)
 	icon = 'icons/fallout/objects/medicine/bloodpack.dmi'
 	icon_state = "radaway"
+	apply_method = "выпить"
 	item_state = "syringe_15"
 	self_weight = 0.1
 	price = 200
@@ -27,6 +29,7 @@
 	icon = 'icons/fallout/objects/medicine/chemical.dmi'
 	icon_state = "jet"
 	item_state = "bandaid"
+	apply_method = "вдохнуть"
 	self_weight = 0.1
 	price = 250
 
@@ -37,6 +40,7 @@
 	icon = 'icons/fallout/objects/medicine/syringe.dmi'
 	icon_state = "psycho"
 	item_state = "syringe_15"
+	apply_method = "вколоть"
 	self_weight = 0.1
 	price = 250
 
@@ -47,6 +51,7 @@
 	icon = 'icons/fallout/objects/medicine/chemical.dmi'
 	icon_state = "radx"
 	item_state = "bandaid"
+	apply_method = "проглотить"
 	self_weight = 0.1
 	price = 200
 
@@ -57,5 +62,6 @@
 	icon = 'icons/fallout/objects/medicine/chemical.dmi'
 	icon_state = "turbo"
 	item_state = "turbo"
+	apply_method = "вдохнуть"
 	self_weight = 0.1
 	price = 250

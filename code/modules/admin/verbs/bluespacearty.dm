@@ -1,5 +1,5 @@
 /client/proc/bluespace_artillery(mob/M in mob_list)
-	set name = "Artillery"
+	set name = "Артиллерия"
 	set category = "Fun"
 
 	if(!holder || !check_rights(R_FUN))
@@ -11,7 +11,7 @@
 		to_chat(usr, "This can only be used on instances of type /mob/living")
 		return
 
-	if(alert(usr, "Are you sure you wish to hit [key_name(target)] with Blue Space Artillery?",  "Confirm Firing?" , "Yes" , "No") != "Yes")
+	if(alert(usr, "Вы уверены что хотите нанести артиллерийский удар по [key_name(target)]?",  "Подтвердите выстрел" , "Да" , "Нет") != "Да")
 		return
 
 	explosion(target.loc, 0, 0, 0, 0)
@@ -23,7 +23,7 @@
 		else
 			T.break_tile()
 
-	to_chat(target, "<span class='userdanger'>You're hit by bluespace artillery!</span>")
+	to_chat(target, "<span class='userdanger'>В вас попал артиллерийский снаряд!</span>")
 	log_admin("[key_name(target)] has been hit by Bluespace Artillery fired by [key_name(usr)]")
 	message_admins("[ADMIN_LOOKUPFLW(target)] has been hit by Bluespace Artillery fired by [ADMIN_LOOKUPFLW(usr)]")
 

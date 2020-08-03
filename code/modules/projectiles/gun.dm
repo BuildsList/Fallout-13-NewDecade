@@ -15,7 +15,7 @@
 	origin_tech = "combat=1"
 	needs_permit = 1
 	unique_rename = 0
-	attack_verb = list("struck", "hit", "bashed")
+	attack_verb = list("ударяет", "бьёт", "колотит")
 
 	var/fire_sound = "gunshot"
 	var/suppressed = 0					//whether or not a message is displayed when fired

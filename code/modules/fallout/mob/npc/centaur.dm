@@ -1,20 +1,20 @@
 //Fallout 13 Centaur directory
 
 /mob/living/simple_animal/hostile/centaur
-	name = "кентавр"
+	name = "Кентавр"
 	desc = "Кентавры, как ни странно, это мутанты. Они, это результат Вируса Рукотворной Эволюции."
 	icon = 'icons/fallout/mobs/animal.dmi'
 	icon_state = "centaur"
 	icon_living = "centaur"
 	icon_gib = "centaur_g"
 	speak_chance = 0
-	speak_emote = list("gnashes")
+	speak_emote = list("жужжит")
 	turns_per_move = 4
 	butcher_results = list()
-	response_help = "pokes"
-	response_disarm = "punches"
-	response_harm = "hits"
-	emote_taunt = list("gnashes")
+	response_help = "тыкает"
+	response_disarm = "толкает"
+	response_harm = "бьёт"
+	emote_taunt = list("жужжит")
 	taunt_chance = 30
 	move_to_delay = 2
 	maxHealth = 120

@@ -48,7 +48,7 @@
 			trans = reagents.trans_to(M, amount_per_transfer_from_this)
 			update_icon()
 			volume = 0
-			to_chat(user, "<span class='notice'>[trans] unit\s injected.  [reagents.total_volume] unit\s remaining in [src].</span>")
+			to_chat(user, "<span class='notice'>[trans] ед. введено.  [reagents.total_volume] осталось в [src].</span>")
 
 			var/contained = english_list(injected)
 

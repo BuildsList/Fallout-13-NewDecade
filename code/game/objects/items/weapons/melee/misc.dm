@@ -159,7 +159,7 @@
 		item_state = "nullrod"
 		w_class = WEIGHT_CLASS_BULKY //doesnt fit in backpack when its on for balance
 		force = 10 //stunbaton damage
-		attack_verb = list("smacked", "struck", "cracked", "beaten")
+		attack_verb = list("избивает", "колотит", "хреначит", "бьёт")
 	else
 		to_chat(user, "<span class ='notice'>You collapse the baton.</span>")
 		icon_state = "telebaton_0"
@@ -167,7 +167,7 @@
 		slot_flags = SLOT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = 0 //not so robust now
-		attack_verb = list("hit", "poked")
+		attack_verb = list("бьёт", "тыкает")
 
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	add_fingerprint(user)
@@ -302,7 +302,7 @@
 	throw_range = 5
 	materials = list(MAT_METAL=4000, MAT_GLASS=1000)
 	origin_tech = "biotech=1;combat=1"
-	attack_verb = list("attacked", "slashed", "sawed", "cut")
+	attack_verb = list("атакует", "изрезает", "пилит", "режет")
 	sharpness = IS_SHARP
 	var/on = 0
 
@@ -322,4 +322,4 @@
 		slot_flags = SLOT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = 2 //not so robust now
-		attack_verb = list("hit", "poked")
+		attack_verb = list("бьёт", "тыкает")

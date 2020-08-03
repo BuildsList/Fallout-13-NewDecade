@@ -114,6 +114,16 @@
 				"<span class='notice'>[M] садится на [src].</span>",\
 				"<span class='notice'>Вы сели на [src].</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
+			if(/obj/vehicle/fuel)
+				M.visible_message(\
+					"<span class='notice'>[M] садится в [src].</span>",\
+					"<span class='notice'>Вы сели в [src].</span>",\
+					"<span class='italics'>Вы слышите металлический лязг.</span>")
+			else
+				M.visible_message(\
+					"<span class='warning'>[user] садит [M] в [src]!</span>",\
+					"<span class='warning'>[user] посадил вас в [src]!</span>",\
+					"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
 				"<span class='warning'>[user] садит [M] на [src]!</span>",\

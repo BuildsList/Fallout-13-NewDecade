@@ -91,7 +91,7 @@ mob/proc/set_status(var/status)
 	set category = "Фракция"
 	if(status == "none")
 		return
-	if(alert("Вы уверены что хотите покинуть фракцию?",,"Yes","No")=="No")
+	if(alert("Вы уверены что хотите покинуть фракцию?",,"Да","Нет")=="Нет")
 		return
 
 	if(jobban_isbanned(src, "labor"))
@@ -108,7 +108,7 @@ mob/proc/set_status(var/status)
 		return
 	if(M.status == status)
 		return
-	if(alert(M, "[src] приглашает вас быть [status].",,"Yes","No")=="No")
+	if(alert(M, "[src] приглашает вас быть [status].",,"Да","Нет")=="Нет")
 		to_chat(src, "<span class='warning'>[M.name] отказался вступать во фракцию.</span>")
 		return
 	else
@@ -132,7 +132,7 @@ mob/proc/set_status(var/status)
 //***Status***
 
 /datum/status/recruit
-	name = "Рекруты"
+	name = "Рекрут"
 	id = "recruit"
 	change_faction = 1
 

@@ -8,14 +8,14 @@
 	icon_living = "cazador"
 	icon_gib = "gib"
 	speak_chance = 0
-	speak_emote = list("gnashes")
+	speak_emote = list("жужжит")
 	environment_smash = 1
 	turns_per_move = 15
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/weapon/reagent_containers/food/snacks/f13/venomgland = 1)
-	response_help = "pokes"
-	response_disarm = "punches"
-	response_harm = "hits"
-	emote_taunt = list("gnashes")
+	response_help = "тыкает"
+	response_disarm = "толкает"
+	response_harm = "бьёт"
+	emote_taunt = list("жужжит")
 	taunt_chance = 30
 	move_to_delay = 2
 	maxHealth = 100

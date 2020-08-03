@@ -106,7 +106,7 @@
 	looting = FALSE
 	looted = TRUE
 
-	player.visible_message("[player] достает что-то из [src].")
+	player.visible_message("[player] роется в [src].")
 
 	// 0 LUCK = 0.3. 10 LUCK = 1.2
 	var/modifer = 0.3 + (player.special.getPoint("l") * 0.05) + (player.special.getPoint("p") * 0.15)

@@ -130,17 +130,17 @@ The box in your backpack has an oxygen tank and gas mask in it."
 //End gas alerts
 
 /obj/screen/alert/thirst
-	name = "Thirst"
+	name = "Жажда"
 	desc = "Drink."
 	icon_state = "water"
 
 /obj/screen/alert/fat
-	name = "Fat"
+	name = "Жир"
 	desc = "You ate too much food, lardass. Run around the station and lose some weight."
 	icon_state = "fat"
 
 /obj/screen/alert/starving
-	name = "Starving"
+	name = "Голодание"
 	desc = "You're severely malnourished. The hunger pains make moving around a chore."
 	icon_state = "starv"
 
@@ -165,7 +165,7 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	icon_state = "highpressure"
 
 /obj/screen/alert/blind
-	name = "Blind"
+	name = "Слепота"
 	desc = "You can't see! This may be caused by a genetic defect, eye trauma, being unconscious, \
 or something covering your eyes."
 	icon_state = "blind"
@@ -176,7 +176,7 @@ or something covering your eyes."
 	icon_state = "high"
 
 /obj/screen/alert/drunk //Not implemented
-	name = "Drunk"
+	name = "Пьян"
 	desc = "All that alcohol you've been drinking is impairing your speech, motor skills, and mental cognition. Make sure to act like it."
 	icon_state = "drunk"
 
@@ -192,7 +192,7 @@ If you're feeling frisky, click yourself in help intent to pull the object out."
 		return M.help_shake_act(M)
 
 /obj/screen/alert/asleep
-	name = "Asleep"
+	name = "Сон"
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
@@ -205,7 +205,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	icon_state = "weightless"
 
 /obj/screen/alert/fire
-	name = "On Fire"
+	name = "Горите"
 	desc = "You're on fire. Stop, drop and roll to put the fire out or move to a vacuum area."
 	icon_state = "fire"
 

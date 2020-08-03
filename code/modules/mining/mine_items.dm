@@ -77,7 +77,7 @@
 /*********************Pickaxe & Drills**************************/
 
 /obj/item/weapon/pickaxe
-	name = "pickaxe"
+	name = "кирка"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "pickaxe"
 	flags = CONDUCT
@@ -90,7 +90,7 @@
 	var/digspeed = 40
 	var/list/digsound = list('sound/effects/picaxe1.ogg','sound/effects/picaxe2.ogg','sound/effects/picaxe3.ogg')
 	origin_tech = "materials=2;engineering=3"
-	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	attack_verb = list("бьёт", "пробивает", "атакует")
 
 /obj/item/weapon/pickaxe/mini
 	name = "compact pickaxe"

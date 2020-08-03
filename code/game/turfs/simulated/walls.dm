@@ -93,7 +93,7 @@
 	switch(M.damtype)
 		if(BRUTE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, 1)
-			visible_message("<span class='danger'>[M.name] has hit [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+			visible_message("<span class='danger'>[M.name] бьёт [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 			if(take_damage(M.force))
 				playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 		if(BURN)

@@ -294,7 +294,7 @@
 	force_unwielded = 0
 	force_wielded = 0
 	origin_tech = null
-	attack_verb = list("attacked", "struck", "hit")
+	attack_verb = list("атакует", "колотит", "бьёт")
 
 /obj/item/weapon/twohanded/dualsaber/toy/hit_reaction()
 	return 0
