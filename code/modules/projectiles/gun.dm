@@ -74,7 +74,7 @@
     //var/loaded = 0
 
 /mob/living/carbon/human/verb/weaponWield()
-	set name = "Wield"
+	set name = "Схватить"
 	set category = "IC"
 
 	var/obj/item/W = get_active_held_item()

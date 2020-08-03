@@ -897,8 +897,6 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
-		outer-size = 656x517
-		inner-size = 640x478
 	elem "split"
 		type = CHILD
 		pos = 3,0
@@ -926,7 +924,6 @@ window "mainwindow"
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"say.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
@@ -938,7 +935,6 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
@@ -967,7 +963,6 @@ window "mapwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 654x494
 	elem "map"
 		type = MAP
 		pos = 0,0
@@ -995,7 +990,6 @@ window "infowindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 654x494
 	elem "info"
 		type = CHILD
 		pos = 0,30
@@ -1036,8 +1030,6 @@ window "outputwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 654x467
-		inner-size = 640x453
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
@@ -1068,6 +1060,34 @@ window "statwindow"
 		transparent-color = #ffffff
 		outer-size = 1224x466
 		inner-size = 1210x452
+	elem "vobelapki"
+		type = BUTTON
+		pos = 1032,408
+		size = 160x36
+		anchor1 = 85,90
+		anchor2 = 99,98
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "СХВАТИТЬСЯ ЗА ПРЕДМЕТ"
+		command = "Схватить"
+	elem "zadachi"
+		type = BUTTON
+		pos = 1032,360
+		size = 160x36
+		anchor1 = 85,80
+		anchor2 = 99,88
+		font-family = "Monofonto"
+		text-color = #66ff66
+		background-color = #292929
+		is-default = true
+		border = sunken
+		saved-params = "is-checked"
+		text = "ЛИЧНЫЕ ЗАДАЧИ"
+		command = "Задачи"
 	elem "adminsuka"
 		type = BUTTON
 		pos = 1032,312
