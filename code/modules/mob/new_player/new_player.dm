@@ -78,15 +78,15 @@
 	..()
 
 	if(statpanel("Lobby"))
-		stat("Game Mode:", (ticker.hide_mode) ? "Secret" : "[master_mode]")
-		stat("Map:", MAP_NAME)
+		stat("Игровой Режим:", (ticker.hide_mode) ? "Секрет" : "[master_mode]")
+		stat("Карта:", MAP_NAME)
 
 		if(ticker.current_state == GAME_STATE_PREGAME)
-			stat("Time To Start:", (ticker.timeLeft >= 0) ? "[round(ticker.timeLeft / 10)]s" : "DELAYED")
+			stat("Время до старта:", (ticker.timeLeft >= 0) ? "[round(ticker.timeLeft / 10)]s" : "ЗАДЕРЖАНО")
 
-			stat("Players:", "[ticker.totalPlayers]")
+			stat("Игроков:", "[ticker.totalPlayers]")
 			if(client.holder)
-				stat("Players Ready:", "[ticker.totalPlayersReady]")
+				stat("Из них готовы:", "[ticker.totalPlayersReady]")
 
 
 /mob/new_player/Topic(href, href_list[])

@@ -194,11 +194,11 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/brahmin
-	name = "male brahmin-skin outfit"
+	name = "одежда из шкуры брамина"
 	desc = "A basic male outfit consisting of a white shirt and patched trousers with Y-shaped suspenders."
-	icon_state = "brahmin_m"
+	icon_state = "brahmin"
 	item_state = "brownjsuit"
-	item_color = "brahmin_m"
+	item_color = "brahmin"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/doctor

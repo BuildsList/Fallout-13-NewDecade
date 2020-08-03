@@ -97,8 +97,8 @@
 	flags = NOSLIP | QUIETSTEPSOUND
 
 /obj/item/clothing/shoes/f13/military/diesel
-	name = "male diesel boots"
-	desc = "Fancy mens' steel-toed boots."
+	name = "берцы из покрышек"
+	desc = "Стильные берцы, изготовлены из покрышек."
 	icon_state = "diesel"
 	item_state = "diesel"
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
