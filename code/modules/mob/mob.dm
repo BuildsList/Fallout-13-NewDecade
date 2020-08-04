@@ -429,8 +429,8 @@ var/next_mob_id = 0
 		to_chat(usr, "<span class='boldnotice'>Вы должны умереть чтобы использовать это!</span>")
 		return
 
-	if(world.time - src.timeofdeath < 6000)
-		to_chat(usr, "<span class='boldnotice'>Рано! Ждите ещё: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
+	if(world.time - src.timeofdeath < 120)
+		to_chat(usr, "<span class='boldnotice'>Рано,должно пройти 2 минуты! Прошло: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
 		return
 
 	if(jobban_isbanned(src, "labor"))
