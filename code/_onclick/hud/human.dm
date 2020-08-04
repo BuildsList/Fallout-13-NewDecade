@@ -218,7 +218,7 @@
 //	inv_box.icon_full = "template"
 	inv_box.screen_loc = ui_sstore1
 	inv_box.slot_id = slot_s_store
-	static_inventory += inv_box
+	toggleable_inventory += inv_box
 
 	using = new /obj/screen/resist()
 	using.icon = ui_style

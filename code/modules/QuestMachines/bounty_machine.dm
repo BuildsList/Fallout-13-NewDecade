@@ -7,7 +7,7 @@
 	name = "Wastland Bounty Machine"
 	desc = "This is Wastland Bounty Machine"
 	icon = 'icons/fallout/machines/terminals.dmi'
-	icon_state = "advanced"
+	icon_state = "bounty"
 	anchored = 1
 	density = 0
 	verb_say = "beeps"
