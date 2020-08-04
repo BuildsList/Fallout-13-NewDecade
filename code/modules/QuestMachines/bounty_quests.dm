@@ -65,7 +65,7 @@
 	employer_icon = "employer_00.png"
 	need_message = "Гуль - 1 шт."
 	desc = "Анклав на связи. Нам необходимы мутанты для очередных опытов. Конечно мы могли бы похитить кого-то из вас, но сегодня ваш день, потому что нам нужны гули."
-	end_message = "Итан! Прибей эту мразь! Так, оплата, вот ваши [caps_reward] крышек.
+	end_message = "Итан! Прибей эту мразь! Так, оплата, вот ваши [caps_reward] крышек."
 	target_items = list(/mob/living/simple_animal/hostile/ghoul = 1)
 	caps_reward = 200
 
@@ -204,5 +204,5 @@
 	desc = "На связи убежище 113, нам нужно плутониевое ядро. Платим очень щедро. Предположительно одно находится в вашем районе, под зданием Волт-Тек."
 	employer_icon = "employer_00.png"
 	need_message = "Плутоний - 1 шт."
-	target_items = list(/obj/item/nuke_core  = 1)
+	target_items = list(/obj/item/nuke_core = 1)
 	caps_reward = 6500
