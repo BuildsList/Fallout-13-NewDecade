@@ -59,8 +59,8 @@ var/global/list/datum/stack_recipe/metal_recipes = list ( \
 )
 
 /obj/item/stack/sheet/metal
-	name = "metal"
-	desc = "Sheets made out of metal."
+	name = "метал"
+	desc = "Лист чистого металла."
 	singular_name = "metal sheet"
 	icon_state = "sheet-metal"
 	materials = list(MAT_METAL=MINERAL_MATERIAL_AMOUNT)
@@ -103,7 +103,7 @@ var/global/list/datum/stack_recipe/plasteel_recipes = list ( \
 )
 
 /obj/item/stack/sheet/plasteel
-	name = "plasteel"
+	name = "пласталь"
 	singular_name = "plasteel sheet"
 	desc = "This sheet is an alloy of iron and titanium."
 	icon_state = "sheet-plasteel"
@@ -130,32 +130,32 @@ var/global/list/datum/stack_recipe/plasteel_recipes = list ( \
  * Wood
  */
 var/global/list/datum/stack_recipe/wood_recipes = list ( \
-	new/datum/stack_recipe("campfire", /obj/structure/campfire, 5, time = 300, one_per_turf = 1), \
-	new/datum/stack_recipe("cross", /obj/structure/statue/wood/headstonewood, 2, time = 150, one_per_turf = 1), \
-	new/datum/stack_recipe("wooden sandals", /obj/item/clothing/shoes/sandal, 1, time = 150), \
-	new/datum/stack_recipe("wood floor tile", /obj/item/stack/tile/wood, 1, 4, 20, time = 80), \
-	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 100), \
-	new/datum/stack_recipe("rifle stock", /obj/item/weaponcrafting/stock, 10, time = 80), \
+	new/datum/stack_recipe("костёр", /obj/structure/campfire, 5, time = 300, one_per_turf = 1), \
+	new/datum/stack_recipe("крест", /obj/structure/statue/wood/headstonewood, 2, time = 150, one_per_turf = 1), \
+	new/datum/stack_recipe("сандали", /obj/item/clothing/shoes/sandal, 1, time = 150), \
+	new/datum/stack_recipe("паркет", /obj/item/stack/tile/wood, 1, 4, 20, time = 80), \
+	new/datum/stack_recipe("рамка стола", /obj/structure/table_frame/wood, 2, time = 100), \
+	new/datum/stack_recipe("оружейная ложа", /obj/item/weaponcrafting/stock, 10, time = 80), \
 	new/datum/stack_recipe("rolling pin", /obj/item/weapon/kitchen/rollingpin, 2, time = 40), \
-	new/datum/stack_recipe("wooden chair", /obj/structure/chair/wood, 3, time = 100, one_per_turf = 1), \
-	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 400, one_per_turf = 1), \
+	new/datum/stack_recipe("кресло", /obj/structure/chair/wood, 3, time = 100, one_per_turf = 1), \
+	new/datum/stack_recipe("баррикада", /obj/structure/barricade/wooden, 5, time = 400, one_per_turf = 1), \
 //	new/datum/stack_recipe("wooden door", /obj/structure/mineral_door/wood, 10, time = 20, one_per_turf = 1, on_floor = 1), \
 	//crc
 	new/datum/stack_recipe("regular wooden door", /obj/structure/simple_door/house, 10, time = 250, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("interior wooden door", /obj/structure/simple_door/interior, 10, time = 250, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("room wooden door", /obj/structure/simple_door/room, 10, time = 250, one_per_turf = 1, on_floor = 1), \
 	//crc
-	new/datum/stack_recipe("coffin", /obj/structure/closet/coffin, 5, time = 150, one_per_turf = 1), \
-	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 150, one_per_turf = 1), \
-	new/datum/stack_recipe("drying rack", /obj/machinery/smartfridge/drying_rack, 35, time = 15, one_per_turf = 1), \
-	new/datum/stack_recipe("dog bed", /obj/structure/bed/dogbed, 10, time = 100, one_per_turf = 1), \
-	new/datum/stack_recipe("picture frame", /obj/item/weapon/picture_frame, 1, time = 80),\
+	new/datum/stack_recipe("гроб", /obj/structure/closet/coffin, 5, time = 150, one_per_turf = 1), \
+	new/datum/stack_recipe("книжная полка", /obj/structure/bookcase, 4, time = 150, one_per_turf = 1), \
+	new/datum/stack_recipe("сушилка", /obj/machinery/smartfridge/drying_rack, 35, time = 15, one_per_turf = 1), \
+	new/datum/stack_recipe("кровать для животных", /obj/structure/bed/dogbed, 10, time = 100, one_per_turf = 1), \
+	new/datum/stack_recipe("фоторамка", /obj/item/weapon/picture_frame, 1, time = 80),\
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = 1), \
 	new/datum/stack_recipe("wooden buckler", /obj/item/weapon/shield/riot/buckler, 20, time = 100), \
 	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50),\
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 100),\
- 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 100, one_per_turf = 1, on_floor = 1),\
-	new/datum/stack_recipe("baseball bat", /obj/item/weapon/twohanded/baseball, 5, time = 150),\
+ 	new/datum/stack_recipe("коробка для руды", /obj/structure/ore_box, 4, time = 100, one_per_turf = 1, on_floor = 1),\
+	new/datum/stack_recipe("бита", /obj/item/weapon/twohanded/baseball, 5, time = 150),\
 	)
 
 /obj/item/stack/sheet/mineral/wood
@@ -183,16 +183,16 @@ var/global/list/datum/stack_recipe/wood_recipes = list ( \
  * Cloth
  */
 var/global/list/datum/stack_recipe/cloth_recipes = list ( \
-	new/datum/stack_recipe("backpack", /obj/item/weapon/storage/backpack, 4), \
+	new/datum/stack_recipe("рюкзак", /obj/item/weapon/storage/backpack, 4), \
 	new/datum/stack_recipe("plant bag", /obj/item/weapon/storage/bag/plants, 4), \
 	new/datum/stack_recipe("mining satchel", /obj/item/weapon/storage/bag/ore, 4), \
-	new/datum/stack_recipe("rag", /obj/item/weapon/reagent_containers/glass/rag, 1), \
+	new/datum/stack_recipe("повязка", /obj/item/weapon/reagent_containers/glass/rag, 1), \
 	new/datum/stack_recipe("bedsheet", /obj/item/weapon/bedsheet, 3), \
 	new/datum/stack_recipe("empty sandbag", /obj/item/weapon/emptysandbag, 4)
 	)
 
 /obj/item/stack/sheet/cloth
-	name = "cloth"
+	name = "ткань"
 	desc = "Is it cotton? Linen? Denim? Burlap? Canvas? You can't tell."
 	singular_name = "cloth roll"
 	icon_state = "sheet-cloth"
@@ -226,7 +226,7 @@ var/global/list/datum/stack_recipe/cardboard_recipes = list ( \
 )
 
 /obj/item/stack/sheet/cardboard	//BubbleWrap //it's cardboard you fuck
-	name = "cardboard"
+	name = "картон"
 	desc = "Large sheets of card, like boxes folded flat."
 	singular_name = "cardboard sheet"
 	icon_state = "sheet-card"

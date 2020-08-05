@@ -182,7 +182,7 @@
 		dat += "<font color='green'><i>[Q.need_message]. </i></font><br>"
 		dat += "<font color='green'><b>Награда:</b></font>"
 		dat += "<font color='green'> [Q.caps_reward] caps</font> "
-		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Отправить посылку</a>"
+		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Отправить</a>"
 		dat += "</div>"
 		item_index++
 

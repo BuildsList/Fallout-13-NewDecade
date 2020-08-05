@@ -218,8 +218,8 @@
 	list_reagents = list("synthflesh" = 50)
 
 /obj/item/weapon/reagent_containers/glass/bucket
-	name = "bucket"
-	desc = "An old tin bucket."
+	name = "ведро"
+	desc = "Старое ржавое ведро."
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "bucket"
 	item_state = "bucket"

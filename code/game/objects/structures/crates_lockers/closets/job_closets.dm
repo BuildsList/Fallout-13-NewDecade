@@ -122,7 +122,7 @@
 	return
 
 /obj/structure/closet/coffin
-	name = "coffin"
+	name = "гроб"
 	desc = "It's a burial receptacle for the dearly departed."
 	icon_state = "coffin"
 	resistance_flags = FLAMMABLE

@@ -16,7 +16,7 @@
 /obj/item/door_key/attack_self(mob/user as mob)
 	if(!id)
 		return
-	src.name = input("Choose key label.",,copytext_char(src.name,0, length(src.name) - 3)) + " key"
+	src.name = input("Дайте название бирки.",,copytext_char(src.name,0, length(src.name) - 3)) + " ключ"
 	return
 
 /obj/item/door_key/attackby(obj/item/W, mob/user, params)
@@ -24,7 +24,7 @@
 		var/obj/item/door_key/K = W
 		if((!src.id && !K.id) || (src.id && K.id))
 			return 0
-		if(alert(user,"You want to make copy of key?",,"Yes","No") == "No")
+		if(alert(user,"Хотите сделать копию ключа?",,"Да","Нет") == "Нет")
 			return 0
 		if(src.id && !K.id)
 			K.attach_id(src.id)
@@ -35,7 +35,7 @@
 
 /obj/item/door_key/proc/attach_id(id)
 	src.id = id
-	src.name = "key"
+	src.name = "ключ"
 	src.icon_state = "key"
 	if(!overlays_cache || !overlays_cache["usable_key"])
 		var/icon/O = icon('icons/fallout/objects/keys.dmi', "key_overlay")

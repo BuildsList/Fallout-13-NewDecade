@@ -126,6 +126,7 @@
 	/obj/item/ammo_box/magazine/F13/m556/fire = 1)
 
 /obj/effect/spawner/lootdrop/garbage
+	name = "мусор случайный"
 	color = "#FF00FF"
 	loot = list(
 	/obj/structure/garbage = 1,
@@ -191,6 +192,7 @@
 	/obj/item/weapon/katana/chinese = 1)
 
 /obj/effect/spawner/lootdrop/food
+	name = "еда случайная"
 	color = "#2DF31A"
 	icon_state = "food"
 	loot = list(

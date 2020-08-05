@@ -30,8 +30,8 @@
 	return
 
 /obj/item/key
-	name = "key"
-	desc = "A small grey key."
+	name = "ключ"
+	desc = "Маленький серый ключик."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "key"
 	w_class = WEIGHT_CLASS_TINY

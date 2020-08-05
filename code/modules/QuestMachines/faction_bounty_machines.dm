@@ -29,34 +29,41 @@
 	faction_id = "city"
 	quest_type = /datum/bounty_quest/faction/city
 	price_list = list(
-					/obj/item/stack/sheet/metal/ = 150,
-					/obj/item/stack/sheet/rglass = 200,
-					/obj/item/stack/sheet/glass = 150,
-					/obj/item/clothing/glasses/hud/health = 500,
-					/obj/item/weapon/gun/ballistic/automatic/wt550 = 2000,
-					/obj/item/weapon/gun/ballistic/shotgun/automatic/dual_tube = 5000,
-					/obj/item/seeds/tomato/blood = 1000,
-					/obj/item/seeds/tomato/killer = 1500,
-					/obj/item/seeds/potato/sweet = 800,
-					/obj/item/seeds/banana = 900,
-					/obj/item/seeds/tobacco = 1200,
+					/obj/item/stack/sheet/metal/five = 850,
+					/obj/item/stack/sheet/glass/five = 750,
+					/obj/effect/spawner/lootdrop/food = 590,
+					/obj/effect/spawner/lootdrop/garbage = 890,
+					/obj/structure/closet/coffin = 700
+					/obj/item/weapon/pickaxe/rust = 1299,
+					/obj/item/weapon/circuitboard/machine/ore_redemption = 1000,
+					/obj/item/weapon/circuitboard/machine/hydroponics = 2500,
+					/obj/item/weapon/circuitboard/machine/chem_dispenser = 5900,
+					/obj/item/weapon/circuitboard/machine/chem_heater = 3900,
+					/obj/item/weapon/circuitboard/machine/chem_master = 4900
+					/obj/structure/reagent_dispensers/beerkeg = 500,
+					/obj/structure/reagent_dispensers/watertank = 5000,
+					/obj/structure/reagent_dispensers/watertank/high = 9000,
+					/obj/item/weapon/paper_bin = 600,
+					/obj/item/seeds/potato/sweet = 3000,
+					/obj/item/seeds/banana = 2000,
+					/obj/item/seeds/tobacco = 2000,
 					/obj/item/seeds/grass = 1000,
-					/obj/item/seeds/grape = 1200,
-					/obj/item/seeds/ambrosia = 1400,
-					/obj/item/weapon/implanter/adrenalin = 2500,
-					/obj/item/weapon/implanter/storage = 5000,
-					/obj/item/seeds/cannabis = 2000,
-					/obj/structure/reagent_dispensers/barrel/explosive = 700,
-					/obj/item/weapon/surgical_drapes = 300,
-					/obj/item/weapon/reagent_containers/glass/beaker/bluespace = 1500,
-					/obj/item/weapon/implantcase = 800,
-					/obj/item/organ/cyberimp/eyes/xray = 7000,
-					/obj/item/organ/cyberimp/eyes/thermals = 8000,
-					/obj/item/organ/cyberimp/chest/reviver = 10000,
-					/obj/item/weapon/implanter/ = 1000,
-					/obj/item/weapon/storage/backpack/holding = 9000,
-					/obj/item/clothing/glasses/hud/health/night = 8000,
-					/obj/item/weapon/storage/bag/plants/portaseeder = 10000
+					/obj/item/seeds/grape = 5000,
+					/obj/item/seeds/cannabis = 6000,
+					/obj/item/seeds/ambrosia = 8000,
+					/obj/item/weapon/gun/energy/disabler/compliance_regulator = 4500,
+					/obj/item/weapon/disk/design_disk/f13/schlocket = 2500,
+					/obj/item/weapon/disk/design_disk/f13/dawnshire = 2500,
+					/obj/item/weapon/disk/design_disk/f13/ormed = 3500,
+					/obj/item/weapon/disk/design_disk/f13/vesttec = 3500,
+					/obj/item/weapon/disk/design_disk/f13/greenway = 2600,
+					/obj/item/pizzabox/mushroom = 1900,
+					/obj/item/lockpick/pro = 3400,
+					/obj/item/device/radio/prc = 4500,
+					/obj/item/crafting/weapon_parts/ballistic = 2500,
+					/obj/item/crafting/weapon_parts/energy = 4500,
+					/obj/item/crafting/weapon_parts/plasma = 6500,
+					/obj/item/weapon/dildo = 100000
 					)
 
 /*
@@ -135,7 +142,7 @@
 		stored_caps -= price_list[target_type]
 
 		// Create item
-		//var/atom/NewItem = new target_type(connected_pod.loc)
+		var/atom/NewItem = new target_type(connected_pod.loc)
 		to_chat(usr, "Done. *boop*")
 	else
 		to_chat(usr, "Not enough caps.")
@@ -173,14 +180,14 @@
 /* Shop UI*/
 /obj/machinery/bounty_machine/faction/proc/GetShopUI()
 	var/dat = {"<meta charset="UTF-8">"}
-	dat += "<h1>Faction shop</h1>"
+	dat += "<h1>Магазин</h1>"
 	dat += "<a href='?src=\ref[src];exit=1'>Выход</a><br><br>"
 	dat += "<font color = 'green'>Баланс: [stored_caps]</font>"
 	dat += "<a href='?src=\ref[src];removecaps=1'>Забрать</a><br>"
 	if(free_access)
-		dat += "<font color = 'green'><b>Access:</b> Бесплатно</font><br>"
+		dat += "<font color = 'green'><b>Доступ:</b> Свободный</font><br>"
 	else
-		dat += "<font color = 'red'><b>Access:</b> Только для лидера</font><br>"
+		dat += "<font color = 'red'><b>Доступ:</b> Только для лидера</font><br>"
 
 	dat += "<div class='statusDisplay'>"
 	for(var/i = 1; i <= price_list.len; i++)
@@ -208,12 +215,12 @@
 	dat += "<h1>Wasteland Bounty Station</h1>"
 
 	if(connected_pod)
-		dat += "<font color='green'>Pod found</font><br>"
+		dat += "<font color='green'>Квантовая площадка найдена</font><br>"
 		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
 	else
-		dat += "<font color='red'>Pod not found</font><br>"
+		dat += "<font color='red'>Квантовая площадка не обнаружена</font><br>"
 		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
-	dat += "<a href='?src=\ref[src];shop=1'>Faction Shop</a><br>"
+	dat += "<a href='?src=\ref[src];shop=1'>Магазин</a><br>"
 	dat += "<style>.leftimg {float:left;margin: 7px 7px 7px 0;}</style>"
 
 	dat += "<h2>Contracts:</h2>"
@@ -221,16 +228,16 @@
 	for(var/datum/bounty_quest/Q in active_quests)
 		//usr << browse_rsc(Q.GetIconWithPath(), Q.employer_icon)
 		dat += "<div class='statusDisplay'>"
-		dat += "<img src=\ref=[Q.employer_icon] class='leftimg' width = 59 height = 70></img>"
+		dat += "<img src='[Q.employer_icon]' class='leftimg' width = 59 height = 70></img>"
 		dat += "<font color='green'><b>ID: </b> [Q.name]</font><br>"
-		dat += "<font color='green'><b>Employer: </b> [Q.employer]</font><br>"
-		dat += "<font color='green'><b>Message:</b></font>"
+		dat += "<font color='green'><b>Заказчик: </b> [Q.employer]</font><br>"
+		dat += "<font color='green'><b>Сообщение:</b></font>"
 		dat += "<font color='green'>[Q.desc]</font><br><br>"
-		dat += "<font color='green'><b>Acceptable package: </b></font>"
+		dat += "<font color='green'><b>Надо: </b></font>"
 		dat += "<font color='green'><i>[Q.need_message]. </i></font><br>"
-		dat += "<font color='green'><b>Reward:</b></font>"
-		dat += "<font color='green'> [Q.caps_reward] caps</font><br>"
-		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Send package</a><br>"
+		dat += "<font color='green'><b>Награда:</b></font>"
+		dat += "<font color='green'> [Q.caps_reward] крышек</font><br>"
+		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Отправить</a><br>"
 		dat += "</div>"
 		item_index++
 

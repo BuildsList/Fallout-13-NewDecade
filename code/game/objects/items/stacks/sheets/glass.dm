@@ -32,6 +32,9 @@ var/global/list/datum/stack_recipe/glass_recipes = list ( \
 /obj/item/stack/sheet/glass/fifty
 	amount = 50
 
+/obj/item/stack/sheet/glass/five
+	amount = 5
+
 /obj/item/stack/sheet/glass/New(loc, amount)
 	recipes = glass_recipes
 	..()
