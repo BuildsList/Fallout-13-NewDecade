@@ -4,7 +4,7 @@
 "ad" = (/obj/vertibird,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "ae" = (/obj/structure/table/wood,/obj/item/weapon/gun/ballistic/automatic/smg10mm,/obj/item/weapon/gun/ballistic/automatic/tommygun,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "af" = (/obj/machinery/light{dir = 1},/obj/structure/barricade/sandbags{dir = 1},/turf/open/indestructible/ground/dirt{icon_state = "dirt"},/area/f13/wasteland)
-"ag" = (/obj/effect/landmark/start,/obj/effect/decal/cleanable/dirt,/turf/open/floor/f13/wood,/area/f13/wasteland)
+"ag" = (/obj/screen/menuf13/join_game,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "ah" = (/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "ai" = (/turf/open/indestructible/ground/dirt{tag = "icon-dirtcorner"; icon_state = "dirtcorner"},/area/f13/wasteland)
 "aj" = (/turf/open/indestructible/ground/dirt{icon_state = "dirt"},/area/f13/wasteland)
@@ -101,6 +101,8 @@
 "bW" = (/obj/machinery/bounty_machine,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "bX" = (/obj/effect/ruin_loader,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "bY" = (/obj/structure/table/wood,/obj/effect/decal/cleanable/dirt,/obj/machinery/bounty_machine,/turf/open/floor/f13/wood,/area/f13/wasteland)
+"bZ" = (/obj/effect/landmark/start,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
+"ca" = (/obj/screen/menuf13/setup,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababab
@@ -109,10 +111,10 @@ abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahahahahahahahahahahahahahaFahahahahaFahahahahahahahahahahahahahababab
-abahahahahahbEbEbEbEbEbEbEahahahahahahahahahahahahahahahahahahahahahahahahababab
-abahahahahahbEbFbGbHbIbJbEahahahahahahahahahahaFahahahahahaFahahahahahahahababab
+abahahahahahbEbEbEbEbEbEbEahahahahahahahagahahahahahahahahahahahahahahahahababab
+abahahahahahbEbFbGbHbIbJbEahahahahahahahcaahahaFahahahahahaFahahahahahahahababab
 abahahahahahbEbKbKbKbKbKbEahahahahahaFahahahahahahahahahahahahahahahahahahababab
-abahahahahahbEbLbMbNbObKbEahahahahahahahahahahahahahahahahahahahahahahahahababab
+abahahahahahbEbLbMbNbObKbEahahahahahahahahahahahbZahahahahahahahahahahahahababab
 abahahahahahbEbPbKbKbKbKbEahahahahahahahahahahaFahahahahahahahahahahahahahababab
 abahahahahahbEbLbQbPbUbVbEahahahahahahahahahahahahahahahahahahahahahahahahababab
 abahahahahahbEbEbEbEbEbEbEahahahahahahahahahahahahahahahahahahahahahahahahababab
@@ -136,7 +138,7 @@ abaqalalalalalalalalalalalalalalbfahahahahahbBahahahahahahahahahahahbiahahababab
 abasatatatbpbpatatatatataAalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCaCaEaEaCaTaCaCaCaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCblbCbsbtaIaybSaraEakalalalbfahahahahahahahahahahahahahahahahahahahahababab
-ababaCbDaIaIaIagaIaIaaaEakalalalbfahahahahahahahadahahahahahahahahahahahahababab
+ababaCbDaIaIaIaIaIaIaaaEakalalalbfahahahahahahahadahahahahahahahahahahahahababab
 ababaCbYaIaMaMaHaMaIaeaCakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCbcaIaMbTaIawaIaxaEakalalalbfahahahahahahahahahahahahahahahahahahahahababab
 ababaCavaIaMbwaIawaIaxaEakalalalbfahahahahahahahahahahahahahahahahahahahahababab

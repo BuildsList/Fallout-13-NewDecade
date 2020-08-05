@@ -71,6 +71,10 @@
 		sleep(10)
 		new /obj/item/weapon/gun/medbeam(T)
 		sleep(10)
+	if(user.ckey == "vanotyan")
+		to_chat(user, "Спасибо что поддержали проект.")
+		new /obj/item/weapon/storage/box/vano_f13(T)
+		sleep(10)
 
 /mob/living/carbon/human/create_internal_organs()
 	if(!(NOHUNGER in dna.species.species_traits))

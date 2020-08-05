@@ -541,3 +541,10 @@
 	icon_state = "sutener"
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/internals/emergency_oxygen,/obj/item/toy,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/gun/ballistic/automatic/pistol,/obj/item/weapon/gun/ballistic/revolver,/obj/item/weapon/gun/ballistic/revolver/detective,/obj/item/device/radio)
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
+
+/obj/item/clothing/suit/jacket/vano
+	name = "Потертый плащ наемника"
+	desc = "Похоже этому плащу много лет, даже кажется его сделали до войны, но при этом его материал все еще довольно твердый на ощуп. Несколько самодельных керамических плит вшиты в его бока."
+	icon_state = "ghost_of_vanechka"
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/internals/emergency_oxygen,/obj/item/toy,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/gun/ballistic/automatic/pistol,/obj/item/weapon/gun/ballistic/revolver,/obj/item/weapon/gun/ballistic/revolver/detective,/obj/item/device/radio)
+	armor = list(melee = 15, bullet = 25, laser = 5, energy = 5, bomb = 0, bio = 0, rad = 10, fire = 15, acid = 0)

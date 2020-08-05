@@ -212,6 +212,35 @@ var/highlander_claymores = 0
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
 	return(BRUTELOSS)
 
+/obj/item/weapon/katana/vanech
+	name = "катана \"Лепесток Лотоса\""
+	desc = "Данное орудие когда-то было найдено в старом Музее, Говорят что оно не тяжелее чем Лепесток Лотоса в честь которого оно и было названо, сама Катана ранее была замечена у одного из Наёмников, который как расказывал нашел ее в одном из музеев старого мира. Странный камень в рукоятке меча не перестает мигать когда ты смотришь на нее."
+	icon_state = "ghost_of_vanecka"
+	item_state = "katana"
+	icon = 'icons/fallout/objects/melee.dmi'
+	flags = CONDUCT
+	slot_flags = SLOT_BELT | SLOT_BACK
+	force = 30
+	throwforce = 10
+	w_class = WEIGHT_CLASS_NORMAL
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("режет", "разрезает", "ранит")
+	block_chance = 50
+	sharpness = IS_SHARP
+	obj_integrity = 100
+	max_integrity = 100
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 100, acid = 50)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/weapon/katana/vanech/pickup(mob/living/user)
+	..()
+	if(user.ckey != "vanotyan")
+		to_chat(user, "<span class='cultlarge'>\"Вы не достойны этого.\"</span>")
+		to_chat(user, "<span class='warning'>Чувство тошноты накатывает на вас!</span>")
+		user.emote("scream")
+		user.apply_damage(15, BRUTE, pick("l_arm", "r_arm"))
+		user.Dizzy(120)
+
 /obj/item/weapon/wirerod
 	name = "арматура с проводами"
 	desc = "Арматура обмотанная проводами красного цвета."

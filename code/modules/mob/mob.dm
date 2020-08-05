@@ -435,12 +435,12 @@ var/next_mob_id = 0
 
 	if(jobban_isbanned(src, "labor"))
 		if(world.time - src.timeofdeath < 12000)
-			to_chat(usr, "<span class='boldnotice'>You are on corrections! Wait for 30 minutes. You waited [Floor((world.time - src.timeofdeath)/10)] seconds!</span>")
+			to_chat(usr, "<span class='boldnotice'>You are on corrections! Wait for 12 minutes. You waited [Floor((world.time - src.timeofdeath)/10)] seconds!</span>")
 			return
 
 	log_game("[usr.name]/[usr.key] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Пожалуйста, старайтесь соблюдать ролевой отыгрышь!</span>")
+	to_chat(usr, "<span class='boldnotice'>Пожалуйста, старайтесь соблюдать ролевой отыгрыш!</span>")
 
 	if(!client)
 		log_game("[usr.key] AM failed due to disconnect.")
