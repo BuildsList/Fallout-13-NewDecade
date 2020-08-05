@@ -33,7 +33,7 @@
 					/obj/item/stack/sheet/glass/five = 750,
 					/obj/effect/spawner/lootdrop/food = 590,
 					/obj/effect/spawner/lootdrop/garbage = 890,
-					/obj/structure/closet/coffin = 700
+					/obj/structure/closet/coffin = 700,
 					/obj/item/weapon/pickaxe/rust = 1299,
 					/obj/item/weapon/circuitboard/machine/ore_redemption = 1000,
 					/obj/item/weapon/circuitboard/machine/hydroponics = 2500,
