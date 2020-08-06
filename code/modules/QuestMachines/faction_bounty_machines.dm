@@ -23,7 +23,7 @@
 
 /*  CITY */
 /obj/machinery/bounty_machine/faction/city
-	name = "City CentrComm Terminal"
+	name = "Терминал Контрактов"
 	desc = "Этот терминал использует мэр, что бы поддерживать связь с внешним миром."
 	icon_state = "terminal"
 	faction_id = "city"
@@ -39,7 +39,7 @@
 					/obj/item/weapon/circuitboard/machine/hydroponics = 2500,
 					/obj/item/weapon/circuitboard/machine/chem_dispenser = 5900,
 					/obj/item/weapon/circuitboard/machine/chem_heater = 3900,
-					/obj/item/weapon/circuitboard/machine/chem_master = 4900
+					/obj/item/weapon/circuitboard/machine/chem_master = 4900,
 					/obj/structure/reagent_dispensers/beerkeg = 500,
 					/obj/structure/reagent_dispensers/watertank = 5000,
 					/obj/structure/reagent_dispensers/watertank/high = 9000,

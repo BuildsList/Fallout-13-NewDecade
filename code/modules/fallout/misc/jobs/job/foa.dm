@@ -1,18 +1,18 @@
 //Followers of the Apocalypse or simple FOA
 
 /datum/job/follower
-	title = "Follower"
+	title = "Последователи Апокалипсиса"
 	desc = "The Followers of the Apocalypse, or simply the Followers, are a faction based in New California and have established their presence in the Mojave Wasteland. Their goal is to tend to the inhabitants of the wasteland, as well as to ensure that the horrors of the Great War are never to be repeated."
 	flag = AFOLLOWER
-	department_head = list("Common sense")
+	department_head = list("Чувству долга")
 	department_flag = FOA
 	faction = "followers"
 	status = "follower"
 	total_positions = 4
 	spawn_positions = 1
-	supervisors = "common sense"
+	supervisors = "чувству долга"
 	selection_color = "#ec9d9d"
-	minimal_player_age = 20
+	minimal_player_age = 17
 	whitelist_on = 0
 
 	allowed_packs = list("starter", "cigarettes", "follower", "bard", "super_ten", "specops")

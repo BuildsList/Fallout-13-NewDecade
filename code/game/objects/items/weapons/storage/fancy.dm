@@ -111,7 +111,7 @@
 //CIG PACK//
 ////////////
 /obj/item/weapon/storage/fancy/cigarettes
-	name = "Big Boss Cigarettes"
+	name = "пачка сигарет Большой Босс"
 	desc = "A small box containing pre-War cigarettes.<br>Its valued by merchants for moderate rarity, solid quality and high demand.<br>This box is labeled with the name of a brand or company, \"Big Boss\" .<br>An image of a snake is seen on both sides of the box."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig"
@@ -131,8 +131,8 @@
 	create_reagents(15 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 	reagents.set_reacting(FALSE)
 	for(var/obj/item/clothing/mask/cigarette/cig in src)
-		cig.desc = "\An [name] brand [cig.name]."
-	name = "\improper [name] packet"
+		cig.desc = "[name] бренда [cig.name]."
+	name = "пачка [name]"
 
 /obj/item/weapon/storage/fancy/cigarettes/AltClick(mob/user)
 	if(user.get_active_held_item())
@@ -186,24 +186,28 @@
 		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
 
 /obj/item/weapon/storage/fancy/cigarettes/tortoise
-	name = "Grey Tortoise Cigarettes"
+	name = "Серая Волна"
 	desc = "A packet of six imported Grey Tortoise Cigarettes. A label on the packaging reads,<br>\"There is only one home to the life of a river-mussel;<br>There is only one home to the life of a tortoise;<br>There is only one shell to the soul of man: there is only one world to the spirit of our race.<br>If that world leaves its course and smashes on boulders of the great void, whose world will give us shelter?\"" //Wole Soyinka
 	icon_state = "tortoise"
+	item_state = "shadyjim"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_uplift
-	name = "Uplift Smooth Cigarettes"
+	name = "Шикльсберри"
 	desc = "Your favorite brand, now menthol flavored."
 	icon_state = "uplift"
+	item_state = "uplift"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_robust
-	name = "Robust Cigarettes"
+	name = "Робаст"
 	desc = "Smoked by the robust."
 	icon_state = "robust"
+	item_state = "robust"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_robustgold
-	name = "Robust Gold Cigarettes"
+	name = "Робаст Голд"
 	desc = "Smoked by the truly robust."
 	icon_state = "robustg"
+	item_state = "robustg"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_robustgold/New()
 	..()
@@ -211,14 +215,16 @@
 		reagents.add_reagent("gold",1)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_carp
-	name = "Carp Classic Cigarettes"
-	desc = "Since 2313."
+	name = "Карп Классик"
+	desc = "С 1998 года."
 	icon_state = "carp"
+	item_state = "carp"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_syndicate
-	name = "Unknown Cigarettes"
-	desc = "An obscure brand of cigarettes."
+	name = "Сигареты Анклава"
+	desc = "Сигареты производимые в Анклаве, по факту, это лучшие сигареты производимые в наши дни, собственно, они единственные..."
 	icon_state = "syndie"
+	item_state = "syndie"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_syndicate/New()
 	..()
@@ -227,15 +233,17 @@
 	name = "cigarette packet"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_joy
-	name = "Joy Cigarettes"
-	desc = "A box full of joy, also the packet smells funny."
+	name = "Весёлые сигареты"
+	desc = "Упаковка полная веселья. Да и сама упаковка пахнет весельем."
 	icon_state = "joy"
+	item_state = "midori"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_myron
-	name ="Myron's Patented Cigarettes"
+	name ="Майрон"
 	desc = "Is your weight slowing you down? Having trouble running away from hungry geckos? Can't stop stuffing your mouth with pre-War junk food? Smoke Myron's Patented Cigarettes and watch all the troubles burn away. Guaranteed results!"
 	icon_state = "myron"
+	item_state = "shadyjim"
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_myron/New()
 	..()
