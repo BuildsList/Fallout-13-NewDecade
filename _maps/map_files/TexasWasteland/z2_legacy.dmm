@@ -936,7 +936,7 @@
 "rZ" = (/obj/structure/toilet{tag = "icon-toilet00 (EAST)"; icon_state = "toilet00"; dir = 4},/turf/open/floor/f13{icon_state = "whitegreenrustychess"},/area/f13/bunker)
 "sa" = (/obj/machinery/shower{dir = 8; pixel_x = -5},/obj/structure/curtain,/turf/open/floor/f13{icon_state = "whitegreenrustychess"},/area/f13/bunker)
 "sb" = (/turf/open/floor/f13/wood{tag = "icon-housewood4-broken"; icon_state = "housewood4-broken"},/area/f13/bunker)
-"sc" = (/obj/structure/bed,/obj/item/weapon/bedsheet,/obj/machinery/light/small{dir = 4},/turf/open/floor/f13/wood,/area/f13/bunker)
+"sc" = (/obj/structure/bed,/obj/machinery/light/small{dir = 4},/obj/item/weapon/bedsheet/qm,/turf/open/floor/f13/wood,/area/f13/bunker)
 "sd" = (/turf/closed/wall/r_wall/f13/vault,/area/f13/brotherhood)
 "se" = (/obj/item/weapon/gun/ballistic/shotgun/trail,/turf/open/indestructible/ground/mountain,/area/f13/citycaves)
 "sf" = (/obj/structure/foamedmetal,/turf/open/floor/f13,/area/f13/brotherhood)
