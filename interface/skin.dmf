@@ -60,6 +60,15 @@ macro "default"
 		name = "CTRL+4"
 		command = "a-intent harm"
 	elem 
+		name = "A+REP"
+		command = ".moveleft"
+	elem 
+		name = "S+REP"
+		command = ".movedown"
+	elem 
+		name = "W+REP"
+		command = ".moveup"
+	elem 
 		name = "CTRL+Numpad1"
 		command = "body-r-leg"
 	elem 
@@ -736,6 +745,28 @@ menu "menu"
 		command = "hotkeys-help"
 		category = "&Help"
 		saved-params = "is-checked"
+	elem 
+		name = "&Scaling"
+		command = ""
+		saved-params = "is-checked"
+	elem "NN"
+		name = "&Nearest Neighbor"
+		command = ".winset \"mapwindow.map.zoom-mode=distort\""
+		category = "&Scaling"
+		can-check = true
+		saved-params = "is-checked"
+	elem "PS"
+		name = "&Point Sampling"
+		command = ".winset \"mapwindow.map.zoom-mode=normal\""
+		category = "&Scaling"
+		can-check = true
+		saved-params = "is-checked"
+	elem "BL"
+		name = "&Bilinear"
+		command = ".winset \"mapwindow.map.zoom-mode=blur\""
+		category = "&Scaling"
+		can-check = true
+		saved-params = "is-checked"
 
 
 window "mainwindow"
@@ -750,6 +781,8 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
+		outer-size = 656x517
+		inner-size = 640x478
 	elem "split"
 		type = CHILD
 		pos = 3,0
@@ -777,9 +810,10 @@ window "mainwindow"
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
-		command = ".winset \"say.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
+		command = ".winset \"say.is-checked=true ? input.command=\"говорить \"\"\\\"\" : input.command=\""
 		is-flat = true
 		button-type = pushbox
 	elem "asset_cache_browser"
@@ -788,6 +822,7 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
