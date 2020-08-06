@@ -1,7 +1,7 @@
 //Followers of the Apocalypse or simple FOA
 
 /datum/job/follower
-	title = "Последователи Апокалипсиса"
+	title = "Follower"
 	desc = "The Followers of the Apocalypse, or simply the Followers, are a faction based in New California and have established their presence in the Mojave Wasteland. Their goal is to tend to the inhabitants of the wasteland, as well as to ensure that the horrors of the Great War are never to be repeated."
 	flag = AFOLLOWER
 	department_head = list("Чувству долга")
