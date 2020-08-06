@@ -220,7 +220,6 @@
 		/obj/item/clothing/shoes/f13/military/diesel,
 		/obj/item/clothing/suit/armor/f13/punk,
 		/obj/item/device/instrument/eguitar,
-		/obj/item/key/motorcycle
 		)
 	price = 5000
 
@@ -247,7 +246,6 @@
 		/obj/item/weapon/reagent_containers/food/snacks/f13/dog,
 		/obj/item/clothing/head/f13/safari,
 		/obj/item/clothing/under/pants/f13/warboy,
-		/obj/item/key/buggy/wheel
 		)
 	price = 15000
 
