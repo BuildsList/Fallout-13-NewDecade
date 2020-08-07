@@ -388,14 +388,14 @@
 	desc = "<b>Открывает доступ к роли Радиста и Рыцаря!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/radist_bs, /datum/job/knight)
 	price = 25000
-
+/*
 /datum/content_pack/bs_scriber
 	name = "Братство: Писец"
 	id = "bs_scribe"
 	desc = "<b>Открывает доступ к роли Писца!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/scriber)
 	price = 15000
-
+*/
 ///Нейтралы и городские///
 
 /datum/content_pack/mayor

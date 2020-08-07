@@ -196,7 +196,7 @@
 	supervisors = "Старейшине"
 	selection_color = "#ec9d9d"
 	minimal_player_age = 7
-	whitelist_on = 1
+	whitelist_on = 0
 	allowed_packs = list("starter", "cigarettes", "follower", "bard", "super_ten", "f76", "specops")
 
 	denied_items = list(
