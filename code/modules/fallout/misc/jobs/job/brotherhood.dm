@@ -20,8 +20,8 @@
 	required_items = list(
 	/obj/item/clothing/gloves/f13/military,
 	/obj/item/clothing/under/f13/recon,
-//	/obj/item/clothing/suit/armor/f13/power_armor/t51b,
-//	/obj/item/clothing/head/helmet/power_armor/t51b,
+	/obj/item/clothing/suit/armor/f13/power_armor/t51b,
+	/obj/item/clothing/head/helmet/power_armor/t51b,
 	/obj/item/clothing/head/soft/f13/utility/navy,
 	/obj/item/clothing/glasses/sunglasses,
 	/obj/item/weapon/gun/energy/laser/rifle/tri,
@@ -116,8 +116,8 @@
 	uniform = /obj/item/clothing/under/f13/combat
 	shoes = /obj/item/clothing/shoes/f13/military
 	ears = /obj/item/device/radio/headset/bs
-//	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
-//	head = /obj/item/clothing/head/helmet/power_armor/t51b
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = /obj/item/clothing/head/helmet/power_armor/t51b
 	belt = /obj/item/weapon/storage/belt/military/army
 	weapon = /obj/item/weapon/gun/energy/laser/rifle/aer13
 	belt_contents = list(/obj/item/weapon/reagent_containers/f13stimpack = 2,/obj/item/weapon/kitchen/knife/combat = 1)
@@ -196,7 +196,7 @@
 	supervisors = "Старейшине"
 	selection_color = "#ec9d9d"
 	minimal_player_age = 7
-	whitelist_on = 1
+	whitelist_on = 0
 	allowed_packs = list("starter", "cigarettes", "follower", "bard", "super_ten", "f76", "specops")
 
 	denied_items = list(
