@@ -78,8 +78,8 @@
 //Rating 1
 
 /obj/item/weapon/stock_parts/console_screen
-	name = "console screen"
-	desc = "Used in the construction of computers and other devices with a interactive console."
+	name = "экран консоли"
+	desc = "Используется в консолях для создания экрана."
 	icon_state = "screen"
 	origin_tech = "materials=1"
 	materials = list(MAT_GLASS=200)
