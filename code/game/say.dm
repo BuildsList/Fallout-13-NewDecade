@@ -99,13 +99,15 @@ var/list/freqtospan = list(
 	else if(message_langs & MONKEY)
 		return "chimpers."
 	else if(message_langs & ALIEN)
-		return "hisses."
+		return "шипит."
 	else if(message_langs & ROBOT)
 		return "beeps rapidly."
 	else if(message_langs & DRONE)
-		return "chitters."
+		return "стрекочет."
 	else if(message_langs & SWARMER)
-		return "hums."
+		return "гудит."
+	else if(message_langs & DOLBOEB)
+		return "мычит."
 	else
 		return "makes a strange sound."
 

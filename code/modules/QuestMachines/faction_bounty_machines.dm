@@ -143,9 +143,9 @@
 
 		// Create item
 		var/atom/NewItem = new target_type(connected_pod.loc)
-		to_chat(usr, "Done. *boop*")
+		to_chat(usr, "Готово. *boop*")
 	else
-		to_chat(usr, "Not enough caps.")
+		to_chat(usr, "Недостаточно средств.")
 
 /* Returns 1 if selected mob have acces to use this machine */
 /obj/machinery/bounty_machine/faction/proc/is_have_access(var/mob/character)
