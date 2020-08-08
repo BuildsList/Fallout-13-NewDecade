@@ -9,7 +9,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor
 	put_on_delay = 100
 	strip_delay = 40
-	self_weight = 200
+	self_weight = 100
 	max_integrity = 10000
 	throw_range = 0
 	w_class = WEIGHT_CLASS_HUGE
