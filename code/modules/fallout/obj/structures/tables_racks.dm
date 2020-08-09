@@ -422,7 +422,12 @@
 		patient = null
 		return 0
 
-
+/obj/structure/table/rounded
+	desc = "Обычный стол закругленной формы, такие повсеместно можно найти в пустоши."
+	icon_state = "round_table"
+	obj_integrity = 150
+	max_integrity = 150
+	smooth = SMOOTH_FALSE
 
 /*
  * Racks
