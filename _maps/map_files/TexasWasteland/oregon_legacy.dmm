@@ -690,7 +690,7 @@
 "ann" = (/obj/machinery/vending/coffee,/turf/open/floor/f13{icon_state = "floordirtysolid"},/area/f13/building)
 "ano" = (/obj/structure/chair/stool{tag = "icon-bench"; icon_state = "bench"; dir = 2},/turf/open/indestructible/ground/sidewalk,/area/f13/wasteland)
 "anp" = (/obj/structure/barricade/sandbags/metal,/obj/effect/landmark/start{name = "Enclave Private"},/turf/open/floor/f13{icon_state = "darkrustysolid"},/area/f13/caves)
-"anq" = (/obj/structure/ladder{height = 0; icon_state = "ladder_bottom"; id = "enclave_base"; in_use = 0},/turf/open/floor/f13{icon_state = "darkrustysolid"},/area/f13/caves)
+"anq" = (/obj/structure/ladder{id = "enclave_base"},/turf/open/floor/f13{icon_state = "darkrustysolid"},/area/f13/caves)
 "anr" = (/obj/structure/flora/grass/wasteland{tag = "icon-tall_grass_6"; icon_state = "tall_grass_6"},/turf/open/indestructible/ground/desert{tag = "icon-wasteland5"; icon_state = "wasteland5"},/area/f13/wasteland)
 "ans" = (/mob/living/simple_animal/hostile/wolf{tag = "icon-dog_angry (NORTH)"; icon_state = "dog_angry"; dir = 1},/turf/open/indestructible/ground/desert{tag = "icon-wasteland5"; icon_state = "wasteland5"},/area/f13/wasteland)
 "ant" = (/obj/structure/chair{tag = "icon-chair (WEST)"; icon_state = "chair"; dir = 8},/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/building)

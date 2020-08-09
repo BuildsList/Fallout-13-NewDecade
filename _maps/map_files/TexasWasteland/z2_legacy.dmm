@@ -2012,7 +2012,7 @@
 "MJ" = (/obj/structure/table/wood/classic,/obj/machinery/modular_computer/console/preset/command{icon_state = "console"; dir = 1},/turf/open/floor/wood,/area/f13/enclave)
 "MK" = (/obj/structure/table/wood/classic,/obj/item/clothing/gloves/pda/syndicate,/turf/open/floor/wood,/area/f13/enclave)
 "ML" = (/obj/structure/table,/obj/structure/bedsheetbin,/turf/open/floor/f13{icon_state = "dark"},/area/f13/enclave)
-"MM" = (/obj/structure/ladder{height = 0; icon_state = "ladder_bottom"; id = "enclave_base"; in_use = 0},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/f13{icon_state = "floorrusty"},/area/f13/enclave)
+"MM" = (/obj/structure/ladder{height = -1; icon_state = "ladder_bottom"; id = "enclave_base"; in_use = 0},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/f13{icon_state = "floorrusty"},/area/f13/enclave)
 "MN" = (/obj/structure/barricade/railing/grey{icon_state = "grey_railing0"; dir = 6},/turf/open/floor/f13{icon_state = "dark"},/area/f13/enclave)
 "MO" = (/obj/structure/barricade/railing/grey,/turf/open/floor/f13{icon_state = "dark"},/area/f13/enclave)
 "MP" = (/obj/structure/simple_door/metal/ventilation,/obj/machinery/door/poddoor/shutters/preopen{id = "enc_armory"; name = "оружейная анклава"},/turf/open/floor/plating/tunnel{icon_state = "tunnelrusty"},/area/f13/enclave)
