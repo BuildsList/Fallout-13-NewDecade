@@ -59,8 +59,8 @@
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100, fire = 100, acid = 100)
 
 /obj/item/clothing/glasses/thermal/f13/enclave
-	name = "\improper pilot goggles"
-	desc = "Heat-sensitive goggles commonly worn by Enclave vertibird pilots."
+	name = "очки пилота"
+	desc = "Очки пилота используемые пилотами винтокрылов. Имеют встроенный тепловизор."
 	icon_state = "enclavegoggles"
 	item_state = "enclavegoggles"
 

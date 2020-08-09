@@ -395,6 +395,33 @@
 	"" = 10
 	)
 
+/obj/effect/spawner/lootdrop/vertibird
+	color = "#96ff4d"
+	icon_state = "vb2"
+	layer = 6
+	loot = list(
+	/obj/vertibird = 30,
+	"" = 70
+	)
+
+/obj/effect/spawner/lootdrop/pilot_goggles
+	color = "#96ff4d"
+	icon_state = "goggles"
+	layer = 6
+	loot = list(
+	/obj/item/clothing/glasses/thermal/f13/enclave = 40,
+	"" = 60
+	)
+
+/obj/effect/spawner/lootdrop/lockpick_rand
+	color = "#96ff4d"
+	icon_state = "lockpick"
+	layer = 6
+	loot = list(
+	/obj/item/weapon/storage/bag/lockpicks = 50,
+	"" = 50
+	)
+
 /obj/effect/spawner/lootdrop/mobs
 	color = "#96ff4d"
 	icon_state = "npc_land"
