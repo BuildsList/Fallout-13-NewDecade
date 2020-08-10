@@ -91,6 +91,10 @@
 	body_color = "brown"
 	icon_state = "mouse_brown"
 
+/mob/living/simple_animal/mouse/squirel
+	body_color = "brown"
+	icon_state = "squirrel"
+
 //TOM IS ALIVE! SQUEEEEEEEE~K :)
 /mob/living/simple_animal/mouse/brown/Tom
 	name = "Tom"
