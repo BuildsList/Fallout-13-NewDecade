@@ -14,7 +14,7 @@
 	emote_see = list("мотает головами.")
 	speed = 4
 	self_weight = 150
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/animalhide/generic=2)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/animalhide/generic=2, /obj/item/weapon/reagent_containers/food/snacks/meat/slab/brahmin_liver = 1)
 
 	XP = 2
 
