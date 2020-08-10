@@ -9,6 +9,7 @@
 /obj/structure/chair/e_chair/New()
 	..()
 	add_overlay(image('icons/fallout/objects/structures/furniture.dmi', src, "echair_over", MOB_LAYER + 1))
+	part = new(src) //oops, shock kit wasn't set
 
 /obj/structure/chair/e_chair/attackby(obj/item/weapon/W, mob/user, params)
 	if(istype(W, /obj/item/weapon/wrench))

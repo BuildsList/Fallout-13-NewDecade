@@ -1352,6 +1352,7 @@
 #include "code\modules\fallout\mob\human\species\supermutant.dm"
 #include "code\modules\fallout\mob\npc\alien.dm"
 #include "code\modules\fallout\mob\npc\arachnide.dm"
+#include "code\modules\fallout\mob\npc\bloatfly.dm"
 #include "code\modules\fallout\mob\npc\brahmin.dm"
 #include "code\modules\fallout\mob\npc\cazador.dm"
 #include "code\modules\fallout\mob\npc\centaur.dm"

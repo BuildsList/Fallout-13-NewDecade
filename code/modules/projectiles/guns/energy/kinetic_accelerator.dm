@@ -22,6 +22,9 @@
 
 	var/empty_state = "kineticgun_empty"
 
+/obj/item/weapon/gun/energy/kinetic_accelerator/attack_hand(mob/living/user)
+	return
+
 /obj/item/weapon/gun/energy/kinetic_accelerator/examine(mob/user)
 	..()
 	if(max_mod_capacity)

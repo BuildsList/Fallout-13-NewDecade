@@ -429,6 +429,13 @@
 	max_integrity = 150
 	smooth = SMOOTH_FALSE
 
+/obj/structure/table/squared
+	desc = "Обычный стол закругленной формы, такие повсеместно можно найти в пустоши."
+	icon_state = "metal_table"
+	obj_integrity = 150
+	max_integrity = 150
+	smooth = SMOOTH_FALSE
+
 /*
  * Racks
  */

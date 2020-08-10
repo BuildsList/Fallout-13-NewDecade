@@ -237,3 +237,15 @@
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/soup/f13/sawdust
 	category = CAT_SOUP
+
+/datum/crafting_recipe/food/moleratstew
+	name = "Похлёбка из кротокрыса"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/weapon/reagent_containers/glass/bowl = 1,
+		/obj/item/weapon/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/weapon/reagent_containers/food/snacks/meat/slab/molerat = 2,
+		/obj/item/weapon/reagent_containers/food/snacks/grown/carrot = 1,
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/soup/moleratstew
+	category = CAT_SOUP

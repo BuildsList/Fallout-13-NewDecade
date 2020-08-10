@@ -147,8 +147,8 @@
 			if(new_item.amount <= 0)//if the stack is empty, i.e it has been merged with an existing stack and has been garbage collected
 				return
 
-		if (istype(O,/obj/item))
-			usr.put_in_hands(O)
+		//if (istype(O,/obj/item))
+		//	usr.put_in_hands(O) //It already drops the item on the ground, its easier to leave it there rather than do pickup inits all over (fixes biobag hud icon, etc)
 		O.add_fingerprint(usr)
 
 		//BubbleWrap - so newly formed boxes are empty

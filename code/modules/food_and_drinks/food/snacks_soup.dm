@@ -173,4 +173,8 @@
 	icon_state = "redbeetsoup"
 	bonus_reagents = list("nutriment" = 4, "vitamin" = 6)
 
-
+/obj/item/weapon/reagent_containers/food/snacks/soup/moleratstew
+	name = "похлёбка из кротокрыса"
+	desc = "Чертовски вкусно!"
+	icon_state = "moleratstew"
+	bonus_reagents = list("nutriment" = 2, "vitamin" = 5)

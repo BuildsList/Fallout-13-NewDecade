@@ -73,10 +73,22 @@
 	desc = "Большой и ржавый вентилятор, когда-то служивший системой подачи воздуха куда-то..."
 	icon_state = "v_vent_rusted"
 
-/obj/structure/decoration_f13/old_tv
+/obj/structure/decoration_f13/tv
 	name = "старый телевизор"
 	desc = "Старый телевизор, покрыт пылью а электроника уже никогда не заработает."
 	icon_state = "tv"
+	layer = 3
+
+/obj/structure/decoration_f13/tv_table
+	name = "старый телевизор"
+	desc = "Старый телевизор, покрыт пылью а электроника уже никогда не заработает."
+	icon_state = "tvold"
+	layer = 3
+
+/obj/structure/decoration_f13/old_tv
+	name = "старый телевизор"
+	desc = "Старый телевизор, покрыт пылью а электроника уже никогда не заработает."
+	icon_state = "tvold_ontable"
 	layer = 3
 
 /obj/structure/decoration_f13/dresser

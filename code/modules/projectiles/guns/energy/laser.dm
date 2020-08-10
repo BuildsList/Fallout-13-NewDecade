@@ -49,6 +49,9 @@
 	origin_tech = null
 	use_cyborg_cell = 1
 
+/obj/item/weapon/gun/energy/laser/cyborg/attack_hand(mob/living/user)
+	return
+
 /obj/item/weapon/gun/energy/laser/cyborg/emp_act()
 	return
 

@@ -114,6 +114,12 @@
 	desc = "Delicious meat, on a stick."
 	bonus_reagents = list("nutriment" = 1, "vitamin" = 2)
 
+/obj/item/weapon/reagent_containers/food/snacks/kebab/gecko
+	name = "шашлык из геккона"
+	desc = "Наконец-то, нормальная блять еда!"
+	icon_state = "gecko_kebab"
+	bonus_reagents = list("nutriment" = 4, "vitamin" = 2)
+
 /obj/item/weapon/reagent_containers/food/snacks/kebab/tofu
 	name = "tofu-kebab"
 	desc = "Vegan meat, on a stick."
@@ -200,6 +206,14 @@
 	bonus_reagents = list("nutriment" = 1, "capsaicin" = 4, "vitamin" = 4)
 	list_reagents = list("nutriment" = 6, "capsaicin" = 5)
 	filling_color = "#FA8072"
+
+/obj/item/weapon/reagent_containers/food/snacks/wondermeat
+	name = "Чудо-мясо"
+	desc = "A piece of mixed, long meat."
+	icon_state = "wondermeat"
+	filling_color = "#CD5C5C"
+	bonus_reagents = list("nutriment" = 1, "vitamin" = 1)
+	list_reagents = list("nutriment" = 6, "vitamin" = 1)
 
 #define LUMP "lump"
 #define STAR "star"

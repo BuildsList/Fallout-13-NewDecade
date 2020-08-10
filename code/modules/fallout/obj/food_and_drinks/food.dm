@@ -316,7 +316,7 @@
 //WASTELAND ANIMAL ORGANS
 
 /obj/item/weapon/reagent_containers/food/snacks/f13/venomgland
-	name ="Venom Gland"
+	name ="ядовитое жало"
 	desc = "It is a venom gland taken from the end of a venomous and poisonous creature. Probably not good to drink!"
 	icon_state ="venomgland"
 	list_reagents = list("venom" = 35)

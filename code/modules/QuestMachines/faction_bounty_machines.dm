@@ -66,6 +66,37 @@
 					/obj/item/weapon/dildo = 100000
 					)
 
+/*  АНКЛАВ */
+
+/obj/machinery/bounty_machine/faction/enclave
+	name = "Терминал Контрактов"
+	desc = "Этот терминал использует мэр, что бы поддерживать связь с внешним миром."
+	icon_state = "terminal"
+	faction_id = "enclave"
+	quest_type = /datum/bounty_quest/faction/city
+	price_list = list(
+					/obj/item/stack/sheet/metal/five = 850,
+					/obj/item/stack/sheet/glass/five = 750,
+					/obj/effect/spawner/lootdrop/food = 590,
+					/obj/effect/spawner/lootdrop/garbage = 890,
+					/obj/structure/reagent_dispensers/beerkeg = 500,
+					/obj/structure/reagent_dispensers/watertank = 5000,
+					/obj/structure/reagent_dispensers/watertank/high = 9000,
+					/obj/item/weapon/paper_bin = 600,
+					/obj/item/weapon/gun/energy/disabler/compliance_regulator = 4500,
+					/obj/item/weapon/disk/design_disk/f13/schlocket = 2500,
+					/obj/item/weapon/disk/design_disk/f13/dawnshire = 2500,
+					/obj/item/weapon/disk/design_disk/f13/ormed = 3500,
+					/obj/item/weapon/disk/design_disk/f13/vesttec = 3500,
+					/obj/item/weapon/disk/design_disk/f13/greenway = 2600,
+					/obj/item/pizzabox/mushroom = 1900,
+					/obj/item/lockpick/pro = 3400,
+					/obj/item/device/radio/prc = 4500,
+					/obj/item/crafting/weapon_parts/ballistic = 2500,
+					/obj/item/crafting/weapon_parts/energy = 4500,
+					/obj/item/crafting/weapon_parts/plasma = 6500,
+					)
+
 /*
 ================ Mechanics ======================
 */
@@ -116,7 +147,7 @@
 /* Buy item */
 /obj/machinery/bounty_machine/faction/proc/buy(var/item_index, var/mob/user)
 	if(item_index > price_list.len)
-		to_chat(usr, "Wrong item! *beep*")
+		to_chat(usr, "Неверный предмет! *beep*")
 		return
 
 	if(!connected_pod)
@@ -125,10 +156,10 @@
 
 	if(!is_have_access(user))
 		if(free_access)
-			to_chat(usr, "Only faction members can use this machine")
+			to_chat(usr, "Только члены фракции может использовать это.")
 			return
 		else
-			to_chat(usr, "Only faction leader can use this machine")
+			to_chat(usr, "Только лидер фракции может использовать это.")
 			return
 
 	var/target_type = price_list[item_index]
@@ -142,7 +173,7 @@
 		stored_caps -= price_list[target_type]
 
 		// Create item
-		var/atom/NewItem = new target_type(connected_pod.loc)
+		new target_type(connected_pod.loc)
 		to_chat(usr, "Готово. *boop*")
 	else
 		to_chat(usr, "Недостаточно средств.")

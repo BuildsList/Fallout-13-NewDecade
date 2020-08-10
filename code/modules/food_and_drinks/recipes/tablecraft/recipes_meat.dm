@@ -11,6 +11,15 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/kebab/human
 	category = CAT_MEAT
 
+/datum/crafting_recipe/food/geckokebab
+	name = "Шашлык из геккона"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/weapon/reagent_containers/food/snacks/meat/slab/gecko = 2
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/kebab/gecko
+	category = CAT_MEAT
+
 /datum/crafting_recipe/food/kebab
 	name = "Kebab"
 	reqs = list(
@@ -94,6 +103,15 @@
 	category = CAT_MEAT
 
 ////////////////////////////////////////////////MISC RECIPE's////////////////////////////////////////////////
+
+/datum/crafting_recipe/food/wondermeat
+	name = "Чудо-мясо"
+	reqs = list(
+		/obj/item/weapon/reagent_containers/food/snacks/meat/steak/plain/human = 1,
+		/obj/item/crafting/wonderglue = 2
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/wondermeat
+	category = CAT_MEAT
 
 /datum/crafting_recipe/food/cornedbeef
 	name = "Corned beef"

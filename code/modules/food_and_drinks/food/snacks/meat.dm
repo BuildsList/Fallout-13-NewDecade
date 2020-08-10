@@ -207,17 +207,24 @@
 	filling_color = "#854817"
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/slab/radscorpion_meat
-	name = "radscorpion meat"
-	desc = "A slab of radscorpion meat."
+	name = "мясо радскорпиона"
+	desc = "Шмат мяса радскорпиона."
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 2, "bad_food" = 3, "vitamin" = 1)
 	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/radscorpion_meat
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/slab/cazador_meat
-	name = "cazador meat"
-	desc = "A slab of cazador meat."
+	name = "мясо касадора"
+	desc = "Шмат мяса касадора."
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 2, "carpotoxin" = 5, "vitamin" = 2)
+	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/cazador_meat
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/slab/brahmin_liver
+	name = "печень брамина"
+	desc = "Вкуснейшая печень брамина."
+	icon_state = "brahminliver"
+	list_reagents = list("nutriment" = 2, "vitamin" = 6, "toxin" = 5)
 	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/cazador_meat
 
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
