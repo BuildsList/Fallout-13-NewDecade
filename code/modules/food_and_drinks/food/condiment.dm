@@ -36,7 +36,7 @@
 		return 0
 
 	if(M == user)
-		to_chat(M, "<span class='notice'>You swallow some of contents of \the [src].</span>")
+		to_chat(M, "<span class='notice'>Вы проглотили немного содержимого [src].</span>")
 	else
 		user.visible_message("<span class='warning'>[user] пытается напоить [M] из [src].</span>")
 		if(!do_mob(user, M))

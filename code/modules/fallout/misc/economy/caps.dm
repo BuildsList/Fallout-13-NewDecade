@@ -1,4 +1,4 @@
-//Fallout 13 base of Wasteland economics
+//Fallout 13 базовая составляющая экономики пустоши
 
 /obj/item/stack/caps
 	name = "крышки"

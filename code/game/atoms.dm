@@ -23,7 +23,7 @@
 
 	var/list/atom_colours	 //used to store the different colors on an atom
 							//its inherent color, the colored paint applied on it, special color effect etc...
-
+	var/initialized = FALSE
 
 /atom/New()
 	//atom creation method that preloads variables at creation
@@ -33,8 +33,9 @@
 	if(color)
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
 
-	if(SSobj && SSobj.initialized)
-		Initialize(FALSE)
+	var/initialized = SSobj.initialized
+	if(initialized > INITIALIZATION_INSSOBJ)
+		Initialize(initialized == INITIALIZATION_INNEW_MAPLOAD)
 	//. = ..() //uncomment if you are dumb enough to add a /datum/New() proc
 
 /atom/Destroy()
@@ -426,15 +427,16 @@ var/list/blood_splatter_icons = list()
 	sleep(1)
 	stoplag()
 
-//This is called just before maps and objects are initialized, use it to spawn other mobs/objects
-//effects at world start up without causing runtimes
-/atom/proc/spawn_atom_to_world()
-
 //Called after New if the world is not loaded with TRUE
 //Called from base of New if the world is loaded with FALSE
+//This base must be called or derivatives must set initialized to TRUE to prevent repeat calls
+//Derivatives must not sleep
 /atom/proc/Initialize(mapload)
-	set waitfor = 0
-	return
+#ifdef TESTING
+	if(initialized)
+		stack_trace("Warning: [src]([type]) initialized multiple times!")
+#endif
+	initialized = TRUE
 
 //the vision impairment to give to the mob whose perspective is set to that atom (e.g. an unfocused camera giving you an impaired vision when looking through it)
 /atom/proc/get_remote_view_fullscreens(mob/user)

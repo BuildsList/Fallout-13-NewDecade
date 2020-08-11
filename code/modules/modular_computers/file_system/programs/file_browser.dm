@@ -15,7 +15,7 @@
 		return 1
 
 	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.all_components[MC_HDD]
-	var/obj/item/weapon/computer_hardware/hard_drive/RHDD = computer.all_components[MC_HDD]
+	var/obj/item/weapon/computer_hardware/hard_drive/RHDD = computer.all_components[MC_SDD]
 	var/obj/item/weapon/computer_hardware/printer/printer = computer.all_components[MC_PRINT]
 
 	switch(action)
@@ -84,7 +84,7 @@
 			if(F.do_not_edit && (alert("Предупреждение: этот файл не совместим с редактором. Его редактирование может привести к необратимому повреждению данных или нарушению работоспособности. Продолжить?", "Обнаруженна Несовместимость", "Нет", "Да") == "Нет"))
 				return 1
 			// 16384 is the limit for file length in characters. Currently, papers have value of 2048 so this is 8 times as long, since we can't edit parts of the file independently.
-			var/newtext = sanitize(html_decode(input(usr, "Редактирование [open_file]. Вы можете использовать большинство тегов, используемых при написании бумаги::", "Текстовый Редактор", F.stored_data) as message|null), 16384)
+			var/newtext = sanitize(html_decode(input(usr, "Редактирование [open_file]. Вы можете использовать большинство тегов, используемых при написании бумаги::", "Текстовый Редактор", html_decode(F.stored_data)) as message|null), 16384)
 			if(!newtext)
 				return
 			if(F)
@@ -110,7 +110,7 @@
 			if(!printer)
 				error = "Ошибка: на вашем компьютере нет необходимого оборудования для выполнения этой операции."
 				return 1
-			if(!printer.print_text(parse_tags(F.stored_data)))
+			if(!printer.print_text("<font face=\"[computer.emagged ? CRAYON_FONT : PRINTER_FONT]\">" + prepare_printjob(F.stored_data) + "</font>", open_file))
 				error = "Ошибка: нет модуля принтера или бумаги в нём."
 				return 1
 		if("PRG_copytousb")
@@ -137,6 +137,7 @@
 	t = replacetext_char(t, "\[center\]", "<center>")
 	t = replacetext_char(t, "\[/center\]", "</center>")
 	t = replacetext_char(t, "\[br\]", "<BR>")
+	t = replacetext_char(t, "\n", "<BR>")
 	t = replacetext_char(t, "\[b\]", "<B>")
 	t = replacetext_char(t, "\[/b\]", "</B>")
 	t = replacetext_char(t, "\[i\]", "<I>")
@@ -168,8 +169,14 @@
 	t = replacetext_char(t, "\[td\]", "<td>")
 	t = replacetext_char(t, "\[cell\]", "<td>")
 	t = replacetext_char(t, "\[logo\]", "<img src = ntlogo.png>")
+	t = replacetext_char(t, "\[tab\]", "&nbsp;&nbsp;&nbsp;&nbsp;")
 	return t
 
+/datum/computer_file/program/filemanager/proc/prepare_printjob(t) // Additional stuff to parse if we want to print it and make a happy Head of Personnel. Forms FTW.
+	t = parse_tags(t)
+	t = replacetext_char(t, "\[field\]", "<span class=\"paper_field\"></span>")
+	t = replacetext_char(t, "\[sign\]", "<span class=\"paper_field\"></span>")
+	return t
 
 /datum/computer_file/program/filemanager/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = default_state)
 

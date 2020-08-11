@@ -229,6 +229,16 @@
 
 	return t
 
+/obj/item/weapon/paper/proc/reload_fields() // Useful if you made the paper programicly and want to include fields. Also runs updateinfolinks() for you.
+	fields = 0
+	var/laststart = 1
+	while(1)
+		var/i = findtext(info, "<span class=\"paper_field\">", laststart)
+		if(i == 0)
+			break
+		laststart = i+1
+		fields++
+	updateinfolinks()
 
 /obj/item/weapon/paper/proc/openhelp(mob/user)
 	user << browse({"<HTML><meta charset=UTF-8><HEAD><TITLE>Pen Help</TITLE></HEAD>

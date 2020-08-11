@@ -9,6 +9,7 @@
 
 	var/sight_flags = 0
 	var/dark_view = 0
+	var/tint = 0
 	var/eye_color = "fff"
 	var/old_eye_color = "fff"
 	var/flash_protect = 0
@@ -26,6 +27,7 @@
 	if(aug_message && !special)
 		to_chat(owner, "<span class='notice'>[aug_message]</span>")
 
+	M.update_tint()
 	owner.update_sight()
 
 /obj/item/organ/cyberimp/eyes/Remove(var/mob/living/carbon/M, var/special = 0)
@@ -34,6 +36,7 @@
 		var/mob/living/carbon/human/HMN = owner
 		HMN.eye_color = old_eye_color
 		HMN.regenerate_icons()
+	M.update_tint()
 	..()
 
 /obj/item/organ/cyberimp/eyes/emp_act(severity)
@@ -66,6 +69,25 @@
 	dark_view = 8
 	aug_message = "You see prey everywhere you look..."
 
+/obj/item/organ/cyberimp/eyes/flashlight
+	name = "flashlight eyes"
+	desc = "It's two flashlights rigged together with some wire. Why would you put these in someones head?"
+	eye_color ="fee5a3"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "flashlight_eyes"
+	flash_protect = 2
+	tint = INFINITY
+	implant_color = "#FFFF00"
+	aug_message = "You've become a beacon of light, but ironically can see nothing at all."
+
+/obj/item/organ/cyberimp/eyes/flashlight/Insert(var/mob/living/carbon/M, var/special = 0)
+	..()
+	M.set_light(15)
+
+
+/obj/item/organ/cyberimp/eyes/flashlight/Remove(var/mob/living/carbon/M, var/special = 0)
+	M.set_light(-15)
+	..()
 
 // HUD implants
 /obj/item/organ/cyberimp/eyes/hud

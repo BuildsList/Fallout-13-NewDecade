@@ -70,6 +70,7 @@
 	var/faction = "turret" // Same faction mobs will never be shot at, no matter the other settings
 
 	var/datum/effect_system/spark_spread/spark_system	//the spark system, used for generating... sparks?
+	var/obj/machinery/turretid/cp = null
 
 /obj/machinery/porta_turret/New(loc)
 	..()
@@ -142,6 +143,15 @@
 	if(cover)
 		qdel(cover)
 		cover = null
+	base = null
+	if(cp)
+		cp.turrets -= src
+		cp = null
+	if(stored_gun)
+		qdel(stored_gun)
+		stored_gun = null
+	qdel(spark_system)
+	spark_system = null
 	return ..()
 
 
@@ -641,6 +651,10 @@
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
 	power_change() //Checks power and initial settings
 
+/obj/machinery/turretid/Destroy()
+	turrets.Cut()
+	return ..()
+
 /obj/machinery/turretid/Initialize(mapload) //map-placed turrets autolink turrets
 	..()
 	if(!mapload)
@@ -662,6 +676,7 @@
 
 	for(var/obj/machinery/porta_turret/T in control_area)
 		turrets |= T
+		T.cp = src
 
 /obj/machinery/turretid/attackby(obj/item/I, mob/user, params)
 	if(stat & BROKEN) return

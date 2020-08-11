@@ -555,3 +555,19 @@
 	resistance_flags = FIRE_PROOF | UNACIDABLE
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	self_weight = 5
+
+//покраска силовой брони//
+
+/obj/item/pa_paint
+	name = "набор для покраски"
+	desc = "Небольшая коробка кистей и банка краски, этого достаточно чтобы покрасить силовую броню."
+	icon = 'icons/fallout/advanced/modkits.dmi'
+	icon_state = "pa_paint"
+
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/pa_paint))
+		to_chat(user, "Вы достаете кисточку из набора для покраски, макаете её в краску и начинаете красить броню.")
+		if(do_after(user, 50, target = src))
+			icon_state = "mk1_division"
+			to_chat(user, "Покраска брони завершена.")
+			qdel(I)

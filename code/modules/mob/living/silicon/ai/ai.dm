@@ -896,3 +896,6 @@ var/list/ai_list = list()
 	if(!target_ai)
 		target_ai = src //cheat! just give... ourselves as the spawned AI, because that's technically correct
 	..()
+
+/mob/living/silicon/ai/resist()
+	return

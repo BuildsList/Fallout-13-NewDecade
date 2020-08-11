@@ -46,8 +46,11 @@
 	if(stored_card && stored_card2)
 		to_chat(user, "<span class='warning'>You try to insert \the [I] into \the [src], but its slots are occupied.</span>")
 		return FALSE
-	if(user && !user.unEquip(I))
-		return FALSE
+	if(user)
+		if(!user.unEquip(I, src))
+			return FALSE
+	else
+		I.forceMove(src)
 
 	if(!stored_card)
 		stored_card = I

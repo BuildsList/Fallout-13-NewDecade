@@ -110,8 +110,8 @@
 	department_flag = FOB
 	faction = "vault"
 	status = "security"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "смотрителю"
 	selection_color = "#005A20"
 
@@ -162,7 +162,7 @@
 	department_flag = FOB
 	faction = "vault"
 	status = "sciencist"
-	total_positions = 1
+	total_positions = 2
 	spawn_positions = 2
 	supervisors = "смотрителю"
 	selection_color = "#005A20"
