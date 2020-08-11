@@ -223,7 +223,7 @@ mob/proc/set_faction(var/faction)
 	karma = 10
 
 /datum/f13_faction/raider
-	name = "Работорговцы и Рейдеры"
+	name = "Бандиты"
 	full_name = "Банда разнообразного отребья."
 	color = "#804B00"
 	id = "raiders"
@@ -345,7 +345,7 @@ mob/proc/set_faction(var/faction)
 1. Вы - важная часть убежища, без вас, оно быстро придет в негодность!<br>\
 2. Если вы смотритель, не допускайте Пустошь в ваш дом.<br>\
 3. Земля вам пухом.<br>"
-
+/*
 /datum/f13_faction/acolytes
 	name = "Аколиты"
 	color = "#204200"
@@ -355,7 +355,7 @@ mob/proc/set_faction(var/faction)
 	preview_image = 'html/factions/acolytes.png'
 	head_status = "master_atom"
 //	verbs = list(/mob/proc/begin_head_voting)
-
+*/
 //	craft_recipes = list(/datum/table_recipe/den_encryption_key)
 
 /*/datum/f13_faction/coc
