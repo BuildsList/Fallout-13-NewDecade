@@ -188,7 +188,7 @@
 
 //13th Division//
 
-/obj/item/clothing/tie/13thdivisionpatch
+/obj/item/clothing/tie/divisionpatch
 	name = "нашивка 13 дивизии Анклава"
 	desc = "Небольшая нашивка 13-й дивизии Анклава, похоже, это какой-то особый отряд."
 	icon_state = "13thdivision"
