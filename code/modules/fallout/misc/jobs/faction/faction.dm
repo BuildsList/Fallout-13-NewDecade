@@ -234,7 +234,7 @@ mob/proc/set_faction(var/faction)
 	area = /area/f13/raiders
 	karma = -10
 
-/*
+
 /datum/f13_faction/vault
 	name = "Убежище"
 	color = "#005A20"
@@ -252,7 +252,7 @@ mob/proc/set_faction(var/faction)
 2. Если вы смотритель, не допускайте Пустошь в ваш дом.<br>\
 3. Земля вам пухом.<br>"
 //	craft_recipes = list(/datum/table_recipe/vlt_encryption_key)
-*/
+
 /datum/f13_faction/brotherhood
 	name = "Братство"
 	full_name = "Братство Стали"
