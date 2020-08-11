@@ -727,11 +727,11 @@ var/list/preferences_datums = list()
 					random_character()
 			update_preview = 1
 		if("faction_next")
-			choiced_faction_index += 4
+			choiced_faction_index += 3
 			if(choiced_faction_index > parent.allowed_factions.len)
 				choiced_faction_index = 1
 		if("faction_previous")
-			choiced_faction_index -= 4
+			choiced_faction_index -= 3
 			if(choiced_faction_index < 1)
 				choiced_faction_index = parent.allowed_factions.len + 1 - parent.allowed_factions.len % 4
 		if("equip")

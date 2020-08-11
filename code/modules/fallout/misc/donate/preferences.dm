@@ -33,7 +33,7 @@ This proc take soooo much perfomance.. Cause i'm using CHECK_TICK on every step,
 //Data of factions. Taking all available factions of this world and showing them as list (once can show 4 max).
 	var/factions_data
 	if(parent && parent.allowed_factions)
-		for(var/i = choiced_faction_index to choiced_faction_index + 8)
+		for(var/i = choiced_faction_index to choiced_faction_index + 3)
 			if(i > parent.allowed_factions.len)
 				break
 			var/datum/f13_faction/faction = parent.allowed_factions[i]
@@ -147,23 +147,19 @@ This proc take soooo much perfomance.. Cause i'm using CHECK_TICK on every step,
 	var/list/data = list(
 	"saves_data" = "[saves_data]",
 	"r_name" = "[be_random_name ? "Да" : "Нет"]",
-	"e_r_name" = "[be_random_name ? "Yes" : "No"]",
 	"name" = "[real_name]",
 
 	"e_gender" = "[gender == MALE ? "&#9794;Male" : "&#9792;Female"]",
 	"gender" = "[gender == MALE ? "&#9794;Мужчина" : "&#9792;Женщина"]",
 	"age" = "[age]",
 	"r_body" = "[be_random_body ? "Да" : "Нет"]",
-	"e_r_body" = "[be_random_body ? "Yes" : "No"]",
 	"species" = "[pref_species ? pref_species.name : "Human"]",
 	"skin_tone" = "[skin_tone]",
 	"factions_data" = "[factions_data]",
 	"f_id" = "[choiced_faction.id]",
 	"f_name" = "[choiced_faction.full_name]",
 	"f_desc" = "[choiced_faction.description]",
-	"e_head" = "[e_head ? e_head : "Empty"]",
 	"head" = "[e_head ? e_head : "Пусто"]",
-	"e_suit" = "[e_suit ? e_suit : "Empty"]",
 	"suit" = "[e_suit ? e_suit : "Пусто"]",
 	"uniform" = "[e_uniform ? e_uniform : "Пусто"]",
 	"shoes" = "[e_shoes ? e_shoes : "Пусто"]",
