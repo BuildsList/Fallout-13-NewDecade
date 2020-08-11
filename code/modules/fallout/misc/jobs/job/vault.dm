@@ -23,17 +23,15 @@
 	)
 	denied_items = list(
 	/obj/item/clothing/shoes/f13/rag,
-	/obj/item/clothing/head/f13/headscarf,
+	/obj/item/clothing/mask/bandana/f13/headscarf,
 	/obj/item/clothing/head/f13/pot,
 	/obj/item/clothing/under/pants/f13/ghoul,
 	/obj/item/clothing/under/pants/f13/cloth,
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -51,7 +49,7 @@
 
 	id = /obj/item/weapon/card/id/gold
 	glasses = /obj/item/clothing/glasses/sunglasses
-	r_pocket = /obj/item/device/pda/captain
+	r_pocket = /obj/item/clothing/gloves/pda/captain
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
@@ -75,17 +73,15 @@
 	)
 	denied_items = list(
 	/obj/item/clothing/shoes/f13/rag,
-	/obj/item/clothing/head/f13/headscarf,
+	/obj/item/clothing/mask/bandana/f13/headscarf,
 	/obj/item/clothing/head/f13/pot,
 	/obj/item/clothing/under/pants/f13/ghoul,
 	/obj/item/clothing/under/pants/f13/cloth,
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -98,7 +94,7 @@
 	name = "Dweller"
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	id = /obj/item/weapon/card/id
-	r_pocket = /obj/item/device/pda
+	r_pocket = /obj/item/clothing/gloves/pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
 ///security///
@@ -120,17 +116,15 @@
 	required_items = list()
 	denied_items = list(
 	/obj/item/clothing/shoes/f13/rag,
-	/obj/item/clothing/head/f13/headscarf,
+	/obj/item/clothing/mask/bandana/f13/headscarf,
 	/obj/item/clothing/head/f13/pot,
 	/obj/item/clothing/under/pants/f13/ghoul,
 	/obj/item/clothing/under/pants/f13/cloth,
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -143,7 +137,7 @@
 	name = "vault security"
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	id = /obj/item/weapon/card/id
-	belt = /obj/item/device/pda/security
+	belt = /obj/item/clothing/gloves/pda/security
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/riot
@@ -175,17 +169,15 @@
 	)
 	denied_items = list(
 	/obj/item/clothing/shoes/f13/rag,
-	/obj/item/clothing/head/f13/headscarf,
+	/obj/item/clothing/mask/bandana/f13/headscarf,
 	/obj/item/clothing/head/f13/pot,
 	/obj/item/clothing/under/pants/f13/ghoul,
 	/obj/item/clothing/under/pants/f13/cloth,
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -196,7 +188,7 @@
 
 /datum/outfit/job/vltsci
 	name = "Scientist VLT"
-	belt = /obj/item/device/pda/toxins
+	belt = /obj/item/clothing/gloves/pda/toxins
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/weapon/card/id
@@ -222,17 +214,15 @@
 	)
 	denied_items = list(
 	/obj/item/clothing/shoes/f13/rag,
-	/obj/item/clothing/head/f13/headscarf,
+	/obj/item/clothing/mask/bandana/f13/headscarf,
 	/obj/item/clothing/head/f13/pot,
 	/obj/item/clothing/under/pants/f13/ghoul,
 	/obj/item/clothing/under/pants/f13/cloth,
 	/obj/item/clothing/under/pants/f13/caravan,
 	/obj/item/clothing/under/f13/rag,
 	/obj/item/clothing/under/f13/tribal,
-	/obj/item/clothing/under/f13/female/tribal,
 	/obj/item/clothing/under/f13/settler,
 	/obj/item/clothing/under/f13/brahmin,
-	/obj/item/clothing/under/f13/female/brahmin,
 	/obj/item/clothing/under/f13/worn,
 	/obj/item/clothing/suit/f13/mantle_liz
 	)
@@ -245,7 +235,7 @@
 	name = "Engineer VLT"
 	satchel = /obj/item/weapon/storage/backpack/satchel/eng
 	head = /obj/item/clothing/head/hardhat/dblue
-	r_pocket = /obj/item/device/pda/engineering
+	r_pocket = /obj/item/clothing/gloves/pda/engineering
 	id = /obj/item/weapon/card/id
 	belt = /obj/item/weapon/storage/belt/utility/full
 	uniform = /obj/item/clothing/under/f13/vault/v113
