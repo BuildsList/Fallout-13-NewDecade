@@ -183,3 +183,13 @@
 	icon_state = "talisman"
 	item_color = "talisman"
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 20, bio = 20, rad = 5, fire = 0, acid = 25)
+
+///ENCLAVE ACCESSORIES///
+
+//13th Division//
+
+/obj/item/clothing/tie/13thdivisionpatch
+	name = "нашивка 13 дивизии Анклава"
+	desc = "Небольшая нашивка 13-й дивизии Анклава, похоже, это какой-то особый отряд."
+	icon_state = "13thdivision"
+	item_color = "13thdivision"
