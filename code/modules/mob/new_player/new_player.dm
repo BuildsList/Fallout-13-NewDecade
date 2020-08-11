@@ -30,13 +30,13 @@
 	if(!ticker || ticker.current_state <= GAME_STATE_PREGAME)
 		if(ready)
 			output += "<p>\[ <b>Готов</b> | <a href='byond://?src=\ref[src];ready=0'>Не готов</a> \]</p>"
-			output += "<p><a href='byond://?src=\ref[src];show_content=1'>Купить контент!</a></p>"
+			output += "<p><a href='byond://?src=\ref[src];show_content=1'>Атомный магазин!</a></p>"
 		else
 			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Готов</a> | <b>Не готов</b> \]</p>"
 			output += "<p><a href='byond://?src=\ref[src];show_content=1'>Атомный магазин!</a></p>"
 	else
 		output += "<p><a href='byond://?src=\ref[src];late_join=1'>Присоедениться!</A></p>"
-		output += "<p><a href='byond://?src=\ref[src];show_content=1'>Купить контент!</a></p>"
+		output += "<p><a href='byond://?src=\ref[src];show_content=1'>Атомный магазин!</a></p>"
 
 
 /*

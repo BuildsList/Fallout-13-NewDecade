@@ -33,7 +33,7 @@ This proc take soooo much perfomance.. Cause i'm using CHECK_TICK on every step,
 //Data of factions. Taking all available factions of this world and showing them as list (once can show 4 max).
 	var/factions_data
 	if(parent && parent.allowed_factions)
-		for(var/i = choiced_faction_index to choiced_faction_index + 2)
+		for(var/i = choiced_faction_index to choiced_faction_index + 3)
 			if(i > parent.allowed_factions.len)
 				break
 			var/datum/f13_faction/faction = parent.allowed_factions[i]

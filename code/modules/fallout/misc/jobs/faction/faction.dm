@@ -329,7 +329,7 @@ mob/proc/set_faction(var/faction)
 	head_status = "leader"
 	area = /area/f13/followers
 	karma = 10
-/*
+
 /datum/f13_faction/vault
 	name = "Убежище"
 	color = "#005A20"
@@ -338,14 +338,14 @@ mob/proc/set_faction(var/faction)
 	description = "<b>Предназначение: Истинниые нейтралы</b><br>The Vault-Tec Corporation, or simply the VTC - A former company contracted by the United States government before the Great War to design and produce the Vault system, a vast network of complex fallout and research shelters.<br>When the bombs fell, thousands of carefully-selected Vault dwellers were sealed within the safe confinement of the Vaults, and their lucky descendants have (mostly) lived to the present day."
 	preview_image = 'html/factions/vault.png'
 	head_status = "overseer"
-	verbs = list(/mob/proc/begin_head_voting)
+	//verbs = list(/mob/proc/begin_head_voting)
 	area = /area/f13/vault
 	karma = 15
 	welcome_text = "Your current objectives are:<br>\
 1. Вы - важная часть убежища, без вас, оно быстро придет в негодность!<br>\
 2. Если вы смотритель, не допускайте Пустошь в ваш дом.<br>\
 3. Земля вам пухом.<br>"
-*/
+
 /datum/f13_faction/acolytes
 	name = "Аколиты"
 	color = "#204200"
