@@ -244,7 +244,7 @@ mob/proc/set_faction(var/faction)
 	preview_image = 'html/factions/vault.png'
 	head_status = "overseer"
 	flags = HAVE_FREQ
-	verbs = list(/mob/proc/begin_head_voting)
+//	verbs = list(/mob/proc/begin_head_voting)
 	area = /area/f13/vault
 	karma = 15
 	welcome_text = "Ваши текущие задачи:<br>\
