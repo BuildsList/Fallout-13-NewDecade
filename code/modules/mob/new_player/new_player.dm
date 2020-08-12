@@ -39,10 +39,10 @@
 		output += "<p><a href='byond://?src=\ref[src];show_content=1'>Атомный магазин!</a></p>"
 
 
-/*
+
 	if(client && client.holder)
 		output += "<p><a href='byond://?src=\ref[src];observe=1'>Наблюдать</A></p>"
-*/
+
 
 
 	if(!IsGuestKey(src.key))
