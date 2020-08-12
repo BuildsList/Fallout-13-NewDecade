@@ -1063,12 +1063,13 @@ window "statwindow"
 		size = 636x430
 		anchor1 = 0,0
 		anchor2 = 100,100
-		font-family = "Monofonto"
+		font-family = "monospace,Monofonto"
 		text-color = #66ff66
 		background-color = #292929
 		is-default = true
 		saved-params = ""
+		highlight-color = #66ff66
 		tab-text-color = #66ff66
 		tab-background-color = #3c4438
-		tab-font-family = "Monofonto"
+		tab-font-family = "monospace,Monofonto"
 
