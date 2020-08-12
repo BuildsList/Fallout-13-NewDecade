@@ -840,7 +840,7 @@ menu "menu"
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 219,0
+		pos = 281,0
 		size = 640x440
 		anchor1 = none
 		anchor2 = none
@@ -849,6 +849,8 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
+		outer-size = 656x498
+		inner-size = 640x459
 	elem "split"
 		type = CHILD
 		pos = 3,0
@@ -876,9 +878,10 @@ window "mainwindow"
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
-		command = ".winset \"say.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
+		command = ".winset \"say.is-checked=true ? input.command=\"!Говорить \\\"\" : input.command=\""
 		is-flat = true
 		button-type = pushbox
 	elem "asset_cache_browser"
@@ -887,6 +890,7 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
@@ -895,6 +899,7 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 
