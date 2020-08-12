@@ -4,7 +4,7 @@
 	name = "ghoul"
 	id = "ghoul"
 	limbs_id = "ghoul"
-	say_mod = "growls"
+	say_mod = "рыкает"
 	roundstart = 1
 	armor = -30
 	speedmod = 0.5
