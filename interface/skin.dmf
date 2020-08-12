@@ -60,54 +60,6 @@ macro "default"
 		name = "CTRL+4"
 		command = "a-intent harm"
 	elem 
-		name = "CTRL+A+REP"
-		command = ".moveleft"
-	elem 
-		name = "CTRL+B"
-		command = "resist"
-	elem 
-		name = "C"
-		command = "Wield"
-	elem 
-		name = "CTRL+D+REP"
-		command = ".moveright"
-	elem 
-		name = "CTRL+E"
-		command = "quick-equip"
-	elem 
-		name = "CTRL+F"
-		command = "a-intent left"
-	elem 
-		name = "CTRL+G"
-		command = "a-intent right"
-	elem 
-		name = "CTRL+H"
-		command = "talk-wheel"
-	elem 
-		name = "CTRL+O"
-		command = "ooc"
-	elem 
-		name = "CTRL+Q"
-		command = ".northwest"
-	elem 
-		name = "CTRL+R"
-		command = ".southwest"
-	elem 
-		name = "CTRL+S+REP"
-		command = ".movedown"
-	elem 
-		name = "CTRL+W+REP"
-		command = ".moveup"
-	elem 
-		name = "CTRL+X"
-		command = ".northeast"
-	elem 
-		name = "CTRL+Y"
-		command = "Activate-Held-Object"
-	elem 
-		name = "CTRL+Z"
-		command = "Activate-Held-Object"
-	elem 
 		name = "CTRL+Numpad1"
 		command = "body-r-leg"
 	elem 
@@ -142,13 +94,13 @@ macro "default"
 		command = ".screenshot"
 	elem 
 		name = "F3"
-		command = "say"
+		command = "говорить"
 	elem 
 		name = "F4"
 		command = "looc"
 	elem 
 		name = "F5"
-		command = "me"
+		command = "действие"
 	elem 
 		name = "F6"
 		command = "Admin-PM"
