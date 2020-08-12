@@ -60,6 +60,54 @@ macro "default"
 		name = "CTRL+4"
 		command = "a-intent harm"
 	elem 
+		name = "CTRL+A+REP"
+		command = ".moveleft"
+	elem 
+		name = "CTRL+B"
+		command = "resist"
+	elem 
+		name = "C"
+		command = "Wield"
+	elem 
+		name = "CTRL+D+REP"
+		command = ".moveright"
+	elem 
+		name = "CTRL+E"
+		command = "quick-equip"
+	elem 
+		name = "CTRL+F"
+		command = "a-intent left"
+	elem 
+		name = "CTRL+G"
+		command = "a-intent right"
+	elem 
+		name = "CTRL+H"
+		command = "talk-wheel"
+	elem 
+		name = "CTRL+O"
+		command = "ooc"
+	elem 
+		name = "CTRL+Q"
+		command = ".northwest"
+	elem 
+		name = "CTRL+R"
+		command = ".southwest"
+	elem 
+		name = "CTRL+S+REP"
+		command = ".movedown"
+	elem 
+		name = "CTRL+W+REP"
+		command = ".moveup"
+	elem 
+		name = "CTRL+X"
+		command = ".northeast"
+	elem 
+		name = "CTRL+Y"
+		command = "Activate-Held-Object"
+	elem 
+		name = "CTRL+Z"
+		command = "Activate-Held-Object"
+	elem 
 		name = "CTRL+Numpad1"
 		command = "body-r-leg"
 	elem 
@@ -94,13 +142,13 @@ macro "default"
 		command = ".screenshot"
 	elem 
 		name = "F3"
-		command = "Говорить"
+		command = "say"
 	elem 
 		name = "F4"
 		command = "looc"
 	elem 
 		name = "F5"
-		command = "действие"
+		command = "me"
 	elem 
 		name = "F6"
 		command = "Admin-PM"
@@ -199,6 +247,105 @@ macro "hotkeys"
 	elem 
 		name = "CTRL+4"
 		command = "a-intent harm"
+	elem 
+		name = "A+REP"
+		command = ".moveleft"
+	elem 
+		name = "CTRL+A+REP"
+		command = ".moveleft"
+	elem 
+		name = "B"
+		command = "resist"
+	elem 
+		name = "CTRL+B"
+		command = "resist"
+	elem 
+		name = "C"
+		command = "Wield"
+	elem 
+		name = "D+REP"
+		command = ".moveright"
+	elem 
+		name = "CTRL+D+REP"
+		command = ".moveright"
+	elem 
+		name = "E"
+		command = "quick-equip"
+	elem 
+		name = "CTRL+E"
+		command = "quick-equip"
+	elem 
+		name = "F"
+		command = "a-intent left"
+	elem 
+		name = "CTRL+F"
+		command = "a-intent left"
+	elem 
+		name = "G"
+		command = "a-intent right"
+	elem 
+		name = "CTRL+G"
+		command = "a-intent right"
+	elem 
+		name = "H"
+		command = "talk-wheel"
+	elem 
+		name = "CTRL+H"
+		command = "talk-wheel"
+	elem 
+		name = "M"
+		command = "me"
+	elem 
+		name = "O"
+		command = "ooc"
+	elem 
+		name = "CTRL+O"
+		command = "ooc"
+	elem 
+		name = "Q"
+		command = ".northwest"
+	elem 
+		name = "CTRL+Q"
+		command = ".northwest"
+	elem 
+		name = "R"
+		command = ".southwest"
+	elem 
+		name = "CTRL+R"
+		command = ".southwest"
+	elem "s_key"
+		name = "S+REP"
+		command = ".movedown"
+	elem 
+		name = "CTRL+S+REP"
+		command = ".movedown"
+	elem 
+		name = "T"
+		command = "say"
+	elem "w_key"
+		name = "W+REP"
+		command = ".moveup"
+	elem 
+		name = "CTRL+W+REP"
+		command = ".moveup"
+	elem 
+		name = "X"
+		command = ".northeast"
+	elem 
+		name = "CTRL+X"
+		command = ".northeast"
+	elem 
+		name = "Y"
+		command = "Activate-Held-Object"
+	elem 
+		name = "CTRL+Y"
+		command = "Activate-Held-Object"
+	elem 
+		name = "Z"
+		command = "Activate-Held-Object"
+	elem 
+		name = "CTRL+Z"
+		command = "Activate-Held-Object"
 	elem 
 		name = "Numpad1"
 		command = "body-r-leg"
@@ -682,7 +829,7 @@ menu "menu"
 		command = ".quit"
 		category = "&File"
 		saved-params = "is-checked"
-	elem "iconzz"
+	elem 
 		name = "&Icons"
 		command = ""
 		saved-params = "is-checked"
@@ -741,8 +888,8 @@ menu "menu"
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 281,0
-		size = 640x459
+		pos = 219,0
+		size = 640x440
 		anchor1 = none
 		anchor2 = none
 		background-color = #3c4438
@@ -753,7 +900,7 @@ window "mainwindow"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x436
+		size = 634x417
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #3c4438
@@ -763,7 +910,7 @@ window "mainwindow"
 		is-vert = true
 	elem "input"
 		type = INPUT
-		pos = 5,439
+		pos = 5,420
 		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
@@ -773,7 +920,7 @@ window "mainwindow"
 		saved-params = "command"
 	elem "say"
 		type = BUTTON
-		pos = 600,439
+		pos = 600,420
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
@@ -796,14 +943,13 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = none
 		anchor2 = none
-		background-color = #0000ff
 		is-visible = false
 		saved-params = ""
 
 window "mapwindow"
 	elem "mapwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -860,8 +1006,8 @@ window "infowindow"
 		size = 624x20
 		anchor1 = 1,1
 		anchor2 = 100,1
-		font-family = "Monofonto,Fallout Regular,Verdana"
-		text-color = #66ff66
+		font-family = "Verdana"
+		text-color = #ffffff
 		background-color = #3c4438
 		border = line
 		saved-params = "is-checked"
@@ -871,11 +1017,11 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x453
 		anchor1 = none
 		anchor2 = none
-		background-color = #3c4438
+		background-color = #747a70
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -898,7 +1044,7 @@ window "statwindow"
 	elem "statwindow"
 		type = MAIN
 		pos = 281,0
-		size = 1210x452
+		size = 640x480
 		anchor1 = none
 		anchor2 = none
 		background-color = #3c4438
@@ -909,134 +1055,20 @@ window "statwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		can-scroll = vertical
 		transparent-color = #ffffff
-	elem "vobelapki"
-		type = BUTTON
-		pos = 1032,408
-		size = 160x36
-		anchor1 = 85,90
-		anchor2 = 99,98
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "СХВАТИТЬСЯ ЗА ПРЕДМЕТ"
-		command = "Схватить"
-	elem "zadachi"
-		type = BUTTON
-		pos = 1032,360
-		size = 160x36
-		anchor1 = 85,80
-		anchor2 = 99,88
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ЛИЧНЫЕ ЗАДАЧИ"
-		command = "Задачи"
-	elem "adminsuka"
-		type = BUTTON
-		pos = 1032,312
-		size = 160x36
-		anchor1 = 85,69
-		anchor2 = 99,77
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ПОМОЩЬ АДМИНА"
-		command = "adminhelp"
-	elem "whispersuka"
-		type = BUTTON
-		pos = 1032,168
-		size = 160x36
-		anchor1 = 85,37
-		anchor2 = 99,45
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ШЕПТАТЬ"
-		command = "Шептать"
-	elem "restsuka"
-		type = BUTTON
-		pos = 1032,264
-		size = 160x36
-		anchor1 = 85,58
-		anchor2 = 99,66
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "СПАТЬ"
-		command = "Спать"
-	elem "oocbutton"
-		type = BUTTON
-		pos = 1032,216
-		size = 160x36
-		anchor1 = 85,48
-		anchor2 = 99,56
-		font-family = "Monofonto"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ЧАТ"
-		command = "OOC"
-	elem "govorit"
-		type = BUTTON
-		pos = 1032,72
-		size = 160x36
-		anchor1 = 85,16
-		anchor2 = 99,24
-		font-family = "Monofonto,Fallout Regular"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ГОВОРИТЬ"
-		command = "Говорить"
-		stretch = true
-	elem "deistvie"
-		type = BUTTON
-		pos = 1032,120
-		size = 160x36
-		anchor1 = 85,27
-		anchor2 = 99,35
-		font-family = "Monofonto,Fallout Regular"
-		text-color = #66ff66
-		background-color = #292929
-		is-default = true
-		border = sunken
-		saved-params = "is-checked"
-		text = "ДЕЙСТВИЕ"
-		command = "Действие"
+		outer-size = 654x494
 	elem "stat"
 		type = INFO
-		pos = 16,8
-		size = 1008x440
-		anchor1 = 1,2
-		anchor2 = 85,99
-		font-family = "Monofonto,Verdana"
+		pos = 0,0
+		size = 636x430
+		anchor1 = 0,0
+		anchor2 = 100,100
+		font-family = "Monofonto"
 		text-color = #66ff66
 		background-color = #292929
 		is-default = true
 		saved-params = ""
-		highlight-color = #ffffcc
 		tab-text-color = #66ff66
-		tab-background-color = #111111
-		tab-font-family = "Monofonto,Verdana"
+		tab-background-color = #3c4438
+		tab-font-family = "Monofonto"
 
