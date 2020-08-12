@@ -1015,7 +1015,7 @@ window "statwindow"
 		size = 636x430
 		anchor1 = 0,0
 		anchor2 = 100,100
-		font-family = "Arial,monospace,Monofonto"
+		font-family = "Verdana"
 		text-color = #66ff66
 		background-color = #292929
 		is-default = true
@@ -1023,5 +1023,5 @@ window "statwindow"
 		highlight-color = #ffff99
 		tab-text-color = #66ff66
 		tab-background-color = #3c4438
-		tab-font-family = "monospace,Monofonto"
+		tab-font-family = "Verdana,Arial"
 
