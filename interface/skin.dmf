@@ -94,13 +94,13 @@ macro "default"
 		command = ".screenshot"
 	elem 
 		name = "F3"
-		command = "говорить"
+		command = "Говорить"
 	elem 
 		name = "F4"
-		command = "looc"
+		command = "Действие"
 	elem 
 		name = "F5"
-		command = "действие"
+		command = "looc"
 	elem 
 		name = "F6"
 		command = "Admin-PM"
@@ -333,13 +333,13 @@ macro "hotkeys"
 		command = ".screenshot"
 	elem 
 		name = "F3"
-		command = "looc"
+		command = "Говорить"
 	elem 
 		name = "F4"
-		command = "say"
+		command = "Действие"
 	elem 
 		name = "F5"
-		command = "me"
+		command = "looc"
 	elem 
 		name = "F6"
 		command = "Admin-PM"
@@ -1015,7 +1015,7 @@ window "statwindow"
 		size = 636x430
 		anchor1 = 0,0
 		anchor2 = 100,100
-		font-family = "monospace,Monofonto"
+		font-family = "Arial,monospace,Monofonto"
 		text-color = #66ff66
 		background-color = #292929
 		is-default = true
