@@ -149,7 +149,6 @@ This proc take soooo much perfomance.. Cause i'm using CHECK_TICK on every step,
 	"r_name" = "[be_random_name ? "Да" : "Нет"]",
 	"name" = "[real_name]",
 
-	"e_gender" = "[gender == MALE ? "&#9794;Male" : "&#9792;Female"]",
 	"gender" = "[gender == MALE ? "&#9794;Мужчина" : "&#9792;Женщина"]",
 	"age" = "[age]",
 	"r_body" = "[be_random_body ? "Да" : "Нет"]",

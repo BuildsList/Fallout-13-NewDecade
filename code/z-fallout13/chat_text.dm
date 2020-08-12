@@ -6,34 +6,34 @@ GLOBAL_VAR_INIT(chat_bubbles, FALSE)
   * Converts a color from HSV space to RGB
   *
   * Arguments:
-  * * bruh - Hue of color
-  * * bruh2 - Saturation of color
-  * * bruh3 - Value of color
+  * * Hue - Hue of color
+  * * Sat - Saturation of color
+  * * Val - Value of color
   */
-/proc/hsv2rgb(var/bruh, var/bruh2, var/bruh3)
+/proc/hsv2rgb(var/Hue, var/Sat, var/Val)
 	val *= 255
-	if(bruh2 <= 0)
-		return rgb(bruh3, bruh3, bruh3)
-	bruh3 %= 360
-	bruh3 /= 60
+	if(Sat <= 0)
+		return rgb(Val, Val, Val)
+	Val %= 360
+	Val /= 60
 	var/i = round(bruh)
-	var/f = bruh - i
-	var/p = bruh3 * (1 - bruh2)
-	var/q = bruh3 * (1 - bruh2 * f)
-	var/t = bruh3 * (1 - bruh2 * (1 - f))
+	var/f = Hue - i
+	var/p = Val * (1 - Sat)
+	var/q = Val * (1 - Sat * f)
+	var/t = Val * (1 - Sat * (1 - f))
 	switch(i)
 		if(0)
-			return rgb(bruh3, t, p)
+			return rgb(Val, t, p)
 		if(1)
-			return rgb(q, bruh3, p)
+			return rgb(q, Val, p)
 		if(2)
-			return rgb(p, bruh3, t)
+			return rgb(p, Val, t)
 		if(3)
-			return rgb(p, q, bruh3)
+			return rgb(p, q, Val)
 		if(4)
-			return rgb(t, p, bruh3)
+			return rgb(t, p, Val)
 		else
-			return rgb(bruh3, p, q)
+			return rgb(Val, p, q)
 
 /mob/living
 	// Vars used for Runescape-Style Chat
