@@ -111,28 +111,28 @@ Admin:
 	//h = talk-wheel has a nonsense tag in it because \th is an escape sequence in BYOND.
 	var/hotkey_mode = {"<font color='purple'>
 Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = drop
-\te = equip
-\tr = throw
-\tm = me
-\tt = say
+\tTAB = включить режим хоткея
+\ta = влево
+\ts = вниз
+\td = вправо
+\tw = вверх
+\tq = выкинуть
+\te = экипировать
+\tr = кинуть
+\tm = действие
+\tt = говорить
 \t<B></B>h = talk-wheel
 \to = OOC
-\tb = resist
-\tx = swap-hand
-\tz = activate held object (or y)
+\tb = сопротивляться
+\tx = сменить руку
+\tz = активировать предмет в руке (или y)
 \tf = cycle-intents-left
 \tg = cycle-intents-right
 \t1 = help-intent
 \t2 = disarm-intent
 \t3 = grab-intent
 \t4 = harm-intent
-\tNumpad = Body target selection (Press 8 repeatedly for Head->Eyes->Mouth)
+\tNumpad = выбор части тела (Жмите 8 для выбора Головы->Глаз->Рта)
 </font>"}
 
 	var/other = {"<font color='purple'>
