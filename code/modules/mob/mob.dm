@@ -256,7 +256,8 @@ var/next_mob_id = 0
 		update_sight()
 		if(client.eye != src)
 			var/atom/AT = client.eye
-			AT.get_remote_view_fullscreens(src)
+			if(AT)
+				AT.get_remote_view_fullscreens(src)
 		else
 			clear_fullscreen("remote_view", 0)
 		update_pipe_vision()
@@ -429,8 +430,8 @@ var/next_mob_id = 0
 		to_chat(usr, "<span class='boldnotice'>Вы должны умереть чтобы использовать это!</span>")
 		return
 
-	if(world.time - src.timeofdeath < 120)
-		to_chat(usr, "<span class='boldnotice'>Рано,должно пройти 2 минуты! Прошло: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
+	if(world.time - src.timeofdeath < 6000)
+		to_chat(usr, "<span class='boldnotice'>Рано,должно пройти 60 секунд! Прошло: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
 		return
 
 	if(jobban_isbanned(src, "labor"))
@@ -636,6 +637,9 @@ var/next_mob_id = 0
 		return 0
 	if(restrained())
 		return 0
+	// Apparently clicking also needs facing.
+	//if(dir_change_lock)
+	//	return 0
 	return 1
 
 
@@ -676,7 +680,6 @@ var/next_mob_id = 0
 		if(layer == LYING_MOB_LAYER || layer == CRAWLING_LAYER)
 			layer = initial(layer)
 	update_transform()
-	update_vision_cone()
 	update_action_buttons_icon(status_only=TRUE)
 	if(isliving(src))
 		var/mob/living/L = src
@@ -698,7 +701,6 @@ var/next_mob_id = 0
 	if(!canface())
 		return 0
 	setDir(EAST)
-	update_vision_cone()
 	client.move_delay += movement_delay()
 	return 1
 
@@ -708,7 +710,6 @@ var/next_mob_id = 0
 	if(!canface())
 		return 0
 	setDir(WEST)
-	update_vision_cone()
 	client.move_delay += movement_delay()
 	return 1
 
@@ -718,7 +719,6 @@ var/next_mob_id = 0
 	if(!canface())
 		return 0
 	setDir(NORTH)
-	update_vision_cone()
 	client.move_delay += movement_delay()
 	return 1
 
@@ -728,7 +728,6 @@ var/next_mob_id = 0
 	if(!canface())
 		return 0
 	setDir(SOUTH)
-	update_vision_cone()
 	client.move_delay += movement_delay()
 	return 1
 

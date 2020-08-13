@@ -30,7 +30,7 @@ var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/mornin
 	var/list/currentrun_lights
 	var/list/currentrun_corners
 	var/list/currentrun_overlays
-	var/list/sunlighting_planes
+	var/list/obj/screen/plane_master/lighting/sunlighting_planes = list()
 
 	var/datum/time_of_day/current_step_datum
 	var/datum/time_of_day/next_step_datum
@@ -118,8 +118,21 @@ var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/mornin
 	update_color()
 
 	if (resuming_stage == 0 || !resumed)
-		currentrun_lights   = sunlighting_update_lights
-		sunlighting_update_lights   = list()
+		// I'm pretty sure that instead of grabbing 30 items per tile affected by sunlight and running a long ass
+		// set of procs through them is really expensive.
+		// Let's see if grabbing just SOME of those items at a time is enough.
+		if(sunlighting_update_lights.len > 50)
+			currentrun_lights   = sunlighting_update_lights.Copy(1,50)
+			sunlighting_update_lights.Cut(1,50)
+		else
+			currentrun_lights   = sunlighting_update_lights.Copy()
+			sunlighting_update_lights.Cut()
+
+		//if(sunlighting_update_lights && currentrun_lights)
+		//	message_admins("There are these many lights [sunlighting_update_lights.len] and we're gonna update these [currentrun_lights.len]" )
+		//else
+		//	return
+		//sunlighting_update_lights   = list()
 
 		resuming_stage = STAGE_SOURCES
 
@@ -143,8 +156,18 @@ var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/mornin
 			return
 
 	if (resuming_stage == STAGE_SOURCES || !resumed)
-		currentrun_corners  = sunlighting_update_corners
-		sunlighting_update_corners  = list()
+		//currentrun_corners  = sunlighting_update_corners
+		//sunlighting_update_corners  = list()
+
+		if(sunlighting_update_corners.len > 50)
+			currentrun_corners   = sunlighting_update_corners.Copy(1,50)
+			sunlighting_update_corners.Cut(1,50)
+		else
+			currentrun_corners   = sunlighting_update_corners.Copy()
+			sunlighting_update_corners.Cut()
+
+		//if(sunlighting_update_corners && currentrun_corners)
+		//	message_admins("There are these many corners [sunlighting_update_corners.len] and we're gonna update these [currentrun_corners.len]" )
 
 		resuming_stage = STAGE_CORNERS
 
@@ -159,7 +182,6 @@ var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/mornin
 
 	if (resuming_stage == STAGE_CORNERS || !resumed)
 		currentrun_overlays = sunlighting_update_overlays.Copy()
-
 		resuming_stage = STAGE_OVERLAYS
 
 	while (currentrun_overlays.len)

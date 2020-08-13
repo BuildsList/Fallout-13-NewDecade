@@ -21,7 +21,6 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-
 	actions_types = list(/datum/action/item_action/toggle/pa_cell, /datum/action/item_action/toggle/pa_toggle)
 
 	var/obj/item/weapon/stock_parts/cell/power_cell = null
@@ -31,11 +30,13 @@
 	var/current_power_usage = null
 	var/enabled = FALSE
 	var/footstep = 1
+	special_defence = PREVENTDISMEMBER
 
-/obj/item/clothing/suit/proc/step_action()
+/obj/item/clothing/suit/armor/f13/power_armor/proc/step_action()
 
 /obj/item/clothing/suit/armor/f13/power_armor/step_action()
-	if(footstep > 1)
+	var/turf/open/t_loc = get_turf(src)
+	if(istype(t_loc))
 		playsound(src, "servostep", 50, 1)
 		footstep = 0
 	else

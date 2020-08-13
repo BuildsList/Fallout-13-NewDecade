@@ -25,7 +25,7 @@
 					. += 10
 
 				if(!perks.have(/datum/perk_hidden/powerArmor))
-					. += 7
+					. += 10
 				else if(H.special.getPoint("a") < 8 && H.special.getPoint("s") < 9)
 					. += 4
 		/*

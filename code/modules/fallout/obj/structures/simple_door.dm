@@ -109,9 +109,11 @@
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
-		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+		for(var/obj/structure/barricade/wooden/planks/P in locate(src.x,src.y,src.z))
 			P.attackby(I, user, params)
 			return 1
+	else
+		return
 	if(istype(I, /obj/item/weapon/screwdriver) && can_disasemble && do_after(user, 5, target = src))
 		if(padlock)
 			to_chat(user, "<span class='warning'>Remove padlock before door dissasembling.</span>")
@@ -167,9 +169,9 @@
 		return 0
 	if(isliving(user))
 		var/mob/living/M = user
-		if(/obj/structure/barricade in src.loc)
-			M << "Не двигается!"
-			return 0
+		for(var/obj/structure/barricade/wooden/planks/P in locate(src.x,src.y,src.z))
+			to_chat(user, "<span class='warning'>Не сдвигаемо!</span>")
+			return
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M

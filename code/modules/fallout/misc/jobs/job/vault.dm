@@ -47,7 +47,7 @@
 /datum/outfit/job/overseer
 	name = "Overseer"
 
-	id = /obj/item/weapon/card/id/gold
+	id = /obj/item/weapon/card/id/vault
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/clothing/gloves/pda/captain
 	uniform = /obj/item/clothing/under/f13/vault/v113
@@ -93,7 +93,7 @@
 /datum/outfit/job/dweller
 	name = "Dweller"
 	uniform = /obj/item/clothing/under/f13/vault/v113
-	id = /obj/item/weapon/card/id
+	id = /obj/item/weapon/card/id/vault
 	r_pocket = /obj/item/clothing/gloves/pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
@@ -136,7 +136,7 @@
 /datum/outfit/job/vltsec
 	name = "vault security"
 	uniform = /obj/item/clothing/under/f13/vault/v113
-	id = /obj/item/weapon/card/id
+	id = /obj/item/weapon/card/id/vault
 	belt = /obj/item/clothing/gloves/pda/security
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/color/black
@@ -191,7 +191,7 @@
 	belt = /obj/item/clothing/gloves/pda/toxins
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/laceup
-	id = /obj/item/weapon/card/id
+	id = /obj/item/weapon/card/id/vault
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 
 /datum/job/vlteng
@@ -236,7 +236,7 @@
 	satchel = /obj/item/weapon/storage/backpack/satchel/eng
 	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/clothing/gloves/pda/engineering
-	id = /obj/item/weapon/card/id
+	id = /obj/item/weapon/card/id/vault
 	belt = /obj/item/weapon/storage/belt/utility/full
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/workboots

@@ -170,7 +170,7 @@
 	id = "milk"
 	description = "An opaque white liquid produced by the mammary glands of mammals."
 	color = "#DFDFDF" // rgb: 223, 223, 223
-	water_factor = 1 * REAGENTS_METABOLISM
+	water_factor = 4 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() && prob(20))
@@ -189,7 +189,7 @@
 	id = "soymilk"
 	description = "An opaque white liquid made from soybeans."
 	color = "#DFDFC7" // rgb: 223, 223, 199
-	water_factor = 1 * REAGENTS_METABOLISM
+	water_factor = 4 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/soymilk/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() && prob(20))
@@ -202,7 +202,7 @@
 	id = "cream"
 	description = "The fatty, still liquid part of milk. Why don't you mix this with sum scotch, eh?"
 	color = "#DFD7AF" // rgb: 223, 215, 175
-	water_factor = 1 * REAGENTS_METABOLISM
+	water_factor = 3 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/cream/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() && prob(20))
@@ -217,7 +217,7 @@
 	color = "#482000" // rgb: 72, 32, 0
 	nutriment_factor = 0
 	overdose_threshold = 80
-	water_factor = 1 * REAGENTS_METABOLISM
+	water_factor = 5 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/M)
 	M.Jitter(5)
@@ -240,7 +240,7 @@
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
 	color = "#101000" // rgb: 16, 16, 0
 	nutriment_factor = 0
-	water_factor = 1 * REAGENTS_METABOLISM
+	water_factor = 5 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/M)
 	M.dizziness = max(0,M.dizziness-2)

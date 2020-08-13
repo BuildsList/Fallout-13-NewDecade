@@ -103,6 +103,7 @@
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 80
 	put_on_delay = 60
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
@@ -402,7 +403,7 @@
 	icon_state = "stealth_hans"
 	item_state = "stealthsuit"
 	armor = list(melee = 15, bullet = 15, laser = 15,energy = 15, bomb = 30, bio = 40, rad = 60, fire = 100, acid = 100)
-
+	special_defence = PREVENTDISMEMBER
 
 //All of the armor below is mostly unused
 
@@ -421,6 +422,7 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	armor = list(melee = 80, bullet = 80, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100, fire = 90, acid = 90)
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/heavy
 	name = "heavy armor"
@@ -434,6 +436,7 @@
 	slowdown = 3
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list(melee = 80, bullet = 80, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100, fire = 90, acid = 90)
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/tdome
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -442,15 +445,18 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 80, bullet = 80, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100, fire = 90, acid = 90)
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/tdome/red
 	name = "thunderdome suit"
 	desc = "Reddish armor."
 	icon_state = "tdred"
 	item_state = "tdred"
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/tdome/green
 	name = "thunderdome suit"
 	desc = "Pukish armor."	//classy.
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
+	special_defence = PREVENTDISMEMBER

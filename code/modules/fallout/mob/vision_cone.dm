@@ -49,8 +49,17 @@ mob/living/InCone(mob/center = usr, dir = NORTH)
 		else
 			return .
 */
+// Commenting this - Sansaur
+/*
 proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
 	for(var/atom/A in list)
+		if(!A.InCone(center, dir))
+			list -= A
+	return list
+*/
+// And from now on, in "cone" we will only hide LIVING MOBS
+proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
+	for(var/mob/living/A in list)
 		if(!A.InCone(center, dir))
 			list -= A
 	return list
@@ -61,12 +70,14 @@ mob/proc/update_vision_cone()
 //Updating fov position on screen depends from client.pixel_x/y values
 mob/proc/update_fov_position()
 
-mob/living/update_fov_position()
+mob/living/carbon/human/update_fov_position()
 	if(!client || !fov)
 		return
 	fov.screen_loc = "1:[-client.pixel_x],1:[-client.pixel_y]"
 
-mob/living/update_vision_cone()
+mob/living/carbon/human/update_vision_cone()
+	// This did the opposite of what it was supposed to - Sansaur
+	//CHECK_TICK
 	if(src.client)
 		var/image/I = null
 		for(I in src.client.hidden_atoms)
@@ -87,15 +98,14 @@ mob/living/update_vision_cone()
 				if(src.pulling == M)//If we're pulling them we don't want them to be invisible, too hard to play like that.
 					I.override = 0
 
-/*
 			//Optional items can be made invisible too. Uncomment this part if you wish to items to be invisible. Potentially cpu intensive.
-			/var/obj/item/O
-			for(O in cone(src, OPPOSITE_DIR(src.dir), oview(src)))
-				I = image("split", O)
-				I.override = 1
-				src.client.images += I
-				src.client.hidden_atoms += I
-*/
+			//var/obj/item/O
+			//for(O in cone(src, OPPOSITE_DIR(src.dir), oview(src)))
+			//	I = image("split", O)
+			//	I.override = 1
+			//	src.client.images += I
+			//	src.client.hidden_atoms += I
+
 	else
 		return
 
@@ -114,7 +124,28 @@ mob/proc/hide_cone()
 	if(src.fov)
 		src.fov.alpha = 0
 
+/mob/living/carbon/human/Move(atom/newloc, direct)
+	. = ..()
+	for(var/mob/living/carbon/human/M in oview(src))
+		M.update_vision_cone()
 
+	update_vision_cone()
 
+// RECALLS
 
-
+/mob/living/carbon/human/westface()
+	. = ..()
+	if(.)
+		update_vision_cone()
+/mob/living/carbon/human/eastface()
+	. = ..()
+	if(.)
+		update_vision_cone()
+/mob/living/carbon/human/northface()
+	. = ..()
+	if(.)
+		update_vision_cone()
+/mob/living/carbon/human/southface()
+	. = ..()
+	if(.)
+		update_vision_cone()

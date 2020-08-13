@@ -101,6 +101,9 @@ var/global/image/fire_overlay = image("icon" = 'icons/effects/fire.dmi', "icon_s
 	// F13 price
 	var/price = null
 
+	//For special defence flags - so far only has PREVENTDISMEMBER
+	var/special_defence = null
+
 /obj/item/New()
 	if (!materials)
 		materials = list()

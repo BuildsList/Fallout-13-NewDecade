@@ -150,3 +150,6 @@
 
 	var/atom/mouse_on_atom //using to fire target checking
 	var/mouse_on_params
+
+	// Lock where you're looking so you cannot change where you look by  - Sansaur
+	var/dir_change_lock = FALSE

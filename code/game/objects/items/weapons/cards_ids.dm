@@ -119,6 +119,9 @@ update_label("John Doe", "Clowny")
 
 	name = "[(!registered_name)	? "identification card"	: "[registered_name]'s ID"][(!assignment) ? "" : " ([assignment])"]"
 
+/obj/item/weapon/card/id/vault
+	name = "карточка жителя убежища"
+
 /obj/item/weapon/card/id/silver
 	name = "silver identification card"
 	desc = "A silver card which shows honour and dedication."

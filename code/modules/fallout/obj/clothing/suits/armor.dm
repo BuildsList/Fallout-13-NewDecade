@@ -182,6 +182,7 @@
 	resistance_flags = FIRE_PROOF
 	self_weight = 15
 	price = 1500
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/f13/bmetalarmor
 	name = "black metal armor"
@@ -196,6 +197,7 @@
 	resistance_flags = FIRE_PROOF
 	self_weight = 12
 	price = 2500
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/f13/bmetalarmor/New()
 	item_state = pick("bmetalarmor", "bmetalarmor_2")
@@ -280,6 +282,7 @@
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
 	self_weight = 15
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/f13/combat_mk1
 	name = "reinforced combat armor mark I"
@@ -469,6 +472,7 @@
 	item_state = "elite_riot"
 	armor = list(melee = 70, bullet = 65, laser = 40, energy = 25, bomb = 50, bio = 0, rad = 70, fire = 80, acid = 30)
 	self_weight = 10
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/f13/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
@@ -493,6 +497,7 @@
 	body_parts_covered = CHEST
 	armor = list(melee = 75, bullet = 60, laser = 15, energy = 10, bomb = 50, bio = 0, rad = 0, fire = 0, acid = 0)
 	self_weight = 40
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/armor/riot/knight/yellow
 	icon_state = "knight_yellow"

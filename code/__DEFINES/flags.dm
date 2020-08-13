@@ -87,3 +87,7 @@
 #define HAVE_FREQ 1
 #define HAVE_FLAG 2
 #define DONATE 4
+
+// DFS
+
+#define DF_USE_TAG

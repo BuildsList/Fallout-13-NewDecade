@@ -167,6 +167,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/map_template_upload,
 	/client/proc/jump_to_ruin,
 	/client/proc/clear_dynamic_transit,
+	/client/proc/view_runtimes,
 	/client/proc/show_qdeleted,
 	/datum/proc/qdel_then_find_references,
 	/client/proc/purge_all_destroyed_objects,
@@ -758,3 +759,13 @@ var/list/admin_verbs_hideable = list(
 
 	log_admin("[key_name(usr)] has [AI_Interact ? "activated" : "deactivated"] Admin AI Interact")
 	message_admins("[key_name_admin(usr)] has [AI_Interact ? "activated" : "deactivated"] their AI interaction")
+
+/client/proc/view_runtimes()
+	set category = "Debug"
+	set name = "View Runtimes"
+	set desc = "Open the runtime Viewer"
+
+	if(!holder)
+		return
+
+	error_cache.show_to(src)

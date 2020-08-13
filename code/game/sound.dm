@@ -102,7 +102,7 @@
 /client/proc/playtitlemusic()
 	if(!ticker || !ticker.login_music)
 		return
-	if(prefs && (prefs.toggles & SOUND_LOBBY))
+	if(prefs && (prefs.toggles & SOUND_LOBBY) && sound_system)
 		if(sound_system)
 			sound_system.PlayMusic(ticker.login_music)
 
