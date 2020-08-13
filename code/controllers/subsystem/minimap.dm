@@ -25,7 +25,7 @@ var/datum/subsystem/minimap/SSminimap
 		fdel(hash_path())
 		text2file(hash, hash_path())
 	else
-		to_chat(world, "<span class='boldannounce'>Minimap generation disabled. Loading from cache...</span>")
+		message_admins("<span class='adminnotice'>Minimap generation disabled. Loading from cache...</span>")
 		var/fileloc = 0
 		if(check_files(0))	//Let's first check if we have maps cached in the data folder. NOTE: This will override the backup files even if this map is older.
 			world.log << "cache"
@@ -35,7 +35,7 @@ var/datum/subsystem/minimap/SSminimap
 			fileloc = 0
 		else
 			if(!check_files(1))
-				to_chat(world, "<span class='boldannounce'>Failed to load backup minimap file. Aborting.</span>")//We couldn't find something. Bail to prevent issues with null files
+				message_admins("<span class='adminnotice'>Failed to load backup minimap file. Aborting.</span>")//We couldn't find something. Bail to prevent issues with null files
 
 				return
 			fileloc = 1	//No map image cached with the current map, and we have a backup. Let's fall back to it.

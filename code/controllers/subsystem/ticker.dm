@@ -197,7 +197,7 @@ var/datum/subsystem/ticker/ticker
 	equip_characters()
 	data_core.manifest()
 
-	SSobjectives.setup_objectives()
+//	SSobjectives.setup_objectives()
 
 	Master.RoundStart()
 
@@ -384,9 +384,9 @@ var/datum/subsystem/ticker/ticker
 
 /datum/subsystem/ticker/proc/declare_completion()
 
-	to_chat(world, "<BR><BR><BR><FONT size=3><B>Раунд завершен.</B></FONT>")
+	to_chat(world, "<BR><BR><BR><FONT size=3><B>Раунд завершен. Ожидайте начала следующего раунда.</B></FONT>")
 
-	SSobjectives.on_roundend()
+//	SSobjectives.on_roundend()
 
 	//Adds the del() log to world.log in a format condensable by the runtime condenser found in tools
 	if(SSgarbage.didntgc.len)

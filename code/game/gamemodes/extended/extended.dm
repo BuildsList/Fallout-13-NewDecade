@@ -13,7 +13,7 @@
 	..()
 
 /datum/game_mode/extended/announced
-	name = "Фоллаут: Кебаб"
+	name = "Выживание"
 	config_tag = "wasteland"
 
 /datum/game_mode/extended/announced/generate_station_goals()
