@@ -189,6 +189,23 @@
 	recoil = 1
 	small_gun = 1
 
+/obj/item/weapon/gun/ballistic/automatic/mp40
+	name = "MP40"
+	desc = "Ебучий случай, мп40!"
+	icon_state = "mp40"
+	item_state = "mp40"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	origin_tech = "combat=3;materials=2;prewar=4"
+	mag_type = /obj/item/ammo_box/magazine/F13/mp40
+	fire_sound = "10mmfire"
+	can_suppress = 0
+	burst_size = 3
+	casing_ejector = 1
+	w_class = WEIGHT_CLASS_NORMAL
+	price = 3500
+	recoil = 1
+	small_gun = 1
+
 /obj/item/weapon/gun/ballistic/shotgun/pipe
 	name = "самопал"
 	desc = "Самодельный дробовик что может нести в себе лишь один патрон."

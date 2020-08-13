@@ -352,8 +352,8 @@
 	qdel(src)
 
 /obj/item/bodypart/chest
-	name = "chest"
-	desc = "It's impolite to stare at a person's chest."
+	name = "грудь"
+	desc = "Это не прилично, пялиться на чью-то грудь."
 	icon_state = "default_human_chest"
 	max_damage = 200
 	body_zone = "chest"
@@ -398,7 +398,7 @@
 	animal_origin = LARVA_BODYPART
 
 /obj/item/bodypart/l_arm
-	name = "left arm"
+	name = "левая рука"
 	desc = "Did you know that the word 'sinister' stems originally from the \
 		Latin 'sinestra' (left hand), because the left hand was supposed to \
 		be possessed by the devil? This arm appears to be possessed by no \
@@ -434,7 +434,7 @@
 	animal_origin = DEVIL_BODYPART
 
 /obj/item/bodypart/r_arm
-	name = "right arm"
+	name = "правая рука"
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
 	icon_state = "default_human_r_arm"
@@ -468,11 +468,11 @@
 	animal_origin = DEVIL_BODYPART
 
 /obj/item/bodypart/l_leg
-	name = "left leg"
+	name = "левая нога"
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
 		luck. In this instance, it probably would not have helped."
 	icon_state = "default_human_l_leg"
-	attack_verb = list("kicked", "stomped")
+	attack_verb = list("пинает", "давит")
 	max_damage = 40
 	body_zone = "l_leg"
 	body_part = LEG_LEFT
@@ -504,7 +504,7 @@
 	animal_origin = DEVIL_BODYPART
 
 /obj/item/bodypart/r_leg
-	name = "right leg"
+	name = "правая нога"
 	desc = "You put your right leg in, your right leg out. In, out, in, out, \
 		shake it all about. And apparently then it detaches.\n\
 		The hokey pokey has certainly changed a lot since space colonisation."

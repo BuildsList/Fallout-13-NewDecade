@@ -60,7 +60,7 @@
 					playsound(src, pshoom, 40, 1)
 				user.Beam(dest_object,icon_state="rped_upgrade",time=5)
 				return 1
-		to_chat(user, "The [src.name] buzzes.")
+		to_chat(user, "[src.name] жужжит.")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 0)
 	return 0
 
@@ -87,7 +87,7 @@
 	return
 
 /obj/item/weapon/storage/backpack/santabag
-	name = "Мешок Санты"
+	name = "мешок Санты"
 	desc = "Space Santa uses this to deliver toys to all the nice children in space in Christmas! Wow, it's pretty big!"
 	icon_state = "giftbag0"
 	item_state = "giftbag"
@@ -112,7 +112,7 @@
 	item_state = "clownpack"
 
 /obj/item/weapon/storage/backpack/explorer
-	name = "Рюкзак Исследователя"
+	name = "рюкзак Исследователя"
 	desc = "A robust backpack for stashing your loot."
 	icon_state = "explorerpack"
 	item_state = "explorerpack"
@@ -124,70 +124,70 @@
 	item_state = "mimepack"
 
 /obj/item/weapon/storage/backpack/medic
-	name = "Медицинский Рюкзак"
+	name = "медицинский мюкзак"
 	desc = "It's a backpack especially designed for use in a sterile environment."
 	icon_state = "medicalpack"
 	item_state = "medicalpack"
 
 /obj/item/weapon/storage/backpack/security
-	name = "Рюкзак Охраны"
+	name = "рюкзак Охраны"
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	item_state = "securitypack"
 
 /obj/item/weapon/storage/backpack/traveler
-	name = "traveler bag"
+	name = "рюкзак путешественника"
 	desc = "traveler backpack for merchants or adventurers."
 	icon_state = "traveler"
 	item_state = "explorerpack"
 
 /obj/item/weapon/storage/backpack/sstbackpack
-	name = "Рюкзак Мобильной Пехоты"
+	name = "рюкзак Мобильной Пехоты"
 	desc = "fancy backpack for good troopers!"
 	icon_state = "sstback"
 	item_state = "sstback"
 
 /obj/item/weapon/storage/backpack/captain
-	name = "Рюкзак Капитана"
+	name = "рюкзак Капитана"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 	resistance_flags = 0
 
 /obj/item/weapon/storage/backpack/industrial
-	name = "industrial backpack"
+	name = "рюкзак инженера"
 	desc = "It's a tough backpack for the daily grind of station life."
 	icon_state = "engiepack"
 	item_state = "engiepack"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/weapon/storage/backpack/botany
-	name = "botany backpack"
+	name = "рюкзак ботаника"
 	desc = "It's a backpack made of all-natural fibers."
 	icon_state = "botpack"
 	item_state = "botpack"
 
 /obj/item/weapon/storage/backpack/chemistry
-	name = "chemistry backpack"
+	name = "рюкзак химика"
 	desc = "A backpack specially designed to repel stains and hazardous liquids."
 	icon_state = "chempack"
 	item_state = "chempack"
 
 /obj/item/weapon/storage/backpack/genetics
-	name = "genetics backpack"
+	name = "рюкзак генетика"
 	desc = "A bag designed to be super tough, just in case someone hulks out on you."
 	icon_state = "genepack"
 	item_state = "genepack"
 
 /obj/item/weapon/storage/backpack/science
-	name = "science backpack"
+	name = "рюкзак учёного"
 	desc = "A specially designed backpack. It's fire resistant and smells vaguely of plasma."
 	icon_state = "toxpack"
 	item_state = "toxpack"
 	resistance_flags = 0
 
 /obj/item/weapon/storage/backpack/virology
-	name = "virology backpack"
+	name = "рюкзак вирусолога"
 	desc = "A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey."
 	icon_state = "viropack"
 	item_state = "viropack"
@@ -204,7 +204,7 @@
 	species_exception = list(/datum/species/angel) //satchels can be equipped since they are on the side, not back !!! supermutant
 
 /obj/item/weapon/storage/backpack/satchel/leather
-	name = "Кожанная сумка"
+	name = "кожанная сумка"
 	desc = "It's a very fancy satchel made with fine leather."
 	icon_state = "satchel"
 	resistance_flags = 0

@@ -19,7 +19,7 @@
 
 	var/obj/item/bodypart/affecting = C.get_bodypart("chest")
 	affecting.receive_damage(Clamp(brute_dam/2, 15, 50), Clamp(burn_dam/2, 0, 50)) //Damage the chest based on limb's existing damage
-	C.visible_message("<span class='danger'><B>[C]'s [src.name] has been violently dismembered!</B></span>")
+	C.visible_message("<span class='danger'><B>[C] [src.name] была жестоко отрублена!</B></span>")
 	C.emote("scream")
 	drop_limb()
 
@@ -71,7 +71,7 @@
 		organ_spilled = 1
 
 	if(organ_spilled)
-		C.visible_message("<span class='danger'><B>[C]'s internal organs spill out onto the floor!</B></span>")
+		C.visible_message("<span class='danger'><B>Органы [C] выпадают из тела!</B></span>")
 	return 1
 
 

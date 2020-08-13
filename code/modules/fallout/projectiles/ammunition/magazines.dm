@@ -172,6 +172,14 @@
 	price = 1200
 	max_ammo = 20
 
+/obj/item/ammo_box/magazine/F13/mp40
+	name = "обойма от автомата"
+	icon_state = "mp40"
+	ammo_type = /obj/item/ammo_casing/F13/m10
+	caliber = "10mm"
+	price = 1200
+	max_ammo = 32
+
 /obj/item/ammo_box/magazine/F13/chinese
 	name = "rifle magazine (5.56mm)"
 	icon_state = "china"
