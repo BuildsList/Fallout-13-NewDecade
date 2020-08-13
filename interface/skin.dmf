@@ -364,6 +364,9 @@ macro "hotkeys"
 	elem 
 		name = "F12"
 		command = "F12"
+	elem
+		name = "C"
+		command = "Схватить"
 
 macro "robot-default"
 	elem 
