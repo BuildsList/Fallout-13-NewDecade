@@ -38,8 +38,18 @@
 
 	outfit = /datum/outfit/job/overseer
 
-	access = list()
-	minimal_access = list()
+	access = list(access_security, access_sec_doors, access_court, access_weapons,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_theatre, access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_mineral_storeroom)
+	minimal_access = list(access_security, access_sec_doors, access_court, access_weapons,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_theatre, access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_mineral_storeroom)
 
 /datum/job/overseer/get_access()
 	return get_all_accesses()
@@ -96,6 +106,7 @@
 	id = /obj/item/weapon/card/id/vault
 	r_pocket = /obj/item/clothing/gloves/pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
+	gloves = /obj/item/clothing/gloves/pda
 
 ///security///
 
@@ -131,15 +142,15 @@
 
 	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_morgue, access_weapons, access_forensics_lockers)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_weapons) //But see /datum/job/warden/get_access()
+
 	outfit = /datum/outfit/job/vltsec
 
 /datum/outfit/job/vltsec
 	name = "vault security"
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	id = /obj/item/weapon/card/id/vault
-	belt = /obj/item/clothing/gloves/pda/security
 	shoes = /obj/item/clothing/shoes/f13/military
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = /obj/item/clothing/gloves/pda/security
 	head = /obj/item/clothing/head/helmet/riot
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	l_pocket = /obj/item/weapon/restraints/handcuffs
@@ -188,11 +199,11 @@
 
 /datum/outfit/job/vltsci
 	name = "Scientist VLT"
-	belt = /obj/item/clothing/gloves/pda/toxins
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/weapon/card/id/vault
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
+	gloves = /obj/item/clothing/gloves/pda/toxins
 
 /datum/job/vlteng
 	title = "Vault Engineer"
@@ -235,8 +246,8 @@
 	name = "Engineer VLT"
 	satchel = /obj/item/weapon/storage/backpack/satchel/eng
 	head = /obj/item/clothing/head/hardhat/dblue
-	r_pocket = /obj/item/clothing/gloves/pda/engineering
 	id = /obj/item/weapon/card/id/vault
 	belt = /obj/item/weapon/storage/belt/utility/full
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/pda/engineering

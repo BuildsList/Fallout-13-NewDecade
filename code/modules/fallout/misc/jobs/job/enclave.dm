@@ -42,8 +42,12 @@
 
 	outfit = /datum/outfit/job/colonel
 
-	access = list()
-	minimal_access = list()
+	access = list(access_medical, access_morgue, access_genetics, access_cloning, access_heads, access_mineral_storeroom,
+			access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
+			access_keycard_auth, access_sec_doors, access_maint_tunnels)
+	minimal_access = list(access_medical, access_morgue, access_genetics, access_cloning, access_heads, access_mineral_storeroom,
+			access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
+			access_keycard_auth, access_sec_doors, access_maint_tunnels)
 
 /datum/outfit/job/colonel
 	name = "Colonel"
@@ -105,8 +109,8 @@
 
 	outfit = /datum/outfit/job/enclave_sergeant
 
-	access = list()
-	minimal_access = list()
+	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_cloning, access_mineral_storeroom)
+	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/enclave_sergeant
 	name = "Enclave Segeant"
@@ -165,8 +169,8 @@
 
 	outfit = /datum/outfit/job/enclave_private
 
-	access = list()
-	minimal_access = list()
+	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_cloning, access_mineral_storeroom)
+	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/enclave_private
 	name = "Enclave Private"
@@ -222,8 +226,8 @@
 
 	outfit = /datum/outfit/job/radist_en
 
-	access = list()
-	minimal_access = list()
+	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_cloning, access_mineral_storeroom)
+	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/radist_en
 	name = "Enclave Radist"

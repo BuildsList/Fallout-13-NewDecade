@@ -202,6 +202,9 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
+	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak_emote = list("говорит", "кричит")
+	speak_chance = 2
 
 /mob/living/simple_animal/hostile/enclave/scientist/Aggro()
 	..()
@@ -224,6 +227,9 @@
 	healable = 1
 	ranged = 1
 	rapid = 1
+	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak_emote = list("говорит", "кричит")
+	speak_chance = 2
 	projectiletype = /obj/item/projectile/beam/plasma
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	XP = 80
@@ -254,6 +260,9 @@
 	ranged = 1
 	rapid = 1
 	projectiletype = /obj/item/projectile/beam
+	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak_emote = list("говорит", "кричит")
+	speak_chance = 2
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	XP = 40
 
