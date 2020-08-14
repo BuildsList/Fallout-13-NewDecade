@@ -430,7 +430,7 @@ var/next_mob_id = 0
 		to_chat(usr, "<span class='boldnotice'>Вы должны умереть чтобы использовать это!</span>")
 		return
 
-	if(world.time - src.timeofdeath < 6000)
+	if(world.time - src.timeofdeath < 600)
 		to_chat(usr, "<span class='boldnotice'>Рано,должно пройти 60 секунд! Прошло: [Floor((world.time - src.timeofdeath)/10)] с!</span>")
 		return
 

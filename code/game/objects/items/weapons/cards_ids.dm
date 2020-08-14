@@ -126,14 +126,14 @@ update_label("John Doe", "Clowny")
 	name = "silver identification card"
 	desc = "A silver card which shows honour and dedication."
 	icon_state = "silver"
-	item_state = "silver_id"
+	item_state = "card-id"
 
 /obj/item/weapon/card/id/gold
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
 	icon_state = "gold"
-	item_state = "gold_id"
-	assignment = "Captain"
+	item_state = "card-id"
+	assignment = "Overseer"
 
 /obj/item/weapon/card/id/syndicate
 	name = "agent card"

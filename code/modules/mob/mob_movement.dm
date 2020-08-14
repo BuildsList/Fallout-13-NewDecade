@@ -162,6 +162,8 @@
 	moving = 1
 	move_delay = mob.movement_delay() + world.time
 
+	var/turf/lastLoc = mob.loc
+
 	if(mob.confused)
 		if(mob.confused > 40)
 			step(mob, pick(cardinal))
@@ -173,6 +175,9 @@
 			step(mob, direct)
 	else
 		. = ..()
+
+	if(mob.pulling)
+		mob.Move_Pulled(lastLoc, 1)
 
 	moving = 0
 	if(mob && .)
@@ -311,8 +316,11 @@
 	return 0
 
 //moves the mob/object we're pulling
-/mob/proc/Move_Pulled(atom/A)
+/mob/proc/Move_Pulled(atom/A, forced=0)
 	if(!pulling)
+		return
+	if(forced)
+		pulling.Move(A)
 		return
 	if(pulling.anchored || !pulling.Adjacent(src))
 		stop_pulling()
@@ -322,7 +330,6 @@
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
 			stop_pulling()
 			return
-	if(A == loc && pulling.density)
 		return
 	if(!Process_Spacemove(get_dir(pulling.loc, A)))
 		return
@@ -460,4 +467,4 @@
 	if(dir_change_lock)
 		..(newloc, src.dir)
 		return
-	..()
+	..(newloc,direct)

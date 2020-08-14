@@ -38,10 +38,8 @@
 	queue_smooth(src)
 
 /obj/structure/fence/relative(forced = 0)
-	// Testing - Sansaur
-	//if(ticker.current_state == GAME_STATE_PLAYING && !forced)
-	//	return
-	recalculate_junction()
+	if(ticker.current_state == GAME_STATE_PLAYING && !forced)
+		return
 	var/icon_junction = 0
 	switch(junction)
 		if(0 to 3)

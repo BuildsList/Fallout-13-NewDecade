@@ -472,12 +472,7 @@
 
 
 /obj/item/device/radio/proc/receive_range(freq, level)
-	// check if this radio can receive on the given frequency, and if so,
-	// what the range is in which mobs will hear the radio
-	// returns: -1 if can't receive, range otherwise
-	if(wires)
-		if (wires.is_cut(WIRE_RX))
-			return -1
+	if (wires.is_cut(WIRE_RX))
 		return -1
 	if(!listening)
 		return -1
