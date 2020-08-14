@@ -154,7 +154,6 @@
 	/obj/item/ammo_box/magazine/F13/m556,
 	/obj/item/ammo_box/magazine/F13/fnfal,
 	/obj/item/ammo_box/magazine/F13/service,
-	/obj/item/key/motorcycle,
 	/obj/item/weapon/holodisk/musicbox
 	)
 
@@ -294,7 +293,6 @@
 		/obj/item/ammo_box/magazine/F13/m556,
 		/obj/item/ammo_box/magazine/F13/fnfal,
 		/obj/item/ammo_box/magazine/F13/service,
-		/obj/item/key/motorcycle,
 		/obj/item/weapon/holodisk/musicbox
 		)
 	if(icon_state == "trader-4")

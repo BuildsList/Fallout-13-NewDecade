@@ -23,7 +23,7 @@
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	actions_types = list(/datum/action/item_action/toggle/pa_cell, /datum/action/item_action/toggle/pa_toggle)
 
-	var/obj/item/weapon/stock_parts/cell/power_cell = null
+	var/obj/item/weapon/stock_parts/cell_pa/power_cell = null
 	var/mob/living/carbon/human/current_user = null
 
 	var/default_power_usage = 10
@@ -103,7 +103,7 @@
 		return
 
 	if(!power_cell)
-		if(istype(usr.get_active_held_item(), /obj/item/weapon/stock_parts/cell))
+		if(istype(usr.get_active_held_item(), /obj/item/weapon/stock_parts/cell_pa))
 			power_cell = usr.get_active_held_item()
 			usr.drop_item()
 			power_cell.forceMove(src)

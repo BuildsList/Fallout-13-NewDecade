@@ -336,8 +336,8 @@
 
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/molotov
-	name = "molotov cocktail"
-	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
+	name = "коктейль молотова"
+	desc = "Актуален как и в 1939."
 	icon_state = "vodkabottle"
 	list_reagents = list()
 	var/list/accelerants = list(	/datum/reagent/consumable/ethanol,/datum/reagent/fuel,/datum/reagent/clf3,/datum/reagent/phlogiston,

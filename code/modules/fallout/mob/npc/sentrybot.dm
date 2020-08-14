@@ -9,12 +9,12 @@
 	icon_dead = "sentrybot_d"
 	icon_gib = "sentrybot_d"
 	speak_chance = 0
-	turns_per_move = 8
+	turns_per_move = 3
 	environment_smash = 0
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "бьет"
-	move_to_delay = 2
+	move_to_delay = 4
 	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 1000

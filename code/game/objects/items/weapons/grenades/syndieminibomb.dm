@@ -33,7 +33,7 @@
 
 /obj/item/weapon/grenade/syndieminibomb/dynim/prime()
 	update_mob()
-	explosion(src.loc,0, 7, 12,flame_range = 0)
+	explosion(src.loc,0, 2, 4,flame_range = 0)
 	qdel(src)
 
 /*/obj/item/weapon/grenade/syndieminibomb/dynim/attack_self(mob/user)
@@ -44,26 +44,26 @@
 		to_chat(user, "Timer set for [det_time] seconds.")*/
 
 /obj/item/weapon/grenade/syndieminibomb/molotov
-	desc = "A home-made flammable grenade."
-	name = "Molotov cocktail"
+	desc = "Нет, Молотов!"
+	name = "коктейль молотова"
 	icon_state = "molotov"
 	origin_tech = "materials=1;magnets=2"
 	det_time = 15
 
 /obj/item/weapon/grenade/syndieminibomb/molotov/prime()
 	update_mob()
-	explosion(src.loc,0,0,1,flame_range = 4)
+	explosion(src.loc,0,0,1,flame_range = 2)
 	qdel(src)
 
 /obj/item/weapon/grenade/syndieminibomb/tincan
-	desc = "Some powder in tincan."
-	name = "Tincan"
+	desc = "Просто порох утрамбованный в жестянку."
+	name = "жестянка"
 	icon_state = "tincan"
 	origin_tech = "materials=1;magnets=2"
 
 /obj/item/weapon/grenade/syndieminibomb/tincan/prime()
 	update_mob()
-	explosion(src.loc,0,3,7,flame_range = 0)
+	explosion(src.loc,0,2,2,flame_range = 0)
 	qdel(src)
 
 

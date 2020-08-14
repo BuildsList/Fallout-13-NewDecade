@@ -69,4 +69,4 @@
 	time = 30
 	category = CAT_EXPLOSIVES
 	default = 1
-	XP = 5
+	XP = 1
