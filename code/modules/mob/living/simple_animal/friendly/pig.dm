@@ -51,7 +51,7 @@ var/global/pigs_count = 0
 	speak_emote = list("хрюкает")
 	emote_hear = list("хрюкает.", "хрюкает осознавая четность бытия.")
 	emote_see = list("роет землю копытцем.","машет своими крыльями.")
-	density = 0
+	density = 1
 	speak_chance = 2
 	turns_per_move = 3
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 2)
