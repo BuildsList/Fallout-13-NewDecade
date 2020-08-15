@@ -196,7 +196,7 @@
 	supervisors = "Старейшине"
 	selection_color = "#ec9d9d"
 	minimal_player_age = 7
-	whitelist_on = 0
+	whitelist_on = 1
 	allowed_packs = list("starter", "cigarettes", "follower", "bard", "super_ten", "f76", "specops")
 
 	denied_items = list(
@@ -278,7 +278,7 @@
 
 
 /datum/outfit/job/radist_bs
-	name = "BS Radist"
+	name = "Радист Братства"
 	back = /obj/item/device/radio/prc/bs
 	ears = /obj/item/device/radio/headset/bs
 	id = /obj/item/weapon/card/id/dogtag

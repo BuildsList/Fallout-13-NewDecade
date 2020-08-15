@@ -336,28 +336,28 @@
 	id = "legion_legate"
 	desc = "<b>Открывает доступ к роли Легата!</b><br>Аве мне!<br>"
 	roles = list(/datum/job/legate)
-	price = 80000
+	price = 40000
 
 /datum/content_pack/leg_centurion
 	name = "Легион: Центурион"
 	id = "legion_centurion"
 	desc = "<b>Открывает доступ к роли Центуриона!</b><br>Дегенераты как ты, должны весеь на кресте!<br>"
 	roles = list(/datum/job/centurion)
-	price = 60000
+	price = 30000
 
 /datum/content_pack/leg_vex
 	name = "Легион: Вексиллярий"
 	id = "legion_vex"
 	desc = "<b>Открывает доступ к роли Вексиллярия!</b><br>Фу, вещества!<br>"
 	roles = list(/datum/job/vex)
-	price = 30000
+	price = 10000
 
 /datum/content_pack/leg_decan
 	name = "Легион: Деканус"
 	id = "legion_decane"
 	desc = "<b>Открывает доступ к роли Декануса!</b><br>СМЕРТЬ БРАТЬЯМ БУ... Не та реплика... СМЕРТЬ БРАТСТВУ!<br>"
 	roles = list(/datum/job/decan)
-	price = 20000
+	price = 5000
 /*
 /datum/content_pack/leg_prime
 	name = "Легион: Прайм"
@@ -373,29 +373,29 @@
 	id = "bs_elder"
 	desc = "<b>Открывает доступ к роли Старейшины!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/elder)
-	price = 80000
+	price = 50000
 
 /datum/content_pack/bs_paladin
 	name = "Братство: Паладин"
 	id = "bs_paladin"
 	desc = "<b>Открывает доступ к роли Паладина!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/paladin)
-	price = 45000
+	price = 35000
 
 /datum/content_pack/bs_private
 	name = "Братство: Радист и Рыцарь"
 	id = "bs_private"
 	desc = "<b>Открывает доступ к роли Радиста и Рыцаря!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/radist_bs, /datum/job/knight)
-	price = 25000
-/*
+	price = 15000
+
 /datum/content_pack/bs_scriber
 	name = "Братство: Писец"
 	id = "bs_scribe"
 	desc = "<b>Открывает доступ к роли Писца!</b><br>ТЕХНОЛОГИИ!<br>"
 	roles = list(/datum/job/scriber)
-	price = 15000
-*/
+	price = 5000
+
 ///Нейтралы и городские///
 
 /datum/content_pack/mayor
@@ -403,7 +403,7 @@
 	id = "mayor"
 	desc = "<b>Открывает доступ к роли Мэр!</b><br>Кто если не я?<br>"
 	roles = list(/datum/job/mayor)
-	price = 15000
+	price = 10000
 /*
 /datum/content_pack/sherif
 	name = "Городские: Шериф"
@@ -440,21 +440,21 @@
 	id = "enclave_colonel"
 	desc = "<b>Открывает доступ к роли полковника Анклава!</b><br>Служу Америке!<br>"
 	roles = list(/datum/job/colonel)
-	price = 80000
+	price = 60000
 
 /datum/content_pack/enclave_sergeant
 	name = "Анклав: роль Сержанта"
 	id = "enclave_sergeant"
 	desc = "<b>Открывает доступ к роли сержанта Анклава!</b><br>И-ДИ-ОТ!<br>"
 	roles = list(/datum/job/enclave_sergeant)
-	price = 45000
+	price = 35000
 
 /datum/content_pack/enclave
 	name = "Анклав: роль Радиста"
 	id = "enclave_private"
 	desc = "<b>Открывает доступ к роли рядового и радиста Анклава!</b><br>ГДЕ ВАША СИЛОВАЯ БРОНЯ?.<br>"
 	roles = list(/datum/job/enclave_radist)
-	price = 20000
+	price = 10000
 
 ///НКР///
 
@@ -470,7 +470,7 @@
 	id = "ncr_sergeant"
 	desc = "<b>Открывает доступ к роли сержанта НКР!</b><br>ГДЕ ВАША СИЛО.. А, не та реплика...<br>"
 	roles = list(/datum/job/ncr_sergeant)
-	price = 30000
+	price = 20000
 
 
 /datum/content_pack/ncr_ranger

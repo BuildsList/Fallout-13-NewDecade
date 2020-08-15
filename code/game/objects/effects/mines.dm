@@ -229,3 +229,8 @@
 	var/mob/living/simple_animal/hostile/ghost_man = new/mob/living/simple_animal/hostile/ghost_man(get_turf(victim))
 	ghost_man.update_icons()
 	qdel()
+
+/obj/item/weapon/grenade/mine/explosive/planted/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/weapon/shovel))
+		icon_state = "landmine_hidden"
+	return

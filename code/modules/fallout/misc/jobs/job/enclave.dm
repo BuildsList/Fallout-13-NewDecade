@@ -113,15 +113,15 @@
 	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/enclave_sergeant
-	name = "Enclave Segeant"
+	name = "Сержант Анклава"
 	backpack = /obj/item/device/radio/prc
 	satchel = null
 	ears = /obj/item/device/radio/headset/enclave
 	gloves = /obj/item/clothing/gloves/f13/military
 	uniform = /obj/item/clothing/under/f13/enclave_officer
 	shoes = /obj/item/clothing/shoes/f13/military
-	suit = null
-	head = /obj/item/clothing/head/soft/f13/enclave
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
+	head = /obj/item/clothing/head/helmet/power_armor/advanced
 	belt = /obj/item/weapon/storage/belt/military/army/enclave
 	weapon = /obj/item/weapon/gun/energy/plasma/pistol
 	belt_contents = list(/obj/item/weapon/reagent_containers/f13stimpack = 2, /obj/item/weapon/kitchen/knife/combat = 1)
@@ -188,8 +188,8 @@
 
 /// enclave radist///
 /datum/job/enclave_radist
-	title = "Enclave Radist"
-	desc = "Enlist today."
+	title = "Радист Анклава"
+	desc = "Запишись в добровольцы сегодня!"
 	flag = ENCLAVE_RADIST
 	department_head = list("colonel", "sergeant")
 	department_flag = MEDSCI

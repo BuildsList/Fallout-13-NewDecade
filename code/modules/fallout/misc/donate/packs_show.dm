@@ -68,6 +68,6 @@
                 <div style="width: 100%;clear: both; "></div>
             </div>
 		  </div>"}
-	var/datum/browser/popup = new(user, "packs", "<div align='center'>Атомный Магазин</div>", 640, 350)
+	var/datum/browser/popup = new(user, "packs", "<div align='center'>Атомный Магазин W.I.P</div>", 640, 350)
 	popup.set_content(html)
 	popup.open(0)

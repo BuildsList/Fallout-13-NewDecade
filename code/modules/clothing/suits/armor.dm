@@ -346,6 +346,7 @@
 	var/on = 0
 	var/old_alpha = 120
 	actions_types = list(/datum/action/item_action/toggle)
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/suit/stealth/stealthsuit/ui_action_click(mob/user)
 	if(user.get_item_by_slot(slot_wear_suit) == src)

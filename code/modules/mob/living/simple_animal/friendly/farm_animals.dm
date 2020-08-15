@@ -204,16 +204,16 @@ var/const/MAX_CHICKENS = 50
 var/global/chicken_count = 0
 
 /mob/living/simple_animal/chicken
-	name = "\improper chicken"
-	desc = "Hopefully the eggs are good this season."
+	name = "курица"
+	desc = "Мутировавший потомок курицы, ну, вроде трех глаз нет..."
 	gender = FEMALE
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
-	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
-	speak_emote = list("clucks","croons")
-	emote_hear = list("clucks.")
-	emote_see = list("pecks at the ground.","flaps its wings viciously.")
+	speak = list("Кудах!","кудах-куд-куда!!!","коо-ко-коо-ко...")
+	speak_emote = list("кудахчет","croons")
+	emote_hear = list("кудахчет.")
+	emote_see = list("клюёт землю.","машет своими крыльями.")
 	density = 0
 	speak_chance = 2
 	turns_per_move = 3
