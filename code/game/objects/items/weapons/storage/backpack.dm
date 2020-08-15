@@ -205,13 +205,19 @@
 
 /obj/item/weapon/storage/backpack/satchel/leather
 	name = "кожанная сумка"
-	desc = "It's a very fancy satchel made with fine leather."
+	desc = "Качественная сумка из кожи, выглядит прекрасно."
 	icon_state = "satchel"
 	resistance_flags = 0
 
 /obj/item/weapon/storage/backpack/satchel/leather/withwallet/New()
 	..()
 	new /obj/item/weapon/storage/wallet/random( src )
+
+/obj/item/weapon/storage/backpack/satchel/scrapbag
+	name = "сумка"
+	desc = "Хорошая сумка из ткани."
+	icon_state = "scrapback"
+	resistance_flags = 0
 
 /obj/item/weapon/storage/backpack/satchel/eng
 	name = "industrial satchel"
