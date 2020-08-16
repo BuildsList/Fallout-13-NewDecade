@@ -461,3 +461,48 @@
 	build_path = /obj/item/weapon/circuitboard/machine/limbgrower
 	category = list("Medical Machinery")
 	build_type = IMPRINTER
+
+/datum/design/board/holotape_ormed
+	name = "Плёнка ОРМЕД"
+	desc = "Голозапись с данными ОРМЕД."
+	id = "ormed"
+	req_tech = list("programming" = 3, "biotech" = 2)
+	build_path = /obj/item/weapon/disk/design_disk/f13/ormed
+	category = list("Medical Machinery")
+	build_type = IMPRINTER
+
+/datum/design/board/holotape_vesttec
+	name = "Плёнка Вест-Тек"
+	desc = "Голозапись с данными Вест-Тек."
+	id = "vesttec"
+	req_tech = list("programming" = 3, "biotech" = 2)
+	build_path = /obj/item/weapon/disk/design_disk/f13/vesttec
+	category = list("Medical Machinery")
+	build_type = IMPRINTER
+
+/datum/design/board/holotape_schlocket
+	name = "Плёнка Шлокет"
+	desc = "Голозапись с данными Шлокет."
+	id = "schlocket"
+	req_tech = list("programming" = 3)
+	build_path = /obj/item/weapon/disk/design_disk/f13/schlocket
+	category = list("Misc. Machinery")
+	build_type = IMPRINTER
+
+/datum/design/board/holotape_dawnshire
+	name = "Плёнка Довншир"
+	desc = "Голозапись с данными Довншир."
+	id = "dawnshire"
+	req_tech = list("programming" = 3)
+	build_path = /obj/item/weapon/disk/design_disk/f13/dawnshire
+	category = list("Misc. Machinery")
+	build_type = IMPRINTER
+
+/datum/design/board/holotape_greenway
+	name = "Плёнка Гринвей"
+	desc = "Голозапись с данными Гринвей."
+	id = "greenway"
+	req_tech = list("programming" = 2)
+	build_path = /obj/item/weapon/disk/design_disk/f13/greenway
+	category = list("Misc. Machinery")
+	build_type = IMPRINTER

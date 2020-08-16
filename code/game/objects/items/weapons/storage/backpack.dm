@@ -192,6 +192,11 @@
 	icon_state = "viropack"
 	item_state = "viropack"
 
+/obj/item/weapon/storage/backpack/caravaneer
+	name = "рюкзак Караванщика"
+	desc = "Стильный классический рюкзак из кожи,в нём есть всё необходимое для походов. Наверное."
+	icon_state = "caravaneer"
+	item_state = "explorerpack"
 
 /*
  * Satchel Types

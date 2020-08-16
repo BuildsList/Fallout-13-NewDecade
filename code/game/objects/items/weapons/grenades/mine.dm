@@ -74,6 +74,7 @@
 	var/range_flash = 3
 	var/press_bolted = 1
 	var/hidden = 0
+	var/wire_cut = 0
 	icon_state = "landmine"
 	price = 350
 
@@ -111,42 +112,77 @@
 			icon_state = initial(icon_state) + "_hidden"
 			hidden = 1
 			return
-	if(istype(I, /obj/item/weapon/shovel) && hidden == 1)
-		if(do_after(user, 20, target = loc))
+		else
 			to_chat(user, "Вы раскапываете мину.")
-			icon_state = initial(icon_state) - "_hidden"
+			icon_state = "landmine"
 			hidden = 0
+			return
 	if(istype(I, /obj/item/weapon/screwdriver) && active == 1)
 		to_chat(user, "Вы аккуратно начинаете развинчивать болты на мине.")
 		playsound(src.loc, I.usesound, 100, 1)
 		if(do_after(user, 15, target = loc))
 			to_chat(user, "Вы очень аккуратно убираете болтики с нажимной пластины.")
 			press_bolted = 0
+			return
+	if(istype(I, /obj/item/weapon/screwdriver) && press_bolted == 0)
+		return
 	if(istype(I, /obj/item/weapon/wirecutters) && press_bolted == 0)
+		if(do_after(user, 15, target = loc))
+			playsound(src.loc, I.usesound, 100, 1)
+			if(user.skills.getPoint("explosives") <= 2)
+				to_chat(user, "Вы перерезали не тот провод. Мина ничинает пищать...")
+				playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
+				icon_state = "[initial(icon_state)]_detonate"
+				sleep(10)
+				explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+				return
+			if(user.skills.getPoint("explosives") >= 6)
+				to_chat(user, "Вы успешно обрезали провода и обезвредели бомбу.")
+				new/obj/item/weapon/grenade/mine/explosive/(get_turf(src), 1)
+				qdel(src)
+				return
+			if(user.skills.getPoint("explosives") >= 3)
+				to_chat(user, "Вы успешно обрезали провода, но мина всё-ещё может взорваться. Вы можете попробовать разобрать мину на компоненты...")
+				wire_cut = 1
+				return
+	if(istype(I, /obj/item/weapon/wirecutters) && wire_cut == 1)
+		return
+	if(istype(I, /obj/item/weapon/wirecutters) && press_bolted == 1)
 		if(user.skills.getPoint("explosives") <= 2)
 			playsound(src.loc, I.usesound, 100, 1)
 			if(do_after(user, 15, target = loc))
-				to_chat(user, "Вы перерезали не тот провод. Мина ничинает пищать...")
-				playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
-				sleep(5)
-				icon_state = initial(icon_state) - "_detonate"
-				triggermine()
-		if(user.skills.getPoint("explosives") >= 6)
-			playsound(src.loc, I.usesound, 100, 1)
-			if(do_after(user, 15, target = loc))
-				to_chat(user, "Вы успешно обрезали провода и обезвредели бомбу.")
-				icon_state = initial(icon_state) - "_active"
-				new /obj/item/weapon/grenade/mine/explosive
-				active = 0
-				qdel(src)
-		if(user.skills.getPoint("explosives") >= 3 !=6 !=7 !=8 !=9 !=10)
-			playsound(src.loc, I.usesound, 100, 1)
-			if(do_after(user, 15, target = loc))
-				to_chat(user, "Вы успешно обрезали провода, но мина всё-ещё может взорваться. Вы можете попробовать разобрать мину на компоненты...")
-				active = 0
-	if(istype(I, /obj/item/weapon/wrench) && active == 0)
+				switch(rand(1,2))
+					if(1)
+						to_chat(user, "Вы тыкаете кусачками в нажимную пластину. Мина ничинает пищать...")
+						playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
+						icon_state = "[initial(icon_state)]_detonate"
+						sleep(10)
+						explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+					if(2)
+						to_chat(user, "Вам просто повезло что мина не взорвалась, будьте осторожнее.")
+						return
+	if(istype(I, /obj/item/weapon/wrench) && wire_cut == 1)
 		to_chat(user, "Вы начинаете скручивать оставшиеся детали мины.")
 		playsound(src.loc, I.usesound, 100, 1)
-		if(do_after(user, 15, target = loc))
-			to_chat(user, "К сожалению, вы повредили корпус и вы не смогли достать ничего полезного.")
-			qdel(src)
+		if(do_after(user, 25, target = loc))
+			switch(rand(1,10))
+				if(3 to 4)
+					to_chat(user, "К сожалению, вы повредили проводку и не смогли извлечь её, зато остался лом...")
+					new/obj/item/crafting/scrap/(get_turf(src), 1)
+					qdel(src)
+				if(5)
+					to_chat(user, "Вы успешно разобрали мину на компоненты, сохранив их все до единого")
+					new/obj/item/crafting/sensor/(get_turf(src), 1)
+					new/obj/item/crafting/scrap/(get_turf(src), 1)
+					new/obj/item/stack/cable_coil/(get_turf(src), 2)
+					qdel(src)
+				else
+					to_chat(user, "К сожалению, вы повредили корпус и вы не смогли достать ничего полезного.")
+					qdel(src)
+	else
+		to_chat(user, "Не стоило этого делать...")
+		playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
+		icon_state = "[initial(icon_state)]_detonate"
+		sleep(5)
+		explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+	return

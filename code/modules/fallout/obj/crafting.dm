@@ -336,6 +336,28 @@
 	icon_state = "weapon_parts/plasma_[rand(1,3)]"
 */
 
+/obj/item/crafting/scrap
+	name = "лом"
+	desc = "Самый обычный металлолом, практически бесполезен, если не знаете как применить. Станки не очень эффективно его перерабатывают."
+	materials = list(MAT_METAL=100, MAT_GLASS=1)
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "scrap"
+	price = 20
+
+/obj/item/crafting/scrap/attackby(obj/item/W, mob/living/carbon/human/user, params)
+	if(istype(W, /obj/item/weapon/weldingtool))
+		var/obj/item/weapon/weldingtool/WT = W
+		if(WT.remove_fuel(0,user))
+			playsound(src.loc, W.usesound, 50, 1)
+			to_chat(user, "Вы начинаете плавить лом, превращая его в однообразный, ровный лист.")
+			if(do_after(user, 40*W.toolspeed, target = src))
+				if( !WT.isOn() )
+					return
+				to_chat(user, "Вы закончили работу над ломом и получили прекрасный лист металла.")
+				var/obj/item/stack/sheet/metal/M = new(get_turf(src))
+				M.amount = 1
+				qdel(src)
+
 /obj/item/crafting/instruments
 	name = "инструменты для работы по металлу"
 	desc = "Инструменты для резки по металлу."

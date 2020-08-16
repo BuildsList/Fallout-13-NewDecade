@@ -15,7 +15,7 @@
 	maxHealth = 50
 	health = 50
 	self_weight = 35
-	faction = list("hostile", "gecko")
+	faction = list("hostile", "radroach")
 	sound_speak_chance = 5
 	sound_speak = list('sound/f13npc/gecko_charge1.ogg','sound/f13npc/gecko_charge2.ogg','sound/f13npc/gecko_charge3.ogg')
 	aggro_sound_chance = 50
@@ -31,6 +31,7 @@
 	attacktext = "кусает"
 	attack_sound = 'sound/weapons/bite.ogg'
 	move_to_delay = 3
+	density = 1
 
 	XP = 7
 

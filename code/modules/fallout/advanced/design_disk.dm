@@ -18,6 +18,7 @@
 	var/design_4 = /datum/design
 	var/design_5 = /datum/design
 	var/design_6 = /datum/design
+	var/design_7 = /datum/design
 
 /obj/item/weapon/disk/design_disk/f13/New()
 	. = ..()
@@ -27,6 +28,7 @@
 	blueprints[4] = new design_4
 	blueprints[5] = new design_5
 	blueprints[6] = new design_6
+	blueprints[7] = new design_7
 
 	icon_state = "datadisk[rand(0,6)]"
 	if(icon_state == "datadisk0")
@@ -53,6 +55,7 @@
 	design_4 = /datum/design/wirecutters
 	design_5 = /datum/design/wrench
 	design_6 = /datum/design/cable_coil
+	design_7 = /datum/design/flashlight
 
 /obj/item/weapon/disk/design_disk/f13/robco_tool/New()
 	..()
