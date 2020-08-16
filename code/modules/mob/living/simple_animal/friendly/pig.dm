@@ -1,22 +1,22 @@
 /mob/living/simple_animal/piggy
-	name = "поросёнок"
-	desc = "Как мило, однажды он вырастет и накормит кого-нибудь."
+	name = "РїРѕСЂРѕСЃС‘РЅРѕРє"
+	desc = "РљР°Рє РјРёР»Рѕ, РѕРґРЅР°Р¶РґС‹ РѕРЅ РІС‹СЂР°СЃС‚РµС‚ Рё РЅР°РєРѕСЂРјРёС‚ РєРѕРіРѕ-РЅРёР±СѓРґСЊ."
 	icon_state = "piglet"
 	icon_living = "piglet"
 	icon_dead = "piglet_dead"
 	gender = FEMALE
-	speak = list("хрю.","хрю?","хрю-ю-ю.","ХРЮ!")
-	speak_emote = list("хрюкает")
-	emote_hear = list("хрюкает.")
-	emote_see = list("тыкается рылом в землю.","чавкает.")
+	speak = list("С…СЂСЋ.","С…СЂСЋ?","С…СЂСЋ-СЋ-СЋ.","РҐР Р®!")
+	speak_emote = list("С…СЂСЋРєР°РµС‚")
+	emote_hear = list("С…СЂСЋРєР°РµС‚.")
+	emote_see = list("С‚С‹РєР°РµС‚СЃСЏ СЂС‹Р»РѕРј РІ Р·РµРјР»СЋ.","С‡Р°РІРєР°РµС‚.")
 	density = 1
 	speak_chance = 2
 	turns_per_move = 2
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 3)
-	response_help  = "гладит"
+	response_help  = "РіР»Р°РґРёС‚"
 	response_disarm = "gently pushes aside"
-	response_harm   = "пинает"
-	attacktext = "кусает"
+	response_harm   = "РїРёРЅР°РµС‚"
+	attacktext = "РєСѓСЃР°РµС‚"
 	health = 65
 	maxHealth = 65
 	var/amount_grown = 0
@@ -41,31 +41,31 @@ var/const/MAX_PIGS = 50
 var/global/pigs_count = 0
 
 /mob/living/simple_animal/pig_n
-	name = "свинья"
-	desc = "Мутировавший потомок свиньи, ну, вроде трех глаз нет..."
+	name = "СЃРІРёРЅСЊСЏ"
+	desc = "РњСѓС‚РёСЂРѕРІР°РІС€РёР№ РїРѕС‚РѕРјРѕРє СЃРІРёРЅСЊРё, РЅСѓ, РІСЂРѕРґРµ С‚СЂРµС… РіР»Р°Р· РЅРµС‚..."
 	gender = FEMALE
 	icon_state = "pig_n"
 	icon_living = "pig_n"
 	icon_dead = "pig_n_dead"
-	speak = list("хрю!","хрю-хрю!!!","хрю...")
-	speak_emote = list("хрюкает")
-	emote_hear = list("хрюкает.", "хрюкает осознавая четность бытия.")
-	emote_see = list("роет землю копытцем.","машет своими крыльями.")
+	speak = list("С…СЂСЋ!","С…СЂСЋ-С…СЂСЋ!!!","С…СЂСЋ...")
+	speak_emote = list("С…СЂСЋРєР°РµС‚")
+	emote_hear = list("С…СЂСЋРєР°РµС‚.", "С…СЂСЋРєР°РµС‚ РѕСЃРѕР·РЅР°РІР°СЏ С‡РµС‚РЅРѕСЃС‚СЊ Р±С‹С‚РёСЏ.")
+	emote_see = list("СЂРѕРµС‚ Р·РµРјР»СЋ РєРѕРїС‹С‚С†РµРј.","РјР°С€РµС‚ СЃРІРѕРёРјРё РєСЂС‹Р»СЊСЏРјРё.")
 	density = 1
 	speak_chance = 2
 	turns_per_move = 3
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 2)
 	var/egg_type = /mob/living/simple_animal/piggy
 	var/food_type = /obj/item/weapon/reagent_containers/food/snacks
-	response_help  = "гладит"
+	response_help  = "РіР»Р°РґРёС‚"
 	response_disarm = "gently pushes aside"
-	response_harm   = "пинает"
-	attacktext = "кусает"
+	response_harm   = "РїРёРЅР°РµС‚"
+	attacktext = "РєСѓСЃР°РµС‚"
 	health = 150
 	maxHealth = 150
 	var/eggsleft = 0
-	var/list/feedMessages = list("довольно хрюкает.","довольно виляет хвостиком.")
-	var/list/layMessage = list("Свинья рожает поросёнка.","Свинья люто хрюкает и рожает поросенка.","Свинья неистово визжит и рожает поросёнка.","Свинья достает сигарету, закуривает, и спокойно рожает хрюнделя.")
+	var/list/feedMessages = list("РґРѕРІРѕР»СЊРЅРѕ С…СЂСЋРєР°РµС‚.","РґРѕРІРѕР»СЊРЅРѕ РІРёР»СЏРµС‚ С…РІРѕСЃС‚РёРєРѕРј.")
+	var/list/layMessage = list("РЎРІРёРЅСЊСЏ СЂРѕР¶Р°РµС‚ РїРѕСЂРѕСЃС‘РЅРєР°.","РЎРІРёРЅСЊСЏ Р»СЋС‚Рѕ С…СЂСЋРєР°РµС‚ Рё СЂРѕР¶Р°РµС‚ РїРѕСЂРѕСЃРµРЅРєР°.","РЎРІРёРЅСЊСЏ РЅРµРёСЃС‚РѕРІРѕ РІРёР·Р¶РёС‚ Рё СЂРѕР¶Р°РµС‚ РїРѕСЂРѕСЃС‘РЅРєР°.","РЎРІРёРЅСЊСЏ РґРѕСЃС‚Р°РµС‚ СЃРёРіР°СЂРµС‚Сѓ, Р·Р°РєСѓСЂРёРІР°РµС‚, Рё СЃРїРѕРєРѕР№РЅРѕ СЂРѕР¶Р°РµС‚ С…СЂСЋРЅРґРµР»СЏ.")
 	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/pig_n/New()
@@ -79,14 +79,14 @@ var/global/pigs_count = 0
 /mob/living/simple_animal/pig_n/attackby(obj/item/O, mob/user, params)
 	if(istype(O, food_type)) //feedin' dem chickens
 		if(!stat && eggsleft < 8)
-			var/feedmsg = "[user] скармливает [O] [name]! [pick(feedMessages)]"
+			var/feedmsg = "[user] СЃРєР°СЂРјР»РёРІР°РµС‚ [O] [name]! [pick(feedMessages)]"
 			user.visible_message(feedmsg)
 			user.drop_item()
 			qdel(O)
 			eggsleft += rand(1, 4)
 //			to_chat(world, eggsleft)
 		else
-			to_chat(user, "<span class='warning'>[name] не выглядит голодной!</span>")
+			to_chat(user, "<span class='warning'>[name] РЅРµ РІС‹РіР»СЏРґРёС‚ РіРѕР»РѕРґРЅРѕР№!</span>")
 	else
 		..()
 
