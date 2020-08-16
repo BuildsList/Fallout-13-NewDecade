@@ -16,7 +16,7 @@
 /obj/item/weapon/gun/attackby(obj/item/weapon/W, mob/living/carbon/human/user, params)
 	..()
 
-	if(user.skills.getPoint("repair") <= 8)
+	if(user.skills.getPoint("repair") <= 7)
 		to_chat(user, "У вас не хватает навыхов, чтобы поставить улучшение. Навык Ремонт: 8")
 		return
 

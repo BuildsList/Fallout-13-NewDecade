@@ -624,14 +624,19 @@
 		return
 
 /obj/item/weapon/gun/attackby(obj/item/I, mob/user, params)
+	var/mob/living/carbon/human/humanUser = user
 	if(istype(I, /obj/item/crafting/weapon_repair_kit))
-		if(condition < 90)
-			if(do_after(user, 20, target = src))
-				to_chat(user, "<span class='notice'>Вы починили оружие.</span>")
-				condition = min(100, condition + 40)
-				qdel(I)
-		else
-			to_chat(user, "<span class='notice'>Не требуется. оружие в прекрасном состоянии.</span>")
+		if(humanUser.skills.getPoint("repair") >= 6)
+			if(do_after(user, 30, target = loc))
+				if(condition < 90)
+					if(do_after(user, 20, target = src))
+						to_chat(user, "<span class='notice'>Вы починили оружие.</span>")
+						condition = min(100, condition + 40)
+						qdel(I)
+				else
+					to_chat(user, "<span class='notice'>Не требуется. оружие в прекрасном состоянии.</span>")
+		if(humanUser.skills.getPoint("repair") < 6)
+			to_chat(user, "Вам не хватает навыка Ремонта ( 6 )")
 
 	if(can_flashlight)
 		if(istype(I, /obj/item/device/flashlight/seclite))

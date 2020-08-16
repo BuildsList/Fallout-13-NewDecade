@@ -90,8 +90,8 @@
 
 /obj/machinery/autolathe_prom/attackby(obj/item/O, mob/user, params)
 	var/mob/living/carbon/human/humanUser = user
-	if (humanUser.special.getPoint("i") + humanUser.skills.getPoint("science") < 12)
-		to_chat(user, "You too dumb or have not enough science skills for this autolathe")
+	if(humanUser.special.getPoint("i") + humanUser.skills.getPoint("science") < 10)
+		to_chat(user, "Вы слишком тупой. Требуется 5 ИНТ и 5 Науки.")
 		return
 
 	if(busy)

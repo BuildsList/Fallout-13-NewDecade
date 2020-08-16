@@ -128,9 +128,9 @@
 			if(do_after(user, 15, target = loc))
 				to_chat(user, "Вы перерезали не тот провод. Мина ничинает пищать...")
 				playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
-				sleep(10)
+				sleep(5)
 				icon_state = initial(icon_state) - "_detonate"
-				explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+				triggermine()
 		if(user.skills.getPoint("explosives") >= 6)
 			playsound(src.loc, I.usesound, 100, 1)
 			if(do_after(user, 15, target = loc))

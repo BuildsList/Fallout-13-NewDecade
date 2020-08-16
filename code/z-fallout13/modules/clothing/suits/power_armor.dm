@@ -82,10 +82,12 @@
 
 	enabled = !enabled
 	if(enabled)
-		to_chat(usr, "<span class='green'>Силовая броня активирована.</span>")
-		powerControl()
+		if(do_after(usr, 5, target = loc))
+			to_chat(usr, "<span class='green'>Силовая броня активирована.</span>")
+			powerControl()
 	else
-		to_chat(usr, "<span class='notice'>Силовая броня деактивирована.</span>")
+		if(do_after(usr, 5, target = loc))
+			to_chat(usr, "<span class='notice'>Силовая броня деактивирована.</span>")
 
 /obj/item/clothing/suit/armor/f13/power_armor/verb/ejectInsertCell()
 	set name = "Изъять/Вставить Ядерную ячейку"
@@ -104,20 +106,22 @@
 
 	if(!power_cell)
 		if(istype(usr.get_active_held_item(), /obj/item/weapon/stock_parts/cell_pa))
-			power_cell = usr.get_active_held_item()
-			usr.drop_item()
-			power_cell.forceMove(src)
-			powerControl()
-			to_chat(usr, "<span class='notice'>Вы подключили [power_cell.name] к [src].</span>")
-			playsound(src.loc, 'sound/weapons/selector.ogg', 40, 0, 0)
-			return
+			if(do_after(usr, 15, target = loc))
+				power_cell = usr.get_active_held_item()
+				usr.drop_item()
+				power_cell.forceMove(src)
+				powerControl()
+				to_chat(usr, "<span class='notice'>Вы подключили [power_cell.name] к [src].</span>")
+				playsound(src.loc, 'sound/weapons/selector.ogg', 40, 0, 0)
+				return
 		to_chat(usr, "<span class='warning'>Ядерный блок отсутствует!</span>")
 		return
 	else
-		to_chat(usr, "<span class='green'>Вы извлекли [power_cell.name] из [src].</span>")
-		playsound(src.loc, 'sound/weapons/selector.ogg', 40, 0, 0)
-		usr.put_in_hands(power_cell)
-		power_cell = null
+		if(do_after(usr, 10, target = loc))
+			to_chat(usr, "<span class='green'>Вы извлекли [power_cell.name] из [src].</span>")
+			playsound(src.loc, 'sound/weapons/selector.ogg', 40, 0, 0)
+			usr.put_in_hands(power_cell)
+			power_cell = null
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerControl()
 	if(!power_cell || power_cell.charge <= 0)

@@ -40,8 +40,8 @@
 
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I, mob/user, params)
 	var/mob/living/carbon/human/humanUser = user
-	if (humanUser.special.getPoint("i") + humanUser.skills.getPoint("science") < 15)
-		to_chat(user, "You too dumb or have not enough science skills for this console")
+	if (humanUser.special.getPoint("i") >=6 && humanUser.skills.getPoint("science") >= 6)
+		to_chat(user, "Вы слишком тупой. Требуется 6 ИНТ и 6 Науки.")
 		return
 
 	if (istype(I, /obj/item/weapon/disk/data)) //INSERT SOME DISKETTES

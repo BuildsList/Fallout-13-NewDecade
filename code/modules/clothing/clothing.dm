@@ -78,13 +78,18 @@
 		return ..()
 
 /obj/item/clothing/attackby(obj/item/W, mob/user, params)
+	var/mob/living/carbon/human/humanUser = user
 	if(damaged_clothes && istype(W, /obj/item/stack/sheet/under_repair_kit))
-		var/obj/item/stack/sheet/under_repair_kit/C = W
-		C.use(1)
-		update_clothes_damaged_state(FALSE)
-		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>Вы подшиваете свою [src].</span>")
-		return 1
+		if(humanUser.skills.getPoint("repair") >= 5)
+			if(do_after(user, 30, target = loc))
+				var/obj/item/stack/sheet/under_repair_kit/C = W
+				C.use(1)
+				update_clothes_damaged_state(FALSE)
+				obj_integrity = max_integrity
+				to_chat(user, "<span class='notice'>Вы подшиваете свою [src].</span>")
+				return 1
+		else
+			to_chat(user, "Вы попытались починить свою одежду, но у вас ничего не вышло. (Ремонт <5)")
 	if(pockets)
 		var/i = pockets.attackby(W, user, params)
 		if(i)
