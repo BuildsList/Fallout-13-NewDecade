@@ -65,7 +65,7 @@
 	desc = "A pair of slightly worn, steel-toed work boots.<br>Good at keeping toes safe from falling junk you find amid the ruins."
 	icon_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 30, fire = 10, acid = 0)
-	self_weight = 1
+	self_weight = 0.3
 	price = 750
 
 /obj/item/clothing/shoes/f13/khan
@@ -87,13 +87,13 @@
 	put_on_delay = 30
 	strip_delay = 40
 	resistance_flags = 0
-	self_weight = 1
+	self_weight = 0.4
 	price = 1000
 
 /obj/item/clothing/shoes/f13/military/light //I'm a ninja!
 	name = "advanced combat boots"
 	desc = "High speed, no-drag combat boots designed for use by U.S. special forces before the Great War.<br>The soles are made of aerated rubber to silence the movement of the wearer."
-	self_weight = 0.5
+	self_weight = 0.2
 	flags = NOSLIP | QUIETSTEPSOUND
 
 /obj/item/clothing/shoes/f13/military/diesel
@@ -178,4 +178,4 @@
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-	self_weight = 1
+	self_weight = 0.4
