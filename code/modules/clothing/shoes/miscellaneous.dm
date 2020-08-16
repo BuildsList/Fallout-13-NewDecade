@@ -55,7 +55,7 @@
 
 /obj/item/clothing/shoes/galoshes
 	desc = "A pair of yellow rubber boots, designed to prevent slipping on wet surfaces."
-	name = "galoshes"
+	name = "галоши"
 	icon_state = "galoshes"
 	permeability_coefficient = 0.05
 	flags = NOSLIP
