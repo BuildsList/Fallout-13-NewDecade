@@ -167,7 +167,7 @@
 /obj/structure/new_closet/proc/ShowWindow(mob/user)
 	var/dat = {"<meta charset="UTF-8">"}
 	dat += {"<div class='block'>
-				<h3>Stored Items</h3>
+				<h3>Предметы внутри</h3>
 				<table align='center'>"}
 	for(var/i = contents.len, i >= 1, i--)
 		var/obj/item/I = contents[i]

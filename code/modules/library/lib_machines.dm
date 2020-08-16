@@ -15,7 +15,7 @@
  * Library Public Computer
  */
 /obj/machinery/computer/libraryconsole
-	name = "library visitor console"
+	name = "консоль посетителя библиотеки"
 	icon_state = "oldcomp"
 	icon_screen = "library"
 	icon_keyboard = null
@@ -38,10 +38,10 @@
 	switch(screenstate)
 		if(0)
 			dat += "<h2>Search Settings</h2><br>"
-			dat += "<A href='?src=\ref[src];settitle=1'>Filter by Title: [title]</A><BR>"
-			dat += "<A href='?src=\ref[src];setcategory=1'>Filter by Category: [category]</A><BR>"
-			dat += "<A href='?src=\ref[src];setauthor=1'>Filter by Author: [author]</A><BR>"
-			dat += "<A href='?src=\ref[src];search=1'>\[Start Search\]</A><BR>"
+			dat += "<A href='?src=\ref[src];settitle=1'>Фильтр по названию: [title]</A><BR>"
+			dat += "<A href='?src=\ref[src];setcategory=1'>Фильтр по категориям: [category]</A><BR>"
+			dat += "<A href='?src=\ref[src];setauthor=1'>Фильтр по авторам: [author]</A><BR>"
+			dat += "<A href='?src=\ref[src];search=1'>\[Начать поиск\]</A><BR>"
 		if(1)
 			establish_db_connection()
 			if(!dbcon.IsConnected())
@@ -50,7 +50,7 @@
 				dat += "<font color=red><b>ERROR</b>: Malformed search request. Please contact your system administrator for assistance.</font><BR>"
 			else
 				dat += "<table>"
-				dat += "<tr><td>AUTHOR</td><td>TITLE</td><td>CATEGORY</td><td>SS<sup>13</sup>BN</td></tr>"
+				dat += "<tr><td>АВТОР</td><td>НАЗВАНИЕ</td><td>КАТЕГОРИЯ</td><td>ФЛ<sup>13</sup>BN</td></tr>"
 
 				var/DBQuery/query = dbcon.NewQuery(SQLquery)
 				query.Execute()
@@ -62,7 +62,7 @@
 					var/id = query.item[4]
 					dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td></tr>"
 				dat += "</table><BR>"
-			dat += "<A href='?src=\ref[src];back=1'>\[Go Back\]</A><BR>"
+			dat += "<A href='?src=\ref[src];back=1'>\[Назад\]</A><BR>"
 	var/datum/browser/popup = new(user, "publiclibrary", name, 600, 400)
 	popup.set_content(dat)
 	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))

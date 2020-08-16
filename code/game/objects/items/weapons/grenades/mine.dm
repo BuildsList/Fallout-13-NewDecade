@@ -2,18 +2,18 @@
 	name = "мина"
 	desc = "Better stay away from that thing."
 	icon = 'icons/fallout/objects/items.dmi'
-	icon_state = "landmine_item"
+	icon_state = "landmine"
 	var/triggered = 0
 	det_time = 0																										//Г‚Г§Г°Г»ГўГ ГҐГІГ±Гї Г¬Г®Г¬ГҐГ­ГІГ Г«ГјГ­Г®
 
 
 /obj/item/weapon/grenade/mine/attack_self(mob/user)
 	if(!active)
-		to_chat(user, "<span class='warning'>You plant the [name]!</span>")											//Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ, ГЄГ®ГІГ®Г°Г®ГҐ ГўГ»ГўГ®Г¤ГЁГІГ±Гї ГЁГЈГ°Г®ГЄГі ГЇГ°ГЁ ГіГ±ГІГ Г­Г®ГўГЄГҐ.
-		visible_message("<span class='danger'>[user] plants the [src]!</span>")										//Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГўГ±ГҐГ¬ ГЇГ°ГЁГ±ГіГІГ±ГІГўГіГѕГ№ГЁГ¬
+		to_chat(user, "<span class='warning'>Вы устанавливаете [name]!</span>")											//Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ, ГЄГ®ГІГ®Г°Г®ГҐ ГўГ»ГўГ®Г¤ГЁГІГ±Гї ГЁГЈГ°Г®ГЄГі ГЇГ°ГЁ ГіГ±ГІГ Г­Г®ГўГЄГҐ.
+		visible_message("<span class='danger'>[user] устанавливает [src]!</span>")										//Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГўГ±ГҐГ¬ ГЇГ°ГЁГ±ГіГІГ±ГІГўГіГѕГ№ГЁГ¬
 		playsound(user.loc, 'sound/weapons/armbomb.ogg', 60, 1)
 		active = 1
-//			icon_state = initial(icon_state) + "_active"																//Г…Г±Г«ГЁ ГЎГіГ¤ГҐГёГј Г¬ГҐГ­ГїГІГј Г±ГЇГ°Г Г©ГІ Гі Г ГЄГІГЁГўГ­Г®Г© - ГЁГ§Г¬ГҐГ­ГЁ ГЅГІГі Г±ГІГ°Г®ГЄГі.
+		icon_state = initial(icon_state) + "_active"																//Г…Г±Г«ГЁ ГЎГіГ¤ГҐГёГј Г¬ГҐГ­ГїГІГј Г±ГЇГ°Г Г©ГІ Гі Г ГЄГІГЁГўГ­Г®Г© - ГЁГ§Г¬ГҐГ­ГЁ ГЅГІГі Г±ГІГ°Г®ГЄГі.
 		add_fingerprint(user)																						//ГЋГ±ГІГ ГўГ«ГїГҐГ¬ Г®ГІГЇГҐГ·Г ГІГЄГЁ Г¬Г®ГЎГ  Г­Г  Г¬ГЁГ­ГҐ
 
 		var/turf/bombturf = get_turf(src)																			//Г‘Г«ГҐГ¤ГіГѕГ№ГЁГҐ ГёГҐГ±ГІГј Г±ГІГ°Г®ГЄ ГўГ®Г®ГЎГ№ГҐ Г­ГҐ Г®ГЎГїГ§Г ГІГҐГ«ГјГ­Г», Г«ГЁГёГј ГЇГЁГёГіГІ Гў Г«Г®ГЈГЁ, Г·ГІГ® ГЄГІГ®-ГІГ® ГЇГ®Г±ГІГ ГўГЁГ« Г¬ГЁГ­Гі.
@@ -72,7 +72,9 @@
 	var/range_heavy = 1
 	var/range_light = 2
 	var/range_flash = 3
-	icon_state = "landmine_item"
+	var/press_bolted = 1
+	var/hidden = 0
+	icon_state = "landmine"
 	price = 350
 
 /obj/item/weapon/grenade/mine/explosive/mineEffect(mob/victim)
@@ -101,3 +103,50 @@
 	active = 1
 	anchored = 1
 	icon_state = "capmine_active"
+
+/obj/item/weapon/grenade/mine/explosive/attackby(obj/item/I, mob/living/carbon/human/user, params)
+	if(istype(I, /obj/item/weapon/shovel) && active == 1)
+		if(do_after(user, 20, target = loc))
+			to_chat(user, "Вы прикапываете мину песком, маскируя её.")
+			icon_state = initial(icon_state) + "_hidden"
+			hidden = 1
+			return
+	if(istype(I, /obj/item/weapon/shovel) && hidden == 1)
+		if(do_after(user, 20, target = loc))
+			to_chat(user, "Вы раскапываете мину.")
+			icon_state = initial(icon_state) - "_hidden"
+			hidden = 0
+	if(istype(I, /obj/item/weapon/screwdriver) && active == 1)
+		to_chat(user, "Вы аккуратно начинаете развинчивать болты на мине.")
+		playsound(src.loc, I.usesound, 100, 1)
+		if(do_after(user, 15, target = loc))
+			to_chat(user, "Вы очень аккуратно убираете болтики с нажимной пластины.")
+			press_bolted = 0
+	if(istype(I, /obj/item/weapon/wirecutters) && press_bolted == 0)
+		if(user.skills.getPoint("explosives") <= 2)
+			playsound(src.loc, I.usesound, 100, 1)
+			if(do_after(user, 15, target = loc))
+				to_chat(user, "Вы перерезали не тот провод. Мина ничинает пищать...")
+				playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
+				sleep(10)
+				icon_state = initial(icon_state) - "_detonate"
+				explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+		if(user.skills.getPoint("explosives") >= 6)
+			playsound(src.loc, I.usesound, 100, 1)
+			if(do_after(user, 15, target = loc))
+				to_chat(user, "Вы успешно обрезали провода и обезвредели бомбу.")
+				icon_state = initial(icon_state) - "_active"
+				new /obj/item/weapon/grenade/mine/explosive
+				active = 0
+				qdel(src)
+		if(user.skills.getPoint("explosives") >= 3 !=6 !=7 !=8 !=9 !=10)
+			playsound(src.loc, I.usesound, 100, 1)
+			if(do_after(user, 15, target = loc))
+				to_chat(user, "Вы успешно обрезали провода, но мина всё-ещё может взорваться. Вы можете попробовать разобрать мину на компоненты...")
+				active = 0
+	if(istype(I, /obj/item/weapon/wrench) && active == 0)
+		to_chat(user, "Вы начинаете скручивать оставшиеся детали мины.")
+		playsound(src.loc, I.usesound, 100, 1)
+		if(do_after(user, 15, target = loc))
+			to_chat(user, "К сожалению, вы повредили корпус и вы не смогли достать ничего полезного.")
+			qdel(src)

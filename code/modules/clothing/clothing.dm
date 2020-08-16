@@ -78,12 +78,12 @@
 		return ..()
 
 /obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cloth))
-		var/obj/item/stack/sheet/cloth/C = W
+	if(damaged_clothes && istype(W, /obj/item/stack/sheet/under_repair_kit))
+		var/obj/item/stack/sheet/under_repair_kit/C = W
 		C.use(1)
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damages on [src] with [C].</span>")
+		to_chat(user, "<span class='notice'>Вы подшиваете свою [src].</span>")
 		return 1
 	if(pockets)
 		var/i = pockets.attackby(W, user, params)

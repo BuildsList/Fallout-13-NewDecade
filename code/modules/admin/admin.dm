@@ -722,7 +722,7 @@ var/global/BSACooldown = 0
 /datum/admins/proc/manage_free_slots()
 	if(!check_rights())
 		return
-	var/dat = "<html><meta charset=UTF-8><head><title>Manage Free Slots</title></head><body>"
+	var/dat = "<html><meta charset=UTF-8><head><title>Освободить слоты</title></head><body>"
 	var/count = 0
 
 	if(ticker && !ticker.mode)

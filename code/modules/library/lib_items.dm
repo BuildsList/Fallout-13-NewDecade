@@ -11,7 +11,7 @@
  */
 
 /obj/structure/bookcase
-	name = "bookcase"
+	name = "книжная полка"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bookempty"
 	anchored = 0
@@ -129,7 +129,7 @@
 
 ///METAL SHELF///
 /obj/structure/metalcase
-	name = "metalshelf"
+	name = "книжная полка"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "metalshelfempty"
 	anchored = 0
@@ -280,19 +280,19 @@
  * Book
  */
 /obj/item/weapon/book
-	name = "book"
+	name = "книга"
 	icon = 'icons/obj/library.dmi'
 	icon_state ="book"
 	throw_speed = 1
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL		 //upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)
-	attack_verb = list("bashed", "whacked", "educated")
+	attack_verb = list("стукает", "бьёт", "учит")
 	resistance_flags = FLAMMABLE
-	var/dat				//Actual page content
+	var/dat = {"<meta charset="UTF-8">"}			//Actual page content
 	var/due_date = 0	//Game time in 1/10th seconds
-	var/author			//Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	var/author = {"<meta charset="UTF-8">"}		//Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	var/unique = 0		//0 - Normal book, 1 - Should not be treated as normal book, unable to be copied, unable to be modified
-	var/title			//The real name of the book.
+	var/title = {"<meta charset="UTF-8">"}			//The real name of the book.
 	var/window_size = null // Specific window size for the book, i.e: "1920x1080", Size x Width
 
 /obj/item/weapon/book/attack_self(mob/user)
@@ -303,11 +303,11 @@
 		to_chat(user, "<span class='notice'>You skim through the book but can't comprehend any of it.</span>")
 		return
 	if(dat)
-		user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book[window_size != null ? ";size=[window_size]" : ""]")
-		user.visible_message("[user] opens a book titled \"[title]\" and begins reading intently.")
+		user << browse("<TT><I>Автор: [author].</I></TT> <BR>" + "[dat]", "window=book[window_size != null ? ";size=[window_size]" : ""]")
+		user.visible_message("[user] открывает книгу под названием \"[title]\" и начинает читать.")
 		onclose(user, "book")
 	else
-		to_chat(user, "<span class='notice'>This book is completely blank!</span>")
+		to_chat(user, "<span class='notice'>Книга пуста!</span>")
 
 
 /obj/item/weapon/book/attackby(obj/item/I, mob/user, params)
@@ -318,9 +318,9 @@
 		if(unique)
 			to_chat(user, "<span class='warning'>These pages don't seem to take the ink well! Looks like you can't modify it.</span>")
 			return
-		var/choice = input("What would you like to change?") in list("Title", "Contents", "Author", "Cancel")
+		var/choice = input("Что вы хотите изменить?") in list("Название", "Содержание", "Автор", "Закрыть")
 		switch(choice)
-			if("Title")
+			if("Название")
 				var/newtitle = reject_bad_text(stripped_input(usr, "Write a new title:"))
 				if (length(newtitle) > 20)
 					to_chat(usr, "That title won't fit on the cover!")
@@ -331,15 +331,15 @@
 				else
 					name = newtitle
 					title = newtitle
-			if("Contents")
+			if("Содержание")
 				var/content = stripped_input(usr, "Write your book's contents (HTML NOT allowed):","","",8192)
 				if(!content)
 					to_chat(usr, "The content is invalid.")
 					return
 				else
 					dat += content
-			if("Author")
-				var/newauthor = stripped_input(usr, "Write the author's name:")
+			if("Автор")
+				var/newauthor = stripped_input(usr, "Напишите имя автора:")
 				if(!newauthor)
 					to_chat(usr, "The name is invalid.")
 					return

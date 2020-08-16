@@ -32,7 +32,7 @@
 /obj/effect/mine/proc/triggermine(mob/victim)
 	if(triggered)
 		return
-	visible_message("<span class='danger'>[victim] sets off [bicon(src)] [src]!</span>")
+	visible_message("<span class='danger'>[victim] активирует [bicon(src)] [src]!</span>")
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
@@ -229,8 +229,3 @@
 	var/mob/living/simple_animal/hostile/ghost_man = new/mob/living/simple_animal/hostile/ghost_man(get_turf(victim))
 	ghost_man.update_icons()
 	qdel()
-
-/obj/item/weapon/grenade/mine/explosive/planted/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/shovel))
-		icon_state = "landmine_hidden"
-	return

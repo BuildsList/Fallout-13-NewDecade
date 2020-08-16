@@ -1,12 +1,12 @@
 /client/proc/cmd_admin_drop_everything(mob/M in mob_list)
 	set category = null
-	set name = "Drop Everything"
+	set name = "Выбросить все вещи"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
 		return
 
-	var/confirm = alert(src, "Make [M] drop everything?", "Message", "Yes", "No")
-	if(confirm != "Yes")
+	var/confirm = alert(src, "[M] сбросит все вещи, уверены?", "Message", "Да", "Нет")
+	if(confirm != "Да")
 		return
 
 	for(var/obj/item/W in M)
@@ -109,7 +109,7 @@
 
 /client/proc/cmd_admin_godmode(mob/M in mob_list)
 	set category = "Special Verbs"
-	set name = "Godmode"
+	set name = "Бессмертие"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
 		return
@@ -260,7 +260,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 /N */
 /client/proc/respawn_character()
 	set category = "Special Verbs"
-	set name = "Respawn Character"
+	set name = "Возродить персонажа"
 	set desc = "Respawn a person that has been gibbed/dusted/killed. They must be a ghost for this to work and preferably should not have a body to go back into."
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -308,7 +308,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				//Now to give them their mind back.
 				G_found.mind.transfer_to(new_xeno)	//be careful when doing stuff like this! I've already checked the mind isn't in use
 				new_xeno.key = G_found.key
-				to_chat(new_xeno, "You have been fully respawned. Enjoy the game.")
+				to_chat(new_xeno, "Вы были возрождены. Наслаждайтесь игрой.")
 				message_admins("<span class='adminnotice'>[key_name_admin(usr)] has respawned [new_xeno.key] as a filthy xeno.</span>")
 				return	//all done. The ghost is auto-deleted
 
@@ -446,7 +446,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /client/proc/cmd_admin_rejuvenate(mob/living/M in mob_list)
 	set category = "Special Verbs"
-	set name = "Rejuvenate"
+	set name = "Оживить"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
 		return
@@ -457,13 +457,13 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 	M.revive(full_heal = 1, admin_revive = 1)
 
-	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
+	log_admin("[key_name(usr)] отхиливает / оживляет [key_name(M)]")
 	message_admins("<span class='danger'>Администратор [key_name_admin(usr)] излечил / оживил [key_name_admin(M)]!</span>")
 	feedback_add_details("admin_verb","REJU") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Special Verbs"
-	set name = "Radio Broadcast: Transmit"
+	set name = "Радио: Передача"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
 		return
@@ -498,7 +498,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /client/proc/cmd_admin_delete(atom/O as obj|mob|turf in world)
 	set category = "Admin"
-	set name = "Delete"
+	set name = "Удалить"
 
 	if (!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -578,7 +578,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /client/proc/cmd_admin_gib(mob/M in mob_list)
 	set category = "Special Verbs"
-	set name = "Gib"
+	set name = "Гибнуть"
 
 	if (!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -604,7 +604,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	feedback_add_details("admin_verb","GIB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_gib_self()
-	set name = "Gibself"
+	set name = "Самогиб"
 	set category = "Fun"
 
 	var/confirm = alert(src, "Вы уверены?", "Подтвердите", "Да", "Нет")
@@ -640,7 +640,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /client/proc/admin_call_shuttle()
 	set category = "Admin"
-	set name = "Call Train"
+	set name = "Вызвать Поезд"
 
 	if(EMERGENCY_AT_LEAST_DOCKED)
 		return
@@ -661,7 +661,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /client/proc/admin_cancel_shuttle()
 	set category = "Admin"
-	set name = "Cancel Train"
+	set name = "Отменить Поезд"
 	if(!check_rights(0))
 		return
 	if(alert(src, "Вы уверены?", "Подтвердите", "Да", "Нет") != "Да")
@@ -809,48 +809,48 @@ var/list/datum/outfit/custom_outfits = list() //Admin created outfits
 	var/list/masks = typesof(/obj/item/clothing/mask)
 	var/list/ids = typesof(/obj/item/weapon/card/id)
 
-	var/uniform_select = "<select name=\"outfit_uniform\"><option value=\"\">None</option>"
+	var/uniform_select = "<select name=\"outfit_uniform\"><option value=\"\">н/а</option>"
 	for(var/path in uniforms)
 		uniform_select += "<option value=\"[path]\">[path]</option>"
 	uniform_select += "</select>"
 
-	var/suit_select = "<select name=\"outfit_suit\"><option value=\"\">None</option>"
+	var/suit_select = "<select name=\"outfit_suit\"><option value=\"\">н/а</option>"
 	for(var/path in suits)
 		suit_select += "<option value=\"[path]\">[path]</option>"
 	suit_select += "</select>"
 
-	var/gloves_select = "<select name=\"outfit_gloves\"><option value=\"\">None</option>"
+	var/gloves_select = "<select name=\"outfit_gloves\"><option value=\"\">н/а</option>"
 	for(var/path in gloves)
 		gloves_select += "<option value=\"[path]\">[path]</option>"
 	gloves_select += "</select>"
 
-	var/shoes_select = "<select name=\"outfit_shoes\"><option value=\"\">None</option>"
+	var/shoes_select = "<select name=\"outfit_shoes\"><option value=\"\">н/а</option>"
 	for(var/path in shoes)
 		shoes_select += "<option value=\"[path]\">[path]</option>"
 	shoes_select += "</select>"
 
-	var/head_select = "<select name=\"outfit_head\"><option value=\"\">None</option>"
+	var/head_select = "<select name=\"outfit_head\"><option value=\"\">н/а</option>"
 	for(var/path in headwear)
 		head_select += "<option value=\"[path]\">[path]</option>"
 	head_select += "</select>"
 
-	var/glasses_select = "<select name=\"outfit_glasses\"><option value=\"\">None</option>"
+	var/glasses_select = "<select name=\"outfit_glasses\"><option value=\"\">н/а</option>"
 	for(var/path in glasses)
 		glasses_select += "<option value=\"[path]\">[path]</option>"
 	glasses_select += "</select>"
 
-	var/mask_select = "<select name=\"outfit_mask\"><option value=\"\">None</option>"
+	var/mask_select = "<select name=\"outfit_mask\"><option value=\"\">н/а</option>"
 	for(var/path in masks)
 		mask_select += "<option value=\"[path]\">[path]</option>"
 	mask_select += "</select>"
 
-	var/id_select = "<select name=\"outfit_id\"><option value=\"\">None</option>"
+	var/id_select = "<select name=\"outfit_id\"><option value=\"\">н/а</option>"
 	for(var/path in ids)
 		id_select += "<option value=\"[path]\">[path]</option>"
 	id_select += "</select>"
 
 	var/dat = {"
-	<html><meta charset=UTF-8><head><title>Create Outfit</title></head><body>
+	<html><meta charset=UTF-8><head><title>Создать костюм</title></head><body>
 	<form name="outfit" action="byond://?src=\ref[src]" method="get">
 	<input type="hidden" name="src" value="\ref[src]">
 	<input type="hidden" name="create_outfit" value="1">
@@ -862,61 +862,61 @@ var/list/datum/outfit/custom_outfits = list() //Admin created outfits
 			</td>
 		</tr>
 		<tr>
-			<th>Uniform:</th>
+			<th>Форма:</th>
 			<td>
 			   [uniform_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Suit:</th>
+			<th>Броня:</th>
 			<td>
 				[suit_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Back:</th>
+			<th>Спина:</th>
 			<td>
 				<input type="text" name="outfit_back" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Belt:</th>
+			<th>Пояс:</th>
 			<td>
 				<input type="text" name="outfit_belt" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Gloves:</th>
+			<th>Перчатки:</th>
 			<td>
 				[gloves_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Shoes:</th>
+			<th>Ботинки:</th>
 			<td>
 				[shoes_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Head:</th>
+			<th>Голова:</th>
 			<td>
 				[head_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Mask:</th>
+			<th>Маска:</th>
 			<td>
 				[mask_select]
 			</td>
 		</tr>
 		<tr>
-			<th>Ears:</th>
+			<th>Уши:</th>
 			<td>
 				<input type="text" name="outfit_ears" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Glasses:</th>
+			<th>Очки:</th>
 			<td>
 				[glasses_select]
 			</td>
@@ -928,31 +928,31 @@ var/list/datum/outfit/custom_outfits = list() //Admin created outfits
 			</td>
 		</tr>
 		<tr>
-			<th>Left Pocket:</th>
+			<th>Левый карман:</th>
 			<td>
 				<input type="text" name="outfit_l_pocket" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Right Pocket:</th>
+			<th>Правый карман:</th>
 			<td>
 				<input type="text" name="outfit_r_pocket" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Suit Store:</th>
+			<th>Хранилище:</th>
 			<td>
 				<input type="text" name="outfit_s_store" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Right Hand:</th>
+			<th>Правая рука:</th>
 			<td>
 				<input type="text" name="outfit_r_hand" value="">
 			</td>
 		</tr>
 		<tr>
-			<th>Left Hand:</th>
+			<th>Левая рука:</th>
 			<td>
 				<input type="text" name="outfit_l_hand" value="">
 			</td>

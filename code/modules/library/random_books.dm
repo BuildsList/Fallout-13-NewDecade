@@ -58,20 +58,20 @@
 
 
 /obj/structure/bookcase/random/fiction
-	name = "bookcase (Fiction)"
+	name = "книжная полка (Фикция)"
 	category = "Fiction"
 /obj/structure/bookcase/random/nonfiction
-	name = "bookcase (Non-Fiction)"
+	name = "книжная полка (Не фикция)"
 	category = "Non-fiction"
 /obj/structure/bookcase/random/religion
-	name = "bookcase (Religion)"
+	name = "книжная полка (Религиозное)"
 	category = "Religion"
 /obj/structure/bookcase/random/adult
-	name = "bookcase (Adult)"
+	name = "книжная полка (18+)"
 	category = "Adult"
 
 /obj/structure/bookcase/random/reference
-	name = "bookcase (Reference)"
+	name = "книжная полка (Руководства)"
 	category = "Reference"
 	var/ref_book_prob = 20
 

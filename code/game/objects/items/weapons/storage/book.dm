@@ -11,7 +11,7 @@
 	var/title = "book"
 
 /obj/item/weapon/storage/book/attack_self(mob/user)
-		to_chat(user, "<span class='notice'>The pages of [title] have been cut out!</span>")
+		to_chat(user, "<span class='notice'>Страницы [title] были вырваны!</span>")
 
 var/global/list/biblenames      = list("Bible", "Quran", "Scrapbook", "Burning Bible", "Clown Bible", "Banana Bible", "Creeper Bible", "White Bible", "Holy Light",  "The God Delusion", "Tome",        "The King in Yellow", "Ithaqua", "Scientology", "Melted Bible", "Necronomicon")
 var/global/list/biblestates     = list("bible", "koran", "scrapbook", "burning",       "honk1",       "honk2",        "creeper",       "white",       "holylight",   "atheist",          "tome",        "kingyellow",         "ithaqua", "scientology", "melted",       "necronomicon")
@@ -34,7 +34,7 @@ var/global/list/bibleitemstates = list("bible", "koran", "scrapbook", "bible",  
 		return
 	// If H is the Chaplain, we can set the icon_state of the bible (but only once!)
 	if(!SSreligion.Bible_icon_state && H.job == "Chaplain")
-		var/dat = "<html><meta charset=UTF-8><head><title>Pick Bible Style</title></head><body><center><h2>Pick a bible style</h2></center><table>"
+		var/dat = "<html><meta charset=UTF-8><head><title>Выберите стиль библии</title></head><body><center><h2>Выберите стиль библии</h2></center><table>"
 		var/i
 		for(i = 1, i < biblestates.len, i++)
 			var/icon/bibleicon = icon('icons/obj/storage.dmi', biblestates[i])
