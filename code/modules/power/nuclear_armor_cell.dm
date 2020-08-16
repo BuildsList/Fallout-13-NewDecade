@@ -1,6 +1,6 @@
 /obj/item/weapon/stock_parts/cell_pa
-	name = "ядерная батарея"
-	desc = "Ядерный источник питания для силовой брони."
+	name = "СЏРґРµСЂРЅР°СЏ Р±Р°С‚Р°СЂРµСЏ"
+	desc = "РЇРґРµСЂРЅС‹Р№ РёСЃС‚РѕС‡РЅРёРє РїРёС‚Р°РЅРёСЏ РґР»СЏ СЃРёР»РѕРІРѕР№ Р±СЂРѕРЅРё."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "pa_cell"
 	item_state = "cell"
@@ -88,7 +88,7 @@
 	if(rigged)
 		to_chat(user, "<span class='danger'>This power cell seems to be faulty!</span>")
 	else
-		to_chat(user, "Индикатор заряда показывает: [round(src.percent() )]%.")
+		to_chat(user, "РРЅРґРёРєР°С‚РѕСЂ Р·Р°СЂСЏРґР° РїРѕРєР°Р·С‹РІР°РµС‚: [round(src.percent() )]%.")
 
 /obj/item/weapon/stock_parts/cell_pa/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -160,7 +160,7 @@
 		return 0
 
 /obj/item/weapon/stock_parts/cell_pa/default
-	name = "ядерная батарея"
+	name = "СЏРґРµСЂРЅР°СЏ Р±Р°С‚Р°СЂРµСЏ"
 	origin_tech = "powerstorage=2"
 	icon_state = "pa_cell"
 	maxcharge = 3500
@@ -170,7 +170,7 @@
 	price = 200
 
 /obj/item/weapon/stock_parts/cell_pa/high
-	name = "ядерная батарея+"
+	name = "СЏРґРµСЂРЅР°СЏ Р±Р°С‚Р°СЂРµСЏ+"
 	icon_state = "pa_cell"
 	maxcharge = 4500
 	chargerate = 0.5
@@ -180,7 +180,7 @@
 	charge = 0
 
 /obj/item/weapon/stock_parts/cell_pa/admin
-	name = "ядерная батарея+++++"
+	name = "СЏРґРµСЂРЅР°СЏ Р±Р°С‚Р°СЂРµСЏ+++++"
 	origin_tech = "powerstorage=2"
 	icon_state = "pa_cell"
 	maxcharge = 350000
@@ -189,7 +189,7 @@
 	chargerate = 100
 
 /obj/item/weapon/stock_parts/cell_pa/admin/self_recharge
-	name = "ядерная батарея+++++"
+	name = "СЏРґРµСЂРЅР°СЏ Р±Р°С‚Р°СЂРµСЏ+++++"
 	origin_tech = "powerstorage=2"
 	icon_state = "pa_cell"
 	maxcharge = 350000
