@@ -169,7 +169,7 @@
 
 	outfit = /datum/outfit/job/enclave_private
 
-	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_cloning, access_mineral_storeroom)
+	access = list(access_medical, access_morgue, access_surgery, access_cloning, access_mineral_storeroom)
 	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/enclave_private
