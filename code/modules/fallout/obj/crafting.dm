@@ -386,7 +386,6 @@
 	icon_state = "under_repair_set"
 	price = 800
 	singular_name = "швейный набор"
-	icon_state = "sheet-cloth"
 	origin_tech = "materials=2"
 	resistance_flags = FLAMMABLE
 	force = 0

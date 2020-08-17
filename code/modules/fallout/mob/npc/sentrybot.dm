@@ -51,9 +51,15 @@
 	projectiletype = /obj/item/projectile/beam/laser/pistol/ultraweak
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	XP = 55
+	var/lootable = 0
+	var/unscrewed = 0
+	var/wire_cut = 0
+	var/core_stable = 1
+	var/core_lootable = 0
+	var/spam_protect_time = 0
 
 /obj/item/projectile/beam/laser/pistol/ultraweak
-	damage = 10 //quantity over quality
+	damage = 8 //quantity over quality
 
 /mob/living/simple_animal/hostile/sentrybot/proc/do_death_beep()
 	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
@@ -63,12 +69,122 @@
 	explosion(src,1,2,4,4)
 	qdel(src)
 
+/mob/living/simple_animal/hostile/sentrybot/proc/self_destruct_looted()
+	explosion(src,1,1,2,2)
+	qdel(src)
+
 /mob/living/simple_animal/hostile/sentrybot/death()
-	new /obj/effect/particle_effect/sparks
-	for(var/i in 1 to 3)
-		addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
-	addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
-	return ..()
+	switch(rand(1,15))
+		if(5)
+			new/obj/effect/particle_effect/sparks
+			for(var/i in 1 to 3)
+				addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
+			addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
+			return ..()
+		else
+			new/obj/effect/particle_effect/sparks
+			lootable = 1
+			desc = "Довоенный робот охранник, некогда грозная машина, теперь лишь груда металла, может из неё удастся что-то получить."
+			name = "повреждённый робот охранник"
+			return ..()
+
+/mob/living/simple_animal/hostile/sentrybot/attackby(obj/item/I, mob/living/carbon/human/user, params)
+	if(istype(I, /obj/item/weapon/screwdriver) && lootable == 1)
+		to_chat(user, "Вы начинаете отвинчивать крепления на спинной панели реактора.")
+		playsound(src.loc, I.usesound, 100, 1)
+		if(do_after(user, 20, target = loc))
+			if(user.skills.getPoint("science") <= 4)
+				to_chat(user, "Вы отвинтили крепления, и перед вами выпала каша из проводов, достаточно сложно определить, какой из них вам нужен...")
+				unscrewed = 1
+				lootable = 0
+				return
+			if(user.skills.getPoint("science") >= 5)
+				to_chat(user, "Вы отвинтили крепление с панели реактора, перед вами выпала каша из проводов, однако ваших знаний достаточно чтобы понять что именно вам нужно.")
+				unscrewed = 1
+				lootable = 0
+				return
+		return
+	if(istype(I, /obj/item/weapon/wirecutters) && unscrewed == 1)
+		if(user.skills.getPoint("science") <= 4)
+			to_chat(user, "Попытка не пытка, хоть тут и не ясно, какой вам всё-же нужен провод, вы аккуратно начинаете перебирать каждый из них.")
+			if(do_after(user, 90, target = loc))
+				playsound(src.loc, I.usesound, 100, 1)
+				to_chat(user, "Это было достаточно сложно, учитывая количество проводов, но вы всё-же справились с этим, хоть и не уверены, добавит ли это стабильности поврежденной ячейке, осталось отварить защитную крышку ядерного блока.")
+				wire_cut = 1
+				core_stable = 0
+				unscrewed = 0
+				return
+			return
+		if(user.skills.getPoint("science") >= 5)
+			to_chat(user, "Вы точно знаете, какие провода вам нужны и принимаетесь ловко обрезать их.")
+			if(do_after(user, 25, target = loc))
+				playsound(src.loc, I.usesound, 100, 1)
+				to_chat(user, "Это было легко, вы смогли обрезать лишь нужные вам провода, что явно добавит стабильности ядерному блоку, который теперь надо изъять, отварив защитную крышку.")
+				wire_cut = 1
+				unscrewed = 0
+				return
+			return
+	if(istype(I, /obj/item/weapon/weldingtool) && wire_cut == 1)
+		var/obj/item/weapon/weldingtool/WT = I
+		if(WT.remove_fuel(0,user))
+			playsound(src.loc, I.usesound, 100, 1)
+			if(user.skills.getPoint("science") >= 5)
+				to_chat(user, "Вы начинаете аккуратно отваривать защитную крышку ядерного блока, стараясь не повредить сам блок.")
+				if(do_after(user, 30, target = loc))
+					if( !WT.isOn() )
+						return
+					playsound(src.loc, I.usesound, 100, 1)
+					to_chat(user, "Вы успешно отвариваете крышку, перед вами предстаёт ядерный блок.")
+					new/obj/item/stack/sheet/plasteel(get_turf(src), 1)
+					new/obj/effect/particle_effect/sparks
+					core_lootable = 1
+					wire_cut = 0
+					return
+				return
+			if(user.skills.getPoint("science") <= 4)
+				to_chat(user, "Понимая, что ядерная батарея скорее всего теперь нестабильна, вы решаете действовать максимально аккуратно.")
+				if(do_after(user, 120, target = loc))
+					if( !WT.isOn() )
+						return
+					playsound(src.loc, I.usesound, 100, 1)
+					to_chat(user, "Вы успешно отвариваете крышку, перед вами предстаёт дымящийся ядерный блок.")
+					new/obj/item/stack/sheet/plasteel(get_turf(src), 1)
+					new/obj/effect/particle_effect/sparks
+					core_lootable = 1
+					wire_cut = 0
+					return
+				return
+	if(istype(I, /obj/item/weapon/wirecutters) && wire_cut == 1)
+		to_chat(user, "Провода уже обрезаны.")
+		return
+	if(istype(I, /obj/item/weapon/screwdriver) && unscrewed == 0)
+		to_chat(user, "Панель уже отвинчена.")
+		return
+	if(istype(I, /obj/item/weapon/weldingtool) && core_lootable == 1)
+		to_chat(user, "Крышка уже отварена")
+		return
+	return
+
+/mob/living/simple_animal/hostile/sentrybot/attack_hand(mob/living/carbon/human/user)
+	if(core_lootable == 1 & core_stable == 1)
+		if(do_after(user, 10, target = loc))
+			var/obj/item/weapon/stock_parts/cell_pa/high/C = new(get_turf(src))
+			core_lootable = 0
+			to_chat(user, "Вы вытягиваете ядерный блок из корпуса робота. Теперь у вас есть 15 секунд, прежде чем останки самоуничтожатся")
+			user.put_in_hands(C)
+			new /obj/effect/particle_effect/sparks
+			for(var/i in 1 to 3)
+				addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
+			addtimer(CALLBACK(src, .proc/self_destruct_looted), 15 SECONDS)
+		return
+	if(core_lootable == 1 & core_stable == 0)
+		if(do_after(user, 10, target = loc))
+			to_chat(user, "Дымящийся ядерный блок выглядит нестабильно... Что это за шум...")
+			new /obj/effect/particle_effect/sparks
+			for(var/i in 1 to 3)
+				addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
+			addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
+		return
 
 /mob/living/simple_animal/hostile/sentrybot/Aggro()
 	..()
