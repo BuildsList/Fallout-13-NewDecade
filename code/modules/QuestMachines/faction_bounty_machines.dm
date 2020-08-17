@@ -95,6 +95,8 @@
 					/obj/item/crafting/weapon_parts/ballistic = 2500,
 					/obj/item/crafting/weapon_parts/energy = 4500,
 					/obj/item/crafting/weapon_parts/plasma = 6500,
+					/obj/item/weapon/stock_parts/cell_pa/default = 3500,
+					/obj/item/weapon/stock_parts/cell_pa/high = 6500
 					)
 
 /*
