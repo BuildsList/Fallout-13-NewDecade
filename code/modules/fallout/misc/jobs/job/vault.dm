@@ -59,7 +59,7 @@
 
 	id = /obj/item/weapon/card/id/vault
 	glasses = /obj/item/clothing/glasses/sunglasses
-	r_pocket = /obj/item/clothing/gloves/pda/captain
+	gloves = /obj/item/clothing/gloves/pda/captain
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
@@ -104,7 +104,6 @@
 	name = "Dweller"
 	uniform = /obj/item/clothing/under/f13/vault/v113
 	id = /obj/item/weapon/card/id/vault
-	r_pocket = /obj/item/clothing/gloves/pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	gloves = /obj/item/clothing/gloves/pda
 
