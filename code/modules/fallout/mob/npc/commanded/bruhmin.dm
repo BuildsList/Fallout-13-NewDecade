@@ -1,14 +1,12 @@
 //Fallout 13 dog companion
 
-/mob/living/simple_animal/hostile/commanded/bruhmin
+/mob/living/simple_animal/hostile/commanded/dog/faction/bruhmin
 	name = "Brahmin"
 	desc = "A large brown cow. With two heads."
-
 	icon_state = "brahmin"
 	icon_living = "brahmin"
 	icon_dead = "brahmin_d"
 	icon_gib = "brahmin_g"
-
 	health = 250
 	maxHealth = 250
 
@@ -37,6 +35,10 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 
 	known_commands = list("stay", "stop", "follow", "friend", "pull")
+
+	faction = list("city")
+	faction_enemy = list("hostile", "legion", "raiders")
+	status_master = "trader"
 
 /mob/living/simple_animal/hostile/commanded/bruhmin/listen(var/mob/speaker, var/text)
 	..()
@@ -126,3 +128,17 @@
 		show_inv(usr)
 	else
 		..()
+
+/mob/living/simple_animal/hostile/commanded/bruhmin/attackby(obj/item/O, mob/user, params)
+	if(inventory_back)
+		//helmet and armor = 100% protection
+		if(istype(inventory_back,/obj/item/weapon/storage/backpack) )
+			if(O.force )
+				to_chat(user, "<span class='warning'>[src] is wearing too much armor! You can't cause [p_them()] any damage.</span>")
+				visible_message("<span class='danger'>[user] hits [src] with [O], however [src] is too armored.</span>")
+			else
+				to_chat(user, "<span class='warning'>[src] is wearing too much armor! You can't reach [p_their()] skin.<span>")
+				visible_message("[user] gently taps [src] with [O].")
+			if(health>0 && prob(15))
+				emote("me", 1, "looks at [user] with [pick("an amused","an annoyed","a confused","a resentful", "a happy", "an excited")] expression.")
+			return

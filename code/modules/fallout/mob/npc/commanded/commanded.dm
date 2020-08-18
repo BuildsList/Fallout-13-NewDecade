@@ -11,7 +11,7 @@
 	environment_target_typecache = list()
 	var/list/command_buffer = list()
 	var/list/known_commands = list("stay", "stop", "attack", "follow", "defend", "enemy", "friend", "pull")
-	var/mob/master = null //undisputed master. Their commands hold ultimate sway and ultimate power.
+	var/mob/master = "" //undisputed master. Their commands hold ultimate sway and ultimate power.
 	var/atom/movable/pointed_target = null
 	var/atom/movable/follow_target = null
 	var/search_enemy = 1
@@ -72,7 +72,7 @@
 		var/text = command_buffer[2]
 		var/filtered_name = lowertext(html_decode(name))
 		if(parse_phrase(text,filtered_name) || parse_phrase(text,"anybody")) //in case somebody wants to command 8 bears at once.
-			var/substring = copytext_char(text,length(filtered_name)+1) //get rid of the name.
+			var/substring = copytext(text,length(filtered_name)+1) //get rid of the name.
 			listen(speaker,substring)
 		command_buffer.Remove(command_buffer[1],command_buffer[2])
 	. = ..()
@@ -130,9 +130,9 @@
 		if(search_enemy && ismob(target) && !(target in allowed_targets))
 			allowed_targets += target
 			return
-//		if(stance == COMMANDED_FOLLOW || (stance == COMMANDED_PULL && (isobj(target) || ismob(target))))
-//			follow_target = target
-//			return
+		if(stance == COMMANDED_FOLLOW || (stance == COMMANDED_PULL && (isobj(target) || ismob(target))))
+			follow_target = target
+			return
 	return
 
 /mob/living/simple_animal/hostile/commanded/proc/follow_target()
@@ -211,7 +211,7 @@
 		if(parse_phrase(text, "[M]"))
 			found = 1
 		else
-			var/list/parsed_name = splittext_char(sanitize_simple(html_decode("[M]"),list("-"=" ", "."=" ", "," = " ", "'" = " ")), " ") //this big MESS is basically 'turn this into words, no punctuation, lowercase so we can check first name/last name/etc'
+			var/list/parsed_name = splittext(sanitize_simple(html_decode("[M]"),list("-"=" ", "."=" ", "," = " ", "'" = " ")), " ") //this big MESS is basically 'turn this into words, no punctuation, lowercase so we can check first name/last name/etc'
 			for(var/a in parsed_name)
 				if(a == "the" || length(a) < 2) //get rid of shit words.
 					continue

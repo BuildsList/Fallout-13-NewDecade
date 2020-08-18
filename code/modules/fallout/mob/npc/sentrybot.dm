@@ -196,7 +196,7 @@
 	icon = 'icons/fallout/mobs/animal.dmi'
 	icon_state = "assaultron"
 	icon_living = "assaultron"
-	icon_dead = "gib7"
+	icon_dead = "assaultron_d"
 	health = 900
 	maxHealth = 900
 	melee_damage_lower = 20

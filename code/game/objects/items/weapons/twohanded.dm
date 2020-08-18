@@ -739,11 +739,11 @@
 	name = "blade of the East"
 	desc = "A great Blade of the East. With that weapon you can dismembering NCR rangers for whole battle. Ave Caesar!"
 	icon_state = "eastblade0"
-	force_unwielded = 60
-	force_wielded = 80
-	block_chance = 50
-	throwforce = 40
-	armour_penetration = 90
+	force_unwielded = 15
+	force_wielded = 30
+	block_chance = 20
+	throwforce = 10
+	armour_penetration = 10
 	hitsound = "eastbladeslice"
 	self_weight = 20
 
