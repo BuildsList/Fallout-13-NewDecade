@@ -63,7 +63,6 @@
 		icon_state = "wallet_[front_id.icon_state]"
 
 
-
 /obj/item/weapon/storage/wallet/GetID()
 	return front_id
 

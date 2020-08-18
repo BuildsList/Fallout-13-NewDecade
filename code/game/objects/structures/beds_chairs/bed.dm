@@ -168,6 +168,26 @@
 	name = "деревянная кровать"
 	icon_state = "wood_bed"
 
+/obj/structure/bed/bedroll
+	name = "походный спальник"
+	icon_state = "bedroll"
+
+/obj/structure/bed/bedroll/attack_hand(mob/living/carbon/human/user)
+	if(do_after(user, 25, target = loc))
+		new/obj/item/bedroll(get_turf(src))
+		qdel(src)
+
+/obj/item/bedroll
+	name = "спальник"
+	desc = "Простой в использовании спальный мешок."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "bedroll"
+
+/obj/item/bedroll/attack_self(mob/user)
+	if(do_after(user, 25, target = loc))
+		new/obj/structure/bed/bedroll(get_turf(src))
+		qdel(src)
+
 /obj/structure/bed/metal
 	name = "металлическая кровать"
 	icon_state = "metal_bed"

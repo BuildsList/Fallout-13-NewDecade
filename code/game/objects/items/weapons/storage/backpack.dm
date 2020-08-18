@@ -195,11 +195,62 @@
 	item_state = "viropack"
 
 /obj/item/weapon/storage/backpack/caravaneer
-	name = "рюкзак Караванщика"
+	name = "походный рюкзак"
 	desc = "Стильный классический рюкзак из кожи,в нём есть всё необходимое для походов. Наверное."
 	icon_state = "caravaneer"
 	item_state = "explorerpack"
 	storage_slots = 12
+	var/obj/item/bedroll/bedroll = null
+	var/obj/item/weapon/shovel/shovel = null
+
+/obj/item/weapon/storage/backpack/caravaneer/remove_from_storage(obj/item/W, atom/new_location)
+	. = ..(W, new_location)
+	if(.)
+		if(istype(W, /obj/item/bedroll))
+			if(W == bedroll)
+				bedroll = null
+			update_icon()
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
+		if(istype(W, /obj/item/weapon/shovel))
+			if(W == shovel)
+				shovel = null
+			update_icon()
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
+
+/obj/item/weapon/storage/backpack/caravaneer/handle_item_insertion(obj/item/W, prevent_warning = 0)
+	. = ..()
+	if(.)
+		if(istype(W, /obj/item/bedroll))
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
+		if(istype(W, /obj/item/weapon/shovel))
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
+
+/obj/item/weapon/storage/backpack/caravaneer/proc/refreshBack()
+	for(var/obj/item/bedroll/I in contents)
+		if(!bedroll)
+			bedroll = I
+			update_icon()
+	for(var/obj/item/weapon/shovel/I in contents)
+		if(!shovel)
+			shovel = I
+			update_icon()
+
+/obj/item/weapon/storage/backpack/caravaneer/update_icon()
+	icon_state = "caravaneer"
+	if(bedroll)
+		icon_state = "caravaneer_bed"
+	if(shovel)
+		icon_state = "caravaneer_shovel"
+	if(bedroll && shovel)
+		icon_state = "caravaneer_bed_shovel"
 
 /obj/item/weapon/storage/backpack/scavpack
 	name = "рюкзак выживальщика"
