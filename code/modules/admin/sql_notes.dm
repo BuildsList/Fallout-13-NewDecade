@@ -144,7 +144,7 @@
 		usr << "<span class='danger'>Failed to establish database connection.</span>"
 		return
 
-	var/output
+	var/output = {"<meta charset="UTF-8">"}
 	var/ruler = "<hr style='background:#000000; border:0; height:3px'>"
 	var/navbar = "<a href='?_src_=holder;nonalpha=1'>\[All\]</a>|<a href='?_src_=holder;nonalpha=2'>\[#\]</a>"
 	for(var/letter in alphabet)

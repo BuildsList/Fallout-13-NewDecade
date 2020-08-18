@@ -202,6 +202,7 @@
 	storage_slots = 12
 	var/obj/item/bedroll/bedroll = null
 	var/obj/item/weapon/shovel/shovel = null
+	var/obj/item/clothing/mask/gas/gas = null
 
 /obj/item/weapon/storage/backpack/caravaneer/remove_from_storage(obj/item/W, atom/new_location)
 	. = ..(W, new_location)
@@ -220,6 +221,13 @@
 			refreshBack()
 			var/mob/M = loc
 			M.update_inv_back()
+		if(istype(W, /obj/item/clothing/mask/gas))
+			if(W == gas)
+				gas = null
+			update_icon()
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
 
 /obj/item/weapon/storage/backpack/caravaneer/handle_item_insertion(obj/item/W, prevent_warning = 0)
 	. = ..()
@@ -229,6 +237,10 @@
 			var/mob/M = loc
 			M.update_inv_back()
 		if(istype(W, /obj/item/weapon/shovel))
+			refreshBack()
+			var/mob/M = loc
+			M.update_inv_back()
+		if(istype(W, /obj/item/clothing/mask/gas))
 			refreshBack()
 			var/mob/M = loc
 			M.update_inv_back()
@@ -242,6 +254,10 @@
 		if(!shovel)
 			shovel = I
 			update_icon()
+	for(var/obj/item/clothing/mask/gas/I in contents)
+		if(!gas)
+			gas = I
+			update_icon()
 
 /obj/item/weapon/storage/backpack/caravaneer/update_icon()
 	icon_state = "caravaneer"
@@ -249,8 +265,16 @@
 		icon_state = "caravaneer_bed"
 	if(shovel)
 		icon_state = "caravaneer_shovel"
+	if(gas)
+		icon_state = "caravaneer_mask"
 	if(bedroll && shovel)
 		icon_state = "caravaneer_bed_shovel"
+	if(bedroll && gas)
+		icon_state = "caravaneer_bed_mask"
+	if(shovel && gas)
+		icon_state = "caravaneer_shovel_mask"
+	if(shovel && gas && bedroll)
+		icon_state = "caravaneer_bed_shovel_mask"
 
 /obj/item/weapon/storage/backpack/scavpack
 	name = "рюкзак выживальщика"
