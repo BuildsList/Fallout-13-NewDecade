@@ -421,6 +421,21 @@
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	allowed = list(/obj/item/clothing/mask/facehugger/toy)
 
+/obj/item/clothing/suit/jacket/f13/burbon
+	name = "куртка"
+	desc = "Стильная куртка."
+	icon_state = "bourbon"
+	item_state = "letterman_red"
+
+/obj/item/clothing/suit/jacket/settler
+	name = "рваное тряпьё"
+	desc = "Тряпьё сформированное в плащ."
+	icon_state = "bomj"
+	item_state = "hostrench"
+	resistance_flags = 0
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/internals/emergency_oxygen,/obj/item/toy,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/lighter,/obj/item/weapon/gun/ballistic/automatic/pistol,/obj/item/weapon/gun/ballistic/revolver,/obj/item/weapon/gun/ballistic/revolver/detective,/obj/item/device/radio)
+
 
 // WINTER COATS
 

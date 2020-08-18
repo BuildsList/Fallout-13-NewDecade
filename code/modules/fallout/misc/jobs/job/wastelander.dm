@@ -23,6 +23,7 @@
 	satchel = null
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/f13/rag
+	suit = /obj/item/clothing/suit/jacket/settler
 
 //Adventurer
 
@@ -104,6 +105,7 @@
 	/obj/item/clothing/suit/armor/f13/leatherarmor,
 	/obj/item/clothing/suit/armor/f13/metalarmor,
 	/obj/item/clothing/suit/armor/f13/bmetalarmor,
+	/obj/item/clothing/suit/jacket/f13/burbon,
 	/obj/item/clothing/head/soft/f13/utility/navy,
 	/obj/item/clothing/head/helmet/f13/tribal,
 	/obj/item/clothing/head/helmet/f13/eyebot,
