@@ -1,5 +1,5 @@
 /datum/species/synth
-	name = "Synth" //inherited from the real species, for health scanners and things
+	name = "Синт МК1" //inherited from the real species, for health scanners and things
 	id = "synth"
 	say_mod = "beep boops" //inherited from a user's real species
 	sexes = 0
@@ -14,7 +14,7 @@
 	var/datum/species/fake_species = null //a species to do most of our work for us, unless we're damaged
 
 /datum/species/synth/military
-	name = "Military Synth"
+	name = "Синт МК2"
 	id = "military_synth"
 	armor = 25
 	punchdamagelow = 10

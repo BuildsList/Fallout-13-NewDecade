@@ -66,7 +66,7 @@
 		var/mob/living/carbon/user = src
 		if(user.perks.have(/datum/perk/radresist))
 			blocked *= 1.25
-		if(user.perks.have(/datum/perk/radresist_mutants))
+		if(user.perks.have(/datum/perk_hidden/radresist_mutants))
 			blocked *= 2500
 
 		apply_effect(amount, IRRADIATE, blocked)

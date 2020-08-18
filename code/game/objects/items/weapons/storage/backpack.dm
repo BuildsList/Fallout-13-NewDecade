@@ -116,6 +116,7 @@
 	desc = "A robust backpack for stashing your loot."
 	icon_state = "explorerpack"
 	item_state = "explorerpack"
+	storage_slots = 8
 
 /obj/item/weapon/storage/backpack/mime
 	name = "Parcel Parceaux"
@@ -146,6 +147,7 @@
 	desc = "fancy backpack for good troopers!"
 	icon_state = "sstback"
 	item_state = "sstback"
+	storage_slots = 8
 
 /obj/item/weapon/storage/backpack/captain
 	name = "рюкзак Капитана"
@@ -197,6 +199,14 @@
 	desc = "Стильный классический рюкзак из кожи,в нём есть всё необходимое для походов. Наверное."
 	icon_state = "caravaneer"
 	item_state = "explorerpack"
+	storage_slots = 12
+
+/obj/item/weapon/storage/backpack/scavpack
+	name = "рюкзак выживальщика"
+	desc = "Рюкзак собранный почти из навоза и палок, лучше так. Чем никак.."
+	icon_state = "scavpack"
+	item_state = "explorerpack"
+	storage_slots = 8
 
 /*
  * Satchel Types
@@ -213,6 +223,7 @@
 	desc = "Качественная сумка из кожи, выглядит прекрасно."
 	icon_state = "satchel"
 	resistance_flags = 0
+	storage_slots = 5
 
 /obj/item/weapon/storage/backpack/satchel/leather/withwallet/New()
 	..()
@@ -223,6 +234,7 @@
 	desc = "Хорошая сумка из ткани."
 	icon_state = "scrapback"
 	resistance_flags = 0
+	storage_slots = 6
 
 /obj/item/weapon/storage/backpack/satchel/eng
 	name = "industrial satchel"
@@ -279,6 +291,7 @@
 	desc = "A robust satchel for stashing your loot."
 	icon_state = "satchel-explorer"
 	item_state = "securitypack"
+	storage_slots = 4
 
 /obj/item/weapon/storage/backpack/satchel/cap
 	name = "captain's satchel"
@@ -344,6 +357,7 @@
 	item_state = "duffle"
 	slowdown = 1
 	max_combined_w_class = 30
+	storage_slots = 14
 
 /obj/item/weapon/storage/backpack/dufflebag/captain
 	name = "captain's dufflebag"

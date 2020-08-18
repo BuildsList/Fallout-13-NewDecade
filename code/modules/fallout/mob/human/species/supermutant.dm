@@ -1,5 +1,5 @@
 /datum/species/supermutant
-	name = "supermutant"
+	name = "супермутант"
 	id = "supermutant"
 	say_mod = "shouts"
 	//default_color = "D5FF00"
@@ -19,7 +19,7 @@
 	mutant_bodyparts = list()
 	//default_features = list("mcolor" = "FFF")
 	no_equip = list(slot_wear_mask, slot_wear_suit, slot_gloves, slot_shoes, slot_w_uniform, slot_glasses, slot_ears, slot_head)
-	specflags = list(RADIMMUNE, PIERCEIMMUNE, VIRUSIMMUNE, RADREGEN)
+	specflags = list(RADIMMUNE, PIERCEIMMUNE, VIRUSIMMUNE, RADREGEN, STIMPACKIMMUNE)
 	var/canshout = 0
 
 //Supermutants have strong limbs.
@@ -28,7 +28,7 @@
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage += 10
 	C.faction |= "supermutant"
-	C.perks.add(/datum/perk/radresist_mutants)
+	C.perks.add(/datum/perk_hidden/radresist_mutants)
 
 /datum/species/supermutant/qualifies_for_faction(faction_id)
 	if(faction_id == "legion" || faction_id == "city" || faction_id == "raider" || faction_id == "vault" || faction_id == "brotherhood" || faction_id == "enclave" || faction_id == "ncr" || faction_id == "followers" || faction_id == "bs")
@@ -54,18 +54,5 @@
 	H.apply_overlay(BODY_LAYER)
 	return
 */
-/datum/perk/radresist_mutants
+/datum/perk_hidden/radresist_mutants
 	name = "Рад-сопротивление/Rad Resistance мутантов"
-	description = "Рад-сопротивление позволяет вам — вот неожиданность — сопротивляться радиации. Эта способность добавляет 2500 % к сопротивляемости радиации. You are better able to avoid radiation, and the bad effects radiation causes. This Perk will improve your Radiation Resistance by 2500%."
-	icon_state = "perk_radresist"
-
-
-/datum/species/supermutant/spec_life(mob/living/carbon/human/H)
-	//H.verbs += /mob/living/carbon/human/proc/hulk_jump
-	//H.verbs += /mob/living/carbon/human/proc/hulk_dash
-	//H.verbs += /mob/living/carbon/human/proc/hulk_smash
-	if (canshout==0)
-		H.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
-		canshout = rand(50, 100)
-	else
-		canshout = canshout - 1
