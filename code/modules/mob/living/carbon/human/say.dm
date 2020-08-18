@@ -1,6 +1,14 @@
 /mob/living/carbon/human/say_quote(input, spans)
 	var/mob/living/carbon/C = usr
 	if(!input)
+		input = attach_spans(input, spans)
+		input = replacetext_char(input, "лол ", "смешно ")
+		input = replacetext_char(input, "зделать ", "сделать ")
+		input = replacetext_char(input, "ок ", "хорошо ")
+		input = replacetext_char(input, "окей ", "хорошо ")
+		input = replacetext_char(input, "хилка", "аптечка")
+		input = replacetext_char(input, "стимпак", "стимулятор")
+		input = replacetext_char(input, "радэвэй", "антирадин")
 		return "говорит, \"...\""
 	verb_say = dna.species.say_mod
 	if(src.slurring)
@@ -78,7 +86,7 @@
 		input = replacetext_char(input, "супер-стимулятор", "супер жижа")
 		input = replacetext_char(input, "убью", "убъйу")
 		input = replacetext_char(input, "смотритель", "синий вождь")
-		input = replacetext_char(input, "город ", " паселение ")
+		input = replacetext_char(input, "город ", " эскейв ")
 		input = replacetext_char(input, "города", " пасиления ")
 		input = replacetext_char(input, "поселение", " паселение ")
 		input = replacetext_char(input, "картошка", " бульба ")
@@ -137,7 +145,7 @@
 		input = replacetext_char(input, "бартер", "абмен")
 		input = replacetext_char(input, "награда", "наградо")
 		input = replacetext_char(input, "награду", "наградо")
-		input = replacetext_char(input, "деньги", "деньга")
+		input = replacetext_char(input, "деньги", "бибы")
 		input = replacetext_char(input, "крышки", "блестяшки")
 		input = replacetext_char(input, "монеты", "манетки")
 		input = replacetext_char(input, "крышек", "блестяшек")
@@ -185,7 +193,15 @@
 		input = replacetext_char(input, "вуна", "бог")
 		input = replacetext_char(input, "глаза", "гляделко")
 		input = replacetext_char(input, "кабинет", "важна комнатухыа")
+		input = replacetext_char(input, "еды", "нямы")
+		input = replacetext_char(input, "житель", "бибурат")
+		input = replacetext_char(input, "жители", "бибураты")
+		input = replacetext_char(input, "раса", "биос")
+		input = replacetext_char(input, "глина", "кузовок")
+		input = replacetext_char(input, "машина", "мехос")
 		return "мычит, \"[input]\""
+	if(C.special.getPoint("i") == 4)
+		return "говорит с акцентом, \"[input]\""
 	return ..()
 
 /mob/living/carbon/human/treat_message(message)

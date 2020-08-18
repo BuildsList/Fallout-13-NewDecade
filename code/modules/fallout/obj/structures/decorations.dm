@@ -175,6 +175,7 @@
 	icon = 'icons/obj/contraband.dmi'
 	icon_state = "rolled_poster"
 	anchored = 1
+	density = 0
 
 /obj/structure/decoration_f13/poster/v2
 	icon_state = "poster2"

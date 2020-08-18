@@ -18,7 +18,6 @@
 	allowed_packs = list("starter", "cigarettes", "follower", "bard", "super_ten", "specops", "f76")
 
 	required_items = list(
-	/obj/item/clothing/head/helmet/power_armor/superadvanced,
 	/obj/item/clothing/glasses/sunglasses,
 	/obj/item/weapon/gun/energy/plasma,
 	/obj/item/weapon/lighter/engraved,
@@ -55,7 +54,7 @@
 	satchel = null
 	ears = /obj/item/device/radio/headset/enclave
 	gloves = /obj/item/clothing/gloves/f13/military
-	uniform = /obj/item/clothing/under/f13/enclave_officer
+	uniform = /obj/item/clothing/under/f13/enclave_colonel
 	shoes = /obj/item/clothing/shoes/f13/military
 	suit = /obj/item/clothing/suit/f13/autumn
 	belt = /obj/item/weapon/storage/belt/military/army/enclave

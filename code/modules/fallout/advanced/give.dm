@@ -55,6 +55,6 @@
 				to_chat(usr,"<span class='warning'>[src] не может взять [I]!</span>")
 				return
 
-			src.visible_message("<span class='notice'>[usr] передал [I] в руки [src].</span>")
+			src.visible_message("<span class='notice'>[usr] передаёт [I] в руки [src].</span>")
 		if("No")
 			src.visible_message("<span class='warning'>[usr] пытается передать [I] в руки [src], но [src] отказывается брать.</span>")

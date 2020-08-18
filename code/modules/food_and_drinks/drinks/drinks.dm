@@ -34,13 +34,14 @@
 	for(var/datum/reagent/C in M.reagents.reagent_list) //we add the nutrition value of what we're currently digesting
 		fullness += C.water_factor * C.volume / C.metabolization_rate
 
+/*
 	if(fullness > THIRST_LEVEL_FULL)
 		if(M == user)
 			to_chat(M, "<span class='notice'>Вы не хотите пить.</span>")
 		else
 			to_chat(user, "<span class='notice'>[M] не может больше пить.</span>")
 		return 0
-
+*/
 	if(M == user)
 		to_chat(M, "<span class='notice'>Вы отхлебнули из [src].</span>")
 

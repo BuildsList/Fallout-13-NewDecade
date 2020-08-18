@@ -104,3 +104,22 @@
 	name = "wumborian fugu den"
 	desc = "A den housing a nest of wumborian fugus, how do they all even fit in there?"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/fugu
+
+/mob/living/simple_animal/hostile/spawner/molerat
+	name = "нора кротокрысов"
+	icon = 'icons/mob/nest.dmi'
+	icon_state = "hole"
+	spawn_text = "выползает из"
+	mob_type = /mob/living/simple_animal/hostile/molerat
+	faction = list("hostile", "molerat")
+	max_mobs = 4
+	spawn_time = 450
+
+/mob/living/simple_animal/hostile/spawner/deathclaw
+	name = "гнездо когтя смерти"
+	icon = 'icons/mob/nest.dmi'
+	icon_state = "deathclaw_nest"
+	spawn_text = "вылупляется и моментально вырастает"
+	mob_type = /mob/living/simple_animal/hostile/deathclaw
+	faction = list("hostile", "deathclaw")
+	max_mobs = 2

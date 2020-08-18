@@ -182,7 +182,7 @@
 //Legion Decanus
 
 /datum/job/decan
-	title = "Decanus"
+	title = "Legion Decanus"
 	desc = "Boldness is our wall, action is our shield.<br>The Decanus is a weapon of Caesar!<br>Audacia pro muro et scuto opus!"
 	flag = LEGDECAN
 	department_head = list("legate", "centurion")
@@ -242,7 +242,7 @@
 //Legion Prime
 
 /datum/job/prime
-	title = "Prime"
+	title = "Legion Prime"
 	desc = "Victory favors bravery.<br>The Prime is a servant of Caesar!<br>Ad victoriam!"
 	flag = PRIME
 	department_head = list("Centurion")
