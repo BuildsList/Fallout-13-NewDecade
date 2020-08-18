@@ -173,6 +173,7 @@
 	icon_state = "bedroll"
 
 /obj/structure/bed/bedroll/attack_hand(mob/living/carbon/human/user)
+	to_chat(user, "Вы начинаете сворачивать спальное место.")
 	if(do_after(user, 25, target = loc))
 		new/obj/item/bedroll(get_turf(src))
 		qdel(src)
@@ -184,6 +185,7 @@
 	icon_state = "bedroll"
 
 /obj/item/bedroll/attack_self(mob/user)
+	to_chat(user, "Вы начинаете разворачивать спальное место.")
 	if(do_after(user, 25, target = loc))
 		new/obj/structure/bed/bedroll(get_turf(src))
 		qdel(src)
