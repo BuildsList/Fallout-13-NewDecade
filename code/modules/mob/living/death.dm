@@ -58,8 +58,8 @@
 	living_mob_list -= src
 	if(!gibbed)
 		dead_mob_list += src
-	to_chat(src, "Пустошь поглатила вас.")
-	to_chat(src, 'sound/f13effects/pustoh.ogg')
+	to_chat(src, "Пустошь поглотила вас.")
+	to_chat(src, 'sound/f13effects/NAR_6.ogg')
 	to_chat(src, "Ожидайте возрождения. OOC -> Возродиться.")
 	paralysis = 0
 	stunned = 0
