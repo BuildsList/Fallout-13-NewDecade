@@ -10,7 +10,7 @@
 	self_weight = 7
 
 /obj/item/clothing/head/helmet/f13/radist
-	name = "radist combat helmet"
+	name = "боевой шлем связиста"
 	desc = "Каска с обозначениями Анклава."
 	icon_state = "unit_helm"
 	item_state = "marine"
@@ -20,9 +20,10 @@
 	strip_delay = 30
 	resistance_flags = FIRE_PROOF
 	self_weight = 2
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/under/f13/j12
-	name = "J-12 uniform"
+	name = "тельняшка"
 	desc = "Ж-12, мы гордимся тобой."
 	icon_state = "j12"
 	item_state = "bl_suit"
@@ -33,7 +34,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/under/f13/radist_bs
-	name = "old radist uniform"
+	name = "форма радиста"
 	desc = "Практичная форма радиста."
 	icon_state = "bs_radist"
 	item_state = "bl_suit"

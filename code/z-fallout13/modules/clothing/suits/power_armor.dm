@@ -247,6 +247,7 @@
 	var/on = 0
 	light_color = LIGHT_COLOR_YELLOW
 	icon = 'icons/fallout/clothing/hats.dmi'
+	special_defence = PREVENTDISMEMBER
 
 /datum/action/item_action/toggle_helmet_light
 	button_icon_state = "pa_helmet"

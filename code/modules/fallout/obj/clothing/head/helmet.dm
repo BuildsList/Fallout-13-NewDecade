@@ -27,6 +27,7 @@
 	strip_delay = 20
 	self_weight = 5
 	price = 3500
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/f13/tribal
 	name = "tribal power helmet"
@@ -39,6 +40,7 @@
 	put_on_delay = 10
 	strip_delay = 30
 	self_weight = 10
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/f13/motorcycle
 	name = "motorcycle helmet"
@@ -70,6 +72,7 @@
 	resistance_flags = FIRE_PROOF
 	self_weight = 1.5
 	price = 1150
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/f13/supaflyhelmet
 	name = "supa-fly raider helmet"
@@ -109,6 +112,7 @@
 	strip_delay = 50
 	resistance_flags = FIRE_PROOF
 	self_weight = 4
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/f13/khan
 	name = "Great Khan helmet"
@@ -238,6 +242,7 @@
 	visor_vars_to_toggle = VISOR_DARKNESSVIEW | VISOR_INVISVIEW
 	can_toggle = 1
 	var/enabled = 1
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/f13/ranger/New()
 	..()
@@ -357,6 +362,7 @@
 	strip_delay = 50
 	resistance_flags = FIRE_PROOF
 	self_weight = 3
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/f13/strange
 	name = "strange helmet"
@@ -402,6 +408,7 @@
 	strip_delay = 80
 	dog_fashion = null
 	self_weight = 5
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/knight/blue
 	name = "blue medieval helmet"
@@ -465,6 +472,7 @@
 	strip_delay = 10
 	resistance_flags = UNACIDABLE
 	self_weight = 20
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/hardhat/f13/headlamp
 	name = "налобный фонарик"

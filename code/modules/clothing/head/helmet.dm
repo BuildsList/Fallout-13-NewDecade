@@ -54,6 +54,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	dog_fashion = null
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
@@ -108,6 +109,7 @@
 	flags = STOPSPRESSUREDMAGE
 	strip_delay = 80
 	dog_fashion = null
+	special_defence = PREVENTDISMEMBER
 
 /obj/item/clothing/head/helmet/swat/nanotrasen
 	name = "каска SWAT"
