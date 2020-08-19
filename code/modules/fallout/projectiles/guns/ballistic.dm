@@ -68,13 +68,14 @@
 	mag_type = /obj/item/ammo_box/magazine/F13/m308
 	can_suppress = 1
 	casing_ejector = 1
+	burst_size = 0
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
-	recoil = 2
+	recoil = 10
 	price = 4000
 	small_gun = 1
 

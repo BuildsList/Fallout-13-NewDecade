@@ -188,6 +188,11 @@
 	begin_day = 1
 	begin_month = JULY
 
+/datum/holiday/lgbt
+	name = "Начадл месяца гордости"
+	begin_day = 2
+	begin_month = JULY
+
 /datum/holiday/UFO
 	name = "UFO Day"
 	begin_day = 2

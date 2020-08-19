@@ -58,6 +58,8 @@
 	living_mob_list -= src
 	if(!gibbed)
 		dead_mob_list += src
+	to_chat(src, "Пустошь поглатила вас.")
+	to_chat(src, 'sound/f13effects/pustoh.ogg')
 	to_chat(src, "Ожидайте возрождения. OOC -> Возродиться.")
 	paralysis = 0
 	stunned = 0
@@ -73,6 +75,6 @@
 	update_canmove()
 	med_hud_set_health()
 	med_hud_set_status()
-	if(client)
-		client.screen += new /obj/screen/fullscreen/death
+	//if(client)
+	//	client.screen += new /obj/screen/fullscreen/death
 	return TRUE

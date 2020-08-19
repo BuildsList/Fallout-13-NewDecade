@@ -11,22 +11,28 @@
 	desc = "You don't whant to know what is this..."
 	desc = "Monstrum from another dimension. It just keeps spreading!"
 	icon = 'code/game/gamemodes/events/cellular_biomass/meatland_cellular.dmi'
+	icon_state = "bloodwall_1"
+	random_icon_states = list("bloodwall_1", "bloodwall_2", "bloodwall_3", "bloodwall_4")
 
 /obj/structure/cellular_biomass/grass/meat
 	name = "Cellular horror surface"
 	desc = "You don't whant to know what is this..."
 	icon = 'code/game/gamemodes/events/cellular_biomass/meatland_cellular.dmi'
+	icon_state = "bloodfloor_1"
+	random_icon_states = list("bloodfloor_1", "bloodfloor_2", "bloodfloor_3")
 
 /obj/structure/cellular_biomass/lair/meat
 	name = "Cellular horror lair"
 	desc = "You don't whant to know what is this..."
 	icon = 'code/game/gamemodes/events/cellular_biomass/meatland_cellular.dmi'
+	icon_state = "lair"
 
 /obj/structure/cellular_biomass/core/meat
 	name = "Cellular horror"
 	desc = "You don't whant to know what is this..."
 	icon = 'code/game/gamemodes/events/cellular_biomass/meatland_cellular.dmi'
 	light_color = "#710F8C"
+	icon_state = "light_1"
 
 /obj/effect/decal/cleanable/cellular/meat
 	name = "horror"
