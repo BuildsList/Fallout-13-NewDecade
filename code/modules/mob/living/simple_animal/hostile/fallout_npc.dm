@@ -202,7 +202,7 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
-	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak = list("Сейчас бы мутанта или пришельца...", "Хочу на пенсию...")
 	speak_emote = list("говорит", "кричит")
 	speak_chance = 2
 
@@ -227,7 +227,7 @@
 	healable = 1
 	ranged = 1
 	rapid = 1
-	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak = list("Как же на кроватку хочется!", "Идиоты...")
 	speak_emote = list("говорит", "кричит")
 	speak_chance = 2
 	projectiletype = /obj/item/projectile/beam/plasma
@@ -254,28 +254,35 @@
 
 	death_sound = list('sound/f13npc/enclave_npc/death_1.ogg','sound/f13npc/enclave_npc/death_2.ogg','sound/f13npc/enclave_npc/death_3.ogg','sound/f13npc/enclave_npc/death_4.ogg','sound/f13npc/enclave_npc/death_5.ogg','sound/f13npc/enclave_npc/death_6.ogg','sound/f13npc/enclave_npc/death_7.ogg','sound/f13npc/enclave_npc/death_8.ogg','sound/f13npc/enclave_npc/death_9.ogg','sound/f13npc/enclave_npc/death_10.ogg','sound/f13npc/enclave_npc/death_11.ogg')
 
-	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
+	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier_ca)
 	self_weight = 45
 	healable = 1
 	ranged = 1
 	rapid = 1
 	projectiletype = /obj/item/projectile/beam
-	speak = list("Чертовы мутанты!", "Хочу на пенсию...")
+	speak = list("Чертовы мутанты!", "Хочу в бой, а не тухнуть в бункере...")
 	speak_emote = list("говорит", "кричит")
 	speak_chance = 2
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	XP = 40
 
+/obj/effect/mob_spawn/human/corpse/enclave/soldier_ca
+	name = "Enclave Soldier"
+	uniform = /obj/item/clothing/under/f13/bdu
+	suit = /obj/item/clothing/suit/armor/f13/black_combat_armor
+	shoes = /obj/item/clothing/shoes/f13/military
+	gloves = /obj/item/clothing/gloves/f13/military
+	radio = /obj/item/device/radio/headset
+	has_id = 0
+
 /obj/effect/mob_spawn/human/corpse/enclave/soldier
 	name = "Enclave Soldier"
 	uniform = /obj/item/clothing/under/f13/enclave_officer
-//	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	//radio = /obj/item/device/radio/headset
-	//mask = /obj/item/clothing/mask/gas
+	radio = /obj/item/device/radio/headset
 	helmet = /obj/item/clothing/head/helmet/power_armor/advanced
-	//back = /obj/item/weapon/storage/backpack
 	has_id = 0
 
 /mob/living/simple_animal/hostile/bs
@@ -697,6 +704,7 @@
 	self_weight = 25
 	healable = 1
 	ranged = 0
+	XP = 10
 
 /mob/living/simple_animal/hostile/raider/tribal
 	icon_state = "tribal_raider"
@@ -711,6 +719,7 @@
 	self_weight = 22
 	healable = 1
 	ranged = 0
+	XP = 10
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/rag
@@ -739,6 +748,7 @@
 	self_weight = 30
 	healable = 1
 	ranged = 0
+	XP = 10
 
 /obj/effect/mob_spawn/human/corpse/raider/baseball
 	uniform = /obj/item/clothing/under/f13/rag
@@ -769,6 +779,7 @@
 	projectiletype = /obj/item/projectile/bullet/F13/c44mmBullet
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	casingtype = /obj/item/ammo_casing/F13/m44
+	XP = 10
 
 /obj/effect/mob_spawn/human/corpse/raider/biker
 	uniform = /obj/item/clothing/under/f13/rag
