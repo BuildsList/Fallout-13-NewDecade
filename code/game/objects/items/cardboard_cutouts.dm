@@ -59,9 +59,9 @@
 	user.do_attack_animation(src)
 
 	if(I.force)
-		user.visible_message("<span class='danger'>[user] has hit \
-			[src] with [I]!</span>", "<span class='danger'>You hit [src] \
-			with [I]!</span>")
+		user.visible_message("<span class='danger'>[user] бъёт \
+			[src] используя [I]!</span>", "<span class='danger'>Вы бъёте [src] \
+			используя [I]!</span>")
 
 		if(prob(I.force))
 			push_over()

@@ -66,10 +66,10 @@
 				to_chat(src, sound('sound/f13effects/NAR_5.ogg',0,1,90))
 	else
 		switch(rand(1,2))
-		if(1)
-			to_chat(src, sound('sound/f13effects/NAR_6.ogg',0,1,90))
-		else
-			to_chat(src, sound('sound/f13effects/NAR_DTH2.ogg',0,1,90))
+			if(1)
+				to_chat(src, sound('sound/f13effects/NAR_6.ogg',0,1,90))
+			else
+				to_chat(src, sound('sound/f13effects/NAR_DTH2.ogg',0,1,90))
 	to_chat(src, "Пустошь поглотила вас.")
 	to_chat(src, "Ожидайте возрождения. OOC -> Возродиться.")
 	paralysis = 0

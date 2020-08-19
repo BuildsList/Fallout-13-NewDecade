@@ -46,12 +46,12 @@
 			topiclimiter[MINUTE_COUNT] = 0
 		topiclimiter[MINUTE_COUNT] += 1
 		if (topiclimiter[MINUTE_COUNT] > config.minutetopiclimit)
-			var/msg = "Your previous action was ignored because you've done too many in a minute."
+			var/msg = "Если вы используете автокликкер, остановитесь."
 			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
 				topiclimiter[ADMINSWARNED_AT] = minute
-				msg += " Administrators have been informed."
+				msg += " Администрация уже знает об этом."
 				log_game("[key_name(src)] Has hit the per-minute topic limit of [config.minutetopiclimit] topic calls in a given game minute")
-				message_admins("[key_name_admin(src)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [config.minutetopiclimit] topic calls in a given game minute")
+				message_admins("[key_name_admin(src)] [ADMIN_KICK(usr)] либо это хуйло использует автокликкер, либо что-то еще, доебитесь, ведь он превысил лимит [config.minutetopiclimit]")
 			src << "<span class='danger'>[msg]</span>"
 			return
 
