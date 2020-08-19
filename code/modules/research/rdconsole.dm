@@ -607,7 +607,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	if(..())
 		return
 	var/mob/living/carbon/human/humanUser = user
-	if(humanUser.special.getPoint("i") >= 6 && humanUser.skills.getPoint("science") >= 8)
+	if(humanUser.special.getPoint("i") > 5 && humanUser.skills.getPoint("science") > 7)
 		interact(user)
 	else
 		to_chat(user, "Вы слишком тупой. Требуется 6 ИНТ и 8 Науки.")
@@ -615,7 +615,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 /obj/machinery/computer/rdconsole/interact(mob/user)
 	var/mob/living/carbon/human/humanUser = user
-	if(humanUser.special.getPoint("i") >= 6 && humanUser.skills.getPoint("science") >= 8)
+	if(humanUser.special.getPoint("i") > 5 && humanUser.skills.getPoint("science") > 7)
 		to_chat(user, "Вы слишком тупой. Требуется 6 ИНТ и 8 Науки.")
 		return
 	user.set_machine(src)
