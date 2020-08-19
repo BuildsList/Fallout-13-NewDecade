@@ -519,35 +519,6 @@
 						dat += "<td><A href='?priv_msg=[abductee.key]'>PM</A></td></tr>"
 			dat += "</table>"
 
-		if(ticker.mode.devils.len)
-			dat += "<br><table cellspacing=5><tr><td><B>devils</B></td><td></td><td></td></tr>"
-			for(var/X in ticker.mode.devils)
-				var/datum/mind/devil = X
-				var/mob/M = devil.current
-				if(M)
-					dat += "<tr><td><a href='?_src_=holder;adminplayeropts=\ref[M]'>[M.real_name] : [devil.devilinfo.truename]</a>[M.client ? "" : " <i>(No Client)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
-					dat += "<td><A href='?priv_msg=[M.ckey]'>PM</A></td>"
-					dat += "<td><A HREF='?_src_=holder;traitor=\ref[M]'>Show Objective</A></td></tr>"
-					dat += "<td><A HREF='?_src_=holder;admincheckdevilinfo=\ref[M]'>Show all devil info</A></td></tr>"
-				else
-					dat += "<tr><td><a href='?_src_=vars;Vars=\ref[devil]'>[devil.name] :  [devil.devilinfo.truename] ([devil.key])</a><i>devil body destroyed!</i></td></tr>"
-					dat += "<td><A href='?priv_msg=[devil.key]'>PM</A></td>"
-			dat += "</table>"
-
-		if(ticker.mode.sintouched.len)
-			dat += "<br><table cellspacing=5><tr><td><B>sintouched</B></td><td></td><td></td></tr>"
-			for(var/X in ticker.mode.sintouched)
-				var/datum/mind/sintouched = X
-				var/mob/M = sintouched.current
-				if(M)
-					dat += "<tr><td><a href='?_src_=holder;adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(No Client)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
-					dat += "<td><A href='?priv_msg=[M.ckey]'>PM</A></td>"
-					dat += "<td><A HREF='?_src_=holder;traitor=\ref[M]'>Show Objective</A></td></tr>"
-				else
-					dat += "<tr><td><a href='?_src_=vars;Vars=\ref[sintouched]'>[sintouched.name]([sintouched.key])</a><i>sintouched body destroyed!</i></td></tr>"
-					dat += "<td><A href='?priv_msg=[sintouched.key]'>PM</A></td>"
-			dat += "</table>"
-
 		var/list/blob_minds = list()
 		for(var/mob/camera/blob/B in mob_list)
 			blob_minds |= B.mind
@@ -569,23 +540,6 @@
 					dat += "<tr><td><a href='?_src_=vars;Vars=\ref[blob]'>[blob.name]([blob.key])</a><i>Blob not found!</i></td>"
 					dat += "<td><A href='?priv_msg=[blob.key]'>PM</A></td></tr>"
 			dat += "</table>"
-
-
-		if(istype(ticker.mode, /datum/game_mode/monkey))
-			var/datum/game_mode/monkey/mode = ticker.mode
-			dat += "<br><table cellspacing=5><tr><td><B>Monkey</B></td><td></td><td></td></tr>"
-
-			for(var/datum/mind/eek in mode.ape_infectees)
-				var/mob/M = eek.current
-				if(M)
-					dat += "<tr><td><a href='?_src_=holder;adminplayeropts=\ref[M]'>[M.real_name]</a>[M.client ? "" : " <i>(No Client)</i>"][M.stat == 2 ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
-					dat += "<td><A href='?priv_msg=[M.ckey]'>PM</A></td>"
-					dat += "<td><A href='?_src_=holder;adminplayerobservefollow=\ref[M]'>FLW</a></td></tr>"
-				else
-					dat += "<tr><td><a href='?_src_=vars;Vars=\ref[eek]'>[eek.name]([eek.key])</a><i>Monkey not found!</i></td>"
-					dat += "<td><A href='?priv_msg=[eek.key]'>PM</A></td></tr>"
-			dat += "</table>"
-
 
 		dat += "</body></html>"
 		usr << browse(dat, "window=roundstatus;size=420x500")

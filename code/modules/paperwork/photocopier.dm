@@ -68,11 +68,6 @@
 			for(var/i = 0, i < copies, i++)
 				if(toner > 0 && !busy && copy)
 					var/copy_as_paper = 1
-					if(istype(copy, /obj/item/weapon/paper/contract/employment))
-						var/obj/item/weapon/paper/contract/employment/E = copy
-						var/obj/item/weapon/paper/contract/employment/C = new /obj/item/weapon/paper/contract/employment (loc, E.target.current)
-						if(C)
-							copy_as_paper = 0
 					if(copy_as_paper)
 						var/obj/item/weapon/paper/c = new /obj/item/weapon/paper (loc)
 						if(length(copy.info) > 0)	//Only print and add content if the copied doc has words on it
@@ -254,15 +249,10 @@
 /obj/machinery/photocopier/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/weapon/paper))
 		if(copier_empty())
-			if(istype(O,/obj/item/weapon/paper/contract/infernal))
-				to_chat(user, "<span class='warning'>[src] smokes, smelling of brimstone!</span>")
-				resistance_flags |= FLAMMABLE
-				fire_act()
-			else
-				if(!user.drop_item())
-					return
-				copy = O
-				do_insertion(O, user)
+			if(!user.drop_item())
+				return
+			copy = O
+			do_insertion(O, user)
 		else
 			to_chat(user, "<span class='warning'>There is already something in [src]!</span>")
 

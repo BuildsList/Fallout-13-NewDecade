@@ -17,6 +17,7 @@
 	var/delay = 2								//Delay for energy weapons
 	var/click_cooldown_override = 0				//Override this to make your gun have a faster fire rate, in tenths of a second. 4 is the default gun cooldown.
 	var/firing_effect_type = /obj/effect/overlay/temp/dir_setting/firing_effect	//the visual effect appearing when the ammo is fired.
+	var/used_casing = 0
 	self_weight = 0
 
 
@@ -43,6 +44,7 @@
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).
 	if(!BB)
 		BB = new projectile_type(src)
+		used_casing = 1
 
 /obj/item/ammo_casing/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/ammo_box))
@@ -62,5 +64,7 @@
 				to_chat(user, "<span class='notice'>You collect [boolets] shell\s. [box] now contains [box.ammo_left] shell\s.</span>")
 			else
 				to_chat(user, "<span class='warning'>You fail to collect anything!</span>")
+			if(used_casing == 1)
+				return 0
 	else
 		return ..()

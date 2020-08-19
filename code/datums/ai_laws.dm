@@ -334,20 +334,12 @@
 			zeroth_borg = null
 			return
 
-/datum/ai_laws/proc/clear_law_sixsixsix(force)
-	if(force || !(owner && owner.mind.devilinfo))
-		devillaws = null
-
 /datum/ai_laws/proc/associate(mob/living/silicon/M)
 	if(!owner)
 		owner = M
 
 /datum/ai_laws/proc/get_law_list(include_zeroth = 0, show_numbers = 1)
 	var/list/data = list()
-
-	if (include_zeroth && devillaws && devillaws.len)
-		for(var/i in devillaws)
-			data += "[show_numbers ? "666:" : ""] [i]"
 
 	if (include_zeroth && zeroth)
 		data += "[show_numbers ? "0:" : ""] [zeroth]"

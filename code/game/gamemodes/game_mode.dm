@@ -279,10 +279,6 @@
 	possible_modes |= name //Re-add the actual gamemode - the intercept will thus always have the correct mode in its list
 	possible_modes = shuffle(possible_modes) //Meta prevention
 
-	var/datum/intercept_text/i_text = new /datum/intercept_text
-	for(var/V in possible_modes)
-		intercepttext += i_text.build(V)
-
 	if(station_goals.len)
 		intercepttext += "<hr><b>Special Orders for [station_name()]:</b>"
 		for(var/datum/station_goal/G in station_goals)

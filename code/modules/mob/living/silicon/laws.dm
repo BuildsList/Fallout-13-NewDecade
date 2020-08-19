@@ -58,7 +58,3 @@
 /mob/living/silicon/proc/clear_zeroth_law(force)
 	laws_sanity_check()
 	laws.clear_zeroth_law(force)
-
-/mob/living/silicon/proc/clear_law_sixsixsix(force)
-	laws_sanity_check()
-	laws.clear_law_sixsixsix(force)

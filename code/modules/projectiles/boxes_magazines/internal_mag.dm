@@ -4,7 +4,10 @@
 	desc = "Oh god, this shouldn't be here"
 
 //internals magazines are accessible, so replace spent ammo if full when trying to put a live one in
-/obj/item/ammo_box/magazine/internal/give_round(obj/item/ammo_casing/R)
+/obj/item/ammo_box/magazine/internal/give_round(obj/item/ammo_casing/R, mob/user)
+	if(R.used_casing == 1)
+		to_chat(user, "Вы больше не можете зарядить этот патрон, ищите новый.")
+		return 0
 	return ..(R,1)
 
 

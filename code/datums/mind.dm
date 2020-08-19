@@ -513,52 +513,6 @@
 
 		sections["changeling"] = text
 
-		/** MONKEY ***/
-		text = "monkey"
-		if (ticker.mode.config_tag=="monkey")
-			text = uppertext(text)
-		text = "<i><b>[text]</b></i>: "
-		if (ishuman(current))
-			text += "<a href='?src=\ref[src];monkey=healthy'>healthy</a>|<a href='?src=\ref[src];monkey=infected'>infected</a>|<b>HUMAN</b>|other"
-		else if (ismonkey(current))
-			var/found = 0
-			for(var/datum/disease/D in current.viruses)
-				if(istype(D, /datum/disease/transformation/jungle_fever)) found = 1
-
-			if(found)
-				text += "<a href='?src=\ref[src];monkey=healthy'>healthy</a>|<b>INFECTED</b>|<a href='?src=\ref[src];monkey=human'>human</a>|other"
-			else
-				text += "<b>HEALTHY</b>|<a href='?src=\ref[src];monkey=infected'>infected</a>|<a href='?src=\ref[src];monkey=human'>human</a>|other"
-
-		else
-			text += "healthy|infected|human|<b>OTHER</b>"
-
-		if(current && current.client && (ROLE_MONKEY in current.client.prefs.be_special))
-			text += "|Enabled in Prefs"
-		else
-			text += "|Disabled in Prefs"
-
-		sections["monkey"] = text
-
-	/** devil ***/
-	text = "devil"
-	if(ticker.mode.config_tag == "devil")
-		text = uppertext(text)
-	text = "<i><b>[text]</b></i>: "
-	if(src in ticker.mode.devils)
-		text += "<b>DEVIL</b>|sintouched|<a href='?src=\ref[src];devil=clear'>human</a>"
-	else if(src in ticker.mode.sintouched)
-		text += "devil|<b>SINTOUCHED</b>|<a href='?src=\ref[src];devil=clear'>human</a>"
-	else
-		text += "<a href='?src=\ref[src];devil=devil'>devil</a>|<a href='?src=\ref[src];devil=sintouched'>sintouched</a>|<b>HUMAN</b>"
-
-	if(current && current.client && (ROLE_DEVIL in current.client.prefs.be_special))
-		text += "|Enabled in Prefs"
-	else
-		text += "|Disabled in Prefs"
-	sections["devil"] = text
-
-
 	/** SILICON ***/
 
 	if(issilicon(current))
@@ -1102,53 +1056,6 @@
 				ticker.mode.forge_traitor_objectives(src)
 				to_chat(usr, "<span class='notice'>The objectives for traitor [key] have been generated. You can edit them and anounce manually.</span>")
 
-	else if(href_list["devil"])
-		switch(href_list["devil"])
-			if("clear")
-				if(src in ticker.mode.devils)
-					if(istype(current,/mob/living/carbon/true_devil/))
-						if(devilinfo)
-							devilinfo.regress_blood_lizard()
-						else
-							to_chat(usr, "<span class='warning'>Something went wrong with removing the devil, we were unable to find an attached devilinfo.</span>.")
-					ticker.mode.devils -= src
-					special_role = null
-					to_chat(current, "<span class='userdanger'>Your infernal link has been severed! You are no longer a devil!</span>")
-					RemoveSpell(/obj/effect/proc_holder/spell/targeted/infernal_jaunt)
-					RemoveSpell(/obj/effect/proc_holder/spell/fireball/hellish)
-					RemoveSpell(/obj/effect/proc_holder/spell/targeted/summon_contract)
-					RemoveSpell(/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork)
-					RemoveSpell(/obj/effect/proc_holder/spell/targeted/conjure_item/violin)
-					message_admins("[key_name_admin(usr)] has de-devil'ed [current].")
-					devilinfo = null
-					if(issilicon(current))
-						var/mob/living/silicon/S = current
-						S.clear_law_sixsixsix(current)
-					log_admin("[key_name(usr)] has de-devil'ed [current].")
-				else if(src in ticker.mode.sintouched)
-					ticker.mode.sintouched -= src
-					message_admins("[key_name_admin(usr)] has de-sintouch'ed [current].")
-					log_admin("[key_name(usr)] has de-sintouch'ed [current].")
-			if("devil")
-				if(!ishuman(current) && !iscyborg(current))
-					to_chat(usr, "<span class='warning'>This only works on humans and cyborgs!</span>")
-					return
-				ticker.mode.devils += src
-				special_role = "devil"
-				ticker.mode.finalize_devil(src)
-				ticker.mode.add_devil_objectives(src, 2)
-				announceDevilLaws()
-				announce_objectives()
-			if("sintouched")
-				if(ishuman(current))
-					ticker.mode.sintouched += src
-					var/mob/living/carbon/human/H = current
-					H.influenceSin()
-					message_admins("[key_name_admin(usr)] has sintouch'ed [current].")
-				else
-					to_chat(usr, "<span class='warning'>This only works on humans!</span>")
-					return
-
 	else if(href_list["abductor"])
 		switch(href_list["abductor"])
 			if("clear")
@@ -1170,54 +1077,6 @@
 						temp.equip_agent(current)
 					else
 						temp.equip_scientist(current)
-
-	else if (href_list["monkey"])
-		var/mob/living/L = current
-		if (L.notransform)
-			return
-		switch(href_list["monkey"])
-			if("healthy")
-				if (check_rights(R_ADMIN))
-					var/mob/living/carbon/human/H = current
-					var/mob/living/carbon/monkey/M = current
-					if (istype(H))
-						log_admin("[key_name(usr)] attempting to monkeyize [key_name(current)]")
-						message_admins("<span class='notice'>[key_name_admin(usr)] attempting to monkeyize [key_name_admin(current)]</span>")
-						src = null
-						M = H.monkeyize()
-						src = M.mind
-//						to_chat(world, "DEBUG: \"healthy\": M=[M], M.mind=[M.mind], src=[src]!")
-					else if (istype(M) && length(M.viruses))
-						for(var/datum/disease/D in M.viruses)
-							D.cure(0)
-						sleep(0) //because deleting of virus is done through spawn(0)
-			if("infected")
-				if (check_rights(R_ADMIN, 0))
-					var/mob/living/carbon/human/H = current
-					var/mob/living/carbon/monkey/M = current
-					if (istype(H))
-						log_admin("[key_name(usr)] attempting to monkeyize and infect [key_name(current)]")
-						message_admins("<span class='notice'>[key_name_admin(usr)] attempting to monkeyize and infect [key_name_admin(current)]</span>")
-						src = null
-						M = H.monkeyize()
-						src = M.mind
-						current.ForceContractDisease(new /datum/disease/transformation/jungle_fever)
-					else if (istype(M))
-						current.ForceContractDisease(new /datum/disease/transformation/jungle_fever)
-			if("human")
-				if (check_rights(R_ADMIN, 0))
-					var/mob/living/carbon/human/H = current
-					var/mob/living/carbon/monkey/M = current
-					if (istype(M))
-						for(var/datum/disease/D in M.viruses)
-							if (istype(D,/datum/disease/transformation/jungle_fever))
-								D.cure(0)
-								sleep(0) //because deleting of virus is doing throught spawn(0)
-						log_admin("[key_name(usr)] attempting to humanize [key_name(current)]")
-						message_admins("<span class='notice'>[key_name_admin(usr)] attempting to humanize [key_name_admin(current)]</span>")
-						H = M.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_DEFAULTMSG)
-						if(H)
-							src = H.mind
 
 	else if (href_list["silicon"])
 		switch(href_list["silicon"])

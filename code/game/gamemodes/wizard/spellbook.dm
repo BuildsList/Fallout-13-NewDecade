@@ -227,20 +227,6 @@
 	spell_type = /obj/effect/proc_holder/spell/targeted/lightning
 	log_name = "LB"
 
-/datum/spellbook_entry/infinite_guns
-	name = "Lesser Summon Guns"
-	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
-	log_name = "IG"
-	cost = 3
-	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-
-/datum/spellbook_entry/arcane_barrage
-	name = "Arcane Barrage"
-	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-	log_name = "AB"
-	cost = 3
-	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
-
 /datum/spellbook_entry/barnyard
 	name = "Barnyard Curse"
 	spell_type = /obj/effect/proc_holder/spell/targeted/barnyardcurse

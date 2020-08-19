@@ -1352,8 +1352,7 @@
 /datum/supply_pack/misc/book_crate
 	name = "Book Crate"
 	cost = 1500
-	contains = list(/obj/item/weapon/book/codex_gigas,
-					/obj/item/weapon/book/manual/random/,
+	contains = list(/obj/item/weapon/book/manual/random,
 					/obj/item/weapon/book/manual/random/,
 					/obj/item/weapon/book/manual/random/,
 					/obj/item/weapon/book/random/triple)

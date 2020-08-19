@@ -108,8 +108,8 @@
 ///////////////////////
 
 /obj/item/weapon/gun/ballistic/shotgun/boltaction
-	name = "\improper Mosin Nagant"
-	desc = "This piece of junk looks like something that could have been used 700 years ago. It feels slightly moist."
+	name = "Винтовка Мосина"
+	desc = "Винтажная винтовка мосина, похоже её разворовали в местном музее истории."
 	icon_state = "moistnugget"
 	item_state = "moistnugget"
 	slot_flags = SLOT_BACK
@@ -136,55 +136,6 @@
 /obj/item/weapon/gun/ballistic/shotgun/boltaction/examine(mob/user)
 	..()
 	to_chat(user, "The bolt is [bolt_open ? "open" : "closed"].")
-
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted
-	name = "enchanted bolt action rifle"
-	desc = "Careful not to lose your head."
-	var/guns_left = 30
-	var/gun_type
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage
-	name = "arcane barrage"
-	desc = "Pew Pew Pew"
-	fire_sound = 'sound/weapons/emitter.ogg'
-	//pin = /obj/item/device/firing_pin/magic
-	icon_state = "arcane_barrage"
-	item_state = "arcane_barrage"
-
-	flags = DROPDEL
-
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/New()
-	..()
-	bolt_open = 1
-	pump()
-	gun_type = type
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/dropped()
-	..()
-	guns_left = 0
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/proc/discard_gun(mob/user)
-	throw_at(pick(oview(7,get_turf(user))),1,1)
-	user.visible_message("<span class='warning'>[user] tosses aside the spent rifle!</span>")
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage/discard_gun(mob/user)
-	return
-
-/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/shoot_live_shot(mob/living/user as mob|obj, pointblank = 0, mob/pbtarget = null, message = 1)
-	..()
-	if(guns_left)
-		var/obj/item/weapon/gun/ballistic/shotgun/boltaction/enchanted/GUN = new gun_type
-		GUN.guns_left = guns_left - 1
-		user.drop_item()
-		user.swap_hand()
-		user.put_in_hands(GUN)
-	else
-		user.drop_item()
-	discard_gun(user)
 
 // Automatic Shotguns//
 

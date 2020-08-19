@@ -43,8 +43,6 @@
 
 	if(ticker && ticker.mode)
 		sql_report_death(src)
-	if(mind && mind.devilinfo)
-		addtimer(CALLBACK(mind.devilinfo, /datum/devilinfo.proc/beginResurrectionCheck, src), 0)
 
 /mob/living/carbon/human/proc/makeSkeleton()
 	status_flags |= DISFIGURED

@@ -171,30 +171,6 @@ var/static/regex/multispin_words = regex("like a record baby|right round")
 	//Get the proper job titles
 	message = get_full_job_name(message)
 
-	for(var/V in listeners)
-		var/mob/living/L = V
-		if(L.mind && L.mind.devilinfo && findtext(message, L.mind.devilinfo.truename))
-			var/start = findtext(message, L.mind.devilinfo.truename)
-			listeners = list(L) //let's be honest you're never going to find two devils with the same name
-			power_multiplier *= 5 //if you're a devil and god himself addressed you, you fucked up
-			//Cut out the name so it doesn't trigger commands
-			message = copytext(message, 0, start)+copytext(message, start + length(L.mind.devilinfo.truename), length(message) + 1)
-			break
-		else if(dd_hasprefix(message, L.real_name))
-			specific_listeners += L //focus on those with the specified name
-			//Cut out the name so it doesn't trigger commands
-			found_string = L.real_name
-
-		else if(dd_hasprefix(message, L.first_name()))
-			specific_listeners += L //focus on those with the specified name
-			//Cut out the name so it doesn't trigger commands
-			found_string = L.first_name()
-
-		else if(L.mind && dd_hasprefix(message, L.mind.assigned_role))
-			specific_listeners += L //focus on those with the specified job
-			//Cut out the job so it doesn't trigger commands
-			found_string = L.mind.assigned_role
-
 	if(specific_listeners.len)
 		listeners = specific_listeners
 		power_multiplier *= (1 + (1/specific_listeners.len)) //2x on a single guy, 1.5x on two and so on
@@ -305,17 +281,6 @@ var/static/regex/multispin_words = regex("like a record baby|right round")
 		for(var/V in listeners)
 			var/mob/living/L = V
 			L.throw_at(get_step_towards(owner,L), 3 * power_multiplier, 1 * power_multiplier)
-
-	//WHO ARE YOU?
-	else if((findtext(message, whoareyou_words)))
-		next_command = world.time + cooldown_meme
-		for(var/V in listeners)
-			var/mob/living/L = V
-			if(L.mind && L.mind.devilinfo)
-				L.say("[L.mind.devilinfo.truename]")
-			else
-				L.say("[L.real_name]")
-			sleep(5) //So the chat flows more naturally
 
 	//SAY MY NAME
 	else if((findtext(message, saymyname_words)))

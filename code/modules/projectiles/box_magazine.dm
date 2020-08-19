@@ -34,7 +34,7 @@
 		ammo_left -= 1
 		return PoolOrNew(ammo_type)
 
-/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, replace_spent = 0)
+/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, mob/user, replace_spent = 0)
 	// Boxes don't have a caliber type, magazines do. Not sure if it's intended or not, but if we fail to find a caliber, then we fall back to ammo_type.
 	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return 0
@@ -44,7 +44,9 @@
 		qdel(R)
 		update_icon()
 		return 1
-
+	if(R.used_casing == 1)
+		to_chat(user, "Вы больше не можете зарядить этот патрон, ищите новый.")
+		return 0
 	return 0
 
 /obj/item/ammo_box/proc/can_load(mob/user)
@@ -56,7 +58,7 @@
 		return
 	if(istype(A, /obj/item/ammo_box))
 		if(A:ammo_type != ammo_type)
-			to_chat(user, "<span class='notice'>Wrong ammo type!</span>")
+			to_chat(user, "<span class='notice'>Неверный тип боеприпаса!</span>")
 			return
 
 		var/amount = min(A:ammo_left, max_ammo - ammo_left)
@@ -93,7 +95,7 @@
 			icon_state = "[initial(icon_state)]-[ammo_left]"
 		if(2)
 			icon_state = "[initial(icon_state)]-[ammo_left ? "[max_ammo]" : "0"]"
-	desc = "[initial(desc)] There are [ammo_left] shell\s left!"
+	desc = "[initial(desc)] Осталось: [ammo_left] патрон!"
 
 //Behavior for magazines
 /obj/item/ammo_box/magazine/proc/ammo_count()

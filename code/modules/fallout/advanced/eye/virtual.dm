@@ -1,10 +1,13 @@
 /mob/living/simple_animal/hostile/eyebot/virtual
 	var/mob/living/carbon/human/pilot
+	speed = 2
+	ranged_cooldown_time = 25
 
 /mob/living/simple_animal/hostile/eyebot/virtual/New()
 	..()
 	eyebots += src
 	src.verbs += /mob/living/simple_animal/hostile/eyebot/virtual/proc/leave
+	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision(null))
 
 /mob/living/simple_animal/hostile/eyebot/virtual/Del()
 	..()
@@ -19,8 +22,8 @@
 	ckey = user.ckey
 
 /mob/living/simple_animal/hostile/eyebot/virtual/proc/leave()
-	set name = "Stop Control"
-	set category = "EYEBOT"
+	set name = "Оставить управление"
+	set category = "Робоглаз"
 	pilot.ckey = ckey
 
 /mob/living/simple_animal/hostile/eyebot/virtual/death(gibbed)

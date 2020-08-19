@@ -80,10 +80,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 					if(1024)
 						be_special += ROLE_NINJA
 					if(2048)
-						be_special += ROLE_MONKEY
-					if(4096)
 						be_special += ROLE_GANG
-					if(16384)
+					if(4096)
 						be_special += ROLE_ABDUCTOR
 
 

@@ -195,15 +195,18 @@
 
 //Toggle Night Vision
 /obj/effect/proc_holder/spell/targeted/night_vision
-	name = "Toggle Nightvision \[ON\]"
+	name = "Включить режим ночного виденья"
 	desc = "Toggle your nightvision mode."
 
 	charge_max = 10
 	clothes_req = 0
 
-	message = "<span class='notice'>You toggle your night vision!</span>"
+	message = "<span class='notice'>Вы переключили режим ночного зрения!</span>"
 	range = -1
 	include_user = 1
+
+	action_icon_state = "pa_helmet"
+	background_icon_state = "bg_tech_on"
 
 /obj/effect/proc_holder/spell/targeted/night_vision/cast(list/targets,mob/user = usr)
 	for(var/mob/living/target in targets)
@@ -211,18 +214,18 @@
 			var/mob/living/carbon/human/H = target
 			if(H.dna.species.invis_sight == SEE_INVISIBLE_LIVING)
 				H.dna.species.invis_sight = SEE_INVISIBLE_NOLIGHTING
-				name = "Toggle Nightvision \[ON]"
+				name = "Выключить режим ночного виденья"
 			else
 				H.dna.species.invis_sight = SEE_INVISIBLE_LIVING
-				name = "Toggle Nightvision \[OFF]"
+				name = "Включить режим ночного виденья"
 
 		else
 			if(target.see_invisible == SEE_INVISIBLE_LIVING)
 				target.see_invisible = SEE_INVISIBLE_NOLIGHTING
-				name = "Toggle Nightvision \[ON]"
+				name = "Выключить режим ночного виденья"
 			else
 				target.see_invisible = SEE_INVISIBLE_LIVING
-				name = "Toggle Nightvision \[OFF]"
+				name = "Включить режим ночного виденья"
 
 
 /mob/living/simple_animal/hostile/statue/sentience_act()

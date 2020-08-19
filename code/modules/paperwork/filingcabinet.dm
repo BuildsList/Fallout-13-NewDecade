@@ -206,7 +206,6 @@ var/list/employmentCabinets = list()
 
 
 /obj/structure/filingcabinet/employment/proc/addFile(mob/living/carbon/human/employee)
-	new /obj/item/weapon/paper/contract/employment(src, employee)
 
 /obj/structure/filingcabinet/employment/attack_hand(mob/user)
 	if(!cooldown)

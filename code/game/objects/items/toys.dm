@@ -705,30 +705,6 @@
 	"Ты не представляешь, сколько людей поверили мне, когда я сказал им, что я очень больной гуль. You do not know how many people believed me when I told them that I was a very sick ghoul.")
 	return messages
 
-/obj/item/toy/talking/codex_gigas
-	name = "Toy Codex Gigas"
-	desc = "A tool to help you write fictional devils!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "demonomicon"
-	w_class = WEIGHT_CLASS_SMALL
-	recharge_time = 60
-
-/obj/item/toy/talking/codex_gigas/activation_message(mob/user)
-	user.visible_message(
-		"<span class='notice'>[user] presses the button on \the [src].</span>",
-		"<span class='notice'>You press the button on \the [src].</span>",
-		"<span class='notice'>You hear a soft click.</span>")
-
-/obj/item/toy/talking/codex_gigas/generate_messages()
-	var/datum/devilinfo/devil = randomDevilInfo()
-	var/list/messages = list()
-	messages += "Some fun facts about: [devil.truename]"
-	messages += "[lawlorify[LORE][devil.bane]]"
-	messages += "[lawlorify[LORE][devil.obligation]]"
-	messages += "[lawlorify[LORE][devil.ban]]"
-	messages += "[lawlorify[LORE][devil.banish]]"
-	return messages
-
 /obj/item/toy/talking/owl
 	name = "owl action figure"
 	desc = "An action figure modeled after 'The Owl', defender of justice."
