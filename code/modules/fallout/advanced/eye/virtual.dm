@@ -22,8 +22,8 @@
 	ckey = user.ckey
 
 /mob/living/simple_animal/hostile/eyebot/virtual/proc/leave()
-	set name = "Оставить управление"
-	set category = "Робоглаз"
+	set name = "Stop Control"
+	set category = "EYEBOT"
 	pilot.ckey = ckey
 
 /mob/living/simple_animal/hostile/eyebot/virtual/death(gibbed)
