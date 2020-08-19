@@ -58,8 +58,19 @@
 	living_mob_list -= src
 	if(!gibbed)
 		dead_mob_list += src
+	if(getToxLoss() > 20)
+		switch(rand(1,2))
+			if(1)
+				to_chat(src, sound('sound/f13effects/NAR_7.ogg',0,1,90))
+			else
+				to_chat(src, sound('sound/f13effects/NAR_5.ogg',0,1,90))
+	else
+		switch(rand(1,2))
+		if(1)
+			to_chat(src, sound('sound/f13effects/NAR_6.ogg',0,1,90))
+		else
+			to_chat(src, sound('sound/f13effects/NAR_DTH2.ogg',0,1,90))
 	to_chat(src, "Пустошь поглотила вас.")
-	to_chat(src, 'sound/f13effects/NAR_6.ogg')
 	to_chat(src, "Ожидайте возрождения. OOC -> Возродиться.")
 	paralysis = 0
 	stunned = 0
@@ -75,6 +86,6 @@
 	update_canmove()
 	med_hud_set_health()
 	med_hud_set_status()
-	//if(client)
-	//	client.screen += new /obj/screen/fullscreen/death
+	if(client)
+		client.screen += new /obj/screen/fullscreen/death
 	return TRUE
