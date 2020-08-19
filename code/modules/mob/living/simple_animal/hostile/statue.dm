@@ -197,16 +197,12 @@
 /obj/effect/proc_holder/spell/targeted/night_vision
 	name = "Включить режим ночного виденья"
 	desc = "Toggle your nightvision mode."
-
 	charge_max = 10
 	clothes_req = 0
-
 	message = "<span class='notice'>Вы переключили режим ночного зрения!</span>"
 	range = -1
 	include_user = 1
-
 	action_icon_state = "pa_helmet"
-	background_icon_state = "bg_tech_on"
 
 /obj/effect/proc_holder/spell/targeted/night_vision/cast(list/targets,mob/user = usr)
 	for(var/mob/living/target in targets)
