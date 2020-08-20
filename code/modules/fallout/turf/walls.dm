@@ -113,6 +113,7 @@
 
 /turf/closed/wall/f13/window
 	name = "усиленная бетонная стена"
+	icon = 'icons/fallout/turfs/walls/superstore.dmi'
 	icon_state = "sukablyat"
 	disasemblable = 0
 	grider = 0
