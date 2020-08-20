@@ -17,7 +17,6 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'//There is no fucking reason that shotguns should have the same sounds as pistols, TG.
 	weapon_weight = WEAPON_MEDIUM
 
-
 /obj/item/weapon/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(.)
@@ -77,7 +76,7 @@
 
 /obj/item/weapon/gun/ballistic/shotgun/examine(mob/user)
 	..()
-	if (chambered)
+	if(chambered)
 		to_chat(user, "A [chambered.BB ? "live" : "spent"] one is in the chamber.")
 
 /obj/item/weapon/gun/ballistic/shotgun/lethal
