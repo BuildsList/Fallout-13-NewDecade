@@ -91,10 +91,10 @@
 
 #ifdef LIGHTING_ANIMATION
 	target_color = list(
-		1-cr.cache_r, 1-cr.cache_g, 1-cr.cache_b, 0,
-		1-cg.cache_r, 1-cg.cache_g, 1-cg.cache_b, 0,
-		1-cb.cache_r, 1-cb.cache_g, 1-cb.cache_b, 0,
-		1-ca.cache_r, 1-ca.cache_g, 1-ca.cache_b, 0,
+		cr.cache_r, cr.cache_g, cr.cache_b, 0,
+		cg.cache_r, cg.cache_g, cg.cache_b, 0,
+		cb.cache_r, cb.cache_g, cb.cache_b, 0,
+		ca.cache_r, ca.cache_g, ca.cache_b, 0,
 		0, 0, 0, 1
 	)
 #else
