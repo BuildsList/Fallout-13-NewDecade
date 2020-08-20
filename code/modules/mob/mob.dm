@@ -112,7 +112,7 @@ var/next_mob_id = 0
 			if(self_message)
 				msg = self_message
 		else
-			#warn fix this
+			continue
 			/*
 			else if(T.lighting_object)
 				if(T.lighting_object.invisibility <= M.see_invisible && !T.lighting_object.luminosity) //the light object is dark and not invisible to us
