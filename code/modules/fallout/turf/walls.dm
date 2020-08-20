@@ -111,26 +111,32 @@
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall)
 
-/turf/closed/wall/f13/supermart/window
+/turf/closed/wall/f13/window
+	name = "усиленная бетонная стена"
 	icon_state = "sukablyat"
+	disasemblable = 0
+	grider = 0
+	explosion_block = 2
+	hardness = 70
+	sheet_type = null
 	canSmoothWith = null
 
-/turf/closed/wall/f13/supermart/window/horizontal
+/turf/closed/wall/f13/window/horizontal
 	icon_state = "storeprewindowhorizontal"
 
-/turf/closed/wall/f13/supermart/window/vertical
+/turf/closed/wall/f13/window/vertical
 	icon_state = "storeprewindowvertical"
 
-/turf/closed/wall/f13/supermart/window/top
+/turf/closed/wall/f13/window/top
 	icon_state = "storeprewindowtop"
 
-/turf/closed/wall/f13/supermart/window/bottom
+/turf/closed/wall/f13/window/bottom
 	icon_state = "storeprewindowbottom"
 
-/turf/closed/wall/f13/supermart/window/left
+/turf/closed/wall/f13/window/left
 	icon_state = "storeprewindowleft"
 
-/turf/closed/wall/f13/supermart/window/right
+/turf/closed/wall/f13/window/right
 	icon_state = "storeprewindowright"
 
 /turf/closed/wall/f13/tunnel
