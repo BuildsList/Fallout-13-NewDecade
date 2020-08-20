@@ -217,3 +217,25 @@
 
 /obj/structure/decoration_f13/poster/pinup/v2
 	icon_state = "poster36"
+
+/obj/structure/decoration_f13/window
+	name = "усиленная бетонная стена"
+	icon = 'icons/fallout/turfs/walls/superstore.dmi'
+
+/obj/structure/decoration_f13/window/horizontal
+	icon_state = "storeprewindowhorizontal"
+
+/obj/structure/decoration_f13/window/vertical
+	icon_state = "storeprewindowvertical"
+
+/obj/structure/decoration_f13/window/top
+	icon_state = "storeprewindowtop"
+
+/obj/structure/decoration_f13/window/bottom
+	icon_state = "storeprewindowbottom"
+
+/obj/structure/decoration_f13/window/left
+	icon_state = "storeprewindowleft"
+
+/obj/structure/decoration_f13/window/right
+	icon_state = "storeprewindowright"

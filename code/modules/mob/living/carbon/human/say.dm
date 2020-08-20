@@ -14,7 +14,7 @@
 	if(src.slurring)
 		input = attach_spans(input, spans)
 		return "несвязно, \"[input]\""
-	if(C.special.getPoint("i") < 3)
+	if(C.special.getPoint("i") < 4)
 		input = attach_spans(input, spans)
 		input = replacetext_char(input, " я ", " йа ")
 		input = replacetext_char(input, "я", "'йа")
@@ -200,8 +200,8 @@
 		input = replacetext_char(input, "глина", "кузовок")
 		input = replacetext_char(input, "машина", "мехос")
 		return "мычит, \"[input]\""
-	if(C.special.getPoint("i") == 4)
-		return "говорит с акцентом, \"[input]\""
+	if(C.special.getPoint("i") < 5)
+		return "говорит с акцентом деревенщины, \"[input]\""
 	return ..()
 
 /mob/living/carbon/human/treat_message(message)

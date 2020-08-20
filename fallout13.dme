@@ -1368,6 +1368,7 @@
 #include "code\modules\fallout\obj\decor.dm"
 #include "code\modules\fallout\obj\door_keys.dm"
 #include "code\modules\fallout\obj\explosives.dm"
+#include "code\modules\fallout\obj\farming_things.dm"
 #include "code\modules\fallout\obj\ground_pit.dm"
 #include "code\modules\fallout\obj\holodisks.dm"
 #include "code\modules\fallout\obj\items.dm"

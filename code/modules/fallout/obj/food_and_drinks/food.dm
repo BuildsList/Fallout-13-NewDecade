@@ -67,6 +67,13 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	price = 80
 
+/obj/item/weapon/reagent_containers/food/snacks/f13/pomoi
+	name = "ведро с помоями"
+	desc = "Содержит помои, пригодные для употребления в пищу животными... Или людьми."
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "farm_bucket_full"
+	list_reagents = list("nutriment" = 35, "sugar" = 2)
+
 /obj/item/weapon/reagent_containers/food/snacks/f13/bubblegum
 	name = "жвачка"
 	desc = "A Big Pops branded bubblegum."

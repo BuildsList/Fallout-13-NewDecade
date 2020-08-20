@@ -56,7 +56,7 @@ var/global/pigs_count = 0
 	turns_per_move = 3
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 2)
 	var/egg_type = /mob/living/simple_animal/piggy
-	var/food_type = /obj/item/weapon/reagent_containers/food/snacks
+	var/food_type = /obj/item/weapon/reagent_containers/food/snacks/f13/pomoi
 	response_help  = "гладит"
 	response_disarm = "gently pushes aside"
 	response_harm   = "пинает"
