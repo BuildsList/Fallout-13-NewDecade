@@ -16,8 +16,6 @@
 		add_overlay(overlay)
 	return ..()
 
-
-
 //[[[[BRAIN]]]]
 
 /obj/item/organ/cyberimp/brain
@@ -67,7 +65,6 @@
 		release_items()
 		to_chat(owner, "<span class='notice'>Your hands relax...</span>")
 
-
 /obj/item/organ/cyberimp/brain/anti_drop/emp_act(severity)
 	if(!owner)
 		return
@@ -81,7 +78,6 @@
 		I.throw_at(A, range, 2)
 		to_chat(owner, "<span class='warning'>Your [owner.get_held_index_name(owner.get_held_index_of_item(I))] spasms and throws the [I.name]!</span>")
 	stored_items = list()
-
 
 /obj/item/organ/cyberimp/brain/anti_drop/proc/release_items()
 	for(var/obj/item/I in stored_items)
@@ -155,8 +151,11 @@
 
 /obj/item/weapon/storage/box/cyber_implants/bundle
 	name = "boxed cybernetic implants"
-	var/list/boxed = list(/obj/item/organ/cyberimp/eyes/xray,/obj/item/organ/cyberimp/eyes/thermals,
-						/obj/item/organ/cyberimp/brain/anti_stun, /obj/item/organ/cyberimp/chest/reviver)
+	var/list/boxed = list(
+	/obj/item/organ/eyes/robotic/xray,
+	/obj/item/organ/eyes/robotic/thermals,
+	/obj/item/organ/cyberimp/brain/anti_stun,
+	/obj/item/organ/cyberimp/chest/reviver)
 	var/amount = 5
 
 /obj/item/weapon/storage/box/cyber_implants/bundle/New()

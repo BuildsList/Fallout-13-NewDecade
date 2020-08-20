@@ -6,6 +6,13 @@
 	requires_organic_bodypart = 0
 
 //fix eyes
+
+/datum/surgery/eye_surgery/can_start(mob/user, mob/living/carbon/target)
+	var/obj/item/organ/eyes/E = target.getorganslot("eye_sight")
+	if(!E)
+		user << "It's hard to do surgery on someones eyes when they don't have any."
+		return 0
+
 /datum/surgery_step/fix_eyes
 	name = "fix eyes"
 	implements = list(/obj/item/weapon/hemostat = 100, /obj/item/weapon/screwdriver = 45, /obj/item/weapon/pen = 25)

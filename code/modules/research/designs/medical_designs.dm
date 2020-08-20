@@ -187,7 +187,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(MAT_METAL = 600, MAT_GLASS = 400)
-	build_path = /obj/item/organ/cyberimp/eyes/shield
+	build_path = /obj/item/organ/eyes/robotic/shield
 	category = list("Misc", "Medical Designs")
 
 /datum/design/cyberimp_breather
@@ -242,7 +242,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_COOPER = 1000, MAT_URANIUM = 1000, MAT_DIAMOND = 2000)
-	build_path = /obj/item/organ/cyberimp/eyes/xray
+	build_path = /obj/item/organ/eyes/robotic/xray
 	category = list("Misc", "Medical Designs")
 
 /datum/design/cyberimp_thermals
@@ -253,7 +253,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_COOPER = 1000, MAT_DIAMOND = 2000)
-	build_path = /obj/item/organ/cyberimp/eyes/thermals
+	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 
 /datum/design/cyberimp_antidrop

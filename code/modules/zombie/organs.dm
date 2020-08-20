@@ -1,4 +1,4 @@
-#define START_TIMER reanimation_timer = world.time + rand(600,1200)
+#define START_TIMER reanimation_timer = world.time + rand(450,700)
 
 /obj/item/organ/body_egg/zombie_infection
 	name = "festering ooze"

@@ -1105,13 +1105,13 @@ var/list/uplink_items = list() // Global list so we only initialize this once.
 /datum/uplink_item/cyber_implants/thermals
 	name = "Thermal Vision Implant"
 	desc = "These cybernetic eyes will give you thermal vision. They must be implanted via surgery."
-	item = /obj/item/organ/cyberimp/eyes/thermals
+	item = /obj/item/organ/eyes/robotic/thermals
 	cost = 8
 
 /datum/uplink_item/cyber_implants/xray
 	name = "X-Ray Vision Implant"
 	desc = "These cybernetic eyes will give you X-ray vision. They must be implanted via surgery."
-	item = /obj/item/organ/cyberimp/eyes/xray
+	item = /obj/item/organ/eyes/robotic/xray
 	cost = 10
 
 /datum/uplink_item/cyber_implants/antistun

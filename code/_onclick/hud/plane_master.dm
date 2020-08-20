@@ -14,7 +14,14 @@
 /obj/screen/plane_master/lighting
 	name = "lighting plane master"
 	plane = 1
-	blend_mode = BLEND_OVERLAY
+	blend_mode = BLEND_MULTIPLY
+	color = list(
+		-1,  0,  0,  0,
+		 0, -1,  0,  0,
+		 0,  0, -1,  0,
+		 0,  0,  0,  0,
+		 1,  1,  1,  1
+	)
 	icon_state = "blank"
 	invisibility     = INVISIBILITY_LIGHTING
 	appearance_flags = RESET_TRANSFORM | RESET_COLOR | RESET_ALPHA

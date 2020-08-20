@@ -205,7 +205,8 @@
 	action_icon_state = "pa_helmet"
 
 /obj/effect/proc_holder/spell/targeted/night_vision/cast(list/targets,mob/user = usr)
-	for(var/mob/living/target in targets)
+	return
+	/*for(var/mob/living/target in targets)
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			if(H.dna.species.invis_sight == SEE_INVISIBLE_LIVING)
@@ -221,7 +222,7 @@
 				name = "Выключить режим ночного виденья"
 			else
 				target.see_invisible = SEE_INVISIBLE_LIVING
-				name = "Включить режим ночного виденья"
+				name = "Включить режим ночного виденья"*/
 
 
 /mob/living/simple_animal/hostile/statue/sentience_act()
