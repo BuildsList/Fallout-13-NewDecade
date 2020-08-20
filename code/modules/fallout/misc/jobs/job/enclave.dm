@@ -187,7 +187,7 @@
 
 /// enclave radist///
 /datum/job/enclave_radist
-	title = "Радист Анклава"
+	title = "Enclave Radist"
 	desc = "Запишись в добровольцы сегодня!"
 	flag = ENCLAVE_RADIST
 	department_head = list("colonel", "sergeant")
