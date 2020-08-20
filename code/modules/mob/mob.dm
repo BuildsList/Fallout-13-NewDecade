@@ -112,17 +112,14 @@ var/next_mob_id = 0
 			if(self_message)
 				msg = self_message
 		else
-			if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
-				if(blind_message) // then people see blind message if there is one, otherwise nothing.
-					msg = blind_message
-				else
-					continue
-			else if(T.lighting_overlay)
-				if(T.lighting_overlay.invisibility <= M.see_invisible && T.is_softly_lit()) //the light object is dark and not invisible to us
+			#warn fix this
+			/*
+			else if(T.lighting_object)
+				if(T.lighting_object.invisibility <= M.see_invisible && !T.lighting_object.luminosity) //the light object is dark and not invisible to us
 					if(blind_message)
 						msg = blind_message
 					else
-						continue
+						continue*/
 		M.show_message(msg,1,blind_message,2)
 
 // Show a message to all mobs in earshot of this one
