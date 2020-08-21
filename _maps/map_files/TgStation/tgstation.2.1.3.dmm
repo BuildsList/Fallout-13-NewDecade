@@ -2325,7 +2325,7 @@
 "aSK" = (/obj/machinery/light/small{dir = 4},/turf/open/floor/wood,/area/library)
 "aSL" = (/obj/machinery/light/small,/turf/open/floor/engine/cult,/area/library)
 "aSM" = (/obj/effect/landmark{name = "blobstart"},/obj/structure/chair/comfy/brown{dir = 1},/turf/open/floor/engine/cult,/area/library)
-"aSN" = (/obj/structure/destructible/cult/tome,/obj/item/clothing/under/suit_jacket/red,/obj/item/weapon/book/codex_gigas,/turf/open/floor/engine/cult,/area/library)
+"aSN" = (/obj/structure/destructible/cult/tome,/obj/item/clothing/under/suit_jacket/red,/turf/open/floor/engine/cult,/area/library)
 "aSO" = (/turf/open/floor/plasteel/chapel,/area/chapel/main)
 "aSP" = (/obj/structure/table/wood,/turf/open/floor/plasteel/black,/area/chapel/main)
 "aSQ" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/open/floor/plasteel/chapel{dir = 8},/area/chapel/main)

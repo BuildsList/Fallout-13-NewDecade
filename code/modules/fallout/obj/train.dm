@@ -60,6 +60,6 @@
 	name = "Панель Управления Поездом"
 	desc = "Вы видите панель с кучей кнопок. Большинство из них не работают кроме нескольких, которые позволяют управлять поездом и направлять его на нужные станции."
 	shuttleId = "poezd"
-	possible_destinations = "poezd_kebab;poezd_end"
+	possible_destinations = "poezd_kebab;poezd_end;landing_zone_dock"
 	circuit = /obj/item/weapon/circuitboard/computer/train
-
+	no_destination_swap = 1
