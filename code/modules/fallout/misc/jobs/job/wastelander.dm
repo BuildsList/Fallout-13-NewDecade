@@ -77,7 +77,7 @@
 //Mercenary
 
 /datum/job/mercenary
-	title = "Mercenary"
+	title = "Наёмник"
 	desc = "A spawn of guns and bullets.<br>You know that peace is not always applicable.<br>Why waste time on diplomacy when you can shoot things and earn yourself a fortune?"
 	flag = MERCENARY
 	department_flag = MEDSCI
