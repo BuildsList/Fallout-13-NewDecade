@@ -668,7 +668,8 @@
 	name = "robotic voicebox"
 	desc = "A voice synthesizer that can interface with organic lifeforms."
 	icon_state = "tonguerobot"
-	say_mod = "states"
+	status = ORGAN_ROBOTIC
+	say_mod = "объявляет"
 	attack_verb = list("beeped", "booped")
 
 /obj/item/organ/tongue/robot/get_spans()
@@ -809,6 +810,7 @@
 	name = "robotic eyes"
 	desc = "Your vision is augmented."
 	icon_state = "cybernetic_eyeballs"
+	status = ORGAN_ROBOTIC
 
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	if(!owner)

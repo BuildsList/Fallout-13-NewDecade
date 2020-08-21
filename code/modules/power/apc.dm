@@ -45,6 +45,7 @@
 	desc = "A control terminal for the area electrical systems."
 
 	icon_state = "apc0"
+	resistance_flags = FIRE_PROOF
 	anchored = 1
 	use_power = 0
 	req_access = null

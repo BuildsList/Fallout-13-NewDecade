@@ -167,11 +167,6 @@ var/list/admin_verbs_debug = list(
 	/client/proc/map_template_upload,
 	/client/proc/jump_to_ruin,
 	/client/proc/clear_dynamic_transit,
-	/client/proc/view_runtimes,
-	/client/proc/show_QDELETED,
-	/datum/proc/qdel_then_find_references,
-	/client/proc/purge_all_destroyed_objects,
-	/datum/proc/find_refs,
 	/client/proc/toggle_medal_disable
 	)
 var/list/admin_verbs_possess = list(

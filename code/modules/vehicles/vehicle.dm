@@ -189,9 +189,7 @@
 			to_chat(user, "<span class='warning'>В огне!</span>")
 		var/healthpercent = (obj_integrity/max_integrity) * 100
 		switch(healthpercent)
-			if(100 to INFINITY)
-				to_chat(user, "Выглядит не поврежденным.")
-			if(50 to 100)
+			if(50 to 99)
 				to_chat(user, "Выглядит немного поврежденным.")
 			if(25 to 50)
 				to_chat(user, "Выглядит тяжело поврежденным.")

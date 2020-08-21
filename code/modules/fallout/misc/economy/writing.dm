@@ -26,6 +26,15 @@
 	pressure_resistance = 2
 	var/colour = "black"	//what colour the ink is!
 
+//Crayons path disambiguity sigh.
+/obj/item/proc/on_write(obj/item/weapon/paper/P, mob/user)
+	return
+
+/obj/item/weapon/pen/poison/on_write(obj/item/weapon/paper/P, mob/user)
+	P.contact_poison = "delayed_toxin"
+	P.contact_poison_volume = 10
+	add_logs(user,P,"used poison pen on")
+
 /obj/item/weapon/pen/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)

@@ -30,7 +30,9 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	// of the immortality qdel hints
 	var/list/noforcerespect = list()
 
+#ifdef TESTING
 	var/list/qdel_list = list()	// list of all types that have been qdel()eted
+#endif
 
 /datum/subsystem/garbage_collector/New()
 	NEW_SS_GLOBAL(SSgarbage)
@@ -73,7 +75,6 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	gcedlasttick = 0
 	var/time_to_kill = world.time - collection_timeout // Anything qdel() but not GC'd BEFORE this time needs to be manually del()
 	time_to_kill = 0 // No more del()
-
 	var/list/queue = src.queue
 	var/starttime = world.time
 	var/starttimeofday = world.timeofday
@@ -92,6 +93,10 @@ var/datum/subsystem/garbage_collector/SSgarbage
 		var/datum/A
 		A = locate(refID)
 		if (A && A.gc_destroyed == GCd_at_time) // So if something else coincidently gets the same ref, it's not deleted by mistake
+			#ifdef GC_FAILURE_HARD_LOOKUP
+			A.find_references()
+			#endif
+
 			// Something's still referring to the qdel'd object.  Kill it.
 			var/type = A.type
 			testing("GC: -- \ref[A] | [type] was unable to be GC'd and was deleted --")
@@ -157,7 +162,9 @@ var/datum/subsystem/garbage_collector/SSgarbage
 /proc/qdel(datum/D, force=FALSE)
 	if(!D)
 		return
+#ifdef TESTING
 	SSgarbage.qdel_list += "[D.type]"
+#endif
 	if(!istype(D))
 		del(D)
 	else if(isnull(D.gc_destroyed))
@@ -190,7 +197,9 @@ var/datum/subsystem/garbage_collector/SSgarbage
 				del(D)
 			if (QDEL_HINT_FINDREFERENCE)//qdel will, if TESTING is enabled, display all references to this object, then queue the object for deletion.
 				SSgarbage.QueueForQueuing(D)
+				#ifdef TESTING
 				D.find_references()
+				#endif
 			else
 				if(!SSgarbage.noqdelhint["[D.type]"])
 					SSgarbage.noqdelhint["[D.type]"] = "[D.type]"
@@ -215,9 +224,11 @@ var/datum/subsystem/garbage_collector/SSgarbage
 
 /datum/var/gc_destroyed //Time when this object was destroyed.
 
+#ifdef TESTING
 /datum/var/running_find_references
+/datum/var/last_find_references = 0
 
-/datum/proc/find_refs()
+/datum/verb/find_refs()
 	set category = "Debug"
 	set name = "Find References"
 	set background = 1
@@ -249,17 +260,10 @@ var/datum/subsystem/garbage_collector/SSgarbage
 		usr.client.running_find_references = type
 
 	testing("Beginning search for references to a [type].")
+	last_find_references = world.time
 	find_references_in_globals()
 	for(var/datum/thing in world)
-		if(usr && usr.client && !usr.client.running_find_references) return
-		for(var/varname in thing.vars)
-			var/variable = thing.vars[varname]
-			if(variable == src)
-				testing("Found [src.type] \ref[src] in [thing.type]'s [varname] var.")
-			else if(islist(variable))
-				if(src in variable)
-					testing("Found [src.type] \ref[src] in [thing.type]'s [varname] list var.")
-		CHECK_TICK
+		DoSearchVar(thing, "WorldRef: [thing]")
 	testing("Completed search for references to a [type].")
 	if(usr && usr.client)
 		usr.client.running_find_references = null
@@ -269,7 +273,7 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	SSgarbage.can_fire = 0
 	SSgarbage.next_fire = world.time + world.tick_lag
 
-/client/proc/purge_all_destroyed_objects()
+/client/verb/purge_all_destroyed_objects()
 	set category = "Debug"
 	if(SSgarbage)
 		while(SSgarbage.queue.len)
@@ -279,7 +283,7 @@ var/datum/subsystem/garbage_collector/SSgarbage
 				SSgarbage.totaldels++
 			SSgarbage.queue.Cut(1, 2)
 
-/datum/proc/qdel_then_find_references()
+/datum/verb/qdel_then_find_references()
 	set category = "Debug"
 	set name = "qdel() then Find References"
 	set background = 1
@@ -289,7 +293,7 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	if(!running_find_references)
 		find_references(TRUE)
 
-/client/proc/show_QDELETED()
+/client/verb/show_qdeleted()
 	set category = "Debug"
 	set name = "Show qdel() Log"
 	set desc = "Render the qdel() log and display it"
@@ -306,24 +310,40 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	for(var/path in tmplist)
 		dat += "[path] - [tmplist[path]] times<BR>"
 
-	usr << browse(dat, "window=QDELETEDlog")
+	usr << browse(dat, "window=qdeletedlog")
 
-#define SearchVar(X) DoSearchVar(X, #X)
+#define SearchVar(X) DoSearchVar(X, "Global: " + #X)
 
 /datum/proc/DoSearchVar(X, Xname)
-	if(islist(X))
-		if(src in X)
-			testing("Found [src.type] \ref[src] in global list [Xname].")
-	else if(istype(X, /datum))
+	if(usr && usr.client && !usr.client.running_find_references) return
+	if(istype(X, /datum))
 		var/datum/D = X
+		if(D.last_find_references == last_find_references)
+			return
+		D.last_find_references = last_find_references
 		for(var/V in D.vars)
 			for(var/varname in D.vars)
 				var/variable = D.vars[varname]
 				if(variable == src)
-					testing("Found [src.type] \ref[src] in [D.type]'s [varname] var. Global: [Xname]")
-				else if(islist(variable) && src in variable)
-					testing("Found [src.type] \ref[src] in [D.type]'s [varname] list var. Global: [Xname]")
+					testing("Found [src.type] \ref[src] in [D.type]'s [varname] var. [Xname]")
+				else if(islist(variable))
+					if(src in variable)
+						testing("Found [src.type] \ref[src] in [D.type]'s [varname] list var. Global: [Xname]")
+#ifdef GC_FAILURE_HARD_LOOKUP
+					for(var/I in variable)
+						DoSearchVar(I, TRUE)
+				else
+					DoSearchVar(variable, "[Xname]: [varname]")
+#endif
+	else if(islist(X))
+		if(src in X)
+			testing("Found [src.type] \ref[src] in list [Xname].")
+#ifdef GC_FAILURE_HARD_LOOKUP
+		for(var/I in X)
+			DoSearchVar(I, Xname + ": list")
+#else
 	CHECK_TICK
+#endif
 
 //if find_references isn't working for some datum
 //update this list using tools/DMTreeToGlobalsList

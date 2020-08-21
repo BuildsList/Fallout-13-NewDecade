@@ -573,11 +573,11 @@ var/global/BSACooldown = 0
 	set desc="Delay the game start"
 	set name="Delay pre-game"
 
-	var/newtime = input("Set a new time in seconds. Set -1 for indefinite delay.","Set Delay",round(ticker.timeLeft/10)) as num|null
+	var/newtime = input("Set a new time in seconds. Set -1 for indefinite delay.","Set Delay",round(ticker.GetTimeLeft()/10)) as num|null
 	if(ticker.current_state > GAME_STATE_PREGAME)
 		return alert("Слишком поздно... Игра уже началась!")
 	if(newtime)
-		ticker.timeLeft = newtime * 10
+		ticker.SetTimeLeft(newtime * 10)
 		if(newtime < 0)
 			to_chat(world, "<b>Начало раунда было приостановленно.</b>")
 			log_admin("[key_name(usr)] delayed the round start.")
@@ -817,3 +817,6 @@ var/global/BSACooldown = 0
 				to_chat(world, 'sound/effects/pray.ogg')
 		if(string)
 			message_admins("[string]")
+
+/datum/admins/SDQL_update()
+	return FALSE	//No.

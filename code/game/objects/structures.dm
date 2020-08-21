@@ -107,9 +107,7 @@
 /obj/structure/proc/examine_status(mob/user) //An overridable proc, mostly for falsewalls.
 	var/healthpercent = (obj_integrity/max_integrity) * 100
 	switch(healthpercent)
-		if(100 to INFINITY)
-			return  "Выглядит нетронутым."
-		if(50 to 100)
+		if(50 to 99)
 			return  "Выглядит немного повреждённым."
 		if(25 to 50)
 			return  "Похоже, оно сильно повреждено."

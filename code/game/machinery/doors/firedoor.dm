@@ -23,9 +23,9 @@
 	explosion_block = 1
 	safe = FALSE
 	closingLayer = CLOSED_FIREDOOR_LAYER
+	resistance_flags = FIRE_PROOF
 	assemblytype = /obj/structure/firelock_frame
 	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 10, bio = 100, rad = 100, fire = 95, acid = 70)
-	CanAtmosPass = ATMOS_PASS_PROC
 	var/boltslocked = TRUE
 
 /obj/machinery/door/firedoor/Bumped(atom/AM)
@@ -44,6 +44,12 @@
 		stat |= NOPOWER
 	return
 
+/obj/machinery/door/firedoor/attack_hand(mob/user)
+	if(operating || !density)
+		return
+	user.visible_message("[user] стучит в [src].",
+						 "Вы стучите в [src].")
+	playsound(loc, 'sound/effects/Glassknock.ogg', 10, FALSE, frequency = 32000)
 
 /obj/machinery/door/firedoor/attackby(obj/item/weapon/C, mob/user, params)
 	add_fingerprint(user)
@@ -160,6 +166,7 @@
 /obj/machinery/door/firedoor/border_only
 	icon = 'icons/obj/doors/edge_Doorfire.dmi'
 	flags = ON_BORDER
+	CanAtmosPass = ATMOS_PASS_PROC
 
 /obj/machinery/door/firedoor/border_only/CanPass(atom/movable/mover, turf/target, height=0)
 	if(istype(mover) && mover.checkpass(PASSGLASS))

@@ -83,23 +83,23 @@
 			cur_acc[i] = "n"
 
 		for(var/line in lines)
-//			to_chat(world, line)
-			for(var/beat in splittext_char(lowertext(line), ","))
-//				to_chat(world, "beat: [beat]")
-				var/list/notes = splittext_char(beat, "/")
-				for(var/note in splittext_char(notes[1], "-"))
-//					to_chat(world, "note: [note]")
+			//world << line
+			for(var/beat in splittext(lowertext(line), ","))
+				//world << "beat: [beat]"
+				var/list/notes = splittext(beat, "/")
+				for(var/note in splittext(notes[1], "-"))
+					//world << "note: [note]"
 					if(!playing || shouldStopPlaying(user))//If the instrument is playing, or special case
 						playing = 0
 						return
 					if(length(note) == 0)
 						continue
-//					to_chat(world, "Parse: [copytext_char(note,1,2)]")
+					//world << "Parse: [copytext(note,1,2)]"
 					var/cur_note = text2ascii(note) - 96
 					if(cur_note < 1 || cur_note > 7)
 						continue
 					for(var/i=2 to length(note))
-						var/ni = copytext_char(note,i,i+1)
+						var/ni = copytext(note,i,i+1)
 						if(!text2num(ni))
 							if(ni == "#" || ni == "b" || ni == "n")
 								cur_acc[cur_note] = ni
@@ -107,6 +107,15 @@
 								cur_acc[cur_note] = "#" // so shift is never required
 						else
 							cur_oct[cur_note] = text2num(ni)
+					if(user.dizziness > 0 && prob(user.dizziness / 2))
+						cur_note = Clamp(cur_note + rand(round(-user.dizziness / 10), round(user.dizziness / 10)), 1, 7)
+					if(user.dizziness > 0 && prob(user.dizziness / 5))
+						if(prob(30))
+							cur_acc[cur_note] = "#"
+						else if(prob(42))
+							cur_acc[cur_note] = "b"
+						else if(prob(75))
+							cur_acc[cur_note] = "n"
 					playnote(cur_note, cur_acc[cur_note], cur_oct[cur_note])
 				if(notes.len >= 2 && text2num(notes[2]))
 					sleep(sanitize_tempo(tempo / text2num(notes[2])))
@@ -118,7 +127,7 @@
 	updateDialog(user)
 
 /datum/song/proc/interact(mob/user)
-	var/dat = {"<meta charset="UTF-8">"}
+	var/dat = ""
 
 	if(lines.len > 0)
 		dat += "<H3>Playback</H3>"
@@ -202,19 +211,19 @@
 
 		//split into lines
 		spawn()
-			lines = splittext_char(t, "\n")
-			if(copytext_char(lines[1],1,6) == "BPM: ")
-				tempo = sanitize_tempo(600 / text2num(copytext_char(lines[1],6)))
+			lines = splittext(t, "\n")
+			if(copytext(lines[1],1,6) == "BPM: ")
+				tempo = sanitize_tempo(600 / text2num(copytext(lines[1],6)))
 				lines.Cut(1,2)
 			else
 				tempo = sanitize_tempo(5) // default 120 BPM
 			if(lines.len > 50)
-				to_chat(usr, "Too many lines!")
+				usr << "Too many lines!"
 				lines.Cut(51)
 			var/linenum = 1
 			for(var/l in lines)
 				if(length(l) > 50)
-					to_chat(usr, "Line [linenum] too long!")
+					usr << "Line [linenum] too long!"
 					lines.Remove(l)
 				else
 					linenum++
@@ -250,7 +259,7 @@
 		if(lines.len > 50)
 			return
 		if(length(newline) > 50)
-			newline = copytext_char(newline, 1, 50)
+			newline = copytext(newline, 1, 50)
 		lines.Add(newline)
 
 	else if(href_list["deleteline"])
@@ -265,7 +274,7 @@
 		if(!content || !in_range(instrumentObj, usr))
 			return
 		if(length(content) > 50)
-			content = copytext_char(content, 1, 50)
+			content = copytext(content, 1, 50)
 		if(num > lines.len || num < 1)
 			return
 		lines[num] = content
@@ -330,7 +339,7 @@
 
 /obj/structure/piano/attack_hand(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		user << "<span class='warning'>You don't have the dexterity to do this!</span>"
 		return 1
 	interact(user)
 
@@ -348,7 +357,7 @@
 	if (istype(O, /obj/item/weapon/wrench))
 		if (!anchored && !isinspace())
 			playsound(src.loc, O.usesound, 50, 1)
-			to_chat(user, "<span class='notice'> You begin to tighten \the [src] to the floor...</span>")
+			user << "<span class='notice'> You begin to tighten \the [src] to the floor...</span>"
 			if (do_after(user, 20*O.toolspeed, target = src))
 				user.visible_message( \
 					"[user] tightens \the [src]'s casters.", \
@@ -357,7 +366,7 @@
 				anchored = 1
 		else if(anchored)
 			playsound(src.loc, O.usesound, 50, 1)
-			to_chat(user, "<span class='notice'> You begin to loosen \the [src]'s casters...</span>")
+			user << "<span class='notice'> You begin to loosen \the [src]'s casters...</span>"
 			if (do_after(user, 40*O.toolspeed, target = src))
 				user.visible_message( \
 					"[user] loosens \the [src]'s casters.", \

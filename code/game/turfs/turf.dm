@@ -22,6 +22,11 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
+/turf/SDQL_update(const/var_name, new_value)
+	if(var_name == "x" || var_name == "y" || var_name == "z")
+		return FALSE
+	. = ..()
+
 /turf/New()
 	..()
 

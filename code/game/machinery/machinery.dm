@@ -434,14 +434,12 @@ Class Procs:
 			to_chat(user, "<span class='warning'>It's on fire!</span>")
 		var/healthpercent = (obj_integrity/max_integrity) * 100
 		switch(healthpercent)
-			if(100 to INFINITY)
-				to_chat(user, "It seems pristine and undamaged.")
-			if(50 to 100)
-				to_chat(user, "It looks slightly damaged.")
+			if(50 to 99)
+				to_chat(user, "Выглядит немного повреждённым.")
 			if(25 to 50)
-				to_chat(user, "It appears heavily damaged.")
+				to_chat(user, "Выглядит сильно повреждённым.")
 			if(0 to 25)
-				to_chat(user, "<span class='warning'>It's falling apart!</span>")
+				to_chat(user, "<span class='warning'>Выглядит так, будто разваливается на части!</span>")
 	if(user.research_scanner && component_parts)
 		display_parts(user)
 

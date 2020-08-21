@@ -82,7 +82,10 @@
 		stat("Карта:", MAP_NAME)
 
 		if(ticker.current_state == GAME_STATE_PREGAME)
-			stat("Время до старта:", (ticker.timeLeft >= 0) ? "[round(ticker.timeLeft / 10)]s" : "ЗАДЕРЖАНО")
+			var/time_remaining = ticker.GetTimeLeft()
+			if(time_remaining >= 0)
+				time_remaining /= 10
+			stat("Время до старта:", (time_remaining >= 0) ? "[round(time_remaining)]с" : "ЗАДЕРЖАНО")
 
 			stat("Игроков:", "[ticker.totalPlayers]")
 			if(client.holder)

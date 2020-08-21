@@ -341,7 +341,7 @@
 
 	if(spawnPosition)
 		spawn(respawn_time_of_mob/*MOB_RESPAWN_TIME*/)
-			PoolOrNew(src.type, spawnPosition)
+			New(src.type, spawnPosition)
 
 		spawn(respawn_time_of_mob/*MOB_RESPAWN_TIME*/ * MOB_DELETE_MUL)
 			qdel(src)
@@ -358,25 +358,22 @@
 	if(!gibbed)
 		if(death_sound)
 			playsound(get_turf(src),death_sound, 50, 1)
-		if(deathmessage)
-			visible_message("<span class='danger'>[src] [deathmessage]</span>")
-		else if(!del_on_death)
-			visible_message("<span class='danger'>[src.name] перестаёт двигаться...</span>")
+		if(deathmessage || !del_on_death)
+			emote("deathgasp")
 
 	if(del_on_death)
-		ghostize()
+		..()
 		//Prevent infinite loops if the mob Destroy() is overriden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
 		qdel(src)
-		return
 	else
 		health = 0
 		icon_state = icon_dead
 		density = 0
 		lying = 1
 	live_hostiles--
-	..()
+		..()
 
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
 	if(see_invisible < the_target.invisibility)
