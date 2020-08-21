@@ -638,7 +638,7 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 			to_chat(M, "[link] <span class='name'>[msg.sender] </span><span class='game say'>Сообщение на Пипбой</span> --> <span class='name'>[multiple ? "Everyone" : msg.recipient]</span>: <span class='message'>[msg.message][msg.get_photo_ref()]</span></span>")
 
 /obj/item/clothing/gloves/pda/proc/can_send(obj/item/clothing/gloves/pda/P)
-	if(!P || qdeleted(P) || P.toff)
+	if(!P || QDELETED(P) || P.toff)
 		return null
 
 	var/obj/machinery/message_server/useMS = null
@@ -651,7 +651,7 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 
 	var/datum/signal/signal = src.telecomms_process()
 
-	if(!P || qdeleted(P) || P.toff) //in case the PDA or mob gets destroyed during telecomms_process()
+	if(!P || QDELETED(P) || P.toff) //in case the PDA or mob gets destroyed during telecomms_process()
 		return null
 
 	var/useTC = 0

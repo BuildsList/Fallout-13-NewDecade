@@ -11,6 +11,9 @@
 								  //if TESTING is enabled, qdel will call this object's find_references() verb.
 //defines for the gc_destroyed var
 
+#define QDELETED(X) (!X || X.gc_destroyed)
+#define QDESTROYING(X) (!X || X.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
+
 #define GC_QUEUED_FOR_QUEUING -1
 #define GC_QUEUED_FOR_HARD_DEL -2
 #define GC_CURRENTLY_BEING_QDELETED -3

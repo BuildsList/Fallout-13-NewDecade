@@ -26,13 +26,13 @@ var/datum/subsystem/acid/SSacid
 	while (currentrun.len)
 		var/obj/O = currentrun[currentrun.len]
 		currentrun.len--
-		if (!O || qdeleted(O))
+		if(!O || QDELETED(O))
 			processing -= O
 			if (MC_TICK_CHECK)
 				return
 			continue
 
-		if(O.acid_level && O.acid_processing())
+		if (O.acid_level && O.acid_processing())
 		else
 			O.overlays -= acid_overlay
 			O.priority_overlays -= acid_overlay

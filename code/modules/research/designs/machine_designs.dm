@@ -462,6 +462,14 @@
 	category = list("Medical Machinery")
 	build_type = IMPRINTER
 
+/datum/design/board/deepfryer
+	name = "Machine Design (Deep Fryer)"
+	desc = "The circuit board for a Deep Fryer."
+	id = "deepfryer"
+	req_tech = list("programming" = 1)
+	build_path = /obj/item/weapon/circuitboard/machine/deep_fryer
+	category = list ("Misc. Machinery")
+
 /datum/design/board/holotape_ormed
 	name = "Плёнка ОРМЕД"
 	desc = "Голозапись с данными ОРМЕД."
