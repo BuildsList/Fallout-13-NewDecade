@@ -1,7 +1,7 @@
 //Fallout 13 Enclave faction roles
 
 /datum/job/colonel
-	title = "Enclave Colonel"
+	title = "Полковник Анклава"
 	desc = "An actual American patriot.<br>You live by the principle that the Main Goal is more important than the means of achieving it."
 	flag = COLONEL
 	department_head = list("Enclave command HQ")
@@ -66,7 +66,7 @@
 //Enclave Sergeant
 
 /datum/job/enclave_sergeant
-	title = "Enclave Sergeant"
+	title = "Сержант Анклава"
 	desc = "A loyal soldier.<br>You trust your commander and orders from above - it's just about time to make America great again!"
 	flag = ENCLAVE_SERGEANT
 	department_head = list("colonel")
@@ -129,7 +129,7 @@
 //Enclave Private
 
 /datum/job/enclave_private
-	title = "Enclave Private"
+	title = "Рядовой Анклава"
 	desc = "Enlist today."
 	flag = ENCLAVE_PRIVATE
 	department_head = list("colonel", "sergeant")
