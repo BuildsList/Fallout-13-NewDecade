@@ -1,6 +1,6 @@
 /obj/item/device/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "walkie-talkie."
+	name = "рация"
 	suffix = "\[3\]"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
@@ -38,7 +38,6 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
 	materials = list(MAT_METAL=250, MAT_GLASS=150)
-	self_weight = 1
 
 	var/const/TRANSMISSION_DELAY = 5 // only 2/second/radio
 	var/const/FREQ_LISTENING = 1
@@ -172,9 +171,6 @@
 			if(.)
 				frequency = sanitize_frequency(tune, freerange)
 				set_frequency(frequency)
-				if(frequency == traitor_frequency && hidden_uplink)
-					hidden_uplink.interact(usr)
-					ui.close()
 		if("listen")
 			listening = !listening
 			. = TRUE
@@ -602,3 +598,31 @@
 /obj/item/device/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back
+
+/obj/item/device/radio/radist_headset
+	name = "Наушник связи"
+	slot_flags = SLOT_BACK
+	icon = 'icons/obj/prc.dmi'
+	icon_state = "headset"
+	canhear_range = 1
+	freqlock = 1
+	flags = EARBANGPROTECT
+	slot_flags = SLOT_EARS
+
+/obj/item/device/radio/radist_headset/enclave
+	name = "радиогарнитура анклава"
+	icon = 'icons/obj/prc.dmi'
+	command = TRUE
+	freqlock = 6359
+	frequency = 6359
+	key = 343
+	broadcasting = 0
+
+/obj/item/device/radio/radist_headset/brotherhood
+	name = "радиогарнитура братства"
+	icon = 'icons/obj/prc.dmi'
+	command = TRUE
+	freqlock = 1919
+	frequency = 1919
+	key = 1501
+	broadcasting = 0

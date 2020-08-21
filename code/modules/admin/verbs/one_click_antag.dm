@@ -210,69 +210,6 @@
 
 	return 0
 
-
-
-/datum/admins/proc/makeNukeTeam()
-
-	var/datum/game_mode/nuclear/temp = new
-	var/list/mob/dead/observer/candidates = pollCandidates("Do you wish to be considered for a nuke team being sent in?", "operative", temp)
-	var/list/mob/dead/observer/chosen = list()
-	var/mob/dead/observer/theghost = null
-
-	if(candidates.len)
-		var/numagents = 5
-		var/agentcount = 0
-
-		for(var/i = 0, i<numagents,i++)
-			shuffle(candidates) //More shuffles means more randoms
-			for(var/mob/j in candidates)
-				if(!j || !j.client)
-					candidates.Remove(j)
-					continue
-
-				theghost = j
-				candidates.Remove(theghost)
-				chosen += theghost
-				agentcount++
-				break
-		//Making sure we have atleast 3 Nuke agents, because less than that is kinda bad
-		if(agentcount < 3)
-			return 0
-
-		var/nuke_code = random_nukecode()
-
-		var/obj/machinery/nuclearbomb/nuke = locate("syndienuke") in nuke_list
-		if(nuke)
-			nuke.r_code = nuke_code
-
-		//Let's find the spawn locations
-		var/list/turf/synd_spawn = list()
-		for(var/obj/effect/landmark/A in landmarks_list)
-			if(A.name == "Syndicate-Spawn")
-				synd_spawn += get_turf(A)
-				continue
-
-		var/leader_chosen
-		var/spawnpos = 1 //Decides where they'll spawn. 1=leader.
-
-		for(var/mob/c in chosen)
-			if(spawnpos > synd_spawn.len)
-				spawnpos = 2 //Ran out of spawns. Let's loop back to the first non-leader position
-			var/mob/living/carbon/human/new_character=makeBody(c)
-			if(!leader_chosen)
-				leader_chosen = 1
-				new_character.mind.make_Nuke(synd_spawn[spawnpos],nuke_code,1)
-			else
-				new_character.mind.make_Nuke(synd_spawn[spawnpos],nuke_code)
-			spawnpos++
-		return 1
-	else
-		return 0
-
-
-
-
-
 /datum/admins/proc/makeAliens()
 	var/datum/round_event/ghost_role/alien_infestation/E = new(FALSE)
 	E.spawncount = 3
@@ -322,7 +259,6 @@
 					door.open()
 
 			//Assign antag status and the mission
-			ticker.mode.traitors += Commando.mind
 			Commando.mind.special_role = "deathsquad"
 			var/datum/objective/missionobj = new
 			missionobj.owner = Commando.mind
@@ -411,7 +347,6 @@
 		newmob.equipOutfit(/datum/outfit/centcom_official)
 
 		//Assign antag status and the mission
-		ticker.mode.traitors += newmob.mind
 		newmob.mind.special_role = "official"
 		var/datum/objective/missionobj = new
 		missionobj.owner = newmob.mind
@@ -511,7 +446,6 @@
 						door.open()
 
 			//Assign antag status and the mission
-			ticker.mode.traitors += ERTOperative.mind
 			ERTOperative.mind.special_role = "ERT"
 			var/datum/objective/missionobj = new
 			missionobj.owner = ERTOperative.mind

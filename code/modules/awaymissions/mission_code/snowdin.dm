@@ -130,7 +130,6 @@
 				/obj/item/organ/heart/demon = 7,
 				/obj/item/weapon/gun/magic/wand/resurrection/inert = 15,
 				/obj/item/weapon/gun/magic/wand/resurrection = 10,
-				/obj/item/device/radio/uplink/old = 2,
 				/obj/item/weapon/spellbook/oneuse/charge = 12,
 				/obj/item/weapon/grenade/clusterbuster/spawner_manhacks = 15,
 				/obj/item/weapon/spellbook/oneuse/fireball = 10,
@@ -173,23 +172,6 @@
 	desc = "This wand uses healing magics to heal and revive. The years of the cold have weakened the magic inside the wand."
 	max_charges = 5
 
-/obj/item/device/radio/uplink/old
-	name = "dusty radio"
-	desc = "A dusty looking radio."
-
-/obj/item/device/radio/uplink/old/New()
-	..()
-	hidden_uplink.name = "dusty radio"
-	hidden_uplink.telecrystals = 10
-
-/obj/effect/mob_spawn/human/syndicatesoldier/coldres
-	name = "Syndicate Snow Operative"
-	uniform = /obj/item/clothing/under/syndicate/coldres
-	shoes = /obj/item/clothing/shoes/combat/coldres
-	radio = /obj/item/device/radio/headset/syndicate/alt
-	pocket1 = /obj/item/weapon/gun/ballistic/automatic/pistol
-	pocket2 = /obj/item/weapon/card/id/syndicate
-	has_id = 0
 
 /obj/effect/mob_spawn/human/syndicatesoldier/coldres/alive
 	name = "sleeper"

@@ -100,16 +100,6 @@
 					target = A
 		if(TRACK_INFILTRATOR)
 			target = SSshuttle.getShuttle("syndicate")
-		if(TRACK_OPERATIVES)
-			var/list/possible_targets = list()
-			var/turf/here = get_turf(src)
-			for(var/V in ticker.mode.syndicates)
-				var/datum/mind/M = V
-				if(M.current && M.current.stat != DEAD)
-					possible_targets |= M.current
-			var/mob/living/closest_operative = get_closest_atom(/mob/living/carbon/human, possible_targets, here)
-			if(closest_operative)
-				target = closest_operative
 		if(TRACK_ATOM)
 			if(constant_target)
 				target = constant_target

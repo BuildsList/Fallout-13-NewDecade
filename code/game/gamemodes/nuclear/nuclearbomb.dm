@@ -443,20 +443,11 @@ var/bomb_set
 	else
 		off_station = NUKE_NEAR_MISS
 
-	if(istype(ticker.mode, /datum/game_mode/nuclear))
-		var/obj/docking_port/mobile/Shuttle = SSshuttle.getShuttle("syndicate")
-		var/datum/game_mode/nuclear/NM = ticker.mode
-		NM.syndies_didnt_escape = (Shuttle && Shuttle.z == ZLEVEL_CENTCOM) ? 0 : 1
-		NM.nuke_off_station = off_station
-
 	ticker.station_explosion_cinematic(off_station,null,src)
 	if(ticker.mode)
-		if(istype(ticker.mode, /datum/game_mode/nuclear))
-			var/datum/game_mode/nuclear/NM = ticker.mode
-			NM.nukes_left --
 		if(!ticker.mode.check_finished())//If the mode does not deal with the nuke going off so just reboot because everyone is stuck as is
 			spawn()
-				world.Reboot("Denwer destroyed by Nuclear Device.", "end_error", "nuke - unhandled ending")
+				world.Reboot("Орегон был уничтожен ядерным взрывом.", "end_error", "nuke - unhandled ending")
 
 
 /*

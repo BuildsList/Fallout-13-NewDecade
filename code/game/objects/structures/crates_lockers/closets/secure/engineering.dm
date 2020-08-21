@@ -13,7 +13,6 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/weapon/tank/jetpack/suit(src)
 	new /obj/item/weapon/cartridge/ce(src)
-	new /obj/item/device/radio/headset/heads/ce(src)
 	new /obj/item/weapon/storage/toolbox/mechanical(src)
 	new /obj/item/clothing/suit/hazardvest(src)
 	new /obj/item/device/megaphone/command(src)
@@ -64,7 +63,6 @@
 
 /obj/structure/closet/secure_closet/engineering_personal/New()
 	..()
-	new /obj/item/device/radio/headset/headset_eng(src)
 	new /obj/item/weapon/storage/toolbox/mechanical(src)
 	new /obj/item/weapon/tank/internals/emergency_oxygen/engi(src)
 	new /obj/item/weapon/holosign_creator/engineering(src)
@@ -80,7 +78,6 @@
 
 /obj/structure/closet/secure_closet/atmospherics/New()
 	..()
-	new /obj/item/device/radio/headset/headset_eng(src)
 	new /obj/item/weapon/pipe_dispenser(src)
 	new /obj/item/weapon/storage/toolbox/mechanical(src)
 	new /obj/item/weapon/tank/internals/emergency_oxygen/engi(src)

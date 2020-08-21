@@ -503,14 +503,16 @@
 	if(!src.busy)
 		src.busy = 1
 
-		songnumber = pick(1,2)
+		songnumber = pick(1,3)
 		if(songnumber == 1)
 			soundFile = 'sound/f13music/1983_radio_chatter_eng.ogg'
 			soundLength = 550200
 		if(songnumber == 2)
 			soundFile = 'sound/f13music/enclave_washington.ogg'
 			soundLength = 560
-
+		if(songnumber == 3)
+			soundFile = null
+			soundLength = 0
 		playsound(get_turf(src),src.soundFile,50)
 		src.add_fingerprint(user)
 		spawn(src.soundLength)

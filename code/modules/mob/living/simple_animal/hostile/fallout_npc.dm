@@ -50,7 +50,6 @@
 	//suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	//gloves = /obj/item/clothing/gloves/combat
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	//helmet = /obj/item/clothing/head/helmet/swat
 	//back = /obj/item/weapon/storage/backpack
@@ -131,7 +130,6 @@
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	//gloves = /obj/item/clothing/gloves/combat
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/riot
 	//back = /obj/item/weapon/storage/backpack
@@ -189,7 +187,6 @@
 	suit = /obj/item/clothing/suit/radiation/enclave
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/radiation/enclave
 	//back = /obj/item/weapon/storage/backpack
@@ -272,7 +269,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/black_combat_armor
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	radio = /obj/item/device/radio/headset
 	has_id = 0
 
 /obj/effect/mob_spawn/human/corpse/enclave/soldier
@@ -281,7 +277,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	radio = /obj/item/device/radio/headset
 	helmet = /obj/item/clothing/head/helmet/power_armor/advanced
 	has_id = 0
 
@@ -338,7 +333,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/brotherhood_armor
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/brotherhood_helmet
 	//back = /obj/item/weapon/storage/backpack
@@ -388,7 +382,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	shoes = /obj/item/clothing/shoes/f13/military
 	gloves = /obj/item/clothing/gloves/f13/military
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/power_armor/t45d
 	//back = /obj/item/weapon/storage/backpack
@@ -449,7 +442,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/ncr
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/ncr_helmet
 	//back = /obj/item/weapon/storage/backpack
@@ -501,7 +493,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/sergeant
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/ncr
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/f13/sergeant
 	//back = /obj/item/weapon/storage/backpack
@@ -563,7 +554,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/legrecruit
 	shoes = /obj/item/clothing/shoes/f13/military/legionleather
 	//gloves = /obj/item/clothing/gloves/f13/ncr
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/legrecruit
 	//back = /obj/item/weapon/storage/backpack
@@ -615,7 +605,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/legrecruit
 	shoes = /obj/item/clothing/shoes/f13/military/legionleather
 	gloves = /obj/item/clothing/gloves/f13/doom
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/legdecan
 	//back = /obj/item/weapon/storage/backpack
@@ -680,7 +669,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/tribal
 	shoes = /obj/item/clothing/shoes/f13/rag
 	//gloves = /obj/item/clothing/gloves/f13/ncr
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/firefighter
 	//back = /obj/item/weapon/storage/backpack
@@ -726,7 +714,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/supafly
 	shoes = /obj/item/clothing/shoes/f13/rag
 	//gloves = /obj/item/clothing/gloves/f13/doom
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/supaflyhelmet
 	//back = /obj/item/weapon/storage/backpack
@@ -755,7 +742,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/yankee
 	shoes = /obj/item/clothing/shoes/f13/rag
 	//gloves = /obj/item/clothing/gloves/f13/doom
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/yankee
 	//back = /obj/item/weapon/storage/backpack
@@ -786,7 +772,6 @@
 	suit = /obj/item/clothing/suit/armor/f13/slam
 	shoes = /obj/item/clothing/shoes/f13/rag
 	//gloves = /obj/item/clothing/gloves/f13/doom
-	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
 	helmet = /obj/item/clothing/head/helmet/f13/motorcycle
 	//back = /obj/item/weapon/storage/backpack

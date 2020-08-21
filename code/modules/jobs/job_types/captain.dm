@@ -33,13 +33,12 @@ Captain
 	id = /obj/item/weapon/card/id/gold
 	belt = /obj/item/clothing/gloves/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
-	ears = /obj/item/device/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
-	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)
+	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/weapon/storage/backpack/captain
 	satchel = /obj/item/weapon/storage/backpack/satchel/cap
@@ -87,7 +86,6 @@ Head of Personnel
 
 	id = /obj/item/weapon/card/id/silver
 	belt = /obj/item/clothing/gloves/pda/heads/hop
-	ears = /obj/item/device/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap

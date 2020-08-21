@@ -101,14 +101,6 @@
 
 /mob/living/simple_animal/parrot/New()
 	..()
-	if(!ears)
-		var/headset = pick(/obj/item/device/radio/headset/headset_sec, \
-						/obj/item/device/radio/headset/headset_eng, \
-						/obj/item/device/radio/headset/headset_med, \
-						/obj/item/device/radio/headset/headset_sci, \
-						/obj/item/device/radio/headset/headset_cargo)
-		ears = new headset(src)
-
 	parrot_sleep_dur = parrot_sleep_max //In case someone decides to change the max without changing the duration var
 
 	verbs.Add(/mob/living/simple_animal/parrot/proc/steal_from_ground, \
@@ -879,7 +871,6 @@
 	var/longest_deathstreak = 0
 
 /mob/living/simple_animal/parrot/Poly/New()
-	ears = new /obj/item/device/radio/headset/headset_eng(src)
 	available_channels = list(":e")
 	Read_Memory()
 	if(rounds_survived == longest_survival)

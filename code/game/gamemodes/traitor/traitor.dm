@@ -202,11 +202,8 @@
 /datum/game_mode/proc/finalize_traitor(var/datum/mind/traitor)
 	if(issilicon(traitor.current))
 		add_law_zero(traitor.current)
-	else
-		equip_traitor(traitor.current)
 	ticker.mode.update_traitor_icons_added(traitor)
 	return
-
 
 /datum/game_mode/traitor/declare_completion()
 	..()
@@ -245,11 +242,6 @@
 			var/TC_uses = 0
 			var/uplink_true = 0
 			var/purchases = ""
-			for(var/obj/item/device/uplink/H in uplinks)
-				if(H && H.owner && H.owner == traitor.key)
-					TC_uses += H.spent_telecrystals
-					uplink_true = 1
-					purchases += H.purchase_log
 
 			var/objectives = ""
 			if(traitor.objectives.len)//If the traitor had no objectives, don't need to process this.
@@ -292,44 +284,6 @@
 		to_chat(world, text)
 
 	return 1
-
-
-/datum/game_mode/proc/equip_traitor(mob/living/carbon/human/traitor_mob, safety = 0)
-	if (!istype(traitor_mob))
-		return
-	. = 1
-	if (traitor_mob.mind)
-		if (traitor_mob.mind.assigned_role == "Clown")
-			to_chat(traitor_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
-			traitor_mob.dna.remove_mutation(CLOWNMUT)
-
-	var/loc = ""
-	var/obj/item/I = locate(/obj/item/clothing/gloves/pda) in traitor_mob.contents //Hide the uplink in a PDA if available, otherwise radio
-	if(!I)
-		I = locate(/obj/item/device/radio) in traitor_mob.contents
-
-	if (!I)
-		to_chat(traitor_mob, "Unfortunately, the Syndicate wasn't able to get you a radio.")
-		. = 0
-	else
-		var/obj/item/device/uplink/U = new(I)
-		U.owner = "[traitor_mob.key]"
-		I.hidden_uplink = U
-
-		if(istype(I, /obj/item/device/radio))
-			var/obj/item/device/radio/R = I
-			R.traitor_frequency = sanitize_frequency(rand(MIN_FREQ, MAX_FREQ))
-
-			to_chat(traitor_mob, "The Syndicate have cunningly disguised a Syndicate Uplink as your [R.name] [loc]. Simply dial the frequency [format_frequency(R.traitor_frequency)] to unlock its hidden features.")
-			traitor_mob.mind.store_memory("<B>Radio Frequency:</B> [format_frequency(R.traitor_frequency)] ([R.name] [loc]).")
-		else if(istype(I, /obj/item/clothing/gloves/pda))
-			var/obj/item/clothing/gloves/pda/P = I
-			P.lock_code = "[rand(100,999)] [pick("Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu")]"
-
-			to_chat(traitor_mob, "The Syndicate have cunningly disguised a Syndicate Uplink as your [P.name] [loc]. Simply enter the code \"[P.lock_code]\" into the ringtone select to unlock its hidden features.")
-			traitor_mob.mind.store_memory("<B>Uplink Passcode:</B> [P.lock_code] ([P.name] [loc]).")
-	if(!safety) // If they are not a rev. Can be added on to.
-		give_codewords(traitor_mob)
 
 /datum/game_mode/proc/assign_exchange_role(datum/mind/owner)
 	//set faction

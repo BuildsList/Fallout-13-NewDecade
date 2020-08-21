@@ -118,10 +118,6 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 
 	user.set_machine(src)
 
-	if(hidden_uplink && hidden_uplink.active)
-		hidden_uplink.interact(user)
-		return
-
 	var/dat = "<html><meta charset=UTF-8><head><title>ПипБой-3000А</title></head><body bgcolor=\"#808000\"><style>a, a:link, a:visited, a:active, a:hover { color: #000000; }img {border-style:none;}</style>"
 
 	dat += "<a href='byond://?src=\ref[src];choice=Refresh'><img src=pda_refresh.png> Обновить</a>"
@@ -432,14 +428,8 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 				var/t = input(U, "Выберите новый рингтон", name, ttone) as text
 				if(in_range(src, U) && loc == U)
 					if(t)
-						if(hidden_uplink && (trim(lowertext(t)) == trim(lowertext(lock_code))))
-							hidden_uplink.interact(U)
-							to_chat(U, "Пипбой тихо пищит.")
-							U << browse(null, "window=pda")
-							src.mode = 0
-						else
-							t = copytext_char(sanitize(t), 1, 20)
-							ttone = t
+						t = copytext_char(sanitize(t), 1, 20)
+						ttone = t
 				else
 					U << browse(null, "window=pda")
 					return
@@ -508,10 +498,6 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 								difficulty += P.cartridge.access_manifest * 2
 							else
 								difficulty += 2
-
-							if(prob(difficulty * 15) || (P.hidden_uplink))
-								U.show_message("<span class='danger'>Ошибка высвечивается на экране [src].</span>", 1)
-							else
 								U.show_message("<span class='notice'>Успех!</span>", 1)
 								P.explode()
 					else
@@ -825,8 +811,6 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 		var/obj/item/weapon/photo/P = C
 		photo = P.img
 		to_chat(user, "<span class='notice'>You scan \the [C].</span>")
-	else if(hidden_uplink && hidden_uplink.active)
-		hidden_uplink.attackby(C, user, params)
 	else
 		return ..()
 

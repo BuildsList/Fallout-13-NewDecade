@@ -159,7 +159,6 @@ Lawyer
 	jobtype = /datum/job/lawyer
 
 	belt = /obj/item/clothing/gloves/pda/lawyer
-	ears = /obj/item/device/radio/headset/headset_sec
 	uniform = /obj/item/clothing/under/lawyer/bluesuit
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	shoes = /obj/item/clothing/shoes/laceup

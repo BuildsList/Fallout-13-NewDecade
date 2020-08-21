@@ -9,7 +9,7 @@
  */
 
 /obj/item/device/multitool
-	name = "multitool"
+	name = "мульти инструмент"
 	desc = "Used for pulsing wires to test which to cut. Not recommended by doctors."
 	icon_state = "multitool"
 	force = 5
@@ -91,7 +91,7 @@
 	toolspeed = 0.5
 
 /obj/item/device/multitool/abductor
-	name = "alien multitool"
+	name = "мульти инструмент чужих"
 	desc = "An omni-technological interface."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "multitool"

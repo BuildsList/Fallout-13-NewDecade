@@ -746,7 +746,6 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	SearchVar(time_last_changed_position)
 	SearchVar(CALL_SHUTTLE_REASON_LENGTH)
 	SearchVar(crewmonitor)
-	SearchVar(possible_uplinker_IDs)
 	SearchVar(airlock_overlays)
 	SearchVar(pipeID2State)
 	SearchVar(telecomms_list)
@@ -1046,6 +1045,4 @@ var/datum/subsystem/garbage_collector/SSgarbage
 	SearchVar(honk_words)
 	SearchVar(multispin_words)
 	SearchVar(GPS_list)
-	SearchVar(uplinks)
-	SearchVar(uplink_items)
 #endif

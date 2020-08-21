@@ -34,7 +34,6 @@ Research Director
 
 	id = /obj/item/weapon/card/id/silver
 	belt = /obj/item/clothing/gloves/pda/heads/rd
-	ears = /obj/item/device/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/research_director
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat
@@ -78,7 +77,6 @@ Scientist
 	jobtype = /datum/job/scientist
 
 	belt = /obj/item/clothing/gloves/pda/toxins
-	ears = /obj/item/device/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/scientist
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
@@ -111,7 +109,6 @@ Roboticist
 
 	belt = /obj/item/weapon/storage/belt/utility/full
 	l_pocket = /obj/item/clothing/gloves/pda/roboticist
-	ears = /obj/item/device/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/toggle/labcoat
 

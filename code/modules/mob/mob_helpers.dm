@@ -353,9 +353,6 @@ var/static/regex/firstname = new("^\[^\\s-\]+") //First word before whitespace o
 			if("cult")
 				if(M.mind in ticker.mode.cult)
 					return 2
-			if("nuclear")
-				if(M.mind in ticker.mode.syndicates)
-					return 2
 			if("changeling")
 				if(M.mind in ticker.mode.changelings)
 					return 2

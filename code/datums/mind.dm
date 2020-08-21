@@ -145,14 +145,6 @@
 	remove_antag_equip()
 	ticker.mode.update_traitor_icons_removed(src)
 
-/datum/mind/proc/remove_nukeop()
-	if(src in ticker.mode.syndicates)
-		ticker.mode.syndicates -= src
-		ticker.mode.update_synd_icons_removed(src)
-	special_role = null
-	remove_objectives()
-	remove_antag_equip()
-
 /datum/mind/proc/remove_wizard()
 	if(src in ticker.mode.wizards)
 		ticker.mode.wizards -= src
@@ -197,7 +189,6 @@
 /datum/mind/proc/remove_all_antag() //For the Lazy amongst us.
 	remove_changeling()
 	remove_traitor()
-	remove_nukeop()
 	remove_wizard()
 	remove_cultist()
 	remove_rev()
@@ -225,9 +216,6 @@
 
 	else if(is_servant_of_ratvar(creator))
 		add_servant_of_ratvar(current)
-
-	else if(is_nuclear_operative(creator))
-		make_Nuke(null, null, 0, FALSE)
 
 	enslaved_to = creator
 
@@ -375,31 +363,6 @@
 
 		sections["abductor"] = text
 
-		/** NUCLEAR ***/
-		text = "nuclear"
-		if (ticker.mode.config_tag=="nuclear")
-			text = uppertext(text)
-		text = "<i><b>[text]</b></i>: "
-		if (src in ticker.mode.syndicates)
-			text += "<b>OPERATIVE</b>|<a href='?src=\ref[src];nuclear=clear'>nanotrasen</a>"
-			text += "<br><a href='?src=\ref[src];nuclear=lair'>To shuttle</a>, <a href='?src=\ref[src];common=undress'>undress</a>, <a href='?src=\ref[src];nuclear=dressup'>dress up</a>."
-			var/code
-			for (var/obj/machinery/nuclearbomb/bombue in machines)
-				if (length(bombue.r_code) <= 5 && bombue.r_code != "LOLNO" && bombue.r_code != "ADMIN")
-					code = bombue.r_code
-					break
-			if (code)
-				text += " Code is [code]. <a href='?src=\ref[src];nuclear=tellcode'>tell the code.</a>"
-		else
-			text += "<a href='?src=\ref[src];nuclear=nuclear'>operative</a>|<b>NANOTRASEN</b>"
-
-		if(current && current.client && (ROLE_OPERATIVE in current.client.prefs.be_special))
-			text += "|Enabled in Prefs"
-		else
-			text += "|Disabled in Prefs"
-
-		sections["nuclear"] = text
-
 		/** WIZARD ***/
 		text = "wizard"
 		if (ticker.mode.config_tag=="wizard")
@@ -541,20 +504,6 @@
 	for (var/i in sections)
 		if (sections[i])
 			out += sections[i]+"<br>"
-
-
-	if(((src in ticker.mode.head_revolutionaries) || (src in ticker.mode.traitors) || (src in ticker.mode.syndicates)) && ishuman(current))
-
-		text = "Uplink: <a href='?src=\ref[src];common=uplink'>give</a>"
-		var/obj/item/device/uplink/U = find_syndicate_uplink()
-		if(U)
-			text += "|<a href='?src=\ref[src];common=takeuplink'>take</a>"
-			if (check_rights(R_FUN, 0))
-				text += ", <a href='?src=\ref[src];common=crystals'>[U.telecrystals]</a> TC"
-			else
-				text += ", [U.telecrystals] TC"
-		text += "." //hiel grammar
-		out += text
 
 	out += "<br><br>"
 
@@ -981,28 +930,6 @@
 					C.updateappearance(mutcolor_update=1)
 					C.domutcheck()
 
-	else if (href_list["nuclear"])
-		switch(href_list["nuclear"])
-			if("clear")
-				remove_nukeop()
-				to_chat(current, "<span class='userdanger'>You have been brainwashed! You are no longer a syndicate operative!</span>")
-				message_admins("[key_name_admin(usr)] has de-nuke op'ed [current].")
-				log_admin("[key_name(usr)] has de-nuke op'ed [current].")
-			if("nuclear")
-				if(!(src in ticker.mode.syndicates))
-					ticker.mode.syndicates += src
-					ticker.mode.update_synd_icons_added(src)
-					if (ticker.mode.syndicates.len==1)
-						ticker.mode.prepare_syndicate_leader(src)
-					else
-						current.real_name = "[syndicate_name()] Operative #[ticker.mode.syndicates.len-1]"
-					special_role = "Syndicate"
-					assigned_role = "Syndicate"
-					to_chat(current, "<span class='notice'>You are a [syndicate_name()] agent!</span>")
-					ticker.mode.forge_syndicate_objectives(src)
-					ticker.mode.greet_syndicate(src)
-					message_admins("[key_name_admin(usr)] has nuke op'ed [current].")
-					log_admin("[key_name(usr)] has nuke op'ed [current].")
 			if("lair")
 				current.forceMove(get_turf(locate("landmark*Syndicate-Spawn")))
 			if("dressup")
@@ -1016,45 +943,6 @@
 				qdel(H.wear_id)
 				qdel(H.wear_suit)
 				qdel(H.w_uniform)
-
-				if (!ticker.mode.equip_syndicate(current))
-					to_chat(usr, "<span class='danger'>Equipping a syndicate failed!</span>")
-			if("tellcode")
-				var/code
-				for (var/obj/machinery/nuclearbomb/bombue in machines)
-					if (length(bombue.r_code) <= 5 && bombue.r_code != "LOLNO" && bombue.r_code != "ADMIN")
-						code = bombue.r_code
-						break
-				if (code)
-					store_memory("<B>Syndicate Nuclear Bomb Code</B>: [code]", 0, 0)
-					to_chat(current, "The nuclear authorization code is: <B>[code]</B>")
-				else
-					to_chat(usr, "<span class='danger'>No valid nuke found!</span>")
-
-	else if (href_list["traitor"])
-		switch(href_list["traitor"])
-			if("clear")
-				remove_traitor()
-				to_chat(current, "<span class='userdanger'>You have been brainwashed! You are no longer a traitor!</span>")
-				message_admins("[key_name_admin(usr)] has de-traitor'ed [current].")
-				log_admin("[key_name(usr)] has de-traitor'ed [current].")
-				ticker.mode.update_traitor_icons_removed(src)
-
-			if("traitor")
-				if(!(src in ticker.mode.traitors))
-					ticker.mode.traitors += src
-					special_role = "traitor"
-					to_chat(current, "<span class='boldannounce'>You are a traitor!</span>")
-					message_admins("[key_name_admin(usr)] has traitor'ed [current].")
-					log_admin("[key_name(usr)] has traitor'ed [current].")
-					if(isAI(current))
-						var/mob/living/silicon/ai/A = current
-						ticker.mode.add_law_zero(A)
-					ticker.mode.update_traitor_icons_added(src)
-
-			if("autoobjectives")
-				ticker.mode.forge_traitor_objectives(src)
-				to_chat(usr, "<span class='notice'>The objectives for traitor [key] have been generated. You can edit them and anounce manually.</span>")
 
 	else if(href_list["abductor"])
 		switch(href_list["abductor"])
@@ -1100,23 +988,6 @@
 			if("undress")
 				for(var/obj/item/W in current)
 					current.unEquip(W, 1) //The 1 forces all items to drop, since this is an admin undress.
-			if("takeuplink")
-				take_uplink()
-				memory = null//Remove any memory they may have had.
-				log_admin("[key_name(usr)] removed [current]'s uplink.")
-			if("crystals")
-				if(check_rights(R_FUN, 0))
-					var/obj/item/device/uplink/U = find_syndicate_uplink()
-					if(U)
-						var/crystals = input("Amount of telecrystals for [key]","Syndicate uplink", U.telecrystals) as null|num
-						if(!isnull(crystals))
-							U.telecrystals = crystals
-							message_admins("[key_name_admin(usr)] changed [current]'s telecrystal count to [crystals].")
-							log_admin("[key_name(usr)] changed [current]'s telecrystal count to [crystals].")
-			if("uplink")
-				if(!ticker.mode.equip_traitor(current, !(src in ticker.mode.traitors)))
-					to_chat(usr, "<span class='danger'>Equipping a syndicate failed!</span>")
-				log_admin("[key_name(usr)] attempted to give [current] an uplink.")
 
 	else if (href_list["obj_announce"])
 		announce_objectives()
@@ -1131,18 +1002,6 @@
 		to_chat(current, "<B>Objective #[obj_count]</B>: [O.explanation_text]")
 		obj_count++
 
-/datum/mind/proc/find_syndicate_uplink()
-	var/list/L = current.get_contents()
-	for (var/obj/item/I in L)
-		if (I.hidden_uplink)
-			return I.hidden_uplink
-	return null
-
-/datum/mind/proc/take_uplink()
-	var/obj/item/device/uplink/H = find_syndicate_uplink()
-	if(H)
-		qdel(H)
-
 /datum/mind/proc/make_Traitor()
 	if(!(src in ticker.mode.traitors))
 		ticker.mode.traitors += src
@@ -1150,48 +1009,6 @@
 		ticker.mode.forge_traitor_objectives(src)
 		ticker.mode.finalize_traitor(src)
 		ticker.mode.greet_traitor(src)
-
-/datum/mind/proc/make_Nuke(turf/spawnloc, nuke_code, leader=0, telecrystals = TRUE)
-	if(!(src in ticker.mode.syndicates))
-		ticker.mode.syndicates += src
-		ticker.mode.update_synd_icons_added(src)
-		special_role = "Syndicate"
-		ticker.mode.forge_syndicate_objectives(src)
-		ticker.mode.greet_syndicate(src)
-		current.faction |= "syndicate"
-
-		if(spawnloc)
-			current.forceMove(spawnloc)
-
-		if(ishuman(current))
-			var/mob/living/carbon/human/H = current
-			qdel(H.belt)
-			qdel(H.back)
-			qdel(H.ears)
-			qdel(H.gloves)
-			qdel(H.head)
-			qdel(H.shoes)
-			qdel(H.wear_id)
-			qdel(H.wear_suit)
-			qdel(H.w_uniform)
-
-			ticker.mode.equip_syndicate(current, telecrystals)
-
-		if (nuke_code)
-			store_memory("<B>Syndicate Nuclear Bomb Code</B>: [nuke_code]", 0, 0)
-			to_chat(current, "The nuclear authorization code is: <B>[nuke_code]</B>")
-		else
-			var/obj/machinery/nuclearbomb/nuke = locate("syndienuke") in nuke_list
-			if(nuke)
-				store_memory("<B>Syndicate Nuclear Bomb Code</B>: [nuke.r_code]", 0, 0)
-				to_chat(current, "The nuclear authorization code is: <B>nuke.r_code</B>")
-			else
-				to_chat(current, "You were not provided with a nuclear code. Trying asking your team leader or contacting syndicate command.</B>")
-
-		if (leader)
-			ticker.mode.prepare_syndicate_leader(src,nuke_code)
-		else
-			current.real_name = "[syndicate_name()] Operative #[ticker.mode.syndicates.len-1]"
 
 /datum/mind/proc/make_Changling()
 	if(!(src in ticker.mode.changelings))
@@ -1260,9 +1077,7 @@
 	var/list/L = current.get_contents()
 	var/obj/item/device/assembly/flash/flash = locate() in L
 	qdel(flash)
-	take_uplink()
 	var/fail = 0
-//	fail |= !ticker.mode.equip_traitor(current, 1)
 	fail |= !ticker.mode.equip_revolutionary(current)
 
 

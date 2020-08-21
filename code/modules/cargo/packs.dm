@@ -153,43 +153,6 @@
 					/obj/item/drone_shell)
 	crate_name = "drone shell crate"
 
-/datum/supply_pack/emergency/specialops
-	name = "Special Ops Supplies"
-	hidden = TRUE
-	cost = 2000
-	contains = list(/obj/item/weapon/storage/box/emps,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/pen/sleepy,
-					/obj/item/weapon/grenade/chem_grenade/incendiary)
-	crate_name = "emergency crate"
-	crate_type = /obj/structure/closet/crate/internals
-
-/datum/supply_pack/emergency/syndicate
-	name = "NULL_ENTRY"
-	hidden = TRUE
-	cost = 14000
-	contains = list()
-	crate_name = "emergency crate"
-	crate_type = /obj/structure/closet/crate/internals
-	dangerous = TRUE
-
-/datum/supply_pack/emergency/syndicate/fill(obj/structure/closet/crate/C)
-	var/crate_value = 50
-	var/list/uplink_items = get_uplink_items(ticker.mode)
-	while(crate_value)
-		var/category = pick(uplink_items)
-		var/item = pick(uplink_items[category])
-		var/datum/uplink_item/I = uplink_items[category][item]
-
-		if(!I.surplus || prob(100 - I.surplus))
-			continue
-		if(crate_value < I.cost)
-			continue
-		crate_value -= I.cost
-		new I.item(C)
-
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Security ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -1265,7 +1228,6 @@
 	contains = list(/obj/item/weapon/pickaxe/mini,
 			/obj/item/clothing/glasses/meson,
 			/obj/item/device/t_scanner/adv_mining_scanner/lesser,
-			/obj/item/device/radio/headset/headset_cargo/mining,
 			/obj/item/weapon/storage/bag/ore,
 			/obj/item/clothing/suit/hooded/explorer,
 			/obj/item/clothing/mask/gas/explorer)

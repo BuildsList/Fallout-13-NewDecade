@@ -132,7 +132,6 @@ var/list/ai_list = list()
 	aiPDA.name = name + " (" + aiPDA.ownjob + ")"
 
 	aiMulti = new(src)
-	radio = new /obj/item/device/radio/headset/ai(src)
 	aicamera = new/obj/item/device/camera/siliconcam/ai_camera(src)
 
 	if(isturf(loc))

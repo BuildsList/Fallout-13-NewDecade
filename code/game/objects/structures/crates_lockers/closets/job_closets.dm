@@ -8,8 +8,6 @@
 /obj/structure/closet/gmcloset/New()
 	..()
 	new /obj/item/clothing/head/that(src)
-	new /obj/item/device/radio/headset/headset_srv(src)
-	new /obj/item/device/radio/headset/headset_srv(src)
 	new /obj/item/clothing/head/that(src)
 	new /obj/item/clothing/under/sl_suit(src)
 	new /obj/item/clothing/under/sl_suit(src)
@@ -37,8 +35,6 @@
 	..()
 	new /obj/item/clothing/under/waiter(src)
 	new /obj/item/clothing/under/waiter(src)
-	new /obj/item/device/radio/headset/headset_srv(src)
-	new /obj/item/device/radio/headset/headset_srv(src)
 	new /obj/item/clothing/tie/waistcoat(src)
 	new /obj/item/clothing/tie/waistcoat(src)
 	for(var/i in 1 to 3)
@@ -172,7 +168,6 @@
 		new /obj/item/clothing/gloves/fingerless(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/soft(src)
-	new /obj/item/device/radio/headset/headset_cargo(src)
 
 /obj/structure/closet/wardrobe/atmospherics_yellow
 	name = "atmospherics wardrobe"
@@ -347,8 +342,6 @@
 		new /obj/item/clothing/suit/toggle/labcoat/science(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/shoes/sneakers/white(src)
-	new /obj/item/device/radio/headset/headset_sci(src)
-	new /obj/item/device/radio/headset/headset_sci(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/mask/gas(src)
 	return

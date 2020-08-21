@@ -21,7 +21,6 @@ var/highlander = FALSE
 	addtimer(CALLBACK(SSshuttle.emergency, /obj/docking_port/mobile/emergency.proc/request, null, 1), 50)
 
 /mob/living/carbon/human/proc/make_scottish()
-	ticker.mode.traitors += mind
 	mind.special_role = "highlander"
 	dna.species.species_traits |= NOGUNS //nice try jackass
 
@@ -42,7 +41,6 @@ var/highlander = FALSE
 	for(var/obj/item/I in held_items)
 		qdel(I)
 	equip_to_slot_or_del(new /obj/item/clothing/under/kilt/highlander(src), slot_w_uniform)
-	equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(src), slot_ears)
 	equip_to_slot_or_del(new /obj/item/clothing/head/beret/highlander(src), slot_head)
 	equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(src), slot_shoes)
 	equip_to_slot_or_del(new /obj/item/weapon/pinpointer(src), slot_l_store)

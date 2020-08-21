@@ -62,7 +62,6 @@
 
 		if("implant") // 55+ tc holy shit what the fuck this is a lottery disguised as fun boxes isn't it?
 			new /obj/item/weapon/implanter/freedom(src)
-			new /obj/item/weapon/implanter/uplink/precharged(src)
 			new /obj/item/weapon/implanter/emp(src)
 			new /obj/item/weapon/implanter/adrenalin(src)
 			new /obj/item/weapon/implanter/explosive(src)
@@ -164,15 +163,6 @@
 	O.imp = new /obj/item/weapon/implant/explosive/macro(O)
 	O.update_icon()
 	..()
-
-/obj/item/weapon/storage/box/syndie_kit/imp_uplink
-	name = "boxed uplink implant (with injector)"
-
-/obj/item/weapon/storage/box/syndie_kit/imp_uplink/New()
-	..()
-	var/obj/item/weapon/implanter/O = new(src)
-	O.imp = new /obj/item/weapon/implant/uplink(O)
-	O.update_icon()
 
 /obj/item/weapon/storage/box/syndie_kit/bioterror
 	name = "bioterror syringe box"

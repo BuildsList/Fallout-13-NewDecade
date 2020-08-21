@@ -12,6 +12,7 @@
 	frequency = 6359
 	key = 343
 	actions_types = list(/datum/action/item_action/toggle)
+	freqlock = 6359
 
 /obj/item/device/radio/prc/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle))
@@ -25,11 +26,7 @@
 	icon_state = "r105"
 	frequency = 1919
 	key = 1501
-
-/obj/item/device/radio/headset/radist
-	name = "радиогарнитура"
-	icon = 'icons/obj/prc.dmi'
-	icon_state = "headset"
+	freqlock = 1919
 
 /*
 /obj/item/device/radio/prc/MouseDrop(obj/over_object)

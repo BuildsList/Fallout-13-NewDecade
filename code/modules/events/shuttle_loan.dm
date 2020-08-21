@@ -88,17 +88,6 @@
 
 		var/list/shuttle_spawns = list()
 		switch(dispatch_type)
-			if(HIJACK_SYNDIE)
-				var/datum/supply_pack/pack = SSshuttle.supply_packs[/datum/supply_pack/emergency/specialops]
-				pack.generate(pick_n_take(empty_shuttle_turfs))
-
-				shuttle_spawns.Add(/mob/living/simple_animal/hostile/syndicate)
-				shuttle_spawns.Add(/mob/living/simple_animal/hostile/syndicate)
-				if(prob(75))
-					shuttle_spawns.Add(/mob/living/simple_animal/hostile/syndicate)
-				if(prob(50))
-					shuttle_spawns.Add(/mob/living/simple_animal/hostile/syndicate)
-
 			if(RUSKY_PARTY)
 				var/datum/supply_pack/pack = SSshuttle.supply_packs[/datum/supply_pack/organic/party]
 				pack.generate(pick_n_take(empty_shuttle_turfs))
@@ -110,26 +99,6 @@
 					shuttle_spawns.Add(/mob/living/simple_animal/hostile/russian)
 				if(prob(50))
 					shuttle_spawns.Add(/mob/living/simple_animal/hostile/bear/russian)
-
-			if(SPIDER_GIFT)
-				var/datum/supply_pack/pack = SSshuttle.supply_packs[/datum/supply_pack/emergency/specialops]
-				pack.generate(pick_n_take(empty_shuttle_turfs))
-
-				shuttle_spawns.Add(/mob/living/simple_animal/hostile/poison/giant_spider)
-				shuttle_spawns.Add(/mob/living/simple_animal/hostile/poison/giant_spider)
-				shuttle_spawns.Add(/mob/living/simple_animal/hostile/poison/giant_spider/nurse)
-				if(prob(50))
-					shuttle_spawns.Add(/mob/living/simple_animal/hostile/poison/giant_spider/hunter)
-
-				var/turf/T = pick_n_take(empty_shuttle_turfs)
-
-				new /obj/effect/decal/remains/human(T)
-				new /obj/item/clothing/shoes/space_ninja(T)
-				new /obj/item/clothing/mask/balaclava(T)
-
-				for(var/i in 1 to 5)
-					T = pick_n_take(empty_shuttle_turfs)
-					new /obj/structure/spider/stickyweb(T)
 
 			if(ANTIDOTE_NEEDED)
 				var/virus_type = pick(/datum/disease/beesease, /datum/disease/brainrot, /datum/disease/fluspanish)

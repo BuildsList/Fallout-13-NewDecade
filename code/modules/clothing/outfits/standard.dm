@@ -188,7 +188,6 @@
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/device/radio/headset/headset_cent/commander
 	glasses = /obj/item/clothing/glasses/eyepatch
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
 	head = /obj/item/clothing/head/centhat
@@ -218,7 +217,6 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	ears = /obj/item/device/radio/headset/headset_cent/commander
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	head = /obj/item/clothing/head/helmet/space/beret
 	belt = /obj/item/weapon/gun/energy/pulse/pistol/m1911
@@ -276,7 +274,6 @@
 	head = /obj/item/clothing/head/pirate/captain
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/device/radio/headset/headset_cent
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 	suit = /obj/item/clothing/suit/pirate/captain
 	back = /obj/item/weapon/storage/backpack/satchel/leather
@@ -341,7 +338,6 @@
 	belt = /obj/item/weapon/gun/ballistic/revolver/mateba
 	r_hand = /obj/item/weapon/gun/energy/pulse/loyalpin
 	id = /obj/item/weapon/card/id
-	ears = /obj/item/device/radio/headset/headset_cent/alt
 
 	backpack_contents = list(/obj/item/weapon/storage/box=1,\
 		/obj/item/ammo_box/a357=1,\

@@ -369,18 +369,10 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	//Now for special roles and equipment.
 	switch(new_character.mind.special_role)
-		if("traitor")
-			SSjob.EquipRank(new_character, new_character.mind.assigned_role, 1)
-			ticker.mode.equip_traitor(new_character)
 		if("Wizard")
 			new_character.forceMove(pick(wizardstart))
 			//ticker.mode.learn_basic_spells(new_character)
 			ticker.mode.equip_wizard(new_character)
-		if("Syndicate")
-			var/obj/effect/landmark/synd_spawn = locate("landmark*Syndicate-Spawn")
-			if(synd_spawn)
-				new_character.forceMove(get_turf(synd_spawn))
-			call(/datum/game_mode/proc/equip_syndicate)(new_character)
 		if("Space Ninja")
 			var/list/ninja_spawn = list()
 			for(var/obj/effect/landmark/L in landmarks_list)

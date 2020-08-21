@@ -28,7 +28,6 @@ var/list/announcement_systems = list()
 /obj/machinery/announcement_system/New()
 	..()
 	announcement_systems += src
-	radio = new /obj/item/device/radio/headset/ai(src)
 
 	var/obj/item/weapon/circuitboard/machine/B = new /obj/item/weapon/circuitboard/machine/announcement_system(null)
 	B.apply_default_parts(src)

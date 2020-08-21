@@ -38,7 +38,6 @@ Head of Security
 
 	id = /obj/item/weapon/card/id/silver
 	belt = /obj/item/clothing/gloves/pda/heads/hos
-	ears = /obj/item/device/radio/headset/heads/hos/alt
 	uniform = /obj/item/clothing/under/rank/head_of_security
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
@@ -87,7 +86,6 @@ Warden
 	jobtype = /datum/job/warden
 
 	belt = /obj/item/clothing/gloves/pda/warden
-	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/warden
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/warden/alt
@@ -132,7 +130,6 @@ Detective
 	jobtype = /datum/job/detective
 
 	belt = /obj/item/clothing/gloves/pda/detective
-	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/det
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/det_suit
@@ -202,25 +199,21 @@ var/list/available_depts = list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT
 
 	switch(department)
 		if(SEC_DEPT_SUPPLY)
-			ears = /obj/item/device/radio/headset/headset_sec/alt/department/supply
 			dep_access = list(access_mailsorting, access_mining, access_mining_station)
 			destination = /area/security/checkpoint/supply
 			spawn_point = locate(/obj/effect/landmark/start/depsec/supply) in department_security_spawns
 			tie = /obj/item/clothing/tie/armband/cargo
 		if(SEC_DEPT_ENGINEERING)
-			ears = /obj/item/device/radio/headset/headset_sec/alt/department/engi
 			dep_access = list(access_construction, access_engine)
 			destination = /area/security/checkpoint/engineering
 			spawn_point = locate(/obj/effect/landmark/start/depsec/engineering) in department_security_spawns
 			tie = /obj/item/clothing/tie/armband/engine
 		if(SEC_DEPT_MEDICAL)
-			ears = /obj/item/device/radio/headset/headset_sec/alt/department/med
 			dep_access = list(access_medical)
 			destination = /area/security/checkpoint/medical
 			spawn_point = locate(/obj/effect/landmark/start/depsec/medical) in department_security_spawns
 			tie =  /obj/item/clothing/tie/armband/medblue
 		if(SEC_DEPT_SCIENCE)
-			ears = /obj/item/device/radio/headset/headset_sec/alt/department/sci
 			dep_access = list(access_research)
 			destination = /area/security/checkpoint/science
 			spawn_point = locate(/obj/effect/landmark/start/depsec/science) in department_security_spawns
@@ -267,7 +260,6 @@ var/list/available_depts = list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT
 	jobtype = /datum/job/officer
 
 	belt = /obj/item/clothing/gloves/pda/security
-	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
@@ -284,26 +276,3 @@ var/list/available_depts = list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT
 	box = /obj/item/weapon/storage/box/security
 
 	implants = list(/obj/item/weapon/implant/mindshield)
-
-
-/obj/item/device/radio/headset/headset_sec/department/Initialize()
-	wires = new/datum/wires/radio(src)
-	secure_radio_connections = new
-	recalculateChannels()
-	..()
-
-/obj/item/device/radio/headset/headset_sec/alt/department/engi
-	keyslot = new /obj/item/device/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/device/encryptionkey/headset_eng
-
-/obj/item/device/radio/headset/headset_sec/alt/department/supply
-	keyslot = new /obj/item/device/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/device/encryptionkey/headset_cargo
-
-/obj/item/device/radio/headset/headset_sec/alt/department/med
-	keyslot = new /obj/item/device/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/device/encryptionkey/headset_med
-
-/obj/item/device/radio/headset/headset_sec/alt/department/sci
-	keyslot = new /obj/item/device/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/device/encryptionkey/headset_sci

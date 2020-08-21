@@ -63,7 +63,7 @@ MASS SPECTROMETER
 
 
 /obj/item/device/healthanalyzer
-	name = "health analyzer"
+	name = "анализатор здоровья"
 	icon_state = "health"
 	item_state = "analyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."

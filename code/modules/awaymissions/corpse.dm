@@ -384,7 +384,6 @@
 
 /obj/effect/mob_spawn/human/bridgeofficer
 	name = "Bridge Officer"
-	radio = /obj/item/device/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/centcom_officer
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	shoes = /obj/item/clothing/shoes/sneakers/black
@@ -397,7 +396,6 @@
 	name = "Commander"
 	uniform = /obj/item/clothing/under/rank/centcom_commander
 	suit = /obj/item/clothing/suit/armor/bulletproof
-	radio = /obj/item/device/radio/headset/heads/captain
 	glasses = /obj/item/clothing/glasses/eyepatch
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
 	helmet = /obj/item/clothing/head/centhat

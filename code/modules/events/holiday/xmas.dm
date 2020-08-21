@@ -129,7 +129,6 @@
 				santa.equip_to_slot_or_del(new /obj/item/clothing/gloves/color/red, slot_gloves)
 				santa.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/red, slot_shoes)
 				santa.equip_to_slot_or_del(new /obj/item/weapon/tank/internals/emergency_oxygen/double, slot_belt)
-				santa.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain, slot_ears)
 				santa.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/santabag, slot_back)
 				santa.equip_to_slot_or_del(new /obj/item/device/flashlight, slot_r_store) //most blob spawn locations are really dark.
 

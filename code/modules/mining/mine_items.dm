@@ -45,7 +45,6 @@
 	new /obj/item/weapon/storage/box/emptysandbags(src)
 	new /obj/item/weapon/shovel(src)
 	new /obj/item/weapon/pickaxe/mini(src)
-	new /obj/item/device/radio/headset/headset_cargo/mining(src)
 	new /obj/item/device/flashlight/seclite(src)
 	new /obj/item/weapon/storage/bag/plants(src)
 	new /obj/item/weapon/storage/bag/ore(src)

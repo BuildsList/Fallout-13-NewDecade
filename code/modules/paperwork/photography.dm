@@ -12,7 +12,7 @@
  * Film
  */
 /obj/item/device/camera_film
-	name = "film cartridge"
+	name = "плёнка для фотоаппарата"
 	icon = 'icons/obj/items.dmi'
 	desc = "A camera film cartridge. Insert it into a camera to reload it."
 	icon_state = "film"
@@ -24,7 +24,7 @@
  * Photo
  */
 /obj/item/weapon/photo
-	name = "photo"
+	name = "фотография"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "photo"
 	item_state = "paper"
@@ -93,7 +93,7 @@
  * Photo album
  */
 /obj/item/weapon/storage/photo_album
-	name = "photo album"
+	name = "фотоальбом"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "album"
 	item_state = "briefcase"
@@ -104,7 +104,7 @@
  * Camera
  */
 /obj/item/device/camera
-	name = "camera"
+	name = "камера"
 	icon = 'icons/obj/items.dmi'
 	desc = "A polaroid camera."
 	icon_state = "camera"

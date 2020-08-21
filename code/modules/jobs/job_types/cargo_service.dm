@@ -22,7 +22,6 @@ Quartermaster
 	jobtype = /datum/job/qm
 
 	belt = /obj/item/clothing/gloves/pda/quartermaster
-	ears = /obj/item/device/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -52,7 +51,6 @@ Cargo Technician
 	jobtype = /datum/job/cargo_tech
 
 	belt = /obj/item/clothing/gloves/pda/cargo
-	ears = /obj/item/device/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargotech
 
 
@@ -80,7 +78,6 @@ Shaft Miner
 	jobtype = /datum/job/mining
 
 	belt = /obj/item/clothing/gloves/pda/shaftminer
-	ears = /obj/item/device/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/miner/lavaland
@@ -158,7 +155,6 @@ Bartender
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	belt = /obj/item/clothing/gloves/pda/bar
-	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/bartender
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/weapon/storage/box/beanbag=1)
@@ -189,7 +185,6 @@ Cook
 	jobtype = /datum/job/cook
 
 	belt = /obj/item/clothing/gloves/pda/cook
-	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/chef
 	suit = /obj/item/clothing/suit/toggle/chef
 	head = /obj/item/clothing/head/chefhat
@@ -240,7 +235,6 @@ Botanist
 	jobtype = /datum/job/hydro
 
 	belt = /obj/item/clothing/gloves/pda/botanist
-	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/hydroponics
 	suit = /obj/item/clothing/suit/apron
 	gloves  =/obj/item/clothing/gloves/botanic_leather
@@ -275,6 +269,5 @@ Janitor
 	jobtype = /datum/job/janitor
 
 	belt = /obj/item/clothing/gloves/pda/janitor
-	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/janitor
 	backpack_contents = list(/obj/item/device/modular_computer/tablet/preset/advanced=1)

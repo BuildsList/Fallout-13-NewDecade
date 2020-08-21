@@ -27,8 +27,6 @@
 	A.copy_to(operative)
 	operative.dna.update_dna_identity()
 
-	operative.equipOutfit(/datum/outfit/syndicate/full)
-
 	var/datum/mind/Mind = new /datum/mind(selected.key)
 	Mind.assigned_role = "Lone Operative"
 	Mind.special_role = "Lone Operative"

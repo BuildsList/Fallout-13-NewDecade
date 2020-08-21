@@ -9,7 +9,7 @@
 	icon_state = "blueprint[rand(1,4)]"
 
 /obj/item/bench
-	name = "Crafting Bench"
+	name = "Верстак"
 	desc = "just bench"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "bench_1"

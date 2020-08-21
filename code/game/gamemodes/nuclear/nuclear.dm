@@ -320,7 +320,6 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/weapon/storage/backpack
-	ears = /obj/item/device/radio/headset/syndicate/alt
 	l_pocket = /obj/item/weapon/pinpointer/syndicate
 	id = /obj/item/weapon/card/id/syndicate
 	belt = /obj/item/weapon/gun/ballistic/automatic/pistol

@@ -44,7 +44,7 @@
 	song.interact(user)
 
 /obj/item/device/instrument/violin
-	name = "space violin"
+	name = "скрипка"
 	desc = "A wooden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "violin"
@@ -54,14 +54,14 @@
 	instrumentId = "violin"
 
 /obj/item/device/instrument/violin/golden
-	name = "golden violin"
+	name = "золотая скрипка"
 	desc = "A golden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
 	icon_state = "golden_violin"
 	item_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/device/instrument/guitar
-	name = "guitar"
+	name = "гитара"
 	desc = "It's made of wood and has bronze strings."
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "guitar"
@@ -72,13 +72,13 @@
 	instrumentId = "guitar"
 
 /obj/item/device/instrument/guitar/jc
-	name = "guitar"
+	name = "гитара"
 	desc = "It's made of wood and has steel strings.<br>The leather belt is folded behind it and the letters J.C. are engraved on the headstock."
 	icon_state = "guitarjc"
 	item_state = "guitarjc"
 
 /obj/item/device/instrument/eguitar
-	name = "electric guitar"
+	name = "электрогитара"
 	desc = "Makes all your shredding needs possible."
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "eguitar"
@@ -91,7 +91,7 @@
 //Harmonica
 
 /obj/item/device/harmonica
-	name = "harmonica"
+	name = "гармошка"
 	desc = "<font face='Comic sans MS' color='#fd680e'>much blues.</font> <font face='Comic sans MS' color='green'>such music.</font> <font face='Comic sans MS' color='blue'>so amaze.</font> <font face='Comic sans MS' color='red'>wow.</font>"
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "harmonica"

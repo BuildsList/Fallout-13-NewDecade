@@ -20,8 +20,8 @@
 	required_items = list(
 	/obj/item/clothing/gloves/f13/military,
 	/obj/item/clothing/under/f13/recon,
-//	/obj/item/clothing/suit/armor/f13/power_armor/t51b,
-//	/obj/item/clothing/head/helmet/power_armor/t51b,
+	/obj/item/clothing/suit/armor/f13/power_armor/t51b,
+	/obj/item/clothing/head/helmet/power_armor/t51b,
 	/obj/item/clothing/head/soft/f13/utility/navy,
 	/obj/item/clothing/glasses/sunglasses,
 	/obj/item/weapon/gun/energy/laser/rifle/tri,
@@ -53,7 +53,7 @@
 	name = "Старейшина"
 	backpack = null
 	satchel = null
-	ears = /obj/item/device/radio/headset/bs
+	ears = /obj/item/device/radio/radist_headset/brotherhood
 	id = /obj/item/weapon/card/id/gold
 	uniform = /obj/item/clothing/under/f13/combat
 	shoes = /obj/item/clothing/shoes/f13/military
@@ -115,9 +115,9 @@
 	gloves = /obj/item/clothing/gloves/f13/military
 	uniform = /obj/item/clothing/under/f13/combat
 	shoes = /obj/item/clothing/shoes/f13/military
-	ears = /obj/item/device/radio/headset/bs
-//	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
-//	head = /obj/item/clothing/head/helmet/power_armor/t51b
+	ears = /obj/item/device/radio/radist_headset/brotherhood
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = /obj/item/clothing/head/helmet/power_armor/t51b
 	belt = /obj/item/weapon/storage/belt/military/army
 	weapon = /obj/item/weapon/gun/energy/laser/rifle/aer13
 	belt_contents = list(/obj/item/weapon/reagent_containers/f13stimpack = 2,/obj/item/weapon/kitchen/knife/combat = 1)
@@ -173,7 +173,7 @@
 	backpack = null
 	satchel = null
 	id = /obj/item/weapon/card/id/dogtag
-	ears = /obj/item/device/radio/headset/bs
+	ears = /obj/item/device/radio/radist_headset/brotherhood
 	gloves = /obj/item/clothing/gloves/f13/military
 	uniform = /obj/item/clothing/under/f13/combat
 	shoes = /obj/item/clothing/shoes/f13/military
@@ -223,7 +223,7 @@
 /datum/outfit/job/scriber
 	name = "Писец Братства"
 	backpack = null
-	ears = /obj/item/device/radio/headset/bs
+	ears = /obj/item/device/radio/radist_headset/brotherhood
 	satchel = null
 	id = /obj/item/weapon/card/id/dogtag
 	uniform = /obj/item/clothing/under/f13/combat
@@ -280,7 +280,7 @@
 /datum/outfit/job/radist_bs
 	name = "Радист Братства"
 	back = /obj/item/device/radio/prc/bs
-	ears = /obj/item/device/radio/headset/bs
+	ears = /obj/item/device/radio/radist_headset/brotherhood
 	id = /obj/item/weapon/card/id/dogtag
 	gloves = /obj/item/clothing/gloves/f13/military
 	uniform = /obj/item/clothing/under/f13/radist_bs

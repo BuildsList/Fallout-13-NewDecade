@@ -201,11 +201,6 @@
 	abductor.announce_objectives()
 
 /datum/game_mode/abduction/proc/equip_common(mob/living/carbon/human/agent,team_number)
-	var/radio_freq = SYND_FREQ
-
-	var/obj/item/device/radio/R = new /obj/item/device/radio/headset/syndicate/alt(agent)
-	R.set_frequency(radio_freq)
-	agent.equip_to_slot_or_del(R, slot_ears)
 	agent.equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(agent), slot_shoes)
 	agent.equip_to_slot_or_del(new /obj/item/clothing/under/color/grey(agent), slot_w_uniform) //they're greys gettit
 	agent.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack(agent), slot_back)
