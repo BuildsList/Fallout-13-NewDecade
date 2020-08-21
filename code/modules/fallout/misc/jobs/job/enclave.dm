@@ -187,7 +187,7 @@
 
 /// enclave radist///
 /datum/job/enclave_radist
-	title = "Enclave Radist"
+	title = "Радист Анклава"
 	desc = "Запишись в добровольцы сегодня!"
 	flag = ENCLAVE_RADIST
 	department_head = list("colonel", "sergeant")
@@ -229,7 +229,7 @@
 	minimal_access = list(access_medical, access_morgue, access_surgery, access_cloning)
 
 /datum/outfit/job/radist_en
-	name = "Enclave Radist"
+	name = "Радист Анклава"
 	back = /obj/item/device/radio/prc
 	ears = /obj/item/device/radio/radist_headset/enclave
 	gloves = /obj/item/clothing/gloves/f13/military
