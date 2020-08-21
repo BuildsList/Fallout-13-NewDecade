@@ -1,7 +1,7 @@
 //Fallout 13 Legion faction directory
 
 /datum/job/legate
-	title = "Legate"
+	title = "Легат Легиона"
 	desc = "Caesar's will is the will of the Legion.<br>The Legate is the hand of Caesar!<br>Veni, vidi, vici!"
 	flag = LEGLEGAT
 	department_head = list("Caesar")
@@ -64,7 +64,7 @@
 //Legion Centurion
 
 /datum/job/centurion
-	title = "Centurion"
+	title = "Центурион Легиона"
 	desc = "We are the Legion - one is many.<br>The Centurion is a guardian of Caesar!<br>Ab uno disce omnes!"
 	flag = LEGCENTURION
 	department_head = list("legate")
@@ -123,7 +123,7 @@
 //Legion Vexillarius
 
 /datum/job/vex
-	title = "Vexillarius"
+	title = "Вексиллярий Легиона"
 	desc = "Mortal actions never deceive the gods.<br>The Vexillarius is an ambassador of Caesar!<br>Acta deos numquam mortalia fallunt!"
 	flag = LEGVEX
 	department_head = list("legate", "centurion")
@@ -182,7 +182,7 @@
 //Legion Decanus
 
 /datum/job/decan
-	title = "Legion Decanus"
+	title = "Декан Легиона"
 	desc = "Boldness is our wall, action is our shield.<br>The Decanus is a weapon of Caesar!<br>Audacia pro muro et scuto opus!"
 	flag = LEGDECAN
 	department_head = list("legate", "centurion")
@@ -242,7 +242,7 @@
 //Legion Prime
 
 /datum/job/prime
-	title = "Legion Prime"
+	title = "Прайм Легиона"
 	desc = "Victory favors bravery.<br>The Prime is a servant of Caesar!<br>Ad victoriam!"
 	flag = PRIME
 	department_head = list("Centurion")

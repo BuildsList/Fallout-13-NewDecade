@@ -1,7 +1,7 @@
 //Fallout 13 Raider faction roles
 
 /datum/job/gangleader
-	title = "Gang Leader"
+	title = "Лидер банды"
 	desc = "A criminal mastermind.<br>If someone goes against you, you either make an offer they can't refuse, or make sure no one will find the body later."
 	flag = GANGLEAD
 	department_flag = MEDSCI
@@ -67,7 +67,7 @@
 //Basic Raider
 
 /datum/job/slaver
-	title = "Slaver"
+	title = "Работорговец"
 	desc = "A bloodthirsty savage.<br>You have broken every rule but the most important one - the Gang Leader is your supreme commander, the powerful Godfather of all bandits, the only one you trust with your life."
 	flag = SLAVER
 	department_head = list("gangleader")
@@ -119,7 +119,7 @@
 	id = /obj/item/weapon/card/id/passport_trader
 
 /datum/job/raider
-	title = "Raider"
+	title = "Рейдер"
 	desc = "A bloodthirsty savage.<br>You have broken every rule but the most important one - the Gang Leader is your supreme commander, the powerful Godfather of all bandits, the only one you trust with your life."
 	flag = RAIDER
 	department_head = list("gangleader")
@@ -170,7 +170,7 @@
 	head = /obj/item/clothing/head/helmet/f13/supaflyhelmet
 
 /datum/job/prisoner
-	title = "NUCLEAR WINTER PRISONER"
+	title = "БАТТЛСРОЯЛЬ"
 	desc = "КРОВЬ УБИЙСТВА АД И РАЗВРАТ!."
 	flag = RAIDER
 	department_head = list("gangleader")

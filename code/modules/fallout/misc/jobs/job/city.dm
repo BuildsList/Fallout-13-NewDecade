@@ -1,7 +1,7 @@
 //Fallout 13 City faction roles
 
 /datum/job/mayor
-	title = "Mayor"
+	title = "Мэр Города"
 	desc = "Неоспоримый авторитет.<br>Вас избрали для того, чтобы вы привели их к лучшему завтра."
 	flag = MAYOR
 	department_flag = WASTELAND
@@ -58,7 +58,7 @@
 	)
 
 /datum/outfit/job/mayor
-	name = "Mayor"
+	name = "Мэр Кебаба"
 	backpack = null
 	satchel = null
 	uniform = /obj/item/clothing/under/f13/formal
@@ -70,7 +70,7 @@
 //Sheriff
 
 /datum/job/sheriff
-	title = "Sheriff"
+	title = "Шериф Города"
 	desc = "Бесстрашный хранитель закона.<br>Вас избрали чтобы Вы защищали это место."
 	flag = SHERIFF
 	department_flag = WASTELAND
@@ -113,7 +113,7 @@
 	)
 
 /datum/outfit/job/sheriff
-	name = "Sheriff"
+	name = "Шериф Кебаба"
 	id = /obj/item/weapon/card/id/passport_city
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	shoes = /obj/item/clothing/shoes/f13/cowboy
@@ -126,7 +126,7 @@
 //Citizen
 
 /datum/job/citizen
-	title = "Citizen"
+	title = "Гражданин Города"
 	flag = CITIZEN
 	department_flag = ENGSEC
 	desc = "Житель города.<br>Ваша жизнь намного лучше, чем у любого другого бедолаги на пустошах."
@@ -162,7 +162,7 @@
 	)
 
 /datum/outfit/job/citizen
-	name = "Citizen"
+	name = "Гражданин Кебаба"
 	backpack = null
 	satchel = null
 	uniform = /obj/item/clothing/under/f13/cowboyt
@@ -170,7 +170,7 @@
 	id = /obj/item/weapon/card/id/passport_city
 
 /datum/job/trader
-	title = "Trader"
+	title = "Торговец"
 	flag = TRADER
 	department_flag = ENGSEC
 	desc = "Торговец.<br>Вы живёте в достатке, пока у вас есть товар."
@@ -205,7 +205,7 @@
 	)
 
 /datum/outfit/job/trader
-	name = "trader"
+	name = "Торговец Кебаба"
 	backpack = null
 	satchel = null
 	uniform = /obj/item/clothing/under/f13/merchant

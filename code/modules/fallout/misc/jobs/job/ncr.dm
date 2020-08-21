@@ -1,7 +1,7 @@
 //Fallout 13 New California Republic faction directory
 
 /datum/job/general
-	title = "NCR General"
+	title = "Майор НКР"
 	desc = "The fate of civilization rests on your shoulders.<br>You were chosen to write history anew.<br>Make a two-headed bear proud."
 	flag = GENERAL
 	department_head = list("NCR Command HQ")
@@ -64,7 +64,7 @@
 //NCR Sergeant
 
 /datum/job/ncr_sergeant
-	title = "Sergeant NCR"
+	title = "Сержант НКР"
 	desc = "You have to remind Troopers to speak only when spoken to, and that the first and last words out of their filthy sewers will be \"Sir\"."
 	flag = NCR_SERGEANT
 	department_head = list("general")
@@ -125,7 +125,7 @@
 		/obj/item/device/flashlight/torch/flare/blue = 1)
 
 /datum/job/vranger
-	title = "Veteran Ranger"
+	title = "Рейнджер НКР"
 	desc = "You are a shadow. No one can hear you coming - and if they see you, they know they're a goner."
 	flag = RANGER
 	department_head = list("NCR Command HQ")
@@ -183,7 +183,7 @@
 
 
 /datum/job/trooper
-	title = "NCR Trooper"
+	title = "Солдат НКР"
 	desc = "I am a soldier and I'm marching on, I am a warrior and this is my song!"
 	flag = TROOPER
 	department_head = list("general", "ncr_sergeant")

@@ -1,8 +1,8 @@
 ///Gun runners///
 
 /datum/job/gunrunner
-	title = "Gun Runner"
-	desc = "Make weapons. Sell weapons. Trading save the Wasteland!"
+	title = "Оружейник"
+	desc = "Создавай оружие, продавай оружие, торговля спасёт пустоши!"
 	flag = GUNRUNNER
 	department_flag = MEDSCI
 	faction = "none"
@@ -47,7 +47,7 @@
 	)
 
 /datum/outfit/job/gunrunner
-	name = "Gun Runner"
+	name = "Оружейник"
 	backpack = null
 	satchel = null
 	uniform = /obj/item/clothing/under/f13/merchant

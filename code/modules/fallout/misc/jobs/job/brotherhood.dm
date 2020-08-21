@@ -1,7 +1,7 @@
 //Fallout 13 Brotherhood of Steel faction roles
 
 /datum/job/elder
-	title = "Elder of Brotherhood"
+	title = "Старейшина Братства"
 	desc = "A mentor, the source of wisdom.<br>You are the one who shall fulfill destiny."
 	flag = ELDER
 	department_head = list("Brotherhood of Steel command HQ")
@@ -50,7 +50,7 @@
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom)
 
 /datum/outfit/job/elder
-	name = "Elder"
+	name = "Старейшина"
 	backpack = null
 	satchel = null
 	ears = /obj/item/device/radio/headset/bs
@@ -64,7 +64,7 @@
 //Brotherhood Paladin
 
 /datum/job/paladin
-	title = "Paladin of Brotherhood"
+	title = "Паладин Братства"
 	desc = "A guardian, the bringer of light.<br>You are the one who shall protect others."
 	flag = PALADIN
 	department_head = list("elder")
@@ -108,7 +108,7 @@
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom)
 
 /datum/outfit/job/paladin
-	name = "Paladin"
+	name = "Паладин Братства"
 	backpack = null
 	satchel = null
 	id = /obj/item/weapon/card/id/dogtag
@@ -125,7 +125,7 @@
 //Brotherhood Knight
 
 /datum/job/knight
-	title = "Knight of Brotherhood"
+	title = "Рыцарь Братства"
 	desc = "A warrior, the keeper of peace.<br>You are the one who shall bring justice."
 	flag = KNIGHT
 	department_head = list("elder", "paladin")
@@ -169,7 +169,7 @@
 
 
 /datum/outfit/job/knight
-	name = "Knight"
+	name = "Рыцарь Братства"
 	backpack = null
 	satchel = null
 	id = /obj/item/weapon/card/id/dogtag
@@ -184,7 +184,7 @@
 	belt_contents = list(/obj/item/weapon/reagent_containers/f13stimpack = 1, /obj/item/weapon/kitchen/knife/combat = 1)
 
 /datum/job/scriber
-	title = "Scriber of Brotherhood"
+	title = "Писец Братства"
 	desc = "Brotherhood's memory holder."
 	flag = SCRIBER
 	department_head = list("elder", "paladin")
@@ -221,7 +221,7 @@
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom)
 
 /datum/outfit/job/scriber
-	name = "Scriber"
+	name = "Писец Братства"
 	backpack = null
 	ears = /obj/item/device/radio/headset/bs
 	satchel = null
@@ -234,7 +234,7 @@
 ///radist///
 
 /datum/job/radist_bs
-	title = "Radist of Brotherhood"
+	title = "Радист Братства"
 	desc = "A warrior, the keeper of peace.<br>You are the one who shall bring justice."
 	flag = KNIGHTRADIST
 	department_head = list("elder", "paladin")

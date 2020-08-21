@@ -1,10 +1,10 @@
 //VAULT//
 
 /datum/job/overseer
-	title = "Overseer"
-	desc = "Head of the Vault."
+	title = "Смотритель Убежища"
+	desc = "Глава убежища."
 	flag = VAULT_OVERSEER
-	department_head = list("Vault")
+	department_head = list("Волт-Тек")
 	department_flag = FOB
 	faction = "vault"
 	status = "overseer"
@@ -64,7 +64,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
 /datum/job/dweller
-	title = "Vault Resident"
+	title = "Житель Убежища"
 	flag = VAULT_RESIDENT/*ASSISTANT*/
 	department_head = list("Overseer")
 	department_flag = FOB
@@ -110,9 +110,9 @@
 ///security///
 
 /datum/job/vltsec
-	title = "Vault Security"
+	title = "Охрана Убежища"
 	flag = VAULT_SECURITY/*shitcurity*/
-	department_head = list("Head of Security")
+	department_head = list("Глава Службы Безопасности Убежища")
 	department_flag = FOB
 	faction = "vault"
 	status = "security"
@@ -160,7 +160,7 @@
 ///science///
 
 /datum/job/vltsci
-	title = "Vault Sciencist"
+	title = "Учёный Убежища"
 	flag = VAULT_SCIENCIST/*science*/
 	department_head = list("Overseer")
 	department_flag = FOB
@@ -205,7 +205,7 @@
 	gloves = /obj/item/clothing/gloves/pda/toxins
 
 /datum/job/vlteng
-	title = "Vault Engineer"
+	title = "Инженер Убежища"
 	flag = VAULT_ENGINEER/*engineers*/
 	department_head = list("Overseer")
 	department_flag = FOB

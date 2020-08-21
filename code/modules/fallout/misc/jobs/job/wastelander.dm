@@ -1,7 +1,7 @@
 //Fallout 13 Neutral faction aka Wastelanders roles
 
 /datum/job/settler
-	title = "Settler"
+	title = "Выживальщик"
 	flag = SETTLER
 	department_flag = WASTELAND
 	desc = "A true child of the wasteland.<br>In badlands you are born, in badlands lays your grave."
@@ -28,7 +28,7 @@
 //Adventurer
 
 /datum/job/adventurer
-	title = "Adventurer"
+	title = "Приключенец"
 	desc = "An offspring of wasteland wanderers.<br>Your life is a journey, and you are free to choose what kind of a journey it will be."
 	flag = ADVENTURER
 	department_flag = WASTELAND
