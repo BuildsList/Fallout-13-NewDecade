@@ -183,7 +183,7 @@ var/global/list/datum/stack_recipe/wood_recipes = list ( \
  * Cloth
  */
 var/global/list/datum/stack_recipe/cloth_recipes = list ( \
-	new/datum/stack_recipe("рюкзак", /obj/item/weapon/storage/backpack, 4), \
+	new/datum/stack_recipe("рюкзак", /obj/item/weapon/storage/backpack/scavpack, 4), \
 	new/datum/stack_recipe("plant bag", /obj/item/weapon/storage/bag/plants, 4), \
 	new/datum/stack_recipe("mining satchel", /obj/item/weapon/storage/bag/ore, 4), \
 	new/datum/stack_recipe("повязка", /obj/item/weapon/reagent_containers/glass/rag, 1), \

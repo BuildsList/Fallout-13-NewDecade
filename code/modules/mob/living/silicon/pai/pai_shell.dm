@@ -100,3 +100,7 @@
 	else
 		set_light(0)
 		to_chat(src, "<span class='notice'>You disable your integrated light.</span>")
+
+/mob/living/silicon/pai/movement_delay()
+	. = ..()
+	. += 1 //A bit slower than humans, so they're easier to smash

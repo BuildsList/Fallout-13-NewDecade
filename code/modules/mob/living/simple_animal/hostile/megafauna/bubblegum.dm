@@ -1,26 +1,19 @@
 #define MEDAL_PREFIX "Bubblegum"
 
 /*
-
 BUBBLEGUM
-
 Bubblegum spawns randomly wherever a lavaland creature is able to spawn. It is the most powerful slaughter demon in existence.
 Bubblegum's footsteps are heralded by shaking booms, proving its tremendous size.
-
 It acts as a melee creature, chasing down and attacking its target while also using different attacks to augment its power that increase as it takes damage.
-
 It tries to strike at its target through any bloodpools under them; if it fails to do that, it will spray blood and then attempt to warp to a bloodpool near the target.
 If it fails to warp to a target, it may summon up to 6 slaughterlings from the blood around it.
 If it does not summon all 6 slaughterlings, it will instead charge at its target, dealing massive damage to anything it hits and spraying a stream of blood.
 At half health, it will either charge three times or warp, then charge, instead of doing a single charge.
-
 When Bubblegum dies, it leaves behind a chest that can contain three things:
  1. A bottle that, when activated, drives everyone nearby into a frenzy
  2. A contract that marks for death the chosen target
  3. A spellblade that can slice off limbs at range
-
 Difficulty: Hard
-
 */
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum
@@ -98,10 +91,9 @@ Difficulty: Hard
 			addtimer(CALLBACK(src, .proc/charge), 0)
 		else
 			if(prob(70) || warped)
-				addtimer(CALLBACK(src, .proc/triple_charge), 0)
+				addtimer(CALLBACK(src, .proc/charge), 0)
 			else
 				addtimer(CALLBACK(src, .proc/warp_charge), 0)
-
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/New()
 	..()
@@ -141,12 +133,7 @@ Difficulty: Hard
 	blood_warp()
 	charge()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/proc/triple_charge()
-	charge()
-	charge()
-	charge()
-
-/mob/living/simple_animal/hostile/megafauna/bubblegum/proc/charge()
+/mob/living/simple_animal/hostile/megafauna/bubblegum/proc/charge(bonus_charges)
 	var/turf/T = get_turf(target)
 	if(!T || T == loc)
 		return
@@ -156,14 +143,18 @@ Difficulty: Hard
 	walk(src, 0)
 	setDir(get_dir(src, T))
 	var/obj/effect/overlay/temp/decoy/D = new /obj/effect/overlay/temp/decoy(loc,src)
-	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 5)
-	sleep(5)
-	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src, .charge_end))
-/mob/living/simple_animal/hostile/megafauna/bubblegum/proc/charge_end()
+	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 3)
+	sleep(3)
+	throw_at(T, get_dist(src, T), 0.5, src, 0, callback = CALLBACK(src, .charge_end, bonus_charges))
+
+/mob/living/simple_animal/hostile/megafauna/bubblegum/proc/charge_end(bonus_charges)
 	charging = 0
 	try_bloodattack()
 	if(target)
-		Goto(target, move_to_delay, minimum_distance)
+		if(bonus_charges)
+			charge(bonus_charges--)
+		else
+			Goto(target, move_to_delay, minimum_distance)
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Bump(atom/A)
@@ -202,7 +193,6 @@ Difficulty: Hard
 	var/list/targets = get_mobs_on_blood()
 	if(targets.len)
 		addtimer(CALLBACK(src, .proc/bloodattack, targets, prob(50)), 0)
-
 		return TRUE
 	return FALSE
 
@@ -246,7 +236,7 @@ Difficulty: Hard
 	sleep(2.5)
 	for(var/mob/living/L in T)
 		if(!faction_check(L))
-			to_chat(L, "<span class='userdanger'>[src] rends you!</span>")
+			L << "<span class='userdanger'>[src] rends you!</span>"
 			playsound(T, attack_sound, 100, 1, -1)
 			var/limb_to_hit = L.get_bodypart(pick("head", "chest", "r_arm", "l_arm", "r_leg", "l_leg"))
 			L.apply_damage(25, BRUTE, limb_to_hit, L.run_armor_check(limb_to_hit, "melee", null, null, armour_penetration))
@@ -262,7 +252,7 @@ Difficulty: Hard
 	sleep(6)
 	for(var/mob/living/L in T)
 		if(!faction_check(L))
-			to_chat(L, "<span class='userdanger'>[src] drags you through the blood!</span>")
+			L << "<span class='userdanger'>[src] drags you through the blood!</span>"
 			playsound(T, 'sound/magic/enter_blood.ogg', 100, 1, -1)
 			var/turf/targetturf = get_step(src, dir)
 			L.forceMove(targetturf)
@@ -312,8 +302,8 @@ Difficulty: Hard
 	DA.color = "#FF0000"
 	var/oldtransform = DA.transform
 	DA.transform = matrix()*2
-	animate(DA, alpha = 255, color = initial(DA.color), transform = oldtransform, time = 5)
-	sleep(5)
+	animate(DA, alpha = 255, color = initial(DA.color), transform = oldtransform, time = 3)
+	sleep(3)
 	qdel(DA)
 
 	var/obj/effect/decal/cleanable/blood/found_bloodpool

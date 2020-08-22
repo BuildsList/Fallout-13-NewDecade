@@ -30,11 +30,6 @@
 /turf/closed/indestructible/riveted
 	icon_state = "riveted"
 
-/turf/closed/indestructible/New()
-	..()
-	if(smooth)
-		queue_smooth(src)
-
 /turf/closed/indestructible/riveted/uranium
 	icon = 'icons/turf/walls/uranium_wall.dmi'
 	icon_state = "uranium"
@@ -53,7 +48,7 @@
 	smooth = SMOOTH_TRUE
 	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
 
-/turf/closed/indestructible/fakeglass/New()
+/turf/closed/indestructible/fakeglass/Initialize()
 	..()
 	icon_state = null //set the icon state to null, so our base state isn't visible
 	var/image/I = image('icons/obj/structures.dmi', loc = src, icon_state = "grille")

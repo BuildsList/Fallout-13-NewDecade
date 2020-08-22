@@ -9,6 +9,7 @@
 	var/gas_type = "o2"
 	var/on = FALSE
 	var/stabilizers = FALSE
+	var/full_speed = TRUE // If the jetpack will have a speedboost in space/nograv or not
 	var/datum/effect_system/trail_follow/ion/ion_trail
 
 /obj/item/weapon/tank/jetpack/New()
@@ -134,6 +135,7 @@
 	slot_flags = null
 	gas_type = null
 	var/datum/gas_mixture/temp_air_contents
+	full_speed = FALSE
 	var/obj/item/weapon/tank/internals/tank = null
 
 /obj/item/weapon/tank/jetpack/suit/New()

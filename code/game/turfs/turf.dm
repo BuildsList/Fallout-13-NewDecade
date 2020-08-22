@@ -22,15 +22,18 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
+	var/list/decals
+	var/requires_activation	//add to air processing after initialize?
+
 /turf/SDQL_update(const/var_name, new_value)
 	if(var_name == "x" || var_name == "y" || var_name == "z")
 		return FALSE
 	. = ..()
 
-/turf/New()
-	..()
-
-	baseturf_icon = initial(baseturf.icon_state)
+/turf/Initialize()
+	if(initialized)
+		stack_trace("Warning: [src]([type]) initialized multiple times!")
+	initialized = TRUE
 
 	levelupdate()
 	if(smooth)
@@ -40,13 +43,21 @@
 	for(var/atom/movable/AM in src)
 		Entered(AM)
 
+	if(requires_activation)
+		CalculateAdjacentTurfs()
+		SSair.add_to_active(src)
+
 	make_underlays()
+
+	baseturf_icon = initial(baseturf.icon_state)
 
 /turf/proc/Initalize_Atmos(times_fired)
 	CalculateAdjacentTurfs()
 
 /turf/Destroy()
 	visibilityChanged()
+	initialized = FALSE
+	requires_activation = FALSE
 	..()
 	return QDEL_HINT_HARDDEL_NOW
 
@@ -194,7 +205,7 @@
 	var/old_ex_level = explosion_level
 	var/old_ex_id = explosion_id
 
-	Destroy()	//вќ„
+	Destroy()	//❄
 	var/turf/W = new path(src)
 
 	W.proximity_checkers = old_checkers
@@ -447,3 +458,16 @@
 		return
 	if(has_gravity(src))
 		playsound(src, "bodyfall", 50, 1)
+
+
+/turf/proc/add_decal(decal,group)
+	LAZYINITLIST(decals)
+	if(!decals[group])
+		decals[group] = list()
+	decals[group] += decal
+	add_overlay(decals[group])
+
+/turf/proc/remove_decal(group)
+	LAZYINITLIST(decals)
+	overlays -= decals[group]
+	decals[group] = null

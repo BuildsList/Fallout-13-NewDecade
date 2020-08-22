@@ -161,7 +161,7 @@
 	suffix = "goon"
 	name = "NES Port"
 	description = "The Vault-Tec Train Port(VTT Port for short) is a shuttle used at other less known vault-tec vaults and has a more open inside for larger crowds."
-	credit_cost = 3000
+	credit_cost = 500
 
 /datum/map_template/shuttle/emergency/wabbajack
 	suffix = "wabbajack"

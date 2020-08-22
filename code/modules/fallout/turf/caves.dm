@@ -56,7 +56,7 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	var/scan_state = null //Holder for the image we display when we're pinged by a mining scanner
 	var/defer_change = 0
 
-/turf/closed/mineral/New()
+/turf/closed/mineral/Initialize()
 	..()
 	if (mineralType && mineralAmt && spread && spreadChance)
 		for(var/dir in cardinal)
@@ -175,7 +175,7 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	var/mineralChance = 13
 	var/display_icon_state = "rock"
 
-/*/turf/closed/mineral/random/New()
+/*/turf/closed/mineral/random/Initialize()
 	..()
 	if (prob(mineralChance))
 		mineralSpawnChanceList = list(
@@ -226,7 +226,7 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	return
 */
 
-/turf/closed/mineral/random/New()
+/turf/closed/mineral/random/Initialize()
 	if (!mineralSpawnChanceList)
 		mineralSpawnChanceList = list(
 			/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
@@ -319,7 +319,7 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	spreadChance = 20
 	spread = 1
 	scan_state = "rock_Iron"
-	New()
+	Initialize()
 
 
 /turf/closed/mineral/iron/volcanic
@@ -496,7 +496,7 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	var/activated_name = null
 	var/activated_image = null
 
-/turf/closed/mineral/gibtonite/New()
+/turf/closed/mineral/gibtonite/Initialize()
 	det_time = rand(8,10) //So you don't know exactly when the hot potato will explode
 	..()
 

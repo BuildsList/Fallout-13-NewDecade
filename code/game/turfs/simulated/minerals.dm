@@ -24,7 +24,7 @@
 	var/scan_state = null //Holder for the image we display when we're pinged by a mining scanner
 	var/defer_change = 0
 
-/turf/closed/mineral/New()
+/turf/closed/mineral/Initialize()
 	if (!canSmoothWith)
 		canSmoothWith = list(/turf/closed)
 	pixel_y = -4

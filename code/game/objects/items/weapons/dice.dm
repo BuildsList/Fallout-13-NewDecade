@@ -172,7 +172,7 @@
 		user.visible_message("[user] кидает [src]. Он приземляется на [result]. [comment]", \
 							 "<span class='notice'>Вы кинули [src]. Он приземлился на [result]. [comment]</span>", \
 							 "<span class='italics'>Вы слышите как [src] перекатывается, похоже, это [fake_result].</span>")
-	else if(src.throwing == 0) //Dice was thrown and is coming to rest
+	else if(!src.throwing) //Dice was thrown and is coming to rest
 		visible_message("<span class='notice'>[src] перестаёт перекатываться, останавливаясь на [result]. [comment]</span>")
 
 /obj/item/weapon/dice/d4/Crossed(mob/living/carbon/human/H)

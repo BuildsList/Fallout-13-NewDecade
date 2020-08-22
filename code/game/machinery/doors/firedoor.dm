@@ -47,6 +47,7 @@
 /obj/machinery/door/firedoor/attack_hand(mob/user)
 	if(operating || !density)
 		return
+	user.changeNext_move(CLICK_CD_MELEE)
 	user.visible_message("[user] стучит в [src].",
 						 "Вы стучите в [src].")
 	playsound(loc, 'sound/effects/Glassknock.ogg', 10, FALSE, frequency = 32000)
