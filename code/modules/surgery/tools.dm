@@ -22,7 +22,7 @@
 
 
 /obj/item/weapon/cautery
-	name = "термокаутер"
+	name = "хирургическая игла"
 	desc = "Поможет вам остановить кровотечение и заживить надрез."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "cautery"
