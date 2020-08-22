@@ -8,7 +8,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	origin_tech = "materials=1;biotech=1"
 
-
 /obj/item/weapon/hemostat
 	name = "зажим"
 	desc = "Этот нехитрый прибор, поможет остановить кровотечение во время операции."
@@ -20,7 +19,6 @@
 	origin_tech = "materials=1;biotech=1"
 	attack_verb = list("attacked", "pinched")
 
-
 /obj/item/weapon/cautery
 	name = "хирургическая игла"
 	desc = "Поможет вам остановить кровотечение и заживить надрез."
@@ -31,7 +29,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	origin_tech = "materials=1;biotech=1"
 	attack_verb = list("burnt")
-
 
 /obj/item/weapon/surgicaldrill
 	name = "хирургическая дрель"
@@ -84,7 +81,6 @@
 	origin_tech = "biotech=1;combat=1"
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
 	sharpness = IS_SHARP
-
 
 /obj/item/weapon/surgical_drapes
 	name = "хирургическая простыня"
