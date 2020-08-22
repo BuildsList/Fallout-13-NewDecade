@@ -44,6 +44,7 @@
 
 	var/command = FALSE //If we are speaking into a command headset, our text can be BOLD
 	var/use_command = FALSE
+	var/translate_hive = 0
 
 /obj/item/device/radio/proc/set_frequency(new_frequency)
 	remove_radio(src, frequency)
@@ -64,7 +65,7 @@
 	translate_binary = 0
 	syndie = 0
 	centcom = 0
-
+	translate_hive = 0
 	if(keyslot)
 		for(var/ch_name in keyslot.channels)
 			if(ch_name in src.channels)
@@ -74,6 +75,9 @@
 
 		if(keyslot.translate_binary)
 			translate_binary = 1
+
+		if(keyslot.translate_hive)
+			translate_hive = 1
 
 		if(keyslot.syndie)
 			syndie = 1

@@ -169,6 +169,21 @@
 /obj/structure/decoration_f13/decal/hole/large
 	icon_state = "bhole-large"
 
+/obj/structure/decoration_f13/decal/redcross
+	name = "красный крест"
+	desc = "Сильно потрёпанная табличка, некогда обозначавшая организованный медпункт..."
+	icon_state = "blood_pic_2"
+
+/obj/structure/decoration_f13/decal/corpse
+	name = "труп"
+	desc = "Ну и срань ,что здесь произошло? Его просто разорвали в клочья, не к добру это..."
+	icon_state = "corpse"
+
+/obj/structure/decoration_f13/decal/corpse/v2
+	name = "труп"
+	desc = "Ну и срань ,что здесь произошло? Его просто разорвали в клочья, не к добру это..."
+	icon_state = "corpse2"
+
 /obj/structure/decoration_f13/poster
 	name = "постер"
 	desc = "Просто постер."
@@ -209,6 +224,19 @@
 
 /obj/structure/decoration_f13/poster/v12
 	icon_state = "poster20_legit"
+
+/obj/structure/decoration_f13/poster/vault_sign
+	name = "номерная табличка"
+	desc = "Номерная табличка обозначающая номер убежища, наверное..."
+	icon_state = "vlt_113"
+
+/obj/structure/decoration_f13/poster/kalendar
+	name = "календарь"
+	desc = "Обычный календарь из бумаги неизвестного состава, это единственное объяснение почему он дожил до наших дней."
+	icon_state = "kalendar"
+
+/obj/structure/decoration_f13/poster/kalendar/v2
+	icon_state = "kalendar2"
 
 /obj/structure/decoration_f13/poster/pinup
 	name = "пинап"

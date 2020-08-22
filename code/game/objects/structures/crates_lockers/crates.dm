@@ -70,6 +70,14 @@
 	name = "картонная коробка"
 	desc = "обычная коробка из картона."
 	icon = 'icons/fallout/objects/crates.dmi'
+	icon_state = "vb_crate"
+	density = 1
+	self_weight = 50
+
+/obj/structure/closet/crate/cardboxsmall
+	name = "картонная коробка"
+	desc = "обычная коробка из картона."
+	icon = 'icons/fallout/objects/crates.dmi'
 	icon_state = "smallbox"
 	density = 0
 	self_weight = 0.5

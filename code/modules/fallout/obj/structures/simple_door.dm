@@ -243,7 +243,7 @@
 	opacity = 0
 	density = 0
 	opaque = 0
-	can_hold_padlock = FALSE
+	can_hold_padlock = TRUE
 	open_sound = "sound/f13machines/doorhidden_open.ogg"
 	close_sound = "sound/f13machines/doorhidden_close.ogg"
 	hard_open = 0
@@ -369,10 +369,21 @@
 	material_type = /obj/item/stack/sheet/plasteel
 	open_sound = "sound/f13machines/doorblast_open.ogg"
 	close_sound = "sound/f13machines/doorblast_close.ogg"
-	explosion_block = 10
+	explosion_block = 30
 	hard_open = 0
 	opening_time = 30
 	closing_time = 20
+
+/obj/structure/simple_door/blast/germodveri
+	icon_state = "heavydoor"
+	door_type = "heavydoor"
+	material_type = /obj/item/stack/sheet/plasteel
+	open_sound = "sound/f13machines/doorblast_open.ogg"
+	close_sound = "sound/f13machines/doorblast_close.ogg"
+	explosion_block = 30
+	hard_open = 0
+	opening_time = 30
+	closing_time = 5
 
 /obj/structure/simple_door/bunker
 	name = "шлюз"
@@ -383,6 +394,17 @@
 	open_sound = "sound/f13machines/doorairlock_open.ogg"
 	close_sound = "sound/f13machines/doorairlock_close.ogg"
 	explosion_block = 5
+	hard_open = 0
+
+/obj/structure/simple_door/bunker/enclave
+	name = "шлюз"
+	desc = "An olive green painted airlock.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
+	icon_state = "enclave_base"
+	door_type = "enclave_base"
+	material_type = /obj/item/stack/sheet/metal
+	open_sound = "sound/f13machines/doorairlock_open.ogg"
+	close_sound = "sound/f13machines/doorairlock_close.ogg"
+	explosion_block = 15
 	hard_open = 0
 
 /obj/structure/simple_door/bunker/vault
