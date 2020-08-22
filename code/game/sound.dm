@@ -52,6 +52,7 @@
 	if(isturf(turf_source))
 		var/turf/T = get_turf(src)
 
+/*
 		//Atmosphere affects sound
 		var/pressure_factor = 1
 		var/datum/gas_mixture/hearer_env = T.return_air()
@@ -70,7 +71,7 @@
 
 		S.volume *= pressure_factor
 		//End Atmosphere affecting sound
-
+*/
 		// 3D sounds, the technology is here!
 		if(T != src.loc)
 

@@ -70,6 +70,7 @@
 "br" = (/obj/structure/chair/wood/worn,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/ghoul,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "bs" = (/obj/structure/table/wood,/obj/item/weapon/katana,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "bt" = (/obj/structure/table/wood,/obj/item/weapon/katana/chinese,/turf/open/floor/f13/wood,/area/f13/wasteland)
+"bu" = (/obj/machinery/telecomms/allinone,/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "bw" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/computer/eyebots,/turf/open/floor/f13/wood,/area/f13/wasteland)
 "bx" = (/obj/effect/landmark/start{name = "Prime"},/turf/open/indestructible/ground/desert,/area/f13/wasteland)
 "by" = (/obj/effect/landmark/start{name = "Trooper"},/turf/open/floor/f13/wood,/area/f13/building)
@@ -140,7 +141,7 @@ ababaCbDaIaIaIaIaIaIaaaEakalalalbfcacacacacacacaadcacacacacacacacacacacacaababab
 ababaCbYaIaMaMaHaMaIaeaCakalalalbfcacacacacacacacacacacacacacacacacacacacaababab
 ababaCbcaIaMbTaIawaIaxaEakalalalbfcacacacacacacacacacacacacacacacacacacacaababab
 ababaCavaIaMbwaIawaIaxaEakalalalbfcacacacacacacacacacacacacacacacacacacacaababab
-ababaCaCaCaCaCaCaCbnbnaCakalalalbfcacacacacacacacacacacacacacacacacacacacaababab
+ababaCaCaCaCaCaCaCbnbnaCakalalalbfcacacacacacacacacacacacacacacacacacacabuababab
 abababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababab
 "}

@@ -26,7 +26,7 @@
 	var/list/bars = user.progressbars[bar.loc]
 	bars.Add(src)
 	listindex = bars.len
-	bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1))
+	//bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1))
 
 /datum/progressbar/proc/update(progress)
 //	to_chat(world, "Update [progress] - [goal] - [(progress / goal)] - [((progress / goal) * 100)] - [round(((progress / goal) * 100), 5)]")
