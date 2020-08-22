@@ -142,7 +142,7 @@ var/obj/machinery/gateway/centerstation/the_gateway = null
 		return
 	if(!active)
 		return
-	if(!awaygate || QDELETED(awaygate))
+	if(!awaygate || qdeleted(awaygate))
 		return
 
 	if(awaygate.calibrated)
@@ -253,7 +253,7 @@ var/obj/machinery/gateway/centerstation/the_gateway = null
 		return
 	if(!active)
 		return
-	if(!stationgate || QDELETED(stationgate))
+	if(!stationgate || qdeleted(stationgate))
 		return
 	if(istype(AM, /mob/living/carbon))
 		var/mob/living/carbon/C = AM

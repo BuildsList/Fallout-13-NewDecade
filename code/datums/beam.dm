@@ -46,7 +46,7 @@
 			Reset()
 			Draw()
 		sleep(sleep_time)
-	if(!QDELETED(src))
+	if(!qdeleted(src))
 		qdel(src)
 
 

@@ -22,9 +22,8 @@ var/datum/subsystem/augury/SSaugury
 	var/biggest_doom = null
 	var/biggest_threat = null
 
-	for(var/db in doombringers)
-		var/datum/d = db
-		if(!d || QDELETED(d))
+	for(var/d in doombringers)
+		if(!d || qdeleted(d))
 			doombringers -= d
 			continue
 		var/threat = doombringers[d]

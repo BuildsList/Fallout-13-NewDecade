@@ -467,7 +467,7 @@
 
 /proc/pollCandidatesForMob(Question, jobbanType, datum/game_mode/gametypeCheck, be_special_flag = 0, poll_time = 300, mob/M, ignore_category = null)
 	var/list/L = pollCandidates(Question, jobbanType, gametypeCheck, be_special_flag, poll_time, ignore_category)
-	if(!M || QDELETED(M) || !M.loc)
+	if(!M || qdeleted(M) || !M.loc)
 		return list()
 	return L
 
@@ -476,7 +476,7 @@
 	var/i=1
 	for(var/v in mobs)
 		var/atom/A = v
-		if(!A || QDELETED(A) || !A.loc)
+		if(!A || qdeleted(A) || !A.loc)
 			mobs.Cut(i,i+1)
 		else
 			++i

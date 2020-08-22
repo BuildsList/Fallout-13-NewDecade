@@ -140,7 +140,7 @@
 
 /obj/item/weapon/stock_parts/cell_pa/ex_act(severity, target)
 	..()
-	if(!QDELETED(src))
+	if(!qdeleted(src))
 		switch(severity)
 			if(2)
 				if(prob(50))

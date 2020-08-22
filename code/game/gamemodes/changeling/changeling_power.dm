@@ -76,7 +76,7 @@
 
 //used in /mob/Stat()
 /obj/effect/proc_holder/changeling/proc/can_be_used_by(mob/user)
-	if(!user || QDELETED(user))
+	if(!user || qdeleted(user))
 		return 0
 	if(!ishuman(user) && !ismonkey(user))
 		return 0

@@ -34,7 +34,7 @@
 
 /turf/proc/sun_update_light()
 	set waitfor = FALSE
-	if (QDELETED(src))
+	if (qdeleted(src))
 		return
 
 	if (sunlight_source) // Update the light or create it if it does not exist.

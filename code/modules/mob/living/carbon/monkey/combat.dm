@@ -346,7 +346,7 @@
 			if(I == pickupTarget)
 				M.visible_message("<span class='danger'>[src] snatches [pickupTarget] from [M].</span>", "<span class='userdanger'>[src] snatched [pickupTarget]!</span>")
 				M.unEquip(pickupTarget)
-				if(!QDELETED(pickupTarget))
+				if(!qdeleted(pickupTarget))
 					equip_item(pickupTarget)
 	pickpocketing = FALSE
 	pickupTarget = null

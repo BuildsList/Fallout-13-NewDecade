@@ -87,7 +87,7 @@
 	cameraFollow = null
 	unset_machine()
 
-	if(!eyeobj || !eyeobj.loc || QDELETED(eyeobj))
+	if(!eyeobj || !eyeobj.loc || qdeleted(eyeobj))
 		to_chat(src, "ERROR: Eyeobj not found. Creating new eye...")
 		eyeobj = new(loc)
 		eyeobj.ai = src

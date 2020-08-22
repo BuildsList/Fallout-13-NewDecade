@@ -188,7 +188,7 @@ var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/mornin
 		var/atom/movable/sunlighting_overlay/O = currentrun_overlays[currentrun_overlays.len]
 		currentrun_overlays.len--
 
-		if (QDELETED(O))
+		if (qdeleted(O))
 			continue
 
 		O.update_overlay()

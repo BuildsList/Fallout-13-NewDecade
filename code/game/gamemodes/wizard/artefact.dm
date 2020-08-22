@@ -571,7 +571,7 @@ var/global/list/multiverse = list()
 	var/mob/living/carbon/last_user
 
 /obj/item/warpwhistle/proc/interrupted(mob/living/carbon/user)
-	if(!user || QDELETED(src))
+	if(!user || qdeleted(src))
 		on_cooldown = FALSE
 		return TRUE
 	return FALSE

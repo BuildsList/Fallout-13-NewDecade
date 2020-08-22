@@ -98,7 +98,7 @@
 		for(var/obj/item/I in user.held_items)
 			if(I in hands_nodrop)
 				I.flags &= ~NODROP
-		if(phase_underlay && !QDELETED(phase_underlay))
+		if(phase_underlay && !qdeleted(phase_underlay))
 			user.underlays -= phase_underlay
 			qdel(phase_underlay)
 			phase_underlay = null

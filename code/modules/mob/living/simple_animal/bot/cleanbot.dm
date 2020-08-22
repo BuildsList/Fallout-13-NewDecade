@@ -136,7 +136,7 @@
 			bot_patrol()
 
 	if(target)
-		if(QDELETED(target) || !isturf(target.loc))
+		if(qdeleted(target) || !isturf(target.loc))
 			target = null
 			mode = BOT_IDLE
 			return

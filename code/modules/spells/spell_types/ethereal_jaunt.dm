@@ -54,7 +54,7 @@
 	new jaunt_in_type(mobloc, holder.dir)
 	sleep(jaunt_in_time)
 	qdel(holder)
-	if(!QDELETED(target))
+	if(!qdeleted(target))
 		if(mobloc.density)
 			for(var/direction in alldirs)
 				var/turf/T = get_step(mobloc, direction)

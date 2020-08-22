@@ -122,7 +122,7 @@
 		if(throwing)
 			throwing.hit_atom(A)
 			. = 1
-			if(!A || QDELETED(A))
+			if(!A || qdeleted(A))
 				return
 		A.Bumped(src)
 

@@ -367,7 +367,7 @@
 		to_chat(user, "<span class='revenwarning'>It is shifting and distorted. It would be wise to destroy this.</span>")
 
 /obj/item/weapon/ectoplasm/revenant/proc/reform()
-	if(!src || QDELETED(src) || inert)
+	if(!src || qdeleted(src) || inert)
 		return
 	var/key_of_revenant
 	message_admins("Revenant ectoplasm was left undestroyed for 1 minute and is reforming into a new revenant.")

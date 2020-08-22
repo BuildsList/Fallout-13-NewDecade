@@ -412,7 +412,7 @@
 
 /obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
-	if(. && !QDELETED(src))
+	if(. && !qdeleted(src))
 		if(prob(damage_amount * 5))
 			break_light_tube()
 

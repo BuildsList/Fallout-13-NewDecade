@@ -130,7 +130,7 @@
 	awakening = 1
 
 	spawn(30)
-		if(!QDELETED(src))
+		if(!qdeleted(src))
 			var/mob/living/simple_animal/hostile/killertomato/K = new /mob/living/simple_animal/hostile/killertomato(get_turf(src.loc))
 			K.maxHealth += round(seed.endurance / 3)
 			K.melee_damage_lower += round(seed.potency / 10)

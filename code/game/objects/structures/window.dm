@@ -190,7 +190,7 @@
 			playsound(loc, I.usesound, 75, 1)
 			to_chat(user, "<span class='notice'> You begin to disassemble [src]...</span>")
 			if(do_after(user, 40*I.toolspeed, target = src))
-				if(QDELETED(src))
+				if(qdeleted(src))
 					return
 
 				var/obj/item/stack/sheet/G = new glass_type(user.loc, glass_amount)
@@ -233,7 +233,7 @@
 
 
 /obj/structure/window/deconstruct(disassembled = TRUE)
-	if(QDELETED(src))
+	if(qdeleted(src))
 		return
 	if(!disassembled)
 		playsound(src, "shatter", 70, 1)
@@ -335,7 +335,7 @@
 
 //merges adjacent full-tile windows into one
 /obj/structure/window/update_icon()
-	if(!QDELETED(src))
+	if(!qdeleted(src))
 		if(!fulltile)
 			return
 

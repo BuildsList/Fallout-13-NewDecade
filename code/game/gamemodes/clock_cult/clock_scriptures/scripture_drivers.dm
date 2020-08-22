@@ -151,7 +151,7 @@
 	var/obj/structure/destructible/clockwork/geis_binding/binding
 
 /datum/clockwork_scripture/geis/Destroy()
-	if(binding && !QDELETED(binding))
+	if(binding && !qdeleted(binding))
 		qdel(binding)
 	return ..()
 

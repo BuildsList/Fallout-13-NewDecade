@@ -113,6 +113,8 @@
 	if(href_list["ready"])
 		if(!ticker || ticker.current_state <= GAME_STATE_PREGAME) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
+		else
+			ready = 0
 
 	if(href_list["show_content"])
 		client.prefs.ShowContentPacks(src)

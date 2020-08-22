@@ -52,7 +52,7 @@
 	var/A
 
 	A = input(user, "Area to jump to", "BOOYEA", A) as null|anything in teleportlocs
-	if(!src || QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated() || !A || !uses)
+	if(!src || qdeleted(src) || !user || !user.is_holding(src) || user.incapacitated() || !A || !uses)
 		return
 	var/area/thearea = teleportlocs[A]
 

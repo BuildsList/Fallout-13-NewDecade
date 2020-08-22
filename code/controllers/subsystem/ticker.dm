@@ -108,8 +108,6 @@ var/datum/subsystem/ticker/ticker
 
 			if(timeLeft <= 0)
 				current_state = GAME_STATE_SETTING_UP
-				if(start_immediately)
-					fire()
 
 		if(GAME_STATE_SETTING_UP)
 			if(!setup())

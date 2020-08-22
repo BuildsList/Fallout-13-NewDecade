@@ -296,7 +296,7 @@ var/datum/subsystem/vote/SSvote
 /datum/subsystem/vote/proc/remove_action_buttons()
 	for(var/v in generated_actions)
 		var/datum/action/vote/V = v
-		if(!QDELETED(V))
+		if(!qdeleted(V))
 			V.Remove(V.owner)
 	generated_actions = list()
 

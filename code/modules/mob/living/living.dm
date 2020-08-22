@@ -824,7 +824,7 @@
 	return 0
 
 /mob/living/proc/harvest(mob/living/user)
-	if(QDELETED(src))
+	if(qdeleted(src))
 		return
 	if(butcher_results)
 		for(var/path in butcher_results)

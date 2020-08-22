@@ -212,8 +212,6 @@
 		else
 			return
 
-	SSshuttle.emergencyCallAmount++
-
 	if(prob(70))
 		SSshuttle.emergencyLastCallLoc = signalOrigin
 	else
