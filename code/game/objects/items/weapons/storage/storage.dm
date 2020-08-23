@@ -328,20 +328,11 @@
 		if(!prevent_warning)
 			for(var/mob/M in viewers(usr, null))
 				if(M == usr)
-					if(/obj/item/weapon/reagent_containers/food/drinks/flask)
-						to_chat(usr, "<span class='notice'>Вы кладёте флягу в сумку.</span>")
-					else
-						to_chat(usr, "<span class='notice'>Вы кладёте [W] в сумку.</span>")
+					to_chat(usr, "<span class='notice'>Вы кладёте вещь в сумку.</span>")
 				else if(in_range(M, usr)) //If someone is standing close enough, they can tell what it is...
-					if(/obj/item/weapon/reagent_containers/food/drinks/flask)
-						M.show_message("<span class='notice'>[usr] кладёт флягу в сумку.</span>", 1)
-					else
-						M.show_message("<span class='notice'>[usr] кладёт [W] в сумку.</span>", 1)
+					M.show_message("<span class='notice'>[usr] кладёт что-то в сумку.</span>", 1)
 				else if(W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
-					if(/obj/item/weapon/reagent_containers/food/drinks/flask)
-						M.show_message("<span class='notice'>[usr] кладёт флягу в сумку.</span>", 1)
-					else
-						M.show_message("<span class='notice'>[usr] кладёт [W] в сумку.</span>", 1)
+					M.show_message("<span class='notice'>[usr] кладёт что-то в сумку.</span>", 1)
 
 		orient2hud(usr)
 		for(var/mob/M in can_see_contents())

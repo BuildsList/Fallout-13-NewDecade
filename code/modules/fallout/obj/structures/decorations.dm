@@ -178,6 +178,7 @@
 	name = "труп"
 	desc = "Ну и срань ,что здесь произошло? Его просто разорвали в клочья, не к добру это..."
 	icon_state = "corpse"
+	layer = 2
 
 /obj/structure/decoration_f13/decal/corpse/v2
 	name = "труп"

@@ -1335,6 +1335,7 @@
 #include "code\modules\fallout\mob\npc\ghoul.dm"
 #include "code\modules\fallout\mob\npc\liberators.dm"
 #include "code\modules\fallout\mob\npc\molerat.dm"
+#include "code\modules\fallout\mob\npc\monkey_mutant.dm"
 #include "code\modules\fallout\mob\npc\mrhandy.dm"
 #include "code\modules\fallout\mob\npc\protectron.dm"
 #include "code\modules\fallout\mob\npc\rad_scorpion.dm"
