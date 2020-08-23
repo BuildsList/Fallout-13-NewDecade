@@ -266,7 +266,7 @@ var/list/preferences_datums = list()
 			else
 				dat += "<br><a href='?_src_=prefs;preference=skills;back=1'>Назад</a> <br>"
 				dat += "<center>"
-				usr << browse_rsc('icons/special/special.dmi', "skills_[skill_type]")
+				usr.browse_rsc_icon("icons/special/special.dmi", "skills_[skill_type]")
 				dat += "<img src='skills_[skill_type].png' class='center'> <br>"
 				dat += "</center>"
 				dat += SKILLS.getPointDescription(skill_type)
@@ -290,7 +290,7 @@ var/list/preferences_datums = list()
 			else
 				dat += "<br><a href='?_src_=prefs;preference=specials;back=1'>Назад</a> <br>"
 				dat += "<center>"
-				usr << browse_rsc("icons/special/special.dmi", "special_[skill_type]")
+				usr.browse_rsc_icon("icons/special/special.dmi", "special_[skill_type]")
 				dat += "<img src='special_[skill_type].png' class='center'> <br>"
 				dat += "</center>"
 				dat += SPEC.getPointDescription(skill_type)
