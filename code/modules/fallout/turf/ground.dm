@@ -10,7 +10,7 @@
 	icon_state = "wasteland1"
 	intact = 1
 
-/turf/open/indestructible/ground/New()
+/turf/open/indestructible/ground/Initialize()
 	..()
 
 	baseturf = src.type
@@ -53,7 +53,7 @@ var/global/list/desertTurfEdgeCache
 	slowdown = 0.1
 	flags = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
 
-/turf/open/indestructible/ground/desert/New()
+/turf/open/indestructible/ground/desert/Initialize()
 	icon_state = "wasteland[rand(1,31)]"
 	..()
 /turf/open/indestructible/ground/dirt
@@ -84,7 +84,7 @@ var/global/list/desertTurfEdgeCache
 	allowed_plants = list(/obj/item/seeds/glow)
 	step_sounds = list("human" = "erikafootsteps")
 
-/turf/open/indestructible/ground/mountain/New()
+/turf/open/indestructible/ground/mountain/Initialize()
 	..()
 	icon_state = "rockfloor[rand(1,2)]"
 

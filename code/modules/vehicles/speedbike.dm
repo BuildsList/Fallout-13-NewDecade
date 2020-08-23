@@ -10,7 +10,7 @@
  	. = ..()
 		riding_datum = new/datum/riding/space/speedbike
 
-/obj/vehicle/space/speedbike/New()
+/obj/vehicle/space/speedbike/Initialize()
 	. = ..()
 	overlay = image("icons/obj/bike.dmi", overlay_state)
 	overlay.layer = ABOVE_MOB_LAYER
