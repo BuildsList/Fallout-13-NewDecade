@@ -38,6 +38,8 @@
 		output += "<p><a href='byond://?src=\ref[src];late_join=1'>Присоедениться!</A></p>"
 		output += "<p><a href='byond://?src=\ref[src];show_content=1'>Атомный магазин!</a></p>"
 
+	if(client && client.holder)
+		output += "<p><a href='byond://?src=\ref[src];contribute=1'>Принять участие в разработке</A></p>"
 
 /*
 	if(client && client.holder)
@@ -125,7 +127,7 @@
 		new_player_panel()
 
 	if(href_list["contribute"])
-		src << link("http://zlobilling.org/services/ss13-5")
+		src << link("https://github.com/iWuna/Fallout-13-NewDecade/pulls")
 
 	if(href_list["observe"])
 

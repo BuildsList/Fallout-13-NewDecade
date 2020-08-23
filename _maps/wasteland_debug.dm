@@ -4,15 +4,15 @@
 
 		#define MINETYPE "lavaland"
 
-        #include "map_files\debug\turbo_wasteland.dmm"
+		#include "map_files\debug\turbo_wasteland.dmm"
 
-		#define MAP_PATH "map_files/debug"
-        #define MAP_FILE "wasteland.dmm"
-        #define MAP_NAME "Debug Wasteland"
-//		#define MAP_FACTIONS_LIST list("ncr", "legion", "none", "city", "raiders")
+		#define MAP_PATH "map_files/TexasWasteland"
+		#define MAP_FILE "oregon_legacy.dmm"
+		#define MAP_NAME "Oregon Wasteland"
+		#define MAP_FACTIONS_LIST list("vault", "vault_npc", "bs", "bs_npc", "enclave", "enclave_npc", "none", "none_npc", "city", "city_npc", "raiders", "raiders_npc","ncr", "ncr_npc","legion","legion_npc","followers","followers_npc","coc")
 
-		#define MAP_TRANSITION_CONFIG DEFAULT_MAP_TRANSITION_CONFIG
-
+		#define MAP_TRANSITION_CONFIG list()
+//#endif
 #elif !defined(MAP_OVERRIDE)
 
 	#warn a map has already been included, ignoring wasteland debug.

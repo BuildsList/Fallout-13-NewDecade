@@ -26,7 +26,7 @@
 		. += 50
 
 	if (user:dna.species && user:dna.species.id=="ghoul")
-		. -= 15
+		. -= 10
 
 	if(user.perks.have(/datum/perk/strongback))
 		. += 20
