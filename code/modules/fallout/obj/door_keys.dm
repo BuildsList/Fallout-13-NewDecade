@@ -3,7 +3,7 @@
 	desc = "Маленький серый ключ."
 	icon = 'icons/fallout/objects/keys.dmi'
 	icon_state = "empty_key"
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT|SLOT_EARS
 	var/id = null
 	var/static/list/used_ids = list()
 	w_class = WEIGHT_CLASS_TINY
@@ -189,7 +189,7 @@
 	icon_state = "Hairpin"
 	self_weight = 0.1
 	w_class = WEIGHT_CLASS_TINY
-
+	slot_flags = SLOT_EARS
 	var/lockpicking_time = 100
 	var/broken_chance = 50
 

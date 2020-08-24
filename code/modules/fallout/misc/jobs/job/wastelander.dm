@@ -1,10 +1,10 @@
 //Fallout 13 Neutral faction aka Wastelanders roles
 
 /datum/job/settler
-	title = "Выживальщик"
+	title = "Бродяга"
 	flag = SETTLER
 	department_flag = WASTELAND
-	desc = "A true child of the wasteland.<br>In badlands you are born, in badlands lays your grave."
+	desc = "Истинное порождение пустоши.<br>В пустоши вы родились, в пустоши вы и умрёте."
 	faction = "none"
 	status = "none"
 	total_positions = -1

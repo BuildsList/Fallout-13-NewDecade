@@ -277,7 +277,7 @@
 		icon_state = "caravaneer_bed_shovel_mask"
 
 /obj/item/weapon/storage/backpack/scavpack
-	name = "рюкзак выживальщика"
+	name = "рюкзак бродяги"
 	desc = "Рюкзак собранный почти из навоза и палок, лучше так. Чем никак.."
 	icon_state = "scavpack"
 	item_state = "explorerpack"
@@ -310,6 +310,7 @@
 	icon_state = "scrapback"
 	resistance_flags = 0
 	storage_slots = 6
+	slot_flags = SLOT_BACK|SLOT_BELT
 
 /obj/item/weapon/storage/backpack/satchel/eng
 	name = "industrial satchel"

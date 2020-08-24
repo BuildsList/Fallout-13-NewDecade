@@ -1,5 +1,6 @@
 /obj/item/ammo_casing
 	materials = list(MAT_METAL=250)
+	slot_flags = SLOT_EARS
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
