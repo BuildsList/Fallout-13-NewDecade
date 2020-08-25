@@ -25,6 +25,8 @@
 	var/list/decals
 	var/requires_activation	//add to air processing after initialize?
 
+	var/changing_turf = FALSE
+
 /turf/SDQL_update(const/var_name, new_value)
 	if(var_name == "x" || var_name == "y" || var_name == "z")
 		return FALSE
@@ -54,12 +56,16 @@
 /turf/proc/Initalize_Atmos(times_fired)
 	CalculateAdjacentTurfs()
 
-/turf/Destroy()
+/turf/Destroy(force)
+	if(!changing_turf)
+		stack_trace("Incorrect turf deletion")
+	changing_turf = FALSE
+	SSair.remove_from_active(src)
 	visibilityChanged()
 	initialized = FALSE
 	requires_activation = FALSE
 	..()
-	return QDEL_HINT_HARDDEL_NOW
+	return QDEL_HINT_IWILLGC
 
 /turf/attack_hand(mob/user)
 	user.Move_Pulled(src)
@@ -193,24 +199,14 @@
 		return
 	if(!use_preloader && path == type) // Don't no-op if the map loader requires it to be reconstructed
 		return src
-	var/old_blueprint_data = blueprint_data
-
-	SSair.remove_from_active(src)
 
 	var/bt = baseturf
 	var/bti = baseturf_icon
 	var/btd = baseturf_dir
 
-	var/list/old_checkers = proximity_checkers
-	var/old_ex_level = explosion_level
-	var/old_ex_id = explosion_id
-
-	Destroy()	//❄
+	changing_turf = TRUE
+	qdel(src)	//Just get the side effects and call Destroy
 	var/turf/W = new path(src)
-
-	W.proximity_checkers = old_checkers
-	W.explosion_level = old_ex_level
-	W.explosion_id = old_ex_id
 
 	W.baseturf = bt
 	W.baseturf_icon = bti
@@ -220,7 +216,6 @@
 
 	if(!defer_change)
 		W.AfterChange(ignore_air)
-	W.blueprint_data = old_blueprint_data
 	return W
 
 /turf/proc/AfterChange(ignore_air = FALSE) //called after a turf has been replaced in ChangeTurf()
